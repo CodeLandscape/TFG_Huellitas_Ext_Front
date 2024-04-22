@@ -1,0 +1,14 @@
+<app-header></app-header>
+<ng-template [ngIf]="tokenisValid" [ngIfElse]="redirect">
+    <router-outlet></router-outlet>
+</ng-template>
+<ng-template #redirect>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p class=" text-danger"><b>Error en el token:</b> Redirigiendo...</p>
+            </div>
+        </div>
+    </div>
+</ng-template>
+<app-footer></app-footer>

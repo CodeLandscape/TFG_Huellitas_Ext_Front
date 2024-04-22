@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <!-- Etiquetas requeridas: emplear el charset adecuado -->
+    <meta charset="utf-8">
+
+    <!-- Estilos CSS -->
+    <!-- Tipografía Roboto, Iconos FontAwesome, Preving Bootstrap, estilos específicos App,... -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
+    <link rel="stylesheet" href="https://intranet.preving.com/previngapis/css/bootstrap-preving/global/1.0.2/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <title>Preving App</title>
+
+    <!-- Base href, viewport, icono,... -->
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script type="text/javascript">
+        function functionLogoff() {
+            var r = confirm("¿Está seguro de cerrar la sesión?");
+            if (r) {
+                document.formLogoff.action = '/../sso/log-off.do';
+                document.formLogoff.target = "_parent";
+                document.formLogoff.submit();
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form id="formLogoff" name="formLogoff"></form>
+    <app-root></app-root>
+
+    <!-- Archivos JavaScript -->
+    <!-- Primero jQuery, después Popper.js, finalmente Bootstrap JS -->
+    <script type="text/javascript" src='https://intranet.preving.com/previngapis/libs/jquery/3.4.1/jquery-3.4.1.min.js'></script>
+    <script type="text/javascript" src='https://intranet.preving.com/previngapis/libs/popper/1.16.0/popper.min.js'></script>
+    <script type="text/javascript" src="https://intranet.preving.com/previngapis/libs/bootstrap-preving/global/1.0.2/bootstrap.min.js"></script>
+
+</body>
+
+</html>
