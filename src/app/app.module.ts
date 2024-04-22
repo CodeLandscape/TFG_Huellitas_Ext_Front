@@ -18,12 +18,14 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';  // Componente Cabecera
 import { HomeComponent } from './components/home/home.component';        // Componente por defecto
 import { FooterComponent } from './components/footer/footer.component';
-import { LoginComponent } from './components/login/login.component';  // Componente Pie
+import { LoginComponent } from './components/login/login.component';
+import { RegisterUserComponent } from './components/register-user/register-user.component';
+import { ListAssociationsComponent } from './components/list-associations/list-associations.component';  // Componente Pie
 
 
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, HomeComponent, FooterComponent, LoginComponent],
+  declarations: [AppComponent, HeaderComponent, HomeComponent, FooterComponent, LoginComponent, RegisterUserComponent, ListAssociationsComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [
     // AuthTokenService,
