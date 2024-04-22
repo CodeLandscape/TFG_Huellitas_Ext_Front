@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ComunService } from '../../services/comun.service';
-import { AuthTokenService } from '../../services/authToken.service';
 import { IpServiceService } from '../../services/ip-service.service';
 
 
@@ -20,13 +18,11 @@ export class FooterComponent implements OnInit {
 
   constructor(
     // tslint:disable-next-line: variable-name
-    private _communServices: ComunService,
-    private http: AuthTokenService,
     private ip: IpServiceService
     ) {}
 
     ngOnInit() {
-      this.miToken = this._communServices.getTokenData();
+      // this.miToken = this._communServices.getTokenData();
       this.usuarioNombre = this.miToken.u_nombre;
       this.usuarioApellidos = this.miToken.u_apellidos;
       this.usuarioCompleto = this.usuarioNombre + ' ' + this.usuarioApellidos;

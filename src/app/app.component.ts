@@ -1,5 +1,5 @@
 import { Component, OnInit, ElementRef} from '@angular/core';
-import { ComunService } from './services/comun.service';
+// import { ComunService } from './services/comun.service';
 import { Router } from '@angular/router';
 import { ConfigService } from './services/config.service';
 
@@ -17,12 +17,12 @@ export class AppComponent implements OnInit {
   tokenisValid: string = null;
 
   // tslint:disable-next-line: variable-name
-  constructor(private _communServices: ComunService,
-              private router: Router,
-              private elementRef: ElementRef,
-              // tslint:disable-next-line: variable-name
-              private _configService: ConfigService) {
-  }
+  // constructor(private _communServices: ComunService,
+  //             private router: Router,
+  //             private elementRef: ElementRef,
+  //             // tslint:disable-next-line: variable-name
+  //             private _configService: ConfigService) {
+  // }
 
   ngOnInit() {
       // VALIDACIÓN DEL TOKEN

@@ -3,11 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 // Importar cada uno de los componentes a los que apuntan las rutas
 import { HomeComponent } from './components/home/home.component';
+import {LoginComponent} from './components/login/login.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' }, // Por defecto
+  { path: '', redirectTo: '/login', pathMatch: 'full' }, // Por defecto
   { path: 'home', component: HomeComponent },
-  { path: '**', component: HomeComponent }
+  { path: 'login', component: LoginComponent },
+  { path: '**', component: LoginComponent }
 ];
 
 @NgModule({
