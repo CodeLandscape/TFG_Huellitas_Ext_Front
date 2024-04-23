@@ -11,6 +11,8 @@ import { ConfigService } from './services/config.service';
 })
 
 export class AppComponent implements OnInit {
+  constructor(public router: Router) {
+  }
   [x: string]: any;
   title = 'preving-app';
 
@@ -29,7 +31,7 @@ export class AppComponent implements OnInit {
     this.tokenisValid = this._communServices.getTokenData();
     if (!this.tokenisValid) {
       // window.location.href = 'https://intranet.preving.com/sso/login-form.do'; // PROD
-      window.location.href = 'https://demointranet.preving.com/'; // DEMO
+      // window.location.href = 'https://demointranet.preving.com/'; // DEMO
     }
   }
 }

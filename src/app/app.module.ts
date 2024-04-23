@@ -18,13 +18,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';  // Componente Cabecera
 import { HomeComponent } from './components/home/home.component';        // Componente por defecto
 import { FooterComponent } from './components/footer/footer.component';
-import { LoginComponent } from './components/login/login.component';  // Componente Pie
+import { LoginComponent } from './components/login/login.component';
+import {FormsModule} from "@angular/forms";
+import { NavbarComponent } from './components/navbar/navbar.component';  // Componente Pie
 
 
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, HomeComponent, FooterComponent, LoginComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  declarations: [AppComponent, HeaderComponent, HomeComponent, FooterComponent, LoginComponent, NavbarComponent],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [
     // AuthTokenService,
     // ComunService,
