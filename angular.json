@@ -3,7 +3,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "preving-app": {
+        "huellitas-extremenas": {
             "projectType": "application",
             "schematics": {},
             "root": "",
@@ -13,7 +13,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "outputPath": "dist/preving-app",
+                        "outputPath": "dist/huellitas-extremenas",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
@@ -64,18 +64,18 @@
                 "serve": {
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "options": {
-                        "browserTarget": "preving-app:build"
+                        "browserTarget": "huellitas-extremenas:build"
                     },
                     "configurations": {
                         "production": {
-                            "browserTarget": "preving-app:build:production"
+                            "browserTarget": "huellitas-extremenas:build:production"
                         }
                     }
                 },
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "preving-app:build"
+                        "browserTarget": "huellitas-extremenas:build"
                     }
                 },
                 "test": {
@@ -94,11 +94,11 @@
                     "builder": "@angular-devkit/build-angular:protractor",
                     "options": {
                         "protractorConfig": "e2e/protractor.conf.js",
-                        "devServerTarget": "preving-app:serve"
+                        "devServerTarget": "huellitas-extremenas:serve"
                     },
                     "configurations": {
                         "production": {
-                            "devServerTarget": "preving-app:serve:production"
+                            "devServerTarget": "huellitas-extremenas:serve:production"
                         }
                     }
                 }

@@ -11,21 +11,15 @@ import { HttpClient } from '@angular/common/http';
 // import { ComunService } from './services/comun.service';
 import { ConfigService } from './services/config.service';
 import { CookieService } from 'ng2-cookies';
-import { IpServiceService } from './services/ip-service.service';
-
-/* Components */
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';  // Componente Cabecera
-import { HomeComponent } from './components/home/home.component';        // Componente por defecto
-import { FooterComponent } from './components/footer/footer.component';
-import { LoginComponent } from './components/login/login.component';
-import { RegisterUserComponent } from './components/register-user/register-user.component';
-import { ListAssociationsComponent } from './components/list-associations/list-associations.component';  // Componente Pie
+import {AppComponent} from './app.component';
+import {LoginComponent} from './components/login/login.component';
+import {RegisterUserComponent} from "./components/register-user/register-user.component";
+import { RegisterAssociationComponent } from './components/register-association/register-association.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, HomeComponent, FooterComponent, LoginComponent, RegisterUserComponent, ListAssociationsComponent],
+  declarations: [AppComponent, LoginComponent, RegisterUserComponent, RegisterAssociationComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [
     // AuthTokenService,
@@ -33,7 +27,6 @@ import { ListAssociationsComponent } from './components/list-associations/list-a
     HttpClient,
     CookieService,
     ConfigService,
-    IpServiceService
   ],
   bootstrap: [AppComponent]
 })
