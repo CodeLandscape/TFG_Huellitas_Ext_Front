@@ -1,0 +1,4 @@
+<app-form-perfil-asociacion *ngIf="isPerson;else persona"></app-form-perfil-asociacion>
+<ng-template #persona>
+  <app-form-perfil-persona></app-form-perfil-persona>
+</ng-template>

@@ -1,0 +1,80 @@
+<div class="container-fluid p-5">
+  <div class="row">
+    <form class="col-12" [formGroup]="form" *ngIf="cargado">
+      <div class="d-block">
+        <div class="form-group">
+          <h3 class="">Mis datos</h3>
+        </div>
+        <div class="form-group row ">
+          <div class=" col-12">
+            <p class=" h6 text-secondary">Nombre:</p>
+          </div>
+          <div class="col-12">
+            <p class="p-0">{{ persona.nombre + ' ' + persona.apellidos }}</p>
+          </div>
+        </div>
+        <div class="form-group row ">
+          <div class=" col-12">
+            <p class=" h6 text-secondary">Correo:</p>
+          </div>
+          <div class="col-12">
+            <p class="p-0">{{ persona.usuario.correo }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row ">
+        <div class=" col-12">
+          <label for="tlf" class="m-0 h6 text-secondary col-form-label">Teléfono:</label>
+        </div>
+        <div class="col-12 col-md-4">
+          <input type="text" class="form-control" id="tlf" name="tlf" formControlName="tlf"
+                 [class.is-invalid]="validarCampo('tlf')">
+          <small class="form-text text-danger" *ngIf="validarCampo('tlf')">{{ getErrorCampo('tlf') }}</small>
+        </div>
+      </div>
+      <div class="form-group row ">
+        <div class=" col-12">
+          <label for="direccion" class="m-0 h6 text-secondary col-form-label">Direccion:</label>
+        </div>
+        <div class="col-12 col-md-4 ">
+          <input type="text" class="form-control" id="direccion" formControlName="direccion"
+                 [class.is-invalid]="validarCampo('direccion')">
+          <small class="form-text text-danger"
+                 *ngIf="validarCampo('direccion')">{{ getErrorCampo('direccion') }}</small>
+        </div>
+      </div>
+      <div class="form-group row ">
+        <div class=" col-12">
+          <label for="poblacion" class="m-0 h6 text-secondary col-form-label">Población:</label>
+        </div>
+        <div class="col-12 col-md-4 ">
+          <input type="text" class="form-control" id="poblacion" formControlName="poblacion"
+                 [class.is-invalid]="validarCampo('poblacion')">
+          <small class="form-text text-danger"
+                 *ngIf="validarCampo('poblacion')">{{ getErrorCampo('poblacion') }}</small>
+        </div>
+      </div>
+      <div class="form-group row ">
+        <div class=" col-12">
+          <label class="m-0 h6 text-secondary col-form-label">Provincia:</label>
+        </div>
+        <div class="col-12 col-md-4 align-items-center">
+          <select class="form-select" formControlName="provincia" [class.is-invalid]="validarCampo('provincia')">
+            <option *ngFor="let provincia of provincias" [value]="provincia.id">
+              {{ provincia["nombre"] }}
+            </option>
+          </select>
+          <small class="form-text text-danger"
+                 *ngIf="validarCampo('provincia')">{{ getErrorCampo('provincia') }}</small>
+        </div>
+      </div>
+      <!--      Botón de guardar-->
+      <div class="form-group row mt-4">
+        <div class="col-12 col-md-4 d-grip d-flex gap-4">
+          <button type="button" class="btn  btn-primary w-100" (click)="guardar()">Modificar</button>
+          <button type="button" class="btn  btn-danger w-100" (click)="darDeBaja()">Dar de baja</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

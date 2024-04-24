@@ -3,14 +3,16 @@ import { Routes, RouterModule } from '@angular/router';
 
 // Importar cada uno de los componentes a los que apuntan las rutas
 import {LoginComponent} from './components/login/login.component';
-import {RegisterUserComponent} from "./components/register-user/register-user.component";
-import {RegisterAssociationComponent} from "./components/register-association/register-association.component";
+import {PerfilComponent} from './components/perfil/perfil.component';
+// import {RegisterUserComponent} from "./components/register-user/register-user.component";
+// import {RegisterAssociationComponent} from "./components/register-association/register-association.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' }, // Por defecto
   { path: 'login', component: LoginComponent },
-  { path: 'register-user', component: RegisterUserComponent },
-  { path: 'register-association', component: RegisterAssociationComponent },
+  { path: 'perfil', component: PerfilComponent },
+  // { path: 'register-user', component: RegisterUserComponent },
+  // { path: 'register-association', component: RegisterAssociationComponent },
   { path: '**', component: LoginComponent }
 ];
 

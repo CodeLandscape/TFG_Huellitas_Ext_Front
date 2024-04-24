@@ -13,14 +13,18 @@ import { ConfigService } from './services/config.service';
 import { CookieService } from 'ng2-cookies';
 import {AppComponent} from './app.component';
 import {LoginComponent} from './components/login/login.component';
-import {RegisterUserComponent} from "./components/register-user/register-user.component";
-import { RegisterAssociationComponent } from './components/register-association/register-association.component';
+import {PerfilComponent} from './components/perfil/perfil.component';
+import {FormPerfilAsociacionComponent} from './components/form-perfil-asociacion/form-perfil-asociacion.component';
+import {FormPerfilPersonaComponent} from './components/form-perfil-persona/form-perfil-persona.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+// import {RegisterUserComponent} from "./components/register-user/register-user.component";
+// import { RegisterAssociationComponent } from './components/register-association/register-association.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterUserComponent, RegisterAssociationComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  declarations: [AppComponent, LoginComponent, PerfilComponent, FormPerfilAsociacionComponent, FormPerfilPersonaComponent],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule],
   providers: [
     // AuthTokenService,
     // ComunService,
