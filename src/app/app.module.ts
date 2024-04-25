@@ -20,11 +20,12 @@ import { FormPerfilPersonaComponent } from './components/form-perfil-persona/for
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {ListAssociationsComponent} from './components/list-associations/list-associations.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterUserComponent, RegisterAssociationComponent, FormPerfilAsociacionComponent, FormPerfilPersonaComponent, PerfilComponent, NavbarComponent],
+  declarations: [AppComponent, LoginComponent, RegisterUserComponent, RegisterAssociationComponent, FormPerfilAsociacionComponent, FormPerfilPersonaComponent, PerfilComponent, NavbarComponent, ListAssociationsComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule],
   providers: [
     // AuthTokenService,
