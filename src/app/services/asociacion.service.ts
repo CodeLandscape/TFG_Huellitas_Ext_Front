@@ -19,16 +19,15 @@ export class AsociacionService {
 
   getAsociacionSesion() {
     // cambiar por la id de la asociacion en sesion
-    return this.http.get<Asociacion>('http://localhost:8080/comun-api/asociacion/' + 1);
+    return this.http.get<Asociacion>('http://localhost:8080/api-backend/asociacion/' + 1);
   }
 
   actualizarAsociacion(id: number, value: any) {
-    return this.http.put('http://localhost:8080/comun-api/usuario/' + id, value);
+    return this.http.put('http://localhost:8080/api-backend/usuario/' + id, value);
   }
 
   darDeBaja(id: number) {
-    console.log(id);
-    return of(true);
+    return this.http.put('http://localhost:8080/api-backend/usuario/baja/' + id, null);
   }
 
 }

@@ -12,7 +12,7 @@ export class PerfilComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.isPerson = true;
+    this.isPerson = false;
   }
 
 }

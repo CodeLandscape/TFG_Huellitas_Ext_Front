@@ -20,6 +20,6 @@ export class ProvinciaService {
   }
 
   getProvincias() {
-    return this.http.get<Provincia[]>('http://localhost:8080/comun-api/provincia/all');
+    return this.http.get<Provincia[]>('http://localhost:8080/api-backend/provincia/all');
   }
 }

@@ -5,6 +5,7 @@ import {Provincia} from '../../models/provincia';
 import {ProvinciaService} from '../../services/provincia.service';
 import {PersonaService} from '../../services/persona.service';
 import Swal from 'sweetalert2';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-form-perfil-persona',
@@ -23,7 +24,8 @@ export class FormPerfilPersonaComponent implements OnInit {
   constructor(
     private provinciaService: ProvinciaService,
     private usuarioService: PersonaService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
   ) {
   }
 
@@ -70,7 +72,13 @@ export class FormPerfilPersonaComponent implements OnInit {
       cancelButtonText: 'No'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.usuarioService.actualizarPersona(this.persona.id, this.form.value).subscribe(() => {
+
+        this.persona.usuario.tlf = this.form.get('tlf')?.value;
+        this.persona.usuario.direccion = this.form.get('direccion')?.value;
+        this.persona.usuario.poblacion = this.form.get('poblacion')?.value;
+        this.persona.usuario.provincia.id = this.form.get('provincia')?.value;
+
+        this.usuarioService.actualizarPersona(this.persona.usuario.id, this.persona.usuario).subscribe(() => {
           Swal.fire({
             title: '¡Guardado!',
             text: 'Los cambios se han guardado correctamente',
@@ -93,13 +101,14 @@ export class FormPerfilPersonaComponent implements OnInit {
       cancelButtonText: 'No'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.usuarioService.darDeBaja(this.persona.id).subscribe(() => {
+        this.usuarioService.darDeBaja(this.persona.usuario.id).subscribe(() => {
           Swal.fire({
             title: '¡Dado de baja!',
             text: 'Tu cuenta ha sido dada de baja',
             icon: 'success',
             confirmButtonText: 'Aceptar'
           });
+          this.router.navigate(['/']);
         });
       }
     });
