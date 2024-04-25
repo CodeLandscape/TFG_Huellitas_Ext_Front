@@ -1,3 +1,5 @@
+import {Provincia} from './provincia';
+
 export class Usuario {
   id: number;
   correo: string;
