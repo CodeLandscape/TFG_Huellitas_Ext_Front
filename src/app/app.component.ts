@@ -15,6 +15,10 @@ export class AppComponent implements OnInit {
   title = 'huellitas-extremenas';
 
 
+  constructor(
+    private router: Router,
+  ) {
+  }
 
   ngOnInit() {
 

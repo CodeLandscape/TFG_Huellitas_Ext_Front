@@ -17,13 +17,14 @@ import {PerfilComponent} from './components/perfil/perfil.component';
 import {FormPerfilAsociacionComponent} from './components/form-perfil-asociacion/form-perfil-asociacion.component';
 import {FormPerfilPersonaComponent} from './components/form-perfil-persona/form-perfil-persona.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {NavbarComponent} from './components/navbar/navbar.component';
 // import {RegisterUserComponent} from "./components/register-user/register-user.component";
 // import { RegisterAssociationComponent } from './components/register-association/register-association.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, PerfilComponent, FormPerfilAsociacionComponent, FormPerfilPersonaComponent],
+  declarations: [AppComponent, LoginComponent, PerfilComponent, FormPerfilAsociacionComponent, FormPerfilPersonaComponent, NavbarComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule],
   providers: [
     // AuthTokenService,
