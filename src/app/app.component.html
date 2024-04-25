@@ -1,2 +1,6 @@
+<ng-container>
+  <app-navbar *ngIf="router.url !== '/login'"></app-navbar>
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
+</ng-container>
 
-    <router-outlet></router-outlet>

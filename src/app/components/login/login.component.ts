@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {Router} from '@angular/router';
 import Swal from 'sweetalert2';
+import { UsuariosServicesService } from '../../services/usuarios-services.service';
+import { Usuario } from 'src/app/models/usuario';
 
 @Component({
   selector: 'app-login',
@@ -9,14 +11,20 @@ import Swal from 'sweetalert2';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  usuarios: Usuario[] = [];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private usuariosService: UsuariosServicesService) { }
 
   ngOnInit(): void {
+    this.usuariosService.getUsuarios().subscribe(usuarios => {
+      this.usuarios = usuarios;
+      console.log(this.usuarios);
+    });
   }
 
   onSubmit(form: NgForm) {
-    if (form.value.email === 'prueba' && form.value.password === 'prueba') {
+    const usuario = this.usuarios.find(u => u.correo === form.value.email && u.password === form.value.password);
+    if (usuario.activo) {
       this.router.navigate(['/listadoAnimales']);
       Swal.fire({
         icon: 'success',
@@ -32,5 +40,4 @@ export class LoginComponent implements OnInit {
       });
     }
   }
-
 }

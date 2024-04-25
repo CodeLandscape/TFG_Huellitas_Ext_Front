@@ -11,12 +11,14 @@ import { HttpClient } from '@angular/common/http';
 // import { ComunService } from './services/comun.service';
 import { ConfigService } from './services/config.service';
 import { CookieService } from 'ng2-cookies';
-import {AppComponent} from './app.component';
-import {LoginComponent} from './components/login/login.component';
-import {RegisterUserComponent} from "./components/register-user/register-user.component";
-import { RegisterAssociationComponent } from './components/register-association/register-association.component';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {ListAssociationsComponent} from "./components/list-associations/list-associations.component";
+import { IpServiceService } from './services/ip-service.service';
+
+/* Components */
+import { AppComponent } from './app.component';
+import { HeaderComponent } from './components/header/header.component';  // Componente Cabecera
+import { HomeComponent } from './components/home/home.component';        // Componente por defecto
+import { FooterComponent } from './components/footer/footer.component';
+import { LoginComponent } from './components/login/login.component';  // Componente Pie
 
 
 
@@ -29,6 +31,7 @@ import {ListAssociationsComponent} from "./components/list-associations/list-ass
     HttpClient,
     CookieService,
     ConfigService,
+    IpServiceService
   ],
   bootstrap: [AppComponent]
 })
