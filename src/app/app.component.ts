@@ -11,27 +11,16 @@ import { ConfigService } from './services/config.service';
 })
 
 export class AppComponent implements OnInit {
-  constructor(public router: Router) {
-  }
   [x: string]: any;
-  title = 'preving-app';
+  title = 'huellitas-extremenas';
 
-  tokenisValid: string = null;
 
-  // tslint:disable-next-line: variable-name
-  // constructor(private _communServices: ComunService,
-  //             private router: Router,
-  //             private elementRef: ElementRef,
-  //             // tslint:disable-next-line: variable-name
-  //             private _configService: ConfigService) {
-  // }
+  constructor(
+    private router: Router,
+  ) {
+  }
 
   ngOnInit() {
-      // VALIDACIÓN DEL TOKEN
-    this.tokenisValid = this._communServices.getTokenData();
-    if (!this.tokenisValid) {
-      // window.location.href = 'https://intranet.preving.com/sso/login-form.do'; // PROD
-      // window.location.href = 'https://demointranet.preving.com/'; // DEMO
-    }
+
   }
 }

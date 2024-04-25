@@ -5,7 +5,8 @@ import { Routes, RouterModule } from '@angular/router';
 import {LoginComponent} from './components/login/login.component';
 import {RegisterUserComponent} from "./components/register-user/register-user.component";
 import {RegisterAssociationComponent} from "./components/register-association/register-association.component";
-import {ListAssociationsComponent} from "./components/list-associations/list-associations.component";
+import { PerfilComponent } from './components/perfil/perfil.component';
+import { ListAssociationsComponent } from './components/list-associations/list-associations.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' }, // Por defecto
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'register-user', component: RegisterUserComponent },
   { path: 'register-association', component: RegisterAssociationComponent },
   { path: 'list-associations', component: ListAssociationsComponent },
+  { path: 'perfil', component: PerfilComponent },
   { path: '**', component: LoginComponent }
 ];
 

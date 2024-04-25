@@ -11,19 +11,20 @@ import { HttpClient } from '@angular/common/http';
 // import { ComunService } from './services/comun.service';
 import { ConfigService } from './services/config.service';
 import { CookieService } from 'ng2-cookies';
-import { IpServiceService } from './services/ip-service.service';
-
-/* Components */
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';  // Componente Cabecera
-import { HomeComponent } from './components/home/home.component';        // Componente por defecto
-import { FooterComponent } from './components/footer/footer.component';
-import { LoginComponent } from './components/login/login.component';  // Componente Pie
+import {AppComponent} from './app.component';
+import {LoginComponent} from './components/login/login.component';
+import {RegisterUserComponent} from "./components/register-user/register-user.component";
+import { RegisterAssociationComponent } from './components/register-association/register-association.component';
+import { FormPerfilAsociacionComponent } from './components/form-perfil-asociacion/form-perfil-asociacion.component';
+import { FormPerfilPersonaComponent } from './components/form-perfil-persona/form-perfil-persona.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterUserComponent, RegisterAssociationComponent, ListAssociationsComponent],
+  declarations: [AppComponent, LoginComponent, RegisterUserComponent, RegisterAssociationComponent, FormPerfilAsociacionComponent, FormPerfilPersonaComponent, PerfilComponent, NavbarComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule],
   providers: [
     // AuthTokenService,
@@ -31,7 +32,6 @@ import { LoginComponent } from './components/login/login.component';  // Compone
     HttpClient,
     CookieService,
     ConfigService,
-    IpServiceService
   ],
   bootstrap: [AppComponent]
 })
