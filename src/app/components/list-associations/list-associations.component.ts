@@ -2,6 +2,8 @@ import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {AsociacionService} from '../../services/asociacion.service';
 import {Asociacion} from '../../interfaces/associations.interface';
 import {map} from 'rxjs/operators';
+import Swal from 'sweetalert2';
+
 declare var $: any; // Declaración de jQuery
 
 @Component({
@@ -12,11 +14,11 @@ declare var $: any; // Declaración de jQuery
 export class ListAssociationsComponent implements AfterViewInit {
   public asociaciones: Asociacion[] = [];
   columns = [
-    { name: 'nombre', title: 'Nombre' },
-    { name: 'poblacion', title: 'Población' },
-    { name: 'provincia', title: 'Provincia' },
-    { name: 'estado', title: 'Estado' },
-    { name: 'opciones', title: 'Opciones' }
+    {name: 'nombre', title: 'Nombre'},
+    {name: 'poblacion', title: 'Población'},
+    {name: 'provincia', title: 'Provincia'},
+    {name: 'estado', title: 'Estado'},
+    {name: 'opciones', title: 'Opciones'}
   ];
 
   constructor(private asociacionService: AsociacionService) {
@@ -56,6 +58,61 @@ export class ListAssociationsComponent implements AfterViewInit {
         pageLength: 10,
         processing: true,
       });
+    });
+  }
+
+  desactivar(id: number) {
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: '¡No podrás revertir esto!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: '¡Sí, desactivar!',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.asociacionService.darDeBaja(id).subscribe(
+          response => {
+            this.reloadDataTable();
+          }
+        );
+        Swal.fire(
+          'Desactivado',
+          'La asociación ha sido desactivada.',
+          'success'
+        );
+      }
+    });
+
+  }
+
+  reloadDataTable(): void {
+    $('#datatable').DataTable().destroy();
+    this.initializeDataTable();
+  }
+
+  activar(id: number) {
+    Swal.fire({
+      title: '¿Quiere activar la asociación?',
+      text: 'Esto permitirá que la asociación pueda realizar acciones en la plataforma.',
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: '¡Sí, activar!',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.asociacionService.activarAsociacion(id).subscribe();
+        Swal.fire(
+          'Activada',
+          'La asociación ha sido activada.',
+          'success'
+        );
+
+      }
     });
   }
 }
