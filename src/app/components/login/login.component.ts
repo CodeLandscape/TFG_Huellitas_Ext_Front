@@ -18,12 +18,13 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.usuariosService.getUsuarios().subscribe(usuarios => {
       this.usuarios = usuarios;
+      console.log(this.usuarios);
     });
   }
 
   onSubmit(form: NgForm) {
     const usuario = this.usuarios.find(u => u.correo === form.value.email && u.password === form.value.password);
-    if (usuario) {
+    if (usuario.activo) {
       this.router.navigate(['/listadoAnimales']);
       Swal.fire({
         icon: 'success',
