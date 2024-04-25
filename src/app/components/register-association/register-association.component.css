@@ -1,0 +1,8 @@
+.label-styled {
+  display: inline-block;
+  position: relative;
+  font-weight: bold;
+  margin-bottom: .5rem;
+  text-decoration: underline;
+}
+

@@ -1,0 +1,75 @@
+<div class="d-flex flex-column justify-content-center align-items-center bg-light">
+  <div class="d-flex justify-content-center mb-4">
+    <img src="assets/imgs/huellitasLogo2.png" alt="Sample image" style="width:50%;" class="img-fluid"/>
+  </div>
+  <form [formGroup]="registerUser" (ngSubmit)="onSubmit()" class="col-lg-4 col-md-8 col-sm-10 col-12 p-5 rounded shadow bg-white">
+    <h1 class="text-center mb-4">Regístrate</h1>
+    <p class="text-center mb-4 lead">Crea una cuenta para colaborar en nuestra plataforma.</p>
+    <!-- Nombre input -->
+    <div class="mb-3">
+      <label for="nombre" class="form-label label-styled">Nombre</label>
+      <input type="text" id="nombre" class="form-control" placeholder="Nombre" formControlName="nombre" />
+    </div>
+
+    <!-- Apellidos input -->
+    <div class="mb-3">
+      <label for="apellidos" class="form-label label-styled">Apellidos</label>
+      <input type="text" id="apellidos" class="form-control" placeholder="Apellidos" formControlName="apellidos" />
+    </div>
+
+    <!-- DNI input -->
+    <div class="mb-3">
+      <label for="dni" class="form-label label-styled">DNI</label>
+      <input type="text" id="dni" class="form-control" placeholder="DNI" formControlName="dni" />
+    </div>
+
+    <!-- Correo input -->
+    <div class="mb-3">
+      <label for="correo" class="form-label label-styled">Correo electrónico</label>
+      <input type="email" id="correo" class="form-control" placeholder="Correo" formControlName="correo" />
+    </div>
+
+    <!-- Password input -->
+    <div class="mb-3">
+      <label for="password" class="form-label label-styled">Contraseña</label>
+      <input type="password" id="password" class="form-control" placeholder="Contraseña" formControlName="password" />
+    </div>
+
+    <!-- Confirmar Password input -->
+    <div class="mb-3">
+      <label for="password2" class="form-label label-styled">Confirmar Contraseña</label>
+      <input type="password" id="password2" class="form-control" placeholder="Confirmar Contraseña" formControlName="password2" />
+    </div>
+
+    <!-- Teléfono input -->
+    <div class="mb-3">
+      <label for="tlf" class="form-label label-styled">Teléfono</label>
+      <input type="tel" id="tlf" class="form-control" placeholder="Teléfono" formControlName="tlf" />
+    </div>
+
+    <!-- Población input -->
+    <div class="mb-3">
+      <label for="poblacion" class="form-label label-styled">Población</label>
+      <input type="text" id="poblacion" class="form-control" placeholder="Población" formControlName="poblacion" />
+    </div>
+
+    <!-- Provincia input -->
+    <div class="mb-3">
+      <label for="provincia" class="form-label label-styled">Provincia</label>
+      <select id="provincia" class="form-control" formControlName="provincia">
+        <option *ngFor="let provincia of provincias" [value]="provincia.id">{{ provincia.nombre }}</option>
+      </select>
+    </div>
+
+    <!-- Dirección input -->
+    <div class="mb-3">
+      <label for="direccion" class="form-label label-styled">Dirección</label>
+      <input type="text" id="direccion" class="form-control" placeholder="Dirección" formControlName="direccion" />
+    </div>
+
+    <!-- Submit button -->
+    <div class="mb-3 text-center"> <!-- Añadida la clase text-center aquí -->
+      <button type="submit" class="btn btn-primary btn-lg">Registrarse</button> <!-- Quitada la clase btn-block para que no ocupe todo el ancho -->
+    </div>
+  </form>
+</div>

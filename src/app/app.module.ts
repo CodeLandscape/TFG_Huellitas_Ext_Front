@@ -15,12 +15,14 @@ import {AppComponent} from './app.component';
 import {LoginComponent} from './components/login/login.component';
 import {RegisterUserComponent} from "./components/register-user/register-user.component";
 import { RegisterAssociationComponent } from './components/register-association/register-association.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {ListAssociationsComponent} from "./components/list-associations/list-associations.component";
 
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterUserComponent, RegisterAssociationComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  declarations: [AppComponent, LoginComponent, RegisterUserComponent, RegisterAssociationComponent, ListAssociationsComponent],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule],
   providers: [
     // AuthTokenService,
     // ComunService,
