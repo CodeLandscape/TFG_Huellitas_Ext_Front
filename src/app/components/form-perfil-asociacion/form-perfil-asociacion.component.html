@@ -71,7 +71,7 @@
       <!--      Botón de guardar-->
       <div class="form-group row mt-4">
         <div class="col-12 col-md-4 d-grip d-flex gap-4">
-          <button type="button" class="btn  btn-primary w-100" (click)="guardar()">Modificar</button>
+          <button type="button" class="btn  btn-primary w-100" (click)="guardar()" [disabled]="form.invalid">Modificar</button>
           <button type="button" class="btn  btn-danger w-100" (click)="darDeBaja()">Dar de baja</button>
         </div>
       </div>
