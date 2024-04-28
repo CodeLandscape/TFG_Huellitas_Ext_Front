@@ -2,23 +2,31 @@
   <div class="d-flex justify-content-center mb-4">
     <img src="assets/imgs/huellitasLogo2.png" alt="Sample image" class="img-fluid"/>
   </div>
-  <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <!-- Email input -->
     <!-- Email input -->
     <div data-mdb-input-init class="form-outline mb-4 text-center">
-      <input type="email" id="form2Example1" class="form-control" placeholder="Email" name="email" ngModel />
+      <input type="email" id="form2Example1" class="form-control" placeholder="Email" formControlName="email" />
+      <div *ngIf="loginForm.controls.email.invalid && (loginForm.controls.email.dirty || loginForm.controls.email.touched)" class="text-danger">
+        <div *ngIf="loginForm.controls.email.errors.required">Email es campo requerido.</div>
+        <div *ngIf="loginForm.controls.email.errors.email">Por favor introduce un email válido.</div>
+      </div>
     </div>
 
     <!-- Password input -->
     <div data-mdb-input-init class="form-outline mb-4 text-center">
-      <input type="password" id="form2Example2" class="form-control" placeholder="Contraseña" name="password" ngModel />
+      <input type="password" id="form2Example2" class="form-control" placeholder="Contraseña" formControlName="password" />
+      <div *ngIf="loginForm.controls.password.invalid && (loginForm.controls.password.dirty || loginForm.controls.password.touched)" class="text-danger">
+        <div *ngIf="loginForm.controls.password.errors.required">Debes introducir una contraseña.</div>
+      </div>
     </div>
     <!-- Submit button -->
-    <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Acceder</button>
+    <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4" [disabled]="!loginForm.valid">Acceder</button>
 
     <!-- Register buttons -->
     <div class="text-center">
-      <p>¿Quieres adoptar? <a href="#!">Registrate como Usuario</a></p>
-      <p>¿Eres una asociación? <a href="#!">Registrate como Asociación</a></p>
+      <p>¿Quieres adoptar? <a routerLink="/register-user" style="color: blue; cursor: pointer;"><u>Registrate como Usuario</u></a></p>
+      <p>¿Eres una asociación? <a routerLink="/register-association" style="color: blue; cursor: pointer;"><u>Registrate como Asociación</u></a></p>
     </div>
   </form>
 </div>
