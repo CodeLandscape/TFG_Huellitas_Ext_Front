@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
-import {Router} from '@angular/router';
-import {UserRegister} from '../../interfaces/user-register.interface';
-import {AuthService} from "../../services/auth.service";
-import {ProvinciaService} from "../../services/provincia.service";
-import {Provincia} from "../../models/provincia";
+import { Router } from '@angular/router';
+import { UserRegister } from '../../interfaces/user-register.interface';
+import { AuthService } from "../../services/auth.service";
+import { ProvinciaService } from "../../services/provincia.service";
+import { Provincia } from "../../models/provincia";
 
 @Component({
   selector: 'app-register-user',
@@ -15,30 +15,35 @@ import {Provincia} from "../../models/provincia";
 export class RegisterUserComponent implements OnInit {
   public user: UserRegister;
   public provincias: Provincia[] = [];
+
   constructor(private fb: FormBuilder, private router: Router, private authService: AuthService, private provinciaService: ProvinciaService) {
     provinciaService.getProvincias().subscribe((data) => {
       this.provincias = data;
-      console.log(data);
     });
   }
+
   public registerUser: FormGroup = this.fb.group({
-    nombre: [''],
-    apellidos: [''],
-    correo: [''],
-    password: [''],
-    password2: [''],
-    tlf: [''],
-    direccion: [''],
-    poblacion: [''],
-    provincia: [''],
-    dni: [''],
+    nombre: ['', Validators.required],
+    apellidos: ['', Validators.required],
+    correo: ['', [Validators.required, Validators.email]],
+    password: ['', Validators.required],
+    password2: ['', Validators.required],
+    tlf: ['', [Validators.required, Validators.minLength(9), Validators.maxLength(9)]], // Validación de longitud
+    direccion: ['', Validators.required],
+    poblacion: ['', Validators.required],
+    provincia: ['', Validators.required],
+    dni: ['', [Validators.required, this.validateDNI]] // Validación de DNI español
   });
 
   ngOnInit(): void {
   }
 
   onSubmit() {
-    console.log(this.registerUser.value);
+    if (this.registerUser.invalid) {
+      this.registerUser.markAllAsTouched();
+      return;
+    }
+
     if (this.registerUser.value.password !== this.registerUser.value.password2) {
       Swal.fire({
         icon: 'error',
@@ -68,5 +73,19 @@ export class RegisterUserComponent implements OnInit {
       title: 'Usuario registrado',
       text: 'Se ha registrado correctamente',
     });
+  }
+
+  // Función para validar el formato de un DNI español
+  validateDNI(control) {
+    const dniPattern = /^[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKET]{1}$/i;
+    if (control.value && !dniPattern.test(control.value)) {
+      return { invalidDNI: true };
+    }
+    return null;
+  }
+  passwordsMismatch() {
+    const password = this.registerUser.get('password').value;
+    const password2 = this.registerUser.get('password2').value;
+    return password !== password2;
   }
 }
