@@ -9,43 +9,67 @@
     <div class="mb-3">
       <label for="nombre" class="form-label label-styled">Nombre de asociación</label>
       <input type="text" id="nombre" class="form-control" placeholder="Nombre" formControlName="nombre" />
+      <div *ngIf="registerAssociation.get('nombre').errors && (registerAssociation.get('nombre').dirty || registerAssociation.get('nombre').touched)">
+        <div *ngIf="registerAssociation.get('nombre').errors.required" class="text-danger">El nombre de la asociación es requerido.</div>
+      </div>
     </div>
 
     <!-- CIF input -->
     <div class="mb-3">
       <label for="cif" class="form-label label-styled">CIF</label>
-      <input type="text" id="cif" class="form-control" placeholder="Cif" formControlName="cif" />
+      <input type="text" id="cif" class="form-control" placeholder="CIF" formControlName="cif" />
+      <div *ngIf="registerAssociation.get('cif').errors && (registerAssociation.get('cif').dirty || registerAssociation.get('cif').touched)">
+        <div *ngIf="registerAssociation.get('cif').errors.required" class="text-danger">El CIF es requerido.</div>
+        <div *ngIf="registerAssociation.get('cif').errors.invalidCIF" class="text-danger">El CIF no es válido.</div>
+      </div>
     </div>
 
     <!-- Correo input -->
     <div class="mb-3">
       <label for="correo" class="form-label label-styled">Correo electrónico</label>
       <input type="email" id="correo" class="form-control" placeholder="Correo" formControlName="correo" />
+      <div *ngIf="registerAssociation.get('correo').errors && (registerAssociation.get('correo').dirty || registerAssociation.get('correo').touched)">
+        <div *ngIf="registerAssociation.get('correo').errors.required" class="text-danger">El correo electrónico es requerido.</div>
+        <div *ngIf="registerAssociation.get('correo').errors.email" class="text-danger">Correo electrónico inválido.</div>
+      </div>
     </div>
 
     <!-- Password input -->
     <div class="mb-3">
       <label for="password" class="form-label label-styled">Contraseña</label>
       <input type="password" id="password" class="form-control" placeholder="Contraseña" formControlName="password" />
+      <div *ngIf="registerAssociation.get('password').errors && (registerAssociation.get('password').dirty || registerAssociation.get('password').touched)">
+        <div *ngIf="registerAssociation.get('password').errors.required" class="text-danger">La contraseña es requerida.</div>
+      </div>
     </div>
 
     <!-- Confirmar Password input -->
     <div class="mb-3">
       <label for="password2" class="form-label label-styled">Confirmar Contraseña</label>
       <input type="password" id="password2" class="form-control" placeholder="Confirmar Contraseña" formControlName="password2" />
+      <div *ngIf="registerAssociation.get('password2').errors && (registerAssociation.get('password2').dirty || registerAssociation.get('password2').touched)">
+        <div *ngIf="registerAssociation.get('password2').errors.required" class="text-danger">Confirmar contraseña es requerido.</div>
+        <div *ngIf="passwordsMismatch()" class="text-danger">Las contraseñas no coinciden.</div>
+      </div>
     </div>
 
     <!-- Teléfono input -->
     <div class="mb-3">
       <label for="tlf" class="form-label label-styled">Teléfono</label>
       <input type="tel" id="tlf" class="form-control" placeholder="Teléfono" formControlName="tlf" />
+      <div *ngIf="registerAssociation.get('tlf').errors && (registerAssociation.get('tlf').dirty || registerAssociation.get('tlf').touched)">
+        <div *ngIf="registerAssociation.get('tlf').errors.required" class="text-danger">El teléfono es requerido.</div>
+        <div *ngIf="registerAssociation.get('tlf').errors.minlength || registerAssociation.get('tlf').errors.maxlength" class="text-danger">El teléfono debe tener 9 caracteres.</div>
+      </div>
     </div>
-
 
     <!-- Población input -->
     <div class="mb-3">
       <label for="poblacion" class="form-label label-styled">Población</label>
       <input type="text" id="poblacion" class="form-control" placeholder="Población" formControlName="poblacion" />
+      <div *ngIf="registerAssociation.get('poblacion').errors && (registerAssociation.get('poblacion').dirty || registerAssociation.get('poblacion').touched)">
+        <div *ngIf="registerAssociation.get('poblacion').errors.required" class="text-danger">La población es requerida.</div>
+      </div>
     </div>
 
     <!-- Provincia input -->
@@ -54,18 +78,23 @@
       <select id="provincia" class="form-control" formControlName="provincia">
         <option *ngFor="let provincia of provincias" [value]="provincia.id">{{ provincia.nombre }}</option>
       </select>
+      <div *ngIf="registerAssociation.get('provincia').errors && (registerAssociation.get('provincia').dirty || registerAssociation.get('provincia').touched)">
+        <div *ngIf="registerAssociation.get('provincia').errors.required" class="text-danger">La provincia es requerida.</div>
+      </div>
     </div>
 
     <!-- Dirección input -->
     <div class="mb-3">
       <label for="direccion" class="form-label label-styled">Dirección</label>
       <input type="text" id="direccion" class="form-control" placeholder="Dirección" formControlName="direccion" />
+      <div *ngIf="registerAssociation.get('direccion').errors && (registerAssociation.get('direccion').dirty || registerAssociation.get('direccion').touched)">
+        <div *ngIf="registerAssociation.get('direccion').errors.required" class="text-danger">La dirección es requerida.</div>
+      </div>
     </div>
 
-
     <!-- Submit button -->
-    <div class="mb-3 text-center"> <!-- Añadida la clase text-center aquí -->
-      <button type="submit" class="btn btn-primary btn-lg">Registrarse</button> <!-- Quitada la clase btn-block para que no ocupe todo el ancho -->
+    <div class="mb-3 text-center">
+      <button type="submit" class="btn btn-primary btn-lg">Registrarse</button>
     </div>
   </form>
 </div>
