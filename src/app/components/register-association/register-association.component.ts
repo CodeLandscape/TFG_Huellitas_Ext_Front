@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup} from "@angular/forms";
-import Swal from "sweetalert2";
-import {Router} from "@angular/router";
-import {AuthService} from "../../services/auth.service";
-import {ProvinciaService} from "../../services/provincia.service";
-import {Provincia} from "../../models/provincia";
-import {AssociationRegister} from "../../interfaces/associations-register.interface";
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
+import { ProvinciaService } from '../../services/provincia.service';
+import { Provincia } from '../../models/provincia';
+import { AssociationRegister } from '../../interfaces/associations-register.interface';
 
 @Component({
   selector: 'app-register-association',
@@ -15,36 +15,36 @@ import {AssociationRegister} from "../../interfaces/associations-register.interf
 export class RegisterAssociationComponent implements OnInit {
   public provincias: Provincia[] = [];
   public association: AssociationRegister;
-  constructor(private fb: FormBuilder, private router: Router, private authService: AuthService, private provinciaService: ProvinciaService) {
+
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private authService: AuthService,
+    private provinciaService: ProvinciaService
+  ) {
     provinciaService.getProvincias().subscribe((data) => {
       this.provincias = data;
-      console.log(data);
     });
   }
-  public registerAssociation: FormGroup= this.fb.group({
-    nombre: [''],
-    apellidos: [''],
-    correo: [''],
-    password: [''],
-    password2: [''],
-    tlf: [''],
-    direccion: [''],
-    poblacion: [''],
-    provincia: [''],
-    cif: [''],
+
+  public registerAssociation: FormGroup = this.fb.group({
+    nombre: ['', Validators.required],
+    correo: ['', [Validators.required, Validators.email]],
+    password: ['', Validators.required],
+    password2: ['', Validators.required],
+    tlf: ['', [Validators.required, Validators.minLength(9), Validators.maxLength(9)]],
+    direccion: ['', Validators.required],
+    poblacion: ['', Validators.required],
+    provincia: ['', Validators.required],
+    cif: ['', [Validators.required, this.validateCIF]]
   });
 
   ngOnInit(): void {
   }
 
   onSubmit() {
-    console.log(this.registerAssociation.value);
-    if (this.registerAssociation.value.password !== this.registerAssociation.value.password2) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Error',
-        text: 'Las contraseñas no coinciden',
-      });
+    if (this.registerAssociation.invalid || this.passwordsMismatch()) {
+      this.registerAssociation.markAllAsTouched();
       return;
     }
 
@@ -58,6 +58,7 @@ export class RegisterAssociationComponent implements OnInit {
       cif: this.registerAssociation.value.cif,
       idProvincia: this.registerAssociation.value.provincia,
     };
+
     this.authService.registerAssociation(this.association);
     this.router.navigate(['/login']);
 
@@ -66,5 +67,19 @@ export class RegisterAssociationComponent implements OnInit {
       title: 'Solicitud de registro enviada',
       text: 'El registro de su asociación será aprobado por un administrador',
     });
+  }
+
+  passwordsMismatch() {
+    const password = this.registerAssociation.get('password').value;
+    const password2 = this.registerAssociation.get('password2').value;
+    return password !== password2;
+  }
+
+  validateCIF(control) {
+    const cifPattern = /^[A-Za-z\d]{9}$/;
+    if (control.value && !cifPattern.test(control.value)) {
+      return { invalidCIF: true };
+    }
+    return null;
   }
 }
