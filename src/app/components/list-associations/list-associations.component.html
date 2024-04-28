@@ -20,8 +20,8 @@
 
 
       <td>
-        <button *ngIf="!item.usuario.activo" class="btn btn-primary">Activar</button>
-        <button *ngIf="item.usuario.activo" class="btn btn-danger">Desactivar</button>
+        <button *ngIf="!item.usuario.activo" class="btn btn-primary" (click)="activar(item.usuario.id)">Activar</button>
+        <button *ngIf="item.usuario.activo" class="btn btn-danger" (click)="desactivar(item.usuario.id)">Desactivar</button>
       </td>
     </tr>
     </tbody>
