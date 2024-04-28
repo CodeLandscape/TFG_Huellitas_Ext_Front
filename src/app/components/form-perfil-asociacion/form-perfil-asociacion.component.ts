@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Asociacion} from '../../models/asociacion';
 import {Provincia} from '../../models/provincia';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ProvinciaService} from '../../services/provincia.service';
 import {AsociacionService} from '../../services/asociacion.service';
 import Swal from 'sweetalert2';
@@ -43,10 +43,10 @@ export class FormPerfilAsociacionComponent implements OnInit {
 
   private crearFormulario(asociacion: Asociacion) {
     this.form = this.formBuilder.group({
-      tlf: [asociacion.usuario.tlf],
-      direccion: [asociacion.usuario.direccion],
-      poblacion: [asociacion.usuario.poblacion],
-      provincia: [asociacion.usuario.provincia.id],
+      tlf: [asociacion.usuario.tlf, [Validators.required, Validators.pattern('^[0-9]{9}$')]],
+      direccion: [asociacion.usuario.direccion, [Validators.required, Validators.maxLength(100)]],
+      poblacion: [asociacion.usuario.poblacion, [Validators.required, Validators.maxLength(100)]],
+      provincia: [asociacion.usuario.provincia.id, [Validators.required]],
     });
     this.cargado = true;
   }
@@ -56,6 +56,15 @@ export class FormPerfilAsociacionComponent implements OnInit {
   }
 
   getErrorCampo(campo: string) {
+    if (this.form.get(campo)?.hasError('required')) {
+      return 'Campo obligatorio';
+    }
+    if (this.form.get(campo)?.hasError('pattern')) {
+      return 'Formato incorrecto';
+    }
+    if (this.form.get(campo)?.hasError('maxlength')) {
+      return 'Máximo ' + this.form.get(campo)?.errors?.maxlength.requiredLength + ' caracteres';
+    }
     return '';
   }
 
@@ -100,7 +109,6 @@ export class FormPerfilAsociacionComponent implements OnInit {
       if (result.isConfirmed) {
         this.asociacionService.darDeBaja(this.asociacion.usuario.id).subscribe(() => {
           Swal.fire('Baja realizada', 'Te has dado de baja correctamente', 'success');
-          //Cerrar sesión pero no tenemos sesión todavía XD
           this.router.navigate(['/']);
         });
       }

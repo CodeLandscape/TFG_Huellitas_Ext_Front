@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Persona} from '../../models/persona';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Provincia} from '../../models/provincia';
 import {ProvinciaService} from '../../services/provincia.service';
 import {PersonaService} from '../../services/persona.service';
@@ -46,10 +46,10 @@ export class FormPerfilPersonaComponent implements OnInit {
 
   private crearFormulario(persona: Persona) {
     this.form = this.formBuilder.group({
-      tlf: [persona.usuario.tlf],
-      direccion: [persona.usuario.direccion],
-      poblacion: [persona.usuario.poblacion],
-      provincia: [persona.usuario.provincia.id],
+      tlf: [persona.usuario.tlf, [Validators.required, Validators.pattern('^[0-9]{9}$')]],
+      direccion: [persona.usuario.direccion, [Validators.required, Validators.maxLength(100)]],
+      poblacion: [persona.usuario.poblacion, [Validators.required, Validators.maxLength(100)]],
+      provincia: [persona.usuario.provincia.id, [Validators.required]],
     });
     this.cargado = true;
   }
@@ -59,10 +59,25 @@ export class FormPerfilPersonaComponent implements OnInit {
   }
 
   getErrorCampo(campo: string) {
+    if (this.form.get(campo)?.hasError('required')) {
+      return 'Campo obligatorio';
+    }
+    if (this.form.get(campo)?.hasError('pattern')) {
+      return 'Formato incorrecto';
+    }
+    if (this.form.get(campo)?.hasError('maxlength')) {
+      return 'Máximo ' + this.form.get(campo)?.errors?.maxlength.requiredLength + ' caracteres';
+    }
     return '';
   }
 
   guardar() {
+    if (this.form.invalid) { // Validar el formulario
+      return Object.values(this.form.controls).forEach(control => {
+        control.markAsTouched();
+      });
+    }
+
     Swal.fire({
       title: '¿Estás seguro?',
       text: '¿Quieres guardar los cambios realizados?',
