@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {TipoAnimalServiceService} from '../../services/tipo-animal-service.service';
 import {TipoAnimal} from '../../models/tipoAnimal';
 import Swal from 'sweetalert2';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-tipo-animal',
@@ -11,7 +12,7 @@ import Swal from 'sweetalert2';
 export class TipoAnimalComponent implements OnInit {
   tiposAnimal: TipoAnimal[] = [];
 
-  constructor(private tipoAnimalServ: TipoAnimalServiceService) { }
+  constructor(private tipoAnimalServ: TipoAnimalServiceService, private router:Router) { }
 
   ngOnInit(): void {
     this.getTiposAnimal();
@@ -57,5 +58,9 @@ export class TipoAnimalComponent implements OnInit {
         });
       }
     });
+  }
+
+  verRaza(id: number) {
+    this.router.navigate(['/raza', id]);
   }
 }

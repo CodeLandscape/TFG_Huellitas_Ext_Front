@@ -8,6 +8,7 @@ import {RegisterAssociationComponent} from './components/register-association/re
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { ListAssociationsComponent } from './components/list-associations/list-associations.component';
 import {TipoAnimalComponent} from './components/tipo-animal/tipo-animal.component';
+import {RazaComponent} from './components/raza/raza.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' }, // Por defecto
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'list-associations', component: ListAssociationsComponent },
   { path: 'perfil', component: PerfilComponent },
   { path: 'tipo-animal', component: TipoAnimalComponent },
+  { path: 'raza/:id', component: RazaComponent },
   { path: '**', component: LoginComponent }
 ];
 
