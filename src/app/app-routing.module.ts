@@ -3,10 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 
 // Importar cada uno de los componentes a los que apuntan las rutas
 import {LoginComponent} from './components/login/login.component';
-import {RegisterUserComponent} from "./components/register-user/register-user.component";
-import {RegisterAssociationComponent} from "./components/register-association/register-association.component";
+import {RegisterUserComponent} from './components/register-user/register-user.component';
+import {RegisterAssociationComponent} from './components/register-association/register-association.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { ListAssociationsComponent } from './components/list-associations/list-associations.component';
+import {TipoAnimalComponent} from './components/tipo-animal/tipo-animal.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' }, // Por defecto
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'register-association', component: RegisterAssociationComponent },
   { path: 'list-associations', component: ListAssociationsComponent },
   { path: 'perfil', component: PerfilComponent },
+  { path: 'tipo-animal', component: TipoAnimalComponent },
   { path: '**', component: LoginComponent }
 ];
 
