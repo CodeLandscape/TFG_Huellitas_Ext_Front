@@ -1,0 +1,48 @@
+<!-- Modal -->
+<div class="modal fade" id="modalAnadir" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Añadir nuevo animal</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <form [formGroup]="formGroupAnimal" *ngIf="cargado">
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" formControlName="nombre">
+          </div>
+          <div class="mb-3">
+            <label for="fechaNac" class="form-label">Fecha de nacimiento</label>
+            <input type="date" class="form-control" id="fechaNac" formControlName="fechaNac">
+          </div>
+          <div class="mb-3">
+            <label for="fechaLlegadaAsoc" class="form-label">Fecha de llegada a la asociación</label>
+            <input type="date" class="form-control" id="fechaLlegadaAsoc" formControlName="fechaLlegadaAsoc">
+          </div>
+          <div class="mb-3">
+            <label for="observaciones" class="form-label">Observaciones</label>
+            <textarea class="form-control" id="observaciones" formControlName="observaciones"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="raza" class="form-label">Raza</label>
+            <ng-select id="raza"
+                       [items]="razas"
+                       bindLabel="nombre"
+                       groupBy="tipo"
+                       placeholder="Select item"
+                       formControlName="raza">
+            </ng-select>
+          </div>
+        </form>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="guardarAnimal()">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
