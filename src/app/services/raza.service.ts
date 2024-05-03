@@ -8,12 +8,6 @@ import {TipoAnimal} from '../models/tipoAnimal';
   providedIn: 'root'
 })
 export class RazaService {
-
-  razasEjemplo: Raza[] = [
-    new Raza(1, 'Pastor Alemán', new TipoAnimal(1, 'Perro')),
-    new Raza(2, 'Chihuahua', new TipoAnimal(1, 'Perro')),
-    new Raza(3, 'Egipcio', new TipoAnimal(2, 'Gato')),
-    ];
   constructor(private http: HttpClient) { }
 
   getRazas() {

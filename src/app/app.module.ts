@@ -24,11 +24,12 @@ import {ListAssociationsComponent} from './components/list-associations/list-ass
 import { AnimalComponent } from './components/animal/animal.component';
 import { FormCrearAnimalComponent } from './components/form-crear-animal/form-crear-animal.component';
 import {NgSelectModule} from '@ng-select/ng-select';
+import {PaginacionComponent} from './components/paginacion/paginacion.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterUserComponent, RegisterAssociationComponent, FormPerfilAsociacionComponent, FormPerfilPersonaComponent, PerfilComponent, NavbarComponent, ListAssociationsComponent, AnimalComponent, FormCrearAnimalComponent],
+  declarations: [AppComponent, LoginComponent, RegisterUserComponent, RegisterAssociationComponent, FormPerfilAsociacionComponent, FormPerfilPersonaComponent, PerfilComponent, NavbarComponent, ListAssociationsComponent, AnimalComponent, FormCrearAnimalComponent, PaginacionComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule, NgSelectModule],
   providers: [
     // AuthTokenService,
