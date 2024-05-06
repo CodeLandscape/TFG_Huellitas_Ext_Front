@@ -8,6 +8,8 @@ import {Page} from '../../models/page';
 import {Raza} from '../../models/raza';
 import {TipoService} from '../../services/tipo.service';
 
+declare var $: any;
+
 @Component({
   selector: 'app-animal',
   templateUrl: './animal.component.html',
@@ -81,8 +83,13 @@ export class AnimalComponent implements OnInit {
     });
   }
 
-  editarAnimal(id: number) {
+  recargarAnimales() {
+    this.cargarAnimales(this.paginaActual);
+  }
 
+  editarAnimal(id: number) {
+    this.animalService.setIdAEditar(id);
+    $('#modalEditar').modal('show');
   }
 
   private cargarFiltros() {

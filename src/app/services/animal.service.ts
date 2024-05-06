@@ -1,12 +1,17 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
+import {BehaviorSubject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AnimalService {
 
-  constructor(private http: HttpClient) { }
+  private idAEditar = new BehaviorSubject<number | null>(null);
+
+
+  constructor(private http: HttpClient) {
+  }
 
   guardarAnimal(animal: any) {
     return this.http.post('http://localhost:8080/api-backend/animal/add', animal);
@@ -23,10 +28,26 @@ export class AnimalService {
       });
     }
 
-    return this.http.get('http://localhost:8080/api-backend/animal/all', { params: params });
+    return this.http.get('http://localhost:8080/api-backend/animal/all', {params: params});
   }
 
   deleteAnimal(id: number) {
     return this.http.delete(`http://localhost:8080/api-backend/animal/delete/${id}`);
+  }
+
+  getAnimal(idAEditar: number) {
+    return this.http.get(`http://localhost:8080/api-backend/animal/findById/${idAEditar}`);
+  }
+
+  setIdAEditar(id: number) {
+    this.idAEditar.next(id);
+  }
+
+  getIdAEditar() {
+    return this.idAEditar.asObservable();
+  }
+
+  actualizarAnimal(id: number, animal: any) {
+    return this.http.put(`http://localhost:8080/api-backend/animal/update/${id}`, animal);
   }
 }
