@@ -11,9 +11,9 @@
     <li class="page-item" *ngFor="let page of pages" [class.active]="page-1 === actual">
       <button class="page-link" [disabled]="page<0" (click)="goToPage(page-1)">{{page>0? page : "..."}}</button>
     </li>
-    <li class="page-item" [class.disabled]="actual === total">
+    <li class="page-item" [class.disabled]="actual === total-1">
       <button class="page-link" aria-label="Next"
-              [disabled]="actual === total"
+              [disabled]="actual === total-1"
               (click)="nextPage()">
         <span aria-hidden="true">&raquo;</span>
         <span class="sr-only">Next</span>
