@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {of} from 'rxjs';
+import {Raza} from '../models/raza';
 import {TipoAnimal} from '../models/tipoAnimal';
-import {Raza} from "../models/raza";
 
 @Injectable({
   providedIn: 'root'

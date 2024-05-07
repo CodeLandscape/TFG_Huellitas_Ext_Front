@@ -1,0 +1,75 @@
+<!-- Button trigger modal -->
+<div class="d-flex justify-content-center">
+  <button type="button" class="btn btn-success m-3" data-bs-toggle="modal" data-bs-target="#modalAnadir">
+    Añadir nuevo animal
+  </button>
+</div>
+<div>
+  <form [formGroup]="formGroupAnimal" class=" ">
+
+    <div class="form-group">
+      <label for="tipoAnimal" class="form-label">Tipo de animal:</label>
+      <ng-select id="tipoAnimal" *ngIf="tiposFilter.length > 0"
+                 [items]="tiposFilter"
+                 [multiple]="true"
+                 [closeOnSelect]="false"
+                 bindValue="id"
+                 bindLabel="nombre"
+                 placeholder="Seleccionar tipo de animal"
+                 formControlName="tipoAnimal">
+      </ng-select>
+    </div>
+
+
+    <div class="form-group">
+      <label for="raza" class="form-label">Raza de animal:</label>
+      <ng-select id="raza" *ngIf="razasFilter.length > 0"
+                 [items]="razasFilter"
+                 [multiple]="true"
+                 [closeOnSelect]="false"
+                 bindValue="id"
+                 bindLabel="nombre"
+                 groupBy="tipo"
+                 placeholder="Seleccionar raza"
+                 formControlName="raza"
+      >
+      </ng-select>
+    </div>
+
+    <div class="form-group">
+      <label for="nombre" class="form-label">Buscar animal</label>
+      <input class="form-control" type="search" placeholder="Buscar animal" aria-label="Search" id="nombre"
+             formControlName="nombre">
+    </div>
+    <button class="btn btn-primary " type="submit" (click)="buscarAnimal()">Buscar</button>
+  </form>
+</div>
+<div class="row justify-content-center m-0" *ngIf="cargado">
+  <div *ngFor="let animal of animales" class="col-md-4 mb-4">
+    <div class="card" style="background-color: azure;">
+      <div class="card-body text-center">
+        <h5 class="card-title">{{ animal.nombre }}</h5>
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <button class="btn btn-danger w-100" (click)="deleteAnimal(animal.id)">Borrar Animal</button>
+          </div>
+          <div class="col-md-6">
+            <button class="btn btn-success w-100" (click)="editarAnimal(animal.id)">Editar Animal</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h1 *ngIf="animales.length === 0" class="text-center mt-5 mb-4" style="font-size: 3em;">No hay ningún resultado</h1>
+
+  <div class="d-flex justify-content-center ">
+    <app-paginacion [actual]="paginaActual"
+                    [total]="totalPaginas"
+                    (goTo)="cambiarDePagina($event)">
+    </app-paginacion>
+  </div>
+</div>
+
+
+<app-form-crear-animal></app-form-crear-animal>
+<app-form-editar-animal (recargar)="recargarAnimales()"></app-form-editar-animal>
