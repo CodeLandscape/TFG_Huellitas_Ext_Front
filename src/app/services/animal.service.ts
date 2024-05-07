@@ -35,8 +35,8 @@ export class AnimalService {
     return this.http.delete(`http://localhost:8080/api-backend/animal/delete/${id}`);
   }
 
-  getAnimal(idAEditar: number) {
-    return this.http.get(`http://localhost:8080/api-backend/animal/findById/${idAEditar}`);
+  getAnimal(id: number) {
+    return this.http.get(`http://localhost:8080/api-backend/animal/findById/${id}`);
   }
 
   setIdAEditar(id: number) {
