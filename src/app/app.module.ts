@@ -21,18 +21,19 @@ import { PerfilComponent } from './components/perfil/perfil.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ListAssociationsComponent} from './components/list-associations/list-associations.component';
-import { TipoAnimalComponent } from './components/tipo-animal/tipo-animal.component';
-import {RazaComponent} from './components/raza/raza.component';
 import { AnimalComponent } from './components/animal/animal.component';
 import { FormCrearAnimalComponent } from './components/form-crear-animal/form-crear-animal.component';
 import {NgSelectModule} from '@ng-select/ng-select';
 import {PaginacionComponent} from './components/paginacion/paginacion.component';
 import {FormEditarAnimalComponent} from './components/form-editar-animal/form-editar-animal.component';
+import { PerfilAnimalComponent } from './components/perfil-animal/perfil-animal.component';
+import { TipoAnimalComponent } from './components/tipo-animal/tipo-animal.component';
+import { RazaComponent } from './components/raza/raza.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterUserComponent, RegisterAssociationComponent, FormPerfilAsociacionComponent, FormPerfilPersonaComponent, PerfilComponent, NavbarComponent, ListAssociationsComponent, AnimalComponent, FormCrearAnimalComponent, PaginacionComponent, FormEditarAnimalComponent,  TipoAnimalComponent, RazaComponent  ],
+  declarations: [AppComponent, LoginComponent, RegisterUserComponent, RegisterAssociationComponent, FormPerfilAsociacionComponent, FormPerfilPersonaComponent, PerfilComponent, NavbarComponent, ListAssociationsComponent, AnimalComponent, FormCrearAnimalComponent, PaginacionComponent, FormEditarAnimalComponent, PerfilAnimalComponent, TipoAnimalComponent, RazaComponent  ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule, NgSelectModule],
   providers: [
     // AuthTokenService,

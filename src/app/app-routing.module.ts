@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 
 // Importar cada uno de los componentes a los que apuntan las rutas
 import {LoginComponent} from './components/login/login.component';
@@ -10,6 +10,7 @@ import { ListAssociationsComponent } from './components/list-associations/list-a
 import {TipoAnimalComponent} from './components/tipo-animal/tipo-animal.component';
 import {RazaComponent} from './components/raza/raza.component';
 import {AnimalComponent} from './components/animal/animal.component';
+import {PerfilAnimalComponent} from './components/perfil-animal/perfil-animal.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' }, // Por defecto
@@ -21,11 +22,13 @@ const routes: Routes = [
   { path: 'listadoAnimales', component: AnimalComponent},
   { path: 'tipo-animal', component: TipoAnimalComponent },
   { path: 'raza/:id', component: RazaComponent },
+  { path: 'animal/:id', component: PerfilAnimalComponent },
   { path: '**', component: LoginComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
+  imports: [RouterModule.forRoot(routes, {relativeLinkResolution: 'legacy'})],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

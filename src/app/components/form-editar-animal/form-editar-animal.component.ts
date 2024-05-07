@@ -71,11 +71,14 @@ export class FormEditarAnimalComponent implements OnInit {
 
   private cargarDatosAnimal() {
     this.animalService.getAnimal(this.idAEditar).subscribe((animal: Animal) => {
-      animal.fechaNac = new Date(animal.fechaNac);
-      animal.fechaLlegadaAsoc = new Date(animal.fechaLlegadaAsoc);
+      const fechaNac: Date = new Date(animal.fechaNac);
+      fechaNac.setMinutes(fechaNac.getMinutes() - fechaNac.getTimezoneOffset());
+      const fechaLlegadaAsoc: Date = new Date(animal.fechaLlegadaAsoc);
+      fechaLlegadaAsoc.setMinutes(fechaLlegadaAsoc.getMinutes() - fechaLlegadaAsoc.getTimezoneOffset());
 
-      const fechaNacString = animal.fechaNac.toISOString().split('T')[0];
-      const fechaLlegadaAsocString = animal.fechaLlegadaAsoc.toISOString().split('T')[0];
+
+      const fechaNacString = fechaNac.toISOString().split('T')[0];
+      const fechaLlegadaAsocString = fechaLlegadaAsoc.toISOString().split('T')[0];
 
       this.formGroupAnimal.setValue({
         nombre: animal.nombre,
