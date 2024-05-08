@@ -39,8 +39,21 @@
                        formControlName="raza">
             </ng-select>
           </div>
+          <div class="mb-3">
+            <label for="imagen" class="form-label">Añadir imagen</label>
+            <input type="file" class="form-control-file" formControlName="imagen" id="imagen" #fileInput accept=".jpeg, .jpg, .png" hidden (change)="onFileSelected($event)">
+            <div class="input-group-append">
+              <button class="btn btn-primary" type="button" (click)="fileInput.click()">
+                <i class="fas fa-plus"></i>Subir Archivo
+              </button>
+            </div>
+            <div *ngIf="formGroupAnimal.get('imagen').invalid && (formGroupAnimal.get('imagen').dirty || formGroupAnimal.get('imagen').touched)" class="text-danger">
+              <small *ngIf="formGroupAnimal.get('imagen').errors.required">La imagen es requerida</small>
+              <small *ngIf="formGroupAnimal.get('imagen').errors.invalidFileType">La imagen debe ser de formato .jpeg, .jpg o .png</small>
+            </div>
+            <div *ngIf="fileName" class="mt-2">{{ fileName }}</div>
+          </div>
         </form>
-
 
       </div>
       <div class="modal-footer">

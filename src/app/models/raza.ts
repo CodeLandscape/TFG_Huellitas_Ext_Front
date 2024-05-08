@@ -3,7 +3,7 @@ import {TipoAnimal} from './tipoAnimal';
 export class Raza {
   id?: number;
   nombre: string;
-  TipoAnimal: TipoAnimal;
+  tipoAnimal: TipoAnimal;
   idTipoAnimal?: number;
 
   constructor(nombre: string, id?: number) {

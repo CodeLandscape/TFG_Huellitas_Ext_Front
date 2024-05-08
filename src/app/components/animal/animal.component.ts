@@ -95,7 +95,7 @@ export class AnimalComponent implements OnInit {
   private cargarFiltros() {
     this.razaService.getRazas().subscribe((razas: any) => {
       razas.forEach((raza: Raza) => {
-        this.razasFilter.push({id: raza.id, nombre: raza.nombre, tipo: raza.idTipoAnimal.nombre});
+        this.razasFilter.push({id: raza.id, nombre: raza.nombre, tipo: raza.tipoAnimal.nombre});
       });
     });
     this.tipoService.getTipos().subscribe((tipos: any) => {
