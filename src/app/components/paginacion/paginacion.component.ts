@@ -21,14 +21,7 @@ export class PaginacionComponent implements OnInit, OnChanges {
 
   goToPage(page: number): void {
     this.goTo.emit(page);
-  }
-
-  nextPage(): void {
-    this.goTo.emit(this.actual + 1);
-  }
-
-  prevPage(): void {
-    this.goTo.emit(this.actual - 1);
+    window.scrollTo(0, 0);
   }
 
   getPages(current: number, total: number): number[] {
