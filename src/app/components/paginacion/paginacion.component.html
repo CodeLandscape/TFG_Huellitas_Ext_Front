@@ -1,4 +1,4 @@
-<nav aria-label="Page navigation example">
+<nav aria-label="Page navigation example" *ngIf="total>0">
   <ul class="pagination">
     <li class="page-item" [class.disabled]="actual === 0">
       <button class="page-link" aria-label="Previous"

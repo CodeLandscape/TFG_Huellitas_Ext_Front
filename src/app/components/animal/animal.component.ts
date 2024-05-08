@@ -77,6 +77,9 @@ export class AnimalComponent implements OnInit {
             'El animal ha sido borrado.',
             'success'
           );
+          if (this.animales.length === 1 && this.paginaActual > 0) {
+            this.paginaActual--;
+          }
           this.cargarAnimales(this.paginaActual);
         });
       }
@@ -128,5 +131,11 @@ export class AnimalComponent implements OnInit {
 
     this.cargarAnimales(0);
 
+  }
+
+  limpiarForm() {
+    this.formGroupAnimal.reset();
+    this.filtroPorLosQueBuscar = [];
+    this.cargarAnimales(0);
   }
 }

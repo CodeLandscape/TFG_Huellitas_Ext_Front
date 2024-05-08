@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {RazaService} from '../../services/raza.service';
 import {Raza} from '../../models/raza';
@@ -21,6 +21,7 @@ export class FormCrearAnimalComponent implements OnInit {
   razas: any[] = [];
   formGroupAnimal!: FormGroup;
   cargado = false;
+  @Output() recargar = new EventEmitter<any>();
 
   constructor(private razaService: RazaService,
               private animalService: AnimalService,
@@ -61,6 +62,7 @@ export class FormCrearAnimalComponent implements OnInit {
 
     this.animalService.guardarAnimal(this.formGroupAnimal.value).subscribe(() => {
       this.formGroupAnimal.reset();
+      this.recargar.emit();
       $('#modalAnadir').modal('hide');
       Swal.fire('Guardado', 'Animal guardado correctamente', 'success');
     });

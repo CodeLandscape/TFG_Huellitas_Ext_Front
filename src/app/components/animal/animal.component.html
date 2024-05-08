@@ -4,10 +4,10 @@
     Añadir nuevo animal
   </button>
 </div>
-<div>
-  <form [formGroup]="formGroupAnimal" class=" ">
+<div class="d-flex justify-content-center mb-3">
+  <form [formGroup]="formGroupAnimal" class="row w-75">
 
-    <div class="form-group">
+    <div class="form-group col-3">
       <label for="tipoAnimal" class="form-label">Tipo de animal:</label>
       <ng-select id="tipoAnimal" *ngIf="tiposFilter.length > 0"
                  [items]="tiposFilter"
@@ -21,7 +21,7 @@
     </div>
 
 
-    <div class="form-group">
+    <div class="form-group col-3">
       <label for="raza" class="form-label">Raza de animal:</label>
       <ng-select id="raza" *ngIf="razasFilter.length > 0"
                  [items]="razasFilter"
@@ -36,12 +36,15 @@
       </ng-select>
     </div>
 
-    <div class="form-group">
+    <div class="form-group col-3">
       <label for="nombre" class="form-label">Buscar animal</label>
       <input class="form-control" type="search" placeholder="Buscar animal" aria-label="Search" id="nombre"
              formControlName="nombre">
     </div>
-    <button class="btn btn-primary " type="submit" (click)="buscarAnimal()">Buscar</button>
+    <div class="col-3 align-self-end d-flex justify-content-around gap-2">
+      <button class="btn btn-primary w-100" type="submit" (click)="buscarAnimal()">Buscar</button>
+      <button type="button" class="btn btn-secondary w-100" (click)="limpiarForm()">Limpiar</button>
+    </div>
   </form>
 </div>
 <div class="row justify-content-center m-0" *ngIf="cargado">
@@ -76,5 +79,5 @@
 </div>
 
 
-<app-form-crear-animal></app-form-crear-animal>
+<app-form-crear-animal (recargar)="recargarAnimales()"></app-form-crear-animal>
 <app-form-editar-animal (recargar)="recargarAnimales()"></app-form-editar-animal>
