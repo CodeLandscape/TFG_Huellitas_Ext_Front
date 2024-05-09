@@ -1,0 +1,70 @@
+<div class="container">
+  <h1 *ngIf="razas.length > 0" class="text-center mt-5 mb-4" style="font-size: 3em;">Razas {{tipoAnimal.nombre}}</h1>
+  <div class="row justify-content-center">
+    <div *ngFor="let raza of razas" class="col-md-4 mb-4">
+      <div class="card" style="background-color: azure;">
+        <div class="card-body text-center">
+          <h5 class="card-title">{{raza.nombre}}</h5>
+          <div class="d-grid gap-2">
+            <button class="btn btn-danger" (click)="deleteRaza(raza.id)">Borrar raza</button>
+            <button class="btn btn-primary" (click)="openEditModal(raza)" data-bs-toggle="modal" data-bs-target="#editRazaModal">Editar raza</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h1 *ngIf="razas.length === 0" class="text-center mt-5 mb-4" style="font-size: 3em;">No hay razas</h1>
+  </div>
+
+  <!-- Botón para abrir el modal -->
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-4 text-center"> <!-- Ajuste aquí: Agregué la clase text-center -->
+      <button type="button" class="btn btn-primary btn-lg btn-block" data-bs-toggle="modal" data-bs-target="#addRazaModal">
+        Añadir nueva raza
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal add -->
+  <div class="modal fade" id="addRazaModal" tabindex="-1" aria-labelledby="addRazaModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addRazaModalLabel">Añadir nueva raza</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form (submit)="addRaza(newRaza.value)">
+            <div class="mb-3">
+              <label for="newRaza" class="form-label">Nombre de raza</label>
+              <input type="text" class="form-control" id="newRaza" #newRaza>
+            </div>
+            <button type="submit" class="btn btn-primary">Añadir</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Modal editar -->
+<div class="modal fade" id="editRazaModal" tabindex="-1" aria-labelledby="editRazaModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editRazaModalLabel">Editar raza</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form (submit)="editRaza(editRazaName)">
+          <input type="hidden" #editRazaId>
+          <div class="mb-3">
+            <label for="editRazaName" class="form-label">Nombre de raza</label>
+            <input type="text" class="form-control" id="editRazaName" name="editRazaName" [(ngModel)]="editRazaName">
+          </div>
+          <button type="submit" class="btn btn-primary">Guardar cambios</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

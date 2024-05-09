@@ -12,6 +12,12 @@ export class TipoAnimalServiceService {
   getTipoAnimales(){
     return this.http.get<TipoAnimal[]>('http://localhost:8080/api-backend/tipoAnimal/all');
   }
+
+// obtener un tipo de animal por id
+  getTipoAnimalById(id: number){
+    return this.http.get<TipoAnimal>(`http://localhost:8080/api-backend/tipoAnimal/findById/${id}`);
+  }
+
   // añadir un nuevo tipo de animal
   addTipoAnimal(tipoAnimal: TipoAnimal){
     return this.http.post<TipoAnimal>('http://localhost:8080/api-backend/tipoAnimal/add', tipoAnimal);

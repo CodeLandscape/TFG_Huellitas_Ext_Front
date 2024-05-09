@@ -13,7 +13,7 @@
           <h5 class="card-title">{{tipoAnimal.nombre}}</h5>
           <div class="d-grid gap-2">
             <button class="btn btn-danger" (click)="deleteTipoAnimal(tipoAnimal.id)">Borrar tipo</button>
-            <button class="btn btn-success">Ver Razas</button>
+            <button class="btn btn-success" (click)="verRaza(tipoAnimal.id)">Ver Razas</button>
           </div>
         </div>
       </div>
