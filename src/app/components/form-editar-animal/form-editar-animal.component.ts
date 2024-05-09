@@ -64,7 +64,6 @@ export class FormEditarAnimalComponent implements OnInit {
       if (!control.value) {
         return null;
       }
-      console.log(control.value);
       const fileExtension = control.value.split('.').pop().toLowerCase();
       return allowedExtensions.includes(fileExtension) ? null : {invalidFileType: true};
     };

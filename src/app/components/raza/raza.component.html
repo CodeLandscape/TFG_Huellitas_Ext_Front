@@ -28,25 +28,29 @@
 
 
 <!-- Modal add -->
-  <div class="modal fade" id="addRazaModal" tabindex="-1" aria-labelledby="addRazaModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="addRazaModalLabel">Añadir nueva raza</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form (submit)="addRaza(newRaza.value)">
-            <div class="mb-3">
-              <label for="newRaza" class="form-label">Nombre de raza</label>
-              <input type="text" class="form-control" id="newRaza" #newRaza>
+<div class="modal fade" id="addRazaModal" tabindex="-1" aria-labelledby="addRazaModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addRazaModalLabel">Añadir nueva raza</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="addRazaForm" (ngSubmit)="addRaza()">
+          <div class="mb-3">
+            <label for="newRaza" class="form-label">Nombre de raza</label>
+            <input type="text" class="form-control" id="newRaza" formControlName="newRaza">
+            <div *ngIf="addRazaForm.get('newRaza').invalid && addRazaForm.get('newRaza').touched" class="text-danger">
+              El campo no puede estar vacío
             </div>
-            <button type="submit" class="btn btn-primary">Añadir</button>
-          </form>
-        </div>
+          </div>
+          <button type="submit" class="btn btn-primary" [disabled]="addRazaForm.invalid">Añadir</button>
+        </form>
       </div>
     </div>
   </div>
+</div>
+
 <!-- Modal editar -->
 <div class="modal fade" id="editRazaModal" tabindex="-1" aria-labelledby="editRazaModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -56,13 +60,16 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form (submit)="editRaza(editRazaName)">
+        <form [formGroup]="editRazaForm" (ngSubmit)="editRaza()">
           <input type="hidden" #editRazaId>
           <div class="mb-3">
             <label for="editRazaName" class="form-label">Nombre de raza</label>
-            <input type="text" class="form-control" id="editRazaName" name="editRazaName" [(ngModel)]="editRazaName">
+            <input type="text" class="form-control" id="editRazaName" formControlName="editRazaName">
+            <div *ngIf="editRazaForm.get('editRazaName').invalid && editRazaForm.get('editRazaName').touched" class="text-danger">
+              El campo no puede estar vacío
+            </div>
           </div>
-          <button type="submit" class="btn btn-primary">Guardar cambios</button>
+          <button type="submit" class="btn btn-primary" [disabled]="editRazaForm.invalid">Guardar cambios</button>
         </form>
       </div>
     </div>
