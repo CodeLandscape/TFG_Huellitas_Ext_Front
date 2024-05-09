@@ -1,5 +1,6 @@
 import {Raza} from './raza';
 import {Asociacion} from './asociacion';
+import {SafeUrl} from '@angular/platform-browser';
 
 export class Animal {
   id: number;
@@ -11,7 +12,7 @@ export class Animal {
   asociacion: Asociacion;
   activo: boolean;
   fechaAdopcion: Date;
-
+  imagen: SafeUrl;
   constructor(id: number, nombre: string, fechaNac: Date, fechaLlegadaAsoc: Date, observaciones: string, raza: Raza, asociacion: Asociacion, activo: boolean, fechaAdopcion: Date) {
     this.id = id;
     this.nombre = nombre;

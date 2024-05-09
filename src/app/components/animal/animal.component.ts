@@ -7,6 +7,7 @@ import {Animal} from '../../models/animal';
 import {Page} from '../../models/page';
 import {Raza} from '../../models/raza';
 import {TipoService} from '../../services/tipo.service';
+import {DomSanitizer} from '@angular/platform-browser';
 
 declare var $: any;
 
@@ -29,7 +30,8 @@ export class AnimalComponent implements OnInit {
   constructor(private animalService: AnimalService,
               private razaService: RazaService,
               private tipoService: TipoService,
-              private formBuilder: FormBuilder) {
+              private formBuilder: FormBuilder,
+              private sanitizer: DomSanitizer) {
   }
 
   ngOnInit(): void {
@@ -53,6 +55,13 @@ export class AnimalComponent implements OnInit {
   private cargarAnimales(pagina) {
     this.animalService.getAnimales(pagina, this.filtroPorLosQueBuscar).subscribe((animalesRecibidos: Page) => {
       this.animales = animalesRecibidos.content;
+      this.animales.forEach((animal: Animal) => {
+        this.animalService.getImagenAnimal(animal.id).subscribe((data: any) => {
+          const blob = new Blob([data], {type: 'image/jpeg'});
+          const url = window.URL.createObjectURL(blob);
+          animal.imagen = this.sanitizer.bypassSecurityTrustUrl(url);
+        });
+      });
       this.totalPaginas = animalesRecibidos.totalPages;
       this.paginaActual = animalesRecibidos.number;
       this.cargado = true;

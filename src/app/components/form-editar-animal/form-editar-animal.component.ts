@@ -5,7 +5,7 @@ import {AnimalService} from '../../services/animal.service';
 import {Raza} from '../../models/raza';
 import Swal from 'sweetalert2';
 import {Animal} from '../../models/animal';
-import {imagenAnimal} from "../../models/imagenAnimal";
+import {imagenAnimal} from '../../models/imagenAnimal';
 
 declare var $: any;
 
@@ -53,9 +53,10 @@ export class FormEditarAnimalComponent implements OnInit {
       fechaLlegadaAsoc: [''],
       observaciones: [''],
       raza: [''],
-      imagen: ['', [Validators.required, this.fileExtensionValidator(['jpeg', 'jpg', 'png'])]]
+      imagen: ['', [this.fileExtensionValidator(['jpeg', 'jpg', 'png'])]]
     });
   }
+
   // Validador personalizado para la extensión del archivo
   fileExtensionValidator(allowedExtensions: string[]) {
     // El validador recibe un arreglo con las extensiones permitidas
@@ -63,8 +64,9 @@ export class FormEditarAnimalComponent implements OnInit {
       if (!control.value) {
         return null;
       }
+      console.log(control.value);
       const fileExtension = control.value.split('.').pop().toLowerCase();
-      return allowedExtensions.includes(fileExtension) ? null : { invalidFileType: true };
+      return allowedExtensions.includes(fileExtension) ? null : {invalidFileType: true};
     };
   }
 
@@ -104,14 +106,15 @@ export class FormEditarAnimalComponent implements OnInit {
       fechaNac.setMinutes(fechaNac.getMinutes() - fechaNac.getTimezoneOffset());
       const fechaLlegadaAsoc: Date = new Date(animal.fechaLlegadaAsoc);
       fechaLlegadaAsoc.setMinutes(fechaLlegadaAsoc.getMinutes() - fechaLlegadaAsoc.getTimezoneOffset());
-      this.animalService.getImagenAnimal(this.idAEditar).subscribe((imagen: imagenAnimal) => {
-        this.imgAnimal = imagen;
-        console.log(this.imgAnimal);
-        this.fileName = this.imgAnimal[0].ficheroNombre ;
-      } );
 
       const fechaNacString = fechaNac.toISOString().split('T')[0];
       const fechaLlegadaAsocString = fechaLlegadaAsoc.toISOString().split('T')[0];
+
+      this.animalService.getInfoImagenAnimal(this.idAEditar).subscribe((imagen: imagenAnimal) => {
+        this.imgAnimal = imagen;
+        this.fileName = this.imgAnimal.ficheroNombre;
+        this.cargado = true;
+      });
 
       this.formGroupAnimal.patchValue({
         nombre: animal.nombre,
@@ -121,13 +124,12 @@ export class FormEditarAnimalComponent implements OnInit {
         raza: animal.raza,
         imagen: this.imgAnimal
       });
-      this.cargado = true;
     });
   }
 
   private guardarImagenAnimal(idAnimal: number, selectedFile: File) {
     const formData = new FormData();
-    if (selectedFile){
+    if (selectedFile) {
       formData.append('file', selectedFile);
     }
     formData.append('idAnimal', idAnimal.toString());
@@ -137,5 +139,19 @@ export class FormEditarAnimalComponent implements OnInit {
       this.fileName = undefined;
       this.selectedFile = null;  // Reiniciar el archivo seleccionado
     });
+  }
+
+  validarCampo(campo: string) {
+    return this.formGroupAnimal.get(campo)?.invalid && this.formGroupAnimal.get(campo)?.touched;
+  }
+
+  getErrorCampo(campo: string) {
+    if (this.formGroupAnimal.get(campo)?.hasError('required')) {
+      return 'Campo obligatorio';
+    }
+    if (this.formGroupAnimal.get(campo)?.hasError('maxlength')) {
+      return 'Máximo ' + this.formGroupAnimal.get(campo)?.errors?.maxlength.requiredLength + ' caracteres';
+    }
+    return '';
   }
 }

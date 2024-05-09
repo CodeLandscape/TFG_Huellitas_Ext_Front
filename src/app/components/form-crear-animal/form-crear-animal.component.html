@@ -11,19 +11,30 @@
         <form [formGroup]="formGroupAnimal" *ngIf="cargado">
           <div class="mb-3">
             <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre" formControlName="nombre">
+            <input type="text" class="form-control" id="nombre" formControlName="nombre"
+                   [class.is-invalid]="validarCampo('nombre')">
+            <small class="form-text text-danger" *ngIf="validarCampo('nombre')">{{ getErrorCampo('nombre') }}</small>
+
           </div>
           <div class="mb-3">
             <label for="fechaNac" class="form-label">Fecha de nacimiento</label>
-            <input type="date" class="form-control" id="fechaNac" formControlName="fechaNac">
+            <input type="date" class="form-control" id="fechaNac" formControlName="fechaNac"
+                   [class.is-invalid]="validarCampo('fechaNac')">
+            <small class="form-text text-danger"
+                   *ngIf="validarCampo('fechaNac')">{{ getErrorCampo('fechaNac') }}</small>
           </div>
           <div class="mb-3">
             <label for="fechaLlegadaAsoc" class="form-label">Fecha de llegada a la asociación</label>
-            <input type="date" class="form-control" id="fechaLlegadaAsoc" formControlName="fechaLlegadaAsoc">
+            <input type="date" class="form-control" id="fechaLlegadaAsoc" formControlName="fechaLlegadaAsoc"
+                   [class.is-invalid]="validarCampo('fechaLlegadaAsoc')">
+            <small class="form-text text-danger" *ngIf="validarCampo('fechaLlegadaAsoc')">{{ getErrorCampo('fechaLlegadaAsoc') }}</small>
           </div>
           <div class="mb-3">
             <label for="observaciones" class="form-label">Observaciones</label>
-            <textarea class="form-control" id="observaciones" formControlName="observaciones"></textarea>
+            <textarea class="form-control" id="observaciones" formControlName="observaciones"
+                      [class.is-invalid]="validarCampo('observaciones')">
+            </textarea>
+            <small class="form-text text-danger" *ngIf="validarCampo('observaciones')">{{ getErrorCampo('observaciones') }}</small>
           </div>
           <div class="mb-3">
             <label for="raza" class="form-label">Raza</label>
@@ -32,20 +43,26 @@
                        bindLabel="nombre"
                        groupBy="tipo"
                        placeholder="Seleccionar raza"
-                       formControlName="raza">
+                       formControlName="raza"
+                       [class.is-invalid]="validarCampo('raza')">
             </ng-select>
+            <small class="form-text text-danger" *ngIf="validarCampo('raza')">{{ getErrorCampo('raza') }}</small>
           </div>
           <div class="mb-3">
-           <label for="imagen" class="form-label">Añadir imagen</label>
-            <input type="file" class="form-control-file" formControlName="imagen" id="imagen" #fileInput accept=".jpeg, .jpg, .png" hidden (change)="onFileSelected($event)">
+            <label for="imagen" class="form-label">Añadir imagen</label>
+            <input type="file" class="form-control-file" formControlName="imagen" id="imagen" #fileInput
+                   accept=".jpeg, .jpg, .png" hidden (change)="onFileSelected($event)">
             <div class="input-group-append">
               <button class="btn btn-primary" type="button" (click)="fileInput.click()">
                 <i class="fas fa-plus"></i>Subir Archivo
               </button>
             </div>
-            <div *ngIf="formGroupAnimal.get('imagen').invalid && (formGroupAnimal.get('imagen').dirty || formGroupAnimal.get('imagen').touched)" class="text-danger">
+            <div
+              *ngIf="formGroupAnimal.get('imagen').invalid && (formGroupAnimal.get('imagen').dirty || formGroupAnimal.get('imagen').touched)"
+              class="text-danger">
               <small *ngIf="formGroupAnimal.get('imagen').errors.required">La imagen es requerida</small>
-              <small *ngIf="formGroupAnimal.get('imagen').errors.invalidFileType">La imagen debe ser de formato .jpeg, .jpg o .png</small>
+              <small *ngIf="formGroupAnimal.get('imagen').errors.invalidFileType">La imagen debe ser de formato .jpeg,
+                .jpg o .png</small>
             </div>
             <div *ngIf="fileName" class="mt-2">{{ fileName }}</div>
           </div>

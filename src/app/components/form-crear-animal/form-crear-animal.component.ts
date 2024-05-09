@@ -26,6 +26,7 @@ export class FormCrearAnimalComponent implements OnInit {
   fileName: string | undefined;
   selectedFile: File | null = null;
   idAnimal!: number;
+
   constructor(private razaService: RazaService,
               private animalService: AnimalService,
               private formBuilder: FormBuilder,
@@ -45,11 +46,11 @@ export class FormCrearAnimalComponent implements OnInit {
 
   private crearFormAnimal() {
     this.formGroupAnimal = this.formBuilder.group({
-      nombre: [''],
-      fechaNac: [''],
-      fechaLlegadaAsoc: [''],
-      observaciones: [''],
-      raza: [''],
+      nombre: ['', [Validators.required, Validators.maxLength(255)]],
+      fechaNac: ['', [Validators.required]],
+      fechaLlegadaAsoc: ['', [Validators.required]],
+      observaciones: ['', [Validators.required, Validators.maxLength(255)]],
+      raza: ['', [Validators.required]],
       imagen: ['', [Validators.required, this.fileExtensionValidator(['jpeg', 'jpg', 'png'])]]
     });
   }
@@ -62,7 +63,7 @@ export class FormCrearAnimalComponent implements OnInit {
         return null;
       }
       const fileExtension = control.value.split('.').pop().toLowerCase();
-      return allowedExtensions.includes(fileExtension) ? null : { invalidFileType: true };
+      return allowedExtensions.includes(fileExtension) ? null : {invalidFileType: true};
     };
   }
 
@@ -84,10 +85,10 @@ export class FormCrearAnimalComponent implements OnInit {
     }
 
     // Esto se va a sacar del token en el futuro ahora está a lo cutre
-    this.formGroupAnimal.value.asociacion = { id : 1 };
+    this.formGroupAnimal.value.asociacion = {id: 1};
 
 
-    this.animalService.guardarAnimal(this.formGroupAnimal.value).subscribe((data:Animal) => {
+    this.animalService.guardarAnimal(this.formGroupAnimal.value).subscribe((data: Animal) => {
       this.idAnimal = data.id;
       this.guardarImagenAnimal(this.idAnimal, this.selectedFile);
       this.formGroupAnimal.reset();
@@ -100,7 +101,7 @@ export class FormCrearAnimalComponent implements OnInit {
 
   private guardarImagenAnimal(idAnimal: number, selectedFile: File) {
     const formData = new FormData();
-    if (selectedFile){
+    if (selectedFile) {
       formData.append('file', selectedFile);
     }
     formData.append('idAnimal', idAnimal.toString());
@@ -110,5 +111,19 @@ export class FormCrearAnimalComponent implements OnInit {
       this.fileName = undefined;
       this.selectedFile = null;  // Reiniciar el archivo seleccionado
     });
+  }
+
+  validarCampo(campo: string) {
+    return this.formGroupAnimal.get(campo)?.invalid && this.formGroupAnimal.get(campo)?.touched;
+  }
+
+  getErrorCampo(campo: string) {
+    if (this.formGroupAnimal.get(campo)?.hasError('required')) {
+      return 'Campo obligatorio';
+    }
+    if (this.formGroupAnimal.get(campo)?.hasError('maxlength')) {
+      return 'Máximo ' + this.formGroupAnimal.get(campo)?.errors?.maxlength.requiredLength + ' caracteres';
+    }
+    return '';
   }
 }

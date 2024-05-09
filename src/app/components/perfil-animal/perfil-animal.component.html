@@ -1,5 +1,6 @@
 <div class="container-fluid row p-5" *ngIf="animal">
   <div class="col-md-4 col-12">
+    <img [src]="animal.imagen" class="img-fluid" alt="Imagen de {{ animal.nombre }}">
   </div>
   <div class="col-md-8 col-12 p-3">
     <p class="h1">

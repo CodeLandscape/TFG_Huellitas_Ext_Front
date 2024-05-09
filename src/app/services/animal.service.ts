@@ -56,6 +56,10 @@ export class AnimalService {
   }
 
   getImagenAnimal(idAnimal: number) {
-    return this.http.get(`http://localhost:8080/api-backend/imagen-animal/animal/${idAnimal}`);
+    return this.http.get(`http://localhost:8080/api-backend/imagen-animal/animal/${idAnimal}`, {responseType: 'blob'});
+  }
+
+  getInfoImagenAnimal(idAnimal: number) {
+    return this.http.get(`http://localhost:8080/api-backend/imagen-animal/info/${idAnimal}`);
   }
 }
