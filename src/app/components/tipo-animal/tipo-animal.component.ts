@@ -10,6 +10,7 @@ import Swal from 'sweetalert2';
 })
 export class TipoAnimalComponent implements OnInit {
   tiposAnimal: TipoAnimal[] = [];
+  newTipoAnimal = '';
 
   constructor(private tipoAnimalServ: TipoAnimalServiceService) { }
 
