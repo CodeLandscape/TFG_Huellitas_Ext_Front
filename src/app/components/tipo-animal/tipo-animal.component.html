@@ -1,0 +1,49 @@
+<div class="container">
+  <h1 *ngIf="tiposAnimal.length > 0" class="text-center mt-5 mb-4" style="font-size: 3em;">Tipos Animal</h1>
+  <div class="row justify-content-center">
+    <div *ngFor="let tipoAnimal of tiposAnimal" class="col-md-4 mb-4">
+      <div class="card" style="background-color: azure;">
+        <div class="card-body text-center">
+          <h5 class="card-title">{{tipoAnimal.nombre}}</h5>
+          <div class="d-grid gap-2">
+            <button class="btn btn-danger" (click)="deleteTipoAnimal(tipoAnimal.id)">Borrar tipo</button>
+            <button class="btn btn-success" (click)="verRaza(tipoAnimal.id)">Ver Razas</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h1 *ngIf="tiposAnimal.length === 0" class="text-center mt-5 mb-4" style="font-size: 3em;">No hay tipos de animal</h1>
+  </div>
+
+  <!-- Botón para abrir el modal -->
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-4 text-center"> <!-- Ajuste aquí: Agregué la clase text-center -->
+      <button type="button" class="btn btn-primary btn-lg btn-block" data-bs-toggle="modal" data-bs-target="#addTipoAnimalModal">
+        Añadir nuevo tipo animal
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal -->
+  <div class="modal fade" id="addTipoAnimalModal" tabindex="-1" aria-labelledby="addTipoAnimalModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addTipoAnimalModalLabel">Añadir nuevo tipo animal</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form (submit)="addTipoAnimal(newTipoAnimal.value)">
+            <div class="mb-3">
+              <label for="newTipoAnimal" class="form-label">Nombre del tipo animal</label>
+              <input type="text" class="form-control" id="newTipoAnimal" #newTipoAnimal>
+            </div>
+            <button type="submit" class="btn btn-primary">Añadir</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

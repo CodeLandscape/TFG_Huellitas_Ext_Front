@@ -27,11 +27,13 @@ import {NgSelectModule} from '@ng-select/ng-select';
 import {PaginacionComponent} from './components/paginacion/paginacion.component';
 import {FormEditarAnimalComponent} from './components/form-editar-animal/form-editar-animal.component';
 import { PerfilAnimalComponent } from './components/perfil-animal/perfil-animal.component';
+import { TipoAnimalComponent } from './components/tipo-animal/tipo-animal.component';
+import { RazaComponent } from './components/raza/raza.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterUserComponent, RegisterAssociationComponent, FormPerfilAsociacionComponent, FormPerfilPersonaComponent, PerfilComponent, NavbarComponent, ListAssociationsComponent, AnimalComponent, FormCrearAnimalComponent, PaginacionComponent, FormEditarAnimalComponent, PerfilAnimalComponent],
+  declarations: [AppComponent, LoginComponent, RegisterUserComponent, RegisterAssociationComponent, FormPerfilAsociacionComponent, FormPerfilPersonaComponent, PerfilComponent, NavbarComponent, ListAssociationsComponent, AnimalComponent, FormCrearAnimalComponent, PaginacionComponent, FormEditarAnimalComponent, PerfilAnimalComponent, TipoAnimalComponent, RazaComponent  ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule, NgSelectModule],
   providers: [
     // AuthTokenService,

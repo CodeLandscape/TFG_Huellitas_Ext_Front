@@ -1,13 +1,13 @@
 import {TipoAnimal} from './tipoAnimal';
 
 export class Raza {
-  id: number;
+  id?: number;
   nombre: string;
-  idTipoAnimal: TipoAnimal;
+  tipoAnimal: TipoAnimal;
+  idTipoAnimal?: number;
 
-  constructor(id: number, nombre: string, tipoAnimal: TipoAnimal) {
+  constructor(nombre: string, id?: number) {
     this.id = id;
     this.nombre = nombre;
-    this.idTipoAnimal = tipoAnimal;
   }
 }

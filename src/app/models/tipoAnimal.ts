@@ -1,8 +1,8 @@
 export class TipoAnimal {
-  id: number;
+  id?: number;
   nombre: string;
 
-  constructor(id: number, nombre: string) {
+  constructor(nombre: string, id?: number) {
     this.id = id;
     this.nombre = nombre;
   }

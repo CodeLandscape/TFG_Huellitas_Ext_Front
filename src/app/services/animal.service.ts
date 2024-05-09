@@ -50,4 +50,12 @@ export class AnimalService {
   actualizarAnimal(id: number, animal: any) {
     return this.http.put(`http://localhost:8080/api-backend/animal/update/${id}`, animal);
   }
+
+  guardarImagenAnimal(formData: FormData) {
+    return this.http.post('http://localhost:8080/api-backend/imagen-animal/upload', formData);
+  }
+
+  getImagenAnimal(idAnimal: number) {
+    return this.http.get(`http://localhost:8080/api-backend/imagen-animal/animal/${idAnimal}`);
+  }
 }
