@@ -1,0 +1,672 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>huellitas-extremenas documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">huellitas-extremenas documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  PerfilAnimalComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/perfil-animal/perfil-animal.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-perfil-animal</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./perfil-animal.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./perfil-animal.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#animal" >animal</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#cargarAnimal" >cargarAnimal</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(animalService: <a href="../injectables/AnimalService.html" target="_self">AnimalService</a>, route: ActivatedRoute, sanitizer: DomSanitizer)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/components/perfil-animal/perfil-animal.component.ts:14</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>animalService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AnimalService.html" target="_self" >AnimalService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                    <code>ActivatedRoute</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>sanitizer</td>
+                                                  
+                                                        <td>
+                                                                    <code>DomSanitizer</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cargarAnimal"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>cargarAnimal</b></span>
+                        <a href="#cargarAnimal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>cargarAnimal(id: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="27"
+                                    class="link-to-prism">src/app/components/perfil-animal/perfil-animal.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="21"
+                                    class="link-to-prism">src/app/components/perfil-animal/perfil-animal.component.ts:21</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="animal"></a>
+                    <span class="name">
+                        <span ><b>animal</b></span>
+                        <a href="#animal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Animal.html" target="_self" >Animal</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/components/perfil-animal/perfil-animal.component.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, OnInit} from &#x27;@angular/core&#x27;;
+import {AnimalService} from &#x27;../../services/animal.service&#x27;;
+import {Animal} from &#x27;../../models/animal&#x27;;
+import {ActivatedRoute} from &#x27;@angular/router&#x27;;
+import {DomSanitizer} from &#x27;@angular/platform-browser&#x27;;
+
+@Component({
+  selector: &#x27;app-perfil-animal&#x27;,
+  templateUrl: &#x27;./perfil-animal.component.html&#x27;,
+  styleUrls: [&#x27;./perfil-animal.component.css&#x27;]
+})
+export class PerfilAnimalComponent implements OnInit {
+
+  animal: Animal;
+
+  constructor(private animalService: AnimalService,
+              private route: ActivatedRoute,
+              private sanitizer: DomSanitizer) {
+  }
+
+  ngOnInit(): void {
+    this.route.params.subscribe(params &#x3D;&gt; {
+      this.cargarAnimal(params.id);
+    });
+  }
+
+  private cargarAnimal(id: any) {
+    this.animalService.getAnimal(id).subscribe((animal: Animal) &#x3D;&gt; {
+      this.animal &#x3D; animal;
+      this.animalService.getImagenAnimal(animal.id).subscribe((data: any) &#x3D;&gt; {
+        const blob &#x3D; new Blob([data], {type: &#x27;image/jpeg&#x27;});
+        const url &#x3D; window.URL.createObjectURL(blob);
+        this.animal.imagen &#x3D; this.sanitizer.bypassSecurityTrustUrl(url);
+      });
+    });
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container-fluid row p-5&quot; *ngIf&#x3D;&quot;animal&quot;&gt;
+  &lt;div class&#x3D;&quot;col-md-4 col-12&quot;&gt;
+    &lt;img [src]&#x3D;&quot;animal.imagen&quot; class&#x3D;&quot;img-fluid&quot; alt&#x3D;&quot;Imagen de {{ animal.nombre }}&quot;&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;col-md-8 col-12 p-3&quot;&gt;
+    &lt;p class&#x3D;&quot;h1&quot;&gt;
+      {{ animal.nombre }}
+    &lt;/p&gt;
+    &lt;p class&#x3D;&quot;h4&quot;&gt;
+      {{ animal.raza.nombre }}
+    &lt;/p&gt;
+    &lt;p class&#x3D;&quot;text-muted mt-3&quot;&gt;
+      {{ animal.observaciones }}
+    &lt;/p&gt;
+    &lt;p class&#x3D;&quot;h5 mt-3&quot;&gt;
+      Asociación:
+    &lt;/p&gt;
+    &lt;p class&#x3D;&quot;text-muted&quot;&gt;
+      {{ animal.asociacion.nombre }}
+    &lt;/p&gt;
+    &lt;p class&#x3D;&quot;h5 mt-3&quot;&gt;
+      Ubicación de la asociación:
+    &lt;/p&gt;
+    &lt;p class&#x3D;&quot;text-muted mb-0&quot;&gt;
+      {{ animal.asociacion.usuario.direccion}}
+    &lt;/p&gt;
+    &lt;p class&#x3D;&quot;text-muted mt-0&quot;&gt;
+      {{animal.asociacion.usuario.provincia.nombre + &#x27;, &#x27; + animal.asociacion.usuario.poblacion }}
+    &lt;/p&gt;
+    &lt;p class&#x3D;&quot;h5 mt-3&quot;&gt;
+      Fecha de nacimiento:
+    &lt;/p&gt;
+    &lt;p class&#x3D;&quot;text-muted&quot;&gt;
+      {{ animal.fechaNac|date:&#x27;dd/MM/yyyy&#x27; }}
+    &lt;/p&gt;
+    &lt;p class&#x3D;&quot;h5 mt-3&quot;&gt;
+      Fecha de llegada:
+    &lt;/p&gt;
+    &lt;p class&#x3D;&quot;text-muted&quot;&gt;
+      {{ animal.fechaLlegadaAsoc|date:&#x27;dd/MM/yyyy&#x27; }}
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class&#x3D;&quot;container-fluid mt-5 d-flex justify-content-center&quot; *ngIf&#x3D;&quot;!animal&quot;&gt;
+  &lt;div class&#x3D;&quot;spinner-border&quot; role&#x3D;&quot;status&quot;&gt;
+    &lt;span class&#x3D;&quot;sr-only&quot;&gt;Loading...&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./perfil-animal.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container-fluid row p-5" *ngIf="animal">  <div class="col-md-4 col-12">    <img [src]="animal.imagen" class="img-fluid" alt="Imagen de {{ animal.nombre }}">  </div>  <div class="col-md-8 col-12 p-3">    <p class="h1">      {{ animal.nombre }}    </p>    <p class="h4">      {{ animal.raza.nombre }}    </p>    <p class="text-muted mt-3">      {{ animal.observaciones }}    </p>    <p class="h5 mt-3">      Asociación:    </p>    <p class="text-muted">      {{ animal.asociacion.nombre }}    </p>    <p class="h5 mt-3">      Ubicación de la asociación:    </p>    <p class="text-muted mb-0">      {{ animal.asociacion.usuario.direccion}}    </p>    <p class="text-muted mt-0">      {{animal.asociacion.usuario.provincia.nombre + \', \' + animal.asociacion.usuario.poblacion }}    </p>    <p class="h5 mt-3">      Fecha de nacimiento:    </p>    <p class="text-muted">      {{ animal.fechaNac|date:\'dd/MM/yyyy\' }}    </p>    <p class="h5 mt-3">      Fecha de llegada:    </p>    <p class="text-muted">      {{ animal.fechaLlegadaAsoc|date:\'dd/MM/yyyy\' }}    </p>  </div></div><div class="container-fluid mt-5 d-flex justify-content-center" *ngIf="!animal">  <div class="spinner-border" role="status">    <span class="sr-only">Loading...</span>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AnimalComponent', 'selector': 'app-animal'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'FormCrearAnimalComponent', 'selector': 'app-form-crear-animal'},{'name': 'FormEditarAnimalComponent', 'selector': 'app-form-editar-animal'},{'name': 'FormPerfilAsociacionComponent', 'selector': 'app-form-perfil-asociacion'},{'name': 'FormPerfilPersonaComponent', 'selector': 'app-form-perfil-persona'},{'name': 'ListAssociationsComponent', 'selector': 'app-list-associations'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PaginacionComponent', 'selector': 'app-paginacion'},{'name': 'PerfilAnimalComponent', 'selector': 'app-perfil-animal'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'RazaComponent', 'selector': 'app-raza'},{'name': 'RegisterAssociationComponent', 'selector': 'app-register-association'},{'name': 'RegisterUserComponent', 'selector': 'app-register-user'},{'name': 'TipoAnimalComponent', 'selector': 'app-tipo-animal'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'PerfilAnimalComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'PerfilAnimalComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
