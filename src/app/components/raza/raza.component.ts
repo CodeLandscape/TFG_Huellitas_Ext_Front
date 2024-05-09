@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import {TipoAnimalServiceService} from '../../services/tipo-animal-service.service';
 import {TipoAnimal} from '../../models/tipoAnimal';
 import Swal from 'sweetalert2';
@@ -17,7 +18,16 @@ export class RazaComponent implements OnInit {
   tipoAnimal: TipoAnimal;
   editRazaId: number;
   editRazaName: string;
-  constructor(private tipoAnimalServ: TipoAnimalServiceService, private route: ActivatedRoute, private razaService: RazaService) { }
+
+  addRazaForm = this.fb.group({
+    newRaza: ['', Validators.required]
+  });
+
+  editRazaForm = this.fb.group({
+    editRazaName: ['', Validators.required]
+  });
+
+  constructor(private fb: FormBuilder, private tipoAnimalServ: TipoAnimalServiceService, private route: ActivatedRoute, private razaService: RazaService) { }
 
   ngOnInit(): void {
     this.getTipoAnimal();
@@ -39,7 +49,16 @@ export class RazaComponent implements OnInit {
     });
   }
 
-  addRaza(nombre: string): void {
+  addRaza(): void {
+    const nombre = this.addRazaForm.get('newRaza').value;
+    if (this.razas.some(raza => raza.nombre.toLowerCase() === nombre.toLowerCase())) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'La raza ya existe',
+      });
+      return;
+    }
     const raza = new Raza(nombre);
     raza.idTipoAnimal = +this.route.snapshot.params['id'];
     this.razaService.addRaza(raza).subscribe(() => {
@@ -78,6 +97,7 @@ export class RazaComponent implements OnInit {
   editRaza(nombre: string): void {
     this.razaService.getRazaById(this.editRazaId).subscribe(raza => {
       raza.nombre = nombre;
+      this.editRazaForm.patchValue({editRazaName: nombre});
       this.razaService.updateRaza(raza).subscribe(() => {
         Swal.fire({
           icon: 'success',
@@ -93,6 +113,8 @@ export class RazaComponent implements OnInit {
     // Set the values of the raza to be edited
     this.editRazaId = raza.id;
     this.editRazaName = raza.nombre;
+
+    this.editRazaForm.patchValue({editRazaName: this.editRazaName});
 
   }
 
