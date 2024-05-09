@@ -53,7 +53,7 @@ export class FormEditarAnimalComponent implements OnInit {
       fechaLlegadaAsoc: [''],
       observaciones: [''],
       raza: [''],
-      imagen: ['', [Validators.required, this.fileExtensionValidator(['jpeg', 'jpg', 'png'])]]
+       imagen: ['', [this.fileExtensionValidator(['jpeg', 'jpg', 'png'])]]
     });
   }
   // Validador personalizado para la extensión del archivo
