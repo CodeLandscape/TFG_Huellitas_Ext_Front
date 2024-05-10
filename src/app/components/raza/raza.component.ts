@@ -71,6 +71,7 @@ export class RazaComponent implements OnInit {
         title: 'Raza añadida',
         text: 'La raza ha sido añadida con éxito',
       });
+      $('#addRazaModal').modal('hide');
       this.getRazaByTipoAnimal(); // Actualizar la lista de razas
     });
   }
