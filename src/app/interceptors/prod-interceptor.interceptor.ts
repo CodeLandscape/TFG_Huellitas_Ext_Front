@@ -12,7 +12,6 @@ export class ProdInterceptorService implements HttpInterceptor {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    console.log('Interceptor');
     let intReq = req;
     const token = this.tokenService.getToken();
     if (token) {

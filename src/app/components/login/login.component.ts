@@ -47,21 +47,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.loginUsuario).subscribe(
       data => {
         this.tokenService.setToken(data.token);
-        if (data.sub) {
-          // this.userService.getUsuarioPorEmail(data.nombreUsuario).subscribe(
-          //   user => {
-          //     // this.comunService.setUsuarioAutenticado(user);
-          //     this.comunService.setUserLoggedIn(true);
-          //     this.router.navigate(['/listadoAnimales']);
-          //   },
-          //   err => {
-          //     console.log(err);
-          //   }
-          // );
-        } else {
-          console.log(data);
-          console.log('Email no está presente en la respuesta del servidor');
-        }
+        this.router.navigate(['/listadoAnimales']);
       },
       err => {
         this.loginForm.setErrors({ invalidCredentials: true });

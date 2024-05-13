@@ -18,7 +18,6 @@ export class TokenService {
   public setToken(token: string): void {
     this.cookieService.delete(this.TOKEN_KEY);
     this.cookieService.set(this.TOKEN_KEY, token);
-    this.auth.setToken(token.replace('Bearer ', ''));
   }
 
   public getToken(): string {

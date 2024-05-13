@@ -29,6 +29,7 @@ import { PerfilAnimalComponent } from './components/perfil-animal/perfil-animal.
 import { TipoAnimalComponent } from './components/tipo-animal/tipo-animal.component';
 import { RazaComponent } from './components/raza/raza.component';
 import {AuthTokenService} from './services/auth-token.service';
+import {interceptorProvider} from './interceptors/prod-interceptor.interceptor';
 
 
 
@@ -36,6 +37,7 @@ import {AuthTokenService} from './services/auth-token.service';
   declarations: [AppComponent, LoginComponent, RegisterUserComponent, RegisterAssociationComponent, FormPerfilAsociacionComponent, FormPerfilPersonaComponent, PerfilComponent, NavbarComponent, ListAssociationsComponent, AnimalComponent, FormCrearAnimalComponent, PaginacionComponent, FormEditarAnimalComponent, PerfilAnimalComponent, TipoAnimalComponent, RazaComponent  ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule, NgSelectModule],
   providers: [
+    interceptorProvider,
     AuthTokenService,
     ComunService,
     HttpClient,
