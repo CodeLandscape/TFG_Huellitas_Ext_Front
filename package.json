@@ -24,6 +24,7 @@
     "@auth0/angular-jwt": "^3.0.1",
     "@ng-select/ng-select": "^9.1.0",
     "ng2-cookies": "^1.0.12",
+    "ngx-cookie-service": "^17.1.0",
     "node-sass": "^5.0.0",
     "rxjs": "~6.6.7",
     "sweetalert2": "^11.10.8",
