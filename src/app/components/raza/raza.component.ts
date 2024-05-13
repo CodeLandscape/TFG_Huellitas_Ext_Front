@@ -7,11 +7,15 @@ import {Raza} from '../../models/raza';
 import {ActivatedRoute} from '@angular/router';
 import {RazaService} from '../../services/raza.service';
 
+declare var $: any;
+
 @Component({
   selector: 'app-raza',
   templateUrl: './raza.component.html',
   styleUrls: ['./raza.component.css']
 })
+
+
 export class RazaComponent implements OnInit {
   razas: Raza[] = [];
 
@@ -67,6 +71,7 @@ export class RazaComponent implements OnInit {
         title: 'Raza añadida',
         text: 'La raza ha sido añadida con éxito',
       });
+      $('#addRazaModal').modal('hide');
       this.getRazaByTipoAnimal(); // Actualizar la lista de razas
     });
   }
@@ -94,16 +99,17 @@ export class RazaComponent implements OnInit {
       }
     });
   }
-  editRaza(nombre: string): void {
+  editRaza(): void {
     this.razaService.getRazaById(this.editRazaId).subscribe(raza => {
-      raza.nombre = nombre;
-      this.editRazaForm.patchValue({editRazaName: nombre});
+      raza.nombre = this.editRazaForm.get('editRazaName').value;
+      raza.idTipoAnimal = raza.tipoAnimal.id;
       this.razaService.updateRaza(raza).subscribe(() => {
         Swal.fire({
           icon: 'success',
           title: 'Raza actualizada',
           text: 'La raza ha sido actualizada con éxito',
         });
+        $('#editRazaModal').modal('hide');
         this.getRazaByTipoAnimal(); // Actualizar la lista de razas
       });
     });
