@@ -4,4 +4,5 @@ export class JwtDTO {
   id: number;
   activo: boolean;
   exp: number;
+  token: string;
 }

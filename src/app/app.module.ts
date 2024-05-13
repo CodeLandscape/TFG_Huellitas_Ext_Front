@@ -6,9 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
 /* Services / Providers */
-// import { AuthTokenService } from './services/authToken.service';
 import { HttpClient } from '@angular/common/http';
-// import { ComunService } from './services/comun.service';
+import { ComunService } from './services/comun.service';
 import { ConfigService } from './services/config.service';
 import { CookieService } from 'ng2-cookies';
 import {AppComponent} from './app.component';
@@ -29,6 +28,7 @@ import {FormEditarAnimalComponent} from './components/form-editar-animal/form-ed
 import { PerfilAnimalComponent } from './components/perfil-animal/perfil-animal.component';
 import { TipoAnimalComponent } from './components/tipo-animal/tipo-animal.component';
 import { RazaComponent } from './components/raza/raza.component';
+import {AuthTokenService} from './services/auth-token.service';
 
 
 
@@ -36,8 +36,8 @@ import { RazaComponent } from './components/raza/raza.component';
   declarations: [AppComponent, LoginComponent, RegisterUserComponent, RegisterAssociationComponent, FormPerfilAsociacionComponent, FormPerfilPersonaComponent, PerfilComponent, NavbarComponent, ListAssociationsComponent, AnimalComponent, FormCrearAnimalComponent, PaginacionComponent, FormEditarAnimalComponent, PerfilAnimalComponent, TipoAnimalComponent, RazaComponent  ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule, NgSelectModule],
   providers: [
-    // AuthTokenService,
-    // ComunService,
+    AuthTokenService,
+    ComunService,
     HttpClient,
     CookieService,
     ConfigService,
