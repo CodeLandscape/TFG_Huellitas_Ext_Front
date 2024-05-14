@@ -9,6 +9,8 @@ import {LoginUsuario} from '../../dto/auth/login-usuario';
 import {TokenService} from '../../services/token.service';
 import {AuthService} from '../../services/auth.service';
 import {ComunService} from '../../services/comun.service';
+import {CookieService} from 'ngx-cookie-service';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -21,13 +23,15 @@ export class LoginComponent implements OnInit {
   showPassword = false;
   loginUsuario: LoginUsuario;
   // tslint:disable-next-line:max-line-length
-  constructor(private router: Router, private comunService: ComunService, private usuariosService: UsuariosServicesService, private formBuilder: FormBuilder, private tokenService: TokenService, private authService: AuthService) {
+  constructor(private router: Router, private comunService: ComunService, private usuariosService: UsuariosServicesService, private formBuilder: FormBuilder, private tokenService: TokenService, private authService: AuthService, private cookieService: CookieService) {
   }
 
   ngOnInit(): void {
     this.authService.isAuthenticated().subscribe(isAuthenticated => {
       if (isAuthenticated) {
         this.router.navigate(['/listadoAnimales']);
+      } else {
+        this.cookieService.delete(environment.TOKEN_KEY);
       }
     });
 
