@@ -59,14 +59,19 @@ export class RegisterAssociationComponent implements OnInit {
       idProvincia: this.registerAssociation.value.provincia,
     };
 
-    this.authService.registerAssociation(this.association);
-    this.router.navigate(['/login']);
-
-    Swal.fire({
-      icon: 'success',
-      title: 'Solicitud de registro enviada',
-      text: 'El registro de su asociación será aprobado por un administrador',
-    });
+    this.authService.registerAssociation(this.association).subscribe(
+      () => {
+        this.router.navigate(['/login']);
+        Swal.fire({
+          icon: 'success',
+          title: 'Solicitud de registro enviada',
+          text: 'El registro de su asociación será aprobado por un administrador',
+        });
+      },
+      (error) => {
+        Swal.fire('Error', error.error, 'error');
+      }
+    );
   }
 
   passwordsMismatch() {

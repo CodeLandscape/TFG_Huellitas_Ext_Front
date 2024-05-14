@@ -6,9 +6,11 @@ import {environment} from '../../environments/environment';
 import {CookieService} from 'ngx-cookie-service';
 import {Router} from '@angular/router';
 import {JwtDTO} from '../dto/auth/jwt-dto';
-import {Observable, of} from 'rxjs';
+import {Observable, of, throwError} from 'rxjs';
 import {LoginUsuario} from '../dto/auth/login-usuario';
 import {catchError, map} from 'rxjs/operators';
+import Swal from 'sweetalert2';
+
 
 @Injectable({
   providedIn: 'root'
@@ -18,26 +20,20 @@ export class AuthService {
   constructor(private http: HttpClient, private cookieService: CookieService, private router: Router) { }
 
   registerAssociation(association: AssociationRegister) {
-    return this.http.post<void>(`${this.apiUrl}/register-association` , association).subscribe(
-      () => {
-        console.log('Asociación registrado correctamente.');
-      },
-      (error) => {
-        console.error('Error al registrar asociación:', error);
-      }
-    );
-  }
-  registerUser(user: UserRegister) {
-    return this.http.post<void>(`${this.apiUrl}/register-user` , user).subscribe(
-      () => {
-        console.log('Usuario registrado correctamente.');
-      },
-      (error) => {
-        console.error('Error al registrar usuario:', error);
-      }
+    return this.http.post<void>(`${this.apiUrl}/register-association` , association).pipe(
+      catchError((error) => {
+        return throwError(error);
+      })
     );
   }
 
+  registerUser(user: UserRegister) {
+    return this.http.post<void>(`${this.apiUrl}/register-user` , user).pipe(
+      catchError((error) => {
+        return throwError(error);
+      })
+    );
+  }
   public login(loginUsuario: LoginUsuario): Observable<JwtDTO>{
     console.log(loginUsuario);
 

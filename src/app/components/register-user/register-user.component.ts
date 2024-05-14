@@ -66,13 +66,19 @@ export class RegisterUserComponent implements OnInit {
     };
 
     console.log(this.user);
-    this.authService.registerUser(this.user);
-    this.router.navigate(['/login']);
-    Swal.fire({
-      icon: 'success',
-      title: 'Usuario registrado',
-      text: 'Se ha registrado correctamente',
-    });
+    this.authService.registerUser(this.user).subscribe(
+      () => {
+        this.router.navigate(['/login']);
+        Swal.fire({
+          icon: 'success',
+          title: 'Usuario registrado',
+          text: 'Su usuario ha sido registrado correctamente. Inicie sesión para acceder. ',
+        });
+      },
+      (error) => {
+        Swal.fire('Error', error.error, 'error');
+      }
+    );
   }
 
   // Función para validar el formato de un DNI español
