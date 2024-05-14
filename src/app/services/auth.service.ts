@@ -51,17 +51,17 @@ export class AuthService {
     this.router.navigate(['/login']);
   }
 
-  // isAuthenticated() {
-  //   return this.http.get('http://localhost:8080/comun-api/usuarios/authenticate').pipe(
-  //     map(response => {
-  //       return true;
-  //     }),
-  //     catchError(error => {
-  //       this.router.navigate(['/login']);
-  //       return of(false);
-  //     })
-  //   );
-  // }
+  isAuthenticated() {
+    return this.http.get(environment.api.url + '/usuario/authenticate').pipe(
+      map(response => {
+        return true;
+      }),
+      catchError(error => {
+        this.router.navigate(['/login']);
+        return of(false);
+      })
+    );
+  }
 
 
 }

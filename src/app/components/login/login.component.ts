@@ -25,9 +25,10 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.usuariosService.getUsuarios().subscribe(usuarios => {
-      this.usuarios = usuarios;
-      console.log(this.usuarios);
+    this.authService.isAuthenticated().subscribe(isAuthenticated => {
+      if (isAuthenticated) {
+        this.router.navigate(['/listadoAnimales']);
+      }
     });
 
     this.loginForm = this.formBuilder.group({
@@ -50,35 +51,13 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/listadoAnimales']);
       },
       err => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Acceso denegado',
+          text: err.error.code.value === 1010 ? 'Usuario inactivo' : 'Usuario o contraseña incorrectos',
+        });
         this.loginForm.setErrors({ invalidCredentials: true });
       }
     );
-
-
-  // onSubmit() {
-  //   const usuario = this.usuarios.find(u => u.correo === this.loginForm.value.email && u.password === this.loginForm.value.password);
-  //   if (usuario) {
-  //     if (usuario.activo) {
-  //       this.router.navigate(['/listadoAnimales']);
-  //       Swal.fire({
-  //         icon: 'success',
-  //         title: 'Acceso exitoso',
-  //         text: 'Has accedido correctamente',
-  //       });
-  //     } else {
-  //       Swal.fire({
-  //         icon: 'error',
-  //         title: 'Acceso denegado',
-  //         text: 'Usuario inactivo',
-  //       });
-  //     }
-  //   } else {
-  //     Swal.fire({
-  //       icon: 'error',
-  //       title: 'Acceso denegado',
-  //       text: 'Usuario o contraseña incorrectos',
-  //     });
-  //   }
-  // }
 }
 }
