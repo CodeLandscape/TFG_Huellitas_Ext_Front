@@ -1,5 +1,5 @@
 <ng-container>
   <app-navbar *ngIf="router.url !== '/login'"></app-navbar>
   <router-outlet></router-outlet>
-<!--  <app-footer></app-footer>-->
+  <app-footer *ngIf="router.url !== '/login'"></app-footer>
 </ng-container>
