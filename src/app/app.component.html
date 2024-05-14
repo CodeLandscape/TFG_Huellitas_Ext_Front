@@ -1,5 +1,9 @@
 <ng-container>
-  <app-navbar *ngIf="router.url !== '/login'"></app-navbar>
+  <app-navbar
+    *ngIf="router.url !== '/login' && router.url !== '/register-user' && router.url !== '/register-association'">
+  </app-navbar>
   <router-outlet></router-outlet>
-  <app-footer *ngIf="router.url !== '/login'"></app-footer>
+  <app-footer
+    *ngIf="router.url !== '/login' && router.url !== '/register-user' && router.url !== '/register-association'">
+  </app-footer>
 </ng-container>

@@ -1,6 +1,6 @@
 <div class="d-flex flex-column justify-content-center align-items-center vh-100">
   <div class="d-flex justify-content-center mb-4">
-    <img src="assets/imgs/huellitasLogo2.png" alt="Sample image" class="img-fluid"/>
+    <img src="assets/imgs/huellitasLogo2.png" alt="Sample image" class="img-fluid w-75"/>
   </div>
   <form [formGroup]="loginForm" (ngSubmit)="login()">
     <!-- Email input -->
@@ -21,7 +21,9 @@
       </div>
     </div>
     <!-- Submit button -->
-    <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4" [disabled]="!loginForm.valid">Acceder</button>
+    <div class="text-center">
+      <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4" [disabled]="!loginForm.valid">Acceder</button>
+    </div>
 
     <!-- Register buttons -->
     <div class="text-center">
