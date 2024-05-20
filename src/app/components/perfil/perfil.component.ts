@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {TokenService} from '../../services/token.service';
+import {AuthTokenService} from '../../services/auth-token.service';
 
 @Component({
   selector: 'app-perfil',
@@ -8,11 +10,11 @@ import {Component, OnInit} from '@angular/core';
 export class PerfilComponent implements OnInit {
   isPerson: boolean;
 
-  constructor() {
+  constructor(private tokenService: TokenService) {
   }
 
   ngOnInit(): void {
-    this.isPerson = true;
+    this.isPerson = this.tokenService.getTokenData().roles === 'ROLE_USER';
   }
 
 }

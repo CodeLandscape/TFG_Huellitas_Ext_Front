@@ -8,6 +8,8 @@ import {Page} from '../../models/page';
 import {Raza} from '../../models/raza';
 import {TipoService} from '../../services/tipo.service';
 import {DomSanitizer} from '@angular/platform-browser';
+import {AuthTokenService} from '../../services/auth-token.service';
+import {TokenService} from '../../services/token.service';
 
 declare var $: any;
 
@@ -19,6 +21,7 @@ declare var $: any;
 export class AnimalComponent implements OnInit {
 
   formGroupAnimal!: FormGroup;
+  isAsoc: boolean;
   animales: Animal[] = [];
   razasFilter: any[] = [];
   tiposFilter: any[] = [];
@@ -31,10 +34,12 @@ export class AnimalComponent implements OnInit {
               private razaService: RazaService,
               private tipoService: TipoService,
               private formBuilder: FormBuilder,
-              private sanitizer: DomSanitizer) {
+              private sanitizer: DomSanitizer,
+              private authTokenService: TokenService) {
   }
 
   ngOnInit(): void {
+    this.isAsoc = this.authTokenService.getTokenData().roles === 'ROLE_ASOC';
     this.cargarFiltros();
     this.crearFormAnimal();
     this.cargarAnimales(0);

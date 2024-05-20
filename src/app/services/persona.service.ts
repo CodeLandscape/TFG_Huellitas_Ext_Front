@@ -15,14 +15,14 @@ export class PersonaService {
   ) { }
 
   getPersonaSesion(): Observable<Persona> {
-    return this.http.get<Persona>('http://localhost:8080/api-backend/persona/' + 1);
+    return this.http.get<Persona>('http://localhost:8080/api-backend/persona/sesion');
   }
 
-  actualizarPersona(id: number, value: any) {
-    return this.http.put('http://localhost:8080/api-backend/usuario/' + id, value);
+  actualizarPersona(value: any) {
+    return this.http.put('http://localhost:8080/api-backend/usuario/update', value);
   }
 
   darDeBaja(id: number) {
-    return this.http.put('http://localhost:8080/api-backend/usuario/baja/' + id, null);
+    return this.http.put('http://localhost:8080/api-backend/usuario/baja-sesion/', null);
   }
 }

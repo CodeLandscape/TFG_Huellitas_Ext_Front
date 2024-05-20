@@ -84,9 +84,6 @@ export class FormCrearAnimalComponent implements OnInit {
       });
     }
 
-    // Esto se va a sacar del token en el futuro ahora está a lo cutre
-    this.formGroupAnimal.value.asociacion = {id: 1};
-
 
     this.animalService.guardarAnimal(this.formGroupAnimal.value).subscribe((data: Animal) => {
       this.idAnimal = data.id;

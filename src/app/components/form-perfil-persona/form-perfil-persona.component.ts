@@ -6,6 +6,7 @@ import {ProvinciaService} from '../../services/provincia.service';
 import {PersonaService} from '../../services/persona.service';
 import Swal from 'sweetalert2';
 import {Router} from '@angular/router';
+import {AuthService} from '../../services/auth.service';
 
 @Component({
   selector: 'app-form-perfil-persona',
@@ -25,7 +26,8 @@ export class FormPerfilPersonaComponent implements OnInit {
     private provinciaService: ProvinciaService,
     private usuarioService: PersonaService,
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) {
   }
 
@@ -93,7 +95,7 @@ export class FormPerfilPersonaComponent implements OnInit {
         this.persona.usuario.poblacion = this.form.get('poblacion')?.value;
         this.persona.usuario.provincia.id = this.form.get('provincia')?.value;
 
-        this.usuarioService.actualizarPersona(this.persona.usuario.id, this.persona.usuario).subscribe(() => {
+        this.usuarioService.actualizarPersona(this.persona.usuario).subscribe(() => {
           Swal.fire({
             title: '¡Guardado!',
             text: 'Los cambios se han guardado correctamente',
@@ -123,7 +125,7 @@ export class FormPerfilPersonaComponent implements OnInit {
             icon: 'success',
             confirmButtonText: 'Aceptar'
           });
-          this.router.navigate(['/']);
+          this.authService.logout();
         });
       }
     });

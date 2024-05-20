@@ -6,6 +6,7 @@ import {ProvinciaService} from '../../services/provincia.service';
 import {AsociacionService} from '../../services/asociacion.service';
 import Swal from 'sweetalert2';
 import {Router} from '@angular/router';
+import {AuthService} from '../../services/auth.service';
 
 @Component({
   selector: 'app-form-perfil-asociacion',
@@ -23,7 +24,8 @@ export class FormPerfilAsociacionComponent implements OnInit {
     private formBuilder: FormBuilder,
     private provinciaService: ProvinciaService,
     private asociacionService: AsociacionService,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) {
   }
 
@@ -90,7 +92,7 @@ export class FormPerfilAsociacionComponent implements OnInit {
         this.asociacion.usuario.poblacion = this.form.get('poblacion')?.value;
         this.asociacion.usuario.provincia.id = this.form.get('provincia')?.value;
 
-        this.asociacionService.actualizarAsociacion(this.asociacion.usuario.id, this.asociacion.usuario).subscribe(() => {
+        this.asociacionService.actualizarAsociacion(this.asociacion.usuario).subscribe(() => {
           Swal.fire('Cambios guardados', 'Los cambios se han guardado correctamente', 'success');
         });
       }
@@ -107,9 +109,9 @@ export class FormPerfilAsociacionComponent implements OnInit {
       cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.asociacionService.darDeBaja(this.asociacion.usuario.id).subscribe(() => {
+        this.asociacionService.darDeBajaSesion().subscribe(() => {
           Swal.fire('Baja realizada', 'Te has dado de baja correctamente', 'success');
-          this.router.navigate(['/']);
+          this.authService.logout();
         });
       }
     });

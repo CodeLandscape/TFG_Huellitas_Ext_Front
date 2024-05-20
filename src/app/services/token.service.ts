@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {environment} from '../../environments/environment';
 import {AuthTokenService} from './auth-token.service';
 import {CookieService} from 'ngx-cookie-service';
+import {JwtHelperService} from '@auth0/angular-jwt';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +23,15 @@ export class TokenService {
 
   public getToken(): string {
     return this.cookieService.get(this.TOKEN_KEY);
+  }
+
+  public getTokenData(): any {
+    const jwtHelper = new JwtHelperService();
+    if (!jwtHelper.isTokenExpired(this.getToken())) {
+      return jwtHelper.decodeToken(this.getToken());
+    } else {
+      return null;
+    }
   }
 
   public getUserName(): string {
