@@ -1,0 +1,27 @@
+
+<div class="row justify-content-center m-0" *ngIf="cargado">
+  <div *ngFor="let documento of documentos" class="col-md-4 mb-4">
+    <div class="card" style="background-color: azure;">
+      <div class="card-body text-center">
+        <img [src]="documento.imagen" class="card-img-top" style="height: 35vh; object-fit: cover;" alt="...">
+        <h5 class="card-title">{{ documento.nombre }}</h5>
+        <p class="card-text">{{ documento.descripcion }}</p>
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <button class="btn btn-danger w-100" (click)="deleteArchivo(documento.id)">Borrar Archivo</button>
+          </div>
+          <div class="col-md-6">
+            <button class="btn btn-success w-100" (click)="editarArchivo(documento.id)">Editar Archivo</button>
+          </div>
+        </div>
+        <div class="row justify-content-center mt-2">
+          <div class="col-md-12">
+            <button class="btn btn-primary w-100" (click)="descargarArchivo(documento.id)">Descargar Archivo</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h1 *ngIf="documentos.length === 0" class="text-center mt-5 mb-4" style="font-size: 3em;">No hay ningún resultado</h1>
+
+</div>
