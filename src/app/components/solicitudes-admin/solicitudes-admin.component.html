@@ -1,20 +1,28 @@
-<table id ="datatable" class="table table-striped table-bordered">
-  <thead>
-  <tr>
-    <th>Nombre del Animal</th>
-    <th>Correo de la Persona</th>
-    <th>Correo de la Asociación</th>
-    <th>Teléfono de la Persona</th>
-    <th>Estado</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let animalPersona of animalPersonas">
-    <td>{{ animalPersona.idAnimal.nombre }}</td>
-    <td>{{ animalPersona.idPersona.correo }}</td>
-    <td>{{ animalPersona.idAnimal.asociacion.usuario.correo }}</td>
-    <td>{{ animalPersona.idPersona.tlf }}</td>
-    <td>{{ animalPersona.estado ? 'Activo' : 'Inactivo' }}</td>
-  </tr>
-  </tbody>
-</table>
+<div class="container mt-4">
+  <h1 class="text-center m-5">Listado Solicitudes</h1>
+
+  <table id="datatable" class="table table-striped table-bordered">
+    <thead>
+    <tr>
+      <th>Nombre del Animal</th>
+      <th>Correo de la Persona</th>
+      <th>Correo de la Asociación</th>
+      <th>Teléfono de la Persona</th>
+      <th>Estado</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let animalPersona of animalPersonas">
+      <td>{{ animalPersona.idAnimal.nombre }}</td>
+      <td>{{ animalPersona.idPersona.correo }}</td>
+      <td>{{ animalPersona.idAnimal.asociacion.usuario.correo }}</td>
+      <td>{{ animalPersona.idPersona.tlf }}</td>
+      <td>
+        <span [ngClass]="{'badge rounded-pill bg-danger': !animalPersona.estado, 'badge rounded-pill bg-success text-white': animalPersona.estado || !animalPersona.estado}">
+        {{ animalPersona.estado ? 'Aceptada' : 'Pendiente' }}
+        </span>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

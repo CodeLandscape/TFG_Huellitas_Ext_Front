@@ -13,6 +13,7 @@ import {AnimalComponent} from './components/animal/animal.component';
 import {PerfilAnimalComponent} from './components/perfil-animal/perfil-animal.component';
 import {AuthGuard} from './guards/auth.guard';
 import {SolicitudesAdminComponent} from './components/solicitudes-admin/solicitudes-admin.component';
+import {SolicitudesUsuarioComponent} from './components/solicitudes-usuario/solicitudes-usuario.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' }, // Por defecto
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'raza/:id', component: RazaComponent, canActivate: [AuthGuard] },
   { path: 'animal/:id', component: PerfilAnimalComponent, canActivate: [AuthGuard] },
   { path: 'solicitudes-admin', component: SolicitudesAdminComponent, canActivate: [AuthGuard] },
+  { path: 'solicitudes-user', component: SolicitudesUsuarioComponent, canActivate: [AuthGuard] },
   { path: '**', component: LoginComponent }
 ];
 

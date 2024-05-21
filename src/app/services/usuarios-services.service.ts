@@ -12,4 +12,7 @@ export class UsuariosServicesService {
   getUsuarios() {
     return this.http.get<Usuario[]>('http://localhost:8080/api-backend/usuario/all');
   }
+  getUsuarioById(id: number) {
+    return this.http.get<Usuario>(`http://localhost:8080/api-backend/usuario/${id}`);
+  }
 }
