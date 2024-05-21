@@ -1,9 +1,13 @@
-
+<div class="d-flex justify-content-center">
+  <button type="button" class="btn btn-success m-3" data-bs-toggle="modal" data-bs-target="#modalSubirArchivo">
+    Añadir nuevo archivo
+  </button>
+</div>
 <div class="row justify-content-center m-0" *ngIf="cargado">
-  <div *ngFor="let documento of documentos" class="col-md-4 mb-4">
+  <div *ngFor="let documento of documentos" class="col-md-3 mb-4">
     <div class="card" style="background-color: azure;">
       <div class="card-body text-center">
-        <img [src]="documento.imagen" class="card-img-top" style="height: 35vh; object-fit: cover;" alt="...">
+        <img [src]="documento.imagen" class="card-img-top" style="height: 50vh; object-fit: cover;" alt="...">
         <h5 class="card-title">{{ documento.nombre }}</h5>
         <p class="card-text">{{ documento.descripcion }}</p>
         <div class="row justify-content-center">
@@ -25,3 +29,6 @@
   <h1 *ngIf="documentos.length === 0" class="text-center mt-5 mb-4" style="font-size: 3em;">No hay ningún resultado</h1>
 
 </div>
+
+<app-form-subir-archivo-asoc (recargar)="cargarDocumentos()"></app-form-subir-archivo-asoc>
+<app-form-editar-archivo-asoc (recargar)="cargarDocumentos()"></app-form-editar-archivo-asoc>

@@ -1,0 +1,54 @@
+<!-- Modal -->
+<div class="modal fade" id="modalSubirArchivo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Añadir nuevo animal</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <form [formGroup]="formGroupArchivo" *ngIf="cargado">
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" formControlName="nombre"
+                   [class.is-invalid]="validarCampo('nombre')">
+            <small class="form-text text-danger" *ngIf="validarCampo('nombre')">{{ getErrorCampo('nombre') }}</small>
+
+          </div>
+          <div class="mb-3">
+            <label for="descripcion" class="form-label">Descripción</label>
+            <textarea class="form-control" id="descripcion" formControlName="descripcion"
+                      [class.is-invalid]="validarCampo('descripcion')">
+            </textarea>
+            <small class="form-text text-danger" *ngIf="validarCampo('descripcion')">{{ getErrorCampo('descripcion') }}</small>
+          </div>
+          <div class="mb-3">
+            <label for="archivo" class="form-label">Añadir archivo</label>
+            <input type="file" class="form-control-file" formControlName="archivo" id="archivo" #fileInput
+                   accept=".pdf, .docx, .doc, .jpg, .jpeg, .png, .gif, .bmp, .webp" hidden (change)="onFileSelected($event)">
+            <div class="input-group-append">
+              <button class="btn btn-primary" type="button" (click)="fileInput.click()">
+                <i class="fas fa-plus"></i>Subir Archivo
+              </button>
+            </div>
+            <div
+              *ngIf="formGroupArchivo.get('archivo').invalid && (formGroupArchivo.get('archivo').dirty || formGroupArchivo.get('archivo').touched)"
+              class="text-danger">
+              <small *ngIf="formGroupArchivo.get('archivo').errors.required">El archivo es requerido</small>
+              <small *ngIf="formGroupArchivo.get('archivo').errors.invalidFileType">El archivo no tiene un formato válido.
+                .jpg o .png</small>
+            </div>
+            <div *ngIf="fileName" class="mt-2">{{ fileName }}</div>
+          </div>
+        </form>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="guardarArchivo()">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
