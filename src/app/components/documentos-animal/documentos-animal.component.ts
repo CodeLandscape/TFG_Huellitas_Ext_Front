@@ -1,0 +1,96 @@
+import { Component, OnInit } from '@angular/core';
+import {ArchivosAsociacionService} from '../../services/archivos-asociacion.service';
+import {DomSanitizer} from '@angular/platform-browser';
+import Swal from 'sweetalert2';
+import {ArchivosAnimalService} from '../../services/archivos-animal.service';
+import {ActivatedRoute} from '@angular/router';
+
+declare var $: any;
+@Component({
+  selector: 'app-documentos-animal',
+  templateUrl: './documentos-animal.component.html',
+  styleUrls: ['./documentos-animal.component.css']
+})
+export class DocumentosAnimalComponent implements OnInit {
+
+  cargado = false;
+  documentos: any[] = [];
+  idAnimal: number;
+  constructor(private archivosAnimalService: ArchivosAnimalService,
+              private sanitizer: DomSanitizer,
+              private route: ActivatedRoute) { }
+
+
+  ngOnInit(): void {
+    this.idAnimal = this.route.snapshot.params.id;
+    this.cargarDocumentos();
+  }
+
+  cargarDocumentos() {
+    this.archivosAnimalService.getDocumentosAnimal(this.idAnimal).subscribe(documentos => {
+      this.documentos = documentos;
+      this.documentos.forEach(documento => {
+        const extension = documento.ficheroNombre.split('.').pop();
+        if (this.isImage(extension)) {
+          this.archivosAnimalService.getDocumento(documento.id).subscribe(imagen => {
+            const blob = new Blob([imagen], {type: 'image/jpeg'});
+            const url = window.URL.createObjectURL(blob);
+            documento.imagen = this.sanitizer.bypassSecurityTrustUrl(url);
+          });
+        } else {
+          documento.imagen = '../assets/imgs/docs.png';
+        }
+      });
+      this.cargado = true;
+    });
+  }
+
+  deleteArchivo(id) {
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: 'No podrás recuperar este archivo',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, bórralo',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.archivosAnimalService.deleteDocumento(id).subscribe(() => {
+          this.cargarDocumentos();
+          Swal.fire(
+            '¡Borrado!',
+            'El archivo ha sido borrado',
+            'success'
+          );
+        });
+      }
+    });
+  }
+
+  editarArchivo(id) {
+    this.archivosAnimalService.setIdAEditar(id);
+    $('#modalEditarArchivo').modal('show');
+  }
+
+  descargarArchivo(id) {
+    this.archivosAnimalService.getDocumento(id).subscribe(data => {
+      const blob = new Blob([data], {type: 'application/octet-stream'});
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      // tslint:disable-next-line:no-shadowed-variable
+      const documento = this.documentos.find(documento => documento.id === id);
+      const extensionArchivo = documento.ficheroNombre.split('.').pop();
+      a.download = `${documento.nombre}.${extensionArchivo}`; // Añade la extensión al nombre del archivo
+      a.click();
+    });
+  }
+
+  isImage(extension: string): boolean {
+    const imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp'];
+    return imageExtensions.includes(extension.toLowerCase());
+  }
+
+}

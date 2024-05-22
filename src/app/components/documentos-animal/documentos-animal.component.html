@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-center">
-  <a class="btn btn-danger m-3" [routerLink]="['/perfil']">Volver al perfil</a>
+  <a class="btn btn-danger m-3" [routerLink]="['/animal',idAnimal]">Volver al perfil</a>
   <button type="button" class="btn btn-success m-3" data-bs-toggle="modal" data-bs-target="#modalSubirArchivo">
     Añadir nuevo archivo
   </button>
@@ -31,5 +31,5 @@
 
 </div>
 
-<app-form-subir-archivo-asoc (recargar)="cargarDocumentos()"></app-form-subir-archivo-asoc>
-<app-form-editar-archivo-asoc (recargar)="cargarDocumentos()"></app-form-editar-archivo-asoc>
+<app-form-subir-documento-animal [idAnimal]="idAnimal" (recargar)="cargarDocumentos()"></app-form-subir-documento-animal>
+<app-form-editar-documento-animal (recargar)="cargarDocumentos()"></app-form-editar-documento-animal>

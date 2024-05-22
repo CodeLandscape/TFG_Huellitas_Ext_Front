@@ -22,6 +22,7 @@ export class AnimalComponent implements OnInit {
 
   formGroupAnimal!: FormGroup;
   isAsoc: boolean;
+  idUsuario: number;
   animales: Animal[] = [];
   razasFilter: any[] = [];
   tiposFilter: any[] = [];
@@ -40,6 +41,7 @@ export class AnimalComponent implements OnInit {
 
   ngOnInit(): void {
     this.isAsoc = this.authTokenService.getTokenData().roles === 'ROLE_ASOC';
+    this.idUsuario = this.authTokenService.getTokenData().id;
     this.cargarFiltros();
     this.crearFormAnimal();
     this.cargarAnimales(0);

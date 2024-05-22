@@ -34,11 +34,13 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ArchivosAsociacionComponent } from './components/documentos-asociacion/archivos-asociacion.component';
 import { FormSubirArchivoAsocComponent } from './components/form-subir-archivo-asoc/form-subir-archivo-asoc.component';
 import { FormEditarArchivoAsocComponent } from './components/form-editar-archivo-asoc/form-editar-archivo-asoc.component';
-
+import { DocumentosAnimalComponent } from './components/documentos-animal/documentos-animal.component';
+import { FormSubirDocumentoAnimalComponent } from './components/form-subir-documento-animal/form-subir-documento-animal.component';
+import {FormEditarDocumentoAnimalComponent} from './components/form-editar-documento-animal/form-editar-documento-animal.component';
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterUserComponent, RegisterAssociationComponent, FormPerfilAsociacionComponent, FormPerfilPersonaComponent, PerfilComponent, NavbarComponent, ListAssociationsComponent, AnimalComponent, FormCrearAnimalComponent, PaginacionComponent, FormEditarAnimalComponent, PerfilAnimalComponent, TipoAnimalComponent, RazaComponent, FooterComponent, ArchivosAsociacionComponent, FormSubirArchivoAsocComponent, FormEditarArchivoAsocComponent  ],
+  declarations: [AppComponent, LoginComponent, RegisterUserComponent, RegisterAssociationComponent, FormPerfilAsociacionComponent, FormPerfilPersonaComponent, PerfilComponent, NavbarComponent, ListAssociationsComponent, AnimalComponent, FormCrearAnimalComponent, PaginacionComponent, FormEditarAnimalComponent, PerfilAnimalComponent, TipoAnimalComponent, RazaComponent, FooterComponent, ArchivosAsociacionComponent, FormSubirArchivoAsocComponent, FormEditarArchivoAsocComponent, DocumentosAnimalComponent, FormSubirDocumentoAnimalComponent, FormEditarDocumentoAnimalComponent  ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule, NgSelectModule],
   providers: [
     interceptorProvider,

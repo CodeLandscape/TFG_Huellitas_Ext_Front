@@ -13,6 +13,7 @@ import {AnimalComponent} from './components/animal/animal.component';
 import {PerfilAnimalComponent} from './components/perfil-animal/perfil-animal.component';
 import {AuthGuard} from './guards/auth.guard';
 import {ArchivosAsociacionComponent} from './components/documentos-asociacion/archivos-asociacion.component';
+import {DocumentosAnimalComponent} from './components/documentos-animal/documentos-animal.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' }, // Por defecto
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'raza/:id', component: RazaComponent, canActivate: [AuthGuard] },
   { path: 'animal/:id', component: PerfilAnimalComponent, canActivate: [AuthGuard] },
   { path: 'ArchivosAsociacion', component: ArchivosAsociacionComponent, canActivate: [AuthGuard] },
+  { path: 'animal/:id/documentos', component: DocumentosAnimalComponent, canActivate: [AuthGuard] },
   { path: '**', component: LoginComponent }
 ];
 
