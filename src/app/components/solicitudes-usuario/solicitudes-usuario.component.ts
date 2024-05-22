@@ -15,7 +15,9 @@ declare var $: any; // Declaración de jQuery
 })
 export class SolicitudesUsuarioComponent implements OnInit {
   animalPersonas: AnimalPersona[];
-  constructor(private animalPersonaService: AnimalPersonaServiceService, private comunService: ComunService, private personaService: PersonaService) { }
+  nombreUsuario: string; // Nueva propiedad para almacenar el nombre del usuario
+
+  constructor(private animalPersonaService: AnimalPersonaServiceService, protected comunService: ComunService, protected personaService: PersonaService) { }
   ngOnInit(): void {
     this.getAnimalPersonas();
     console.log('Solicitudes admin');
@@ -35,6 +37,7 @@ export class SolicitudesUsuarioComponent implements OnInit {
       this.personaService.getPersonaByUsuarioId(usuarioAutenticado.id).pipe(
         switchMap(persona => {
           console.log(persona);
+          this.nombreUsuario = persona.nombre; // Asignar el nombre del usuario
           return this.animalPersonaService.getAnimalPersonasByPersonaId(persona.id);
         })
       ).subscribe(

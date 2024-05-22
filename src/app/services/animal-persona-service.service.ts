@@ -31,4 +31,26 @@ export class AnimalPersonaServiceService {
       })
     );
   }
+
+  getAnimalPersonasByAsociacionId(id: number) {
+    return this.http.get<AnimalPersona[]>(`${this.apiUrl}/animalPersona/asociacion/${id}`).pipe(
+      catchError(err => {
+        console.error('Error al obtener los datos', err);
+        return throwError(err);
+      })
+    );
+  }
+
+  getAnimalPersonasByAnimalId(id: number) {
+    return this.http.get<AnimalPersona[]>(`${this.apiUrl}/animalPersona/${id}`).pipe(
+      catchError(err => {
+        console.error('Error al obtener los datos', err);
+        return throwError(err);
+      })
+    );
+  }
+
+  solicitarAdopcion(animalPersona: AnimalPersona) {
+    return this.http.post(`${this.apiUrl}/animalPersona/add`, animalPersona).pipe( catchError(err => { console.error('Error al solicitar la adopción', err); return throwError(err); }));
+  }
 }

@@ -33,11 +33,13 @@ import {interceptorProvider} from './interceptors/prod-interceptor.interceptor';
 import { FooterComponent } from './components/footer/footer.component';
 import { SolicitudesAdminComponent } from './components/solicitudes-admin/solicitudes-admin.component';
 import { SolicitudesUsuarioComponent } from './components/solicitudes-usuario/solicitudes-usuario.component';
+import { SolicitudesAnimalComponent } from './components/solicitudes-animal/solicitudes-animal.component';
+import { SolicitudesAsociacionComponent } from './components/solicitudes-asociacion/solicitudes-asociacion.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterUserComponent, RegisterAssociationComponent, FormPerfilAsociacionComponent, FormPerfilPersonaComponent, PerfilComponent, NavbarComponent, ListAssociationsComponent, AnimalComponent, FormCrearAnimalComponent, PaginacionComponent, FormEditarAnimalComponent, PerfilAnimalComponent, TipoAnimalComponent, RazaComponent, FooterComponent, SolicitudesAdminComponent, SolicitudesUsuarioComponent  ],
+  declarations: [AppComponent, LoginComponent, RegisterUserComponent, RegisterAssociationComponent, FormPerfilAsociacionComponent, FormPerfilPersonaComponent, PerfilComponent, NavbarComponent, ListAssociationsComponent, AnimalComponent, FormCrearAnimalComponent, PaginacionComponent, FormEditarAnimalComponent, PerfilAnimalComponent, TipoAnimalComponent, RazaComponent, FooterComponent, SolicitudesAdminComponent, SolicitudesUsuarioComponent, SolicitudesAnimalComponent, SolicitudesAsociacionComponent  ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule, NgSelectModule],
   providers: [
     interceptorProvider,
