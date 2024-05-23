@@ -17,19 +17,16 @@ export class SolicitudesAdminComponent implements OnInit {
     console.log('Solicitudes admin');
   }
 
-  // tslint:disable-next-line:use-lifecycle-interface
-  ngAfterViewInit(): void {
-    // tslint:disable-next-line:only-arrow-functions
-    $(document).ready(function() {
-      $('.table').DataTable();
-    });
-  }
-
   getAnimalPersonas(): void {
     this.animalPersonaService.getAnimalPersonas().subscribe(
       animalPersonas => {
         this.animalPersonas = animalPersonas;
         console.log(this.animalPersonas);
+        // Inicializar la DataTable después de que los datos estén disponibles
+        // tslint:disable-next-line:only-arrow-functions
+        $(document).ready(function() {
+          $('.table').DataTable();
+        });
       }
     );
   }

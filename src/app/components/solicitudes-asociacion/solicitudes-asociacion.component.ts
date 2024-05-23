@@ -5,6 +5,7 @@ import {ComunService} from '../../services/comun.service';
 import {PersonaService} from '../../services/persona.service';
 import {switchMap} from 'rxjs/operators';
 import {AsociacionService} from '../../services/asociacion.service';
+import Swal from "sweetalert2";
 declare var $: any; // Declaración de jQuery
 
 @Component({
@@ -22,13 +23,7 @@ export class SolicitudesAsociacionComponent implements OnInit {
     console.log('Solicitudes admin');
   }
 
-  // tslint:disable-next-line:use-lifecycle-interface
-  ngAfterViewInit(): void {
-    // tslint:disable-next-line:only-arrow-functions
-    $(document).ready(function() {
-      $('.table').DataTable();
-    });
-  }
+
 
   getAnimalPersonas(): void {
     const usuarioAutenticado = this.comunService.getUsuarioAutenticado();
@@ -42,6 +37,10 @@ export class SolicitudesAsociacionComponent implements OnInit {
       ).subscribe(
         animalPersonas => {
           this.animalPersonas = animalPersonas;
+          // tslint:disable-next-line:only-arrow-functions
+          $(document).ready(function() {
+            $('.table').DataTable();
+          });
           console.log(this.animalPersonas);
         }
       );
@@ -51,10 +50,60 @@ export class SolicitudesAsociacionComponent implements OnInit {
   }
 
   aceptarSolicitud(id: number, id2: number) {
+    const animalPersona = new AnimalPersona();
+    animalPersona.idAnimal = {id: id};
+    animalPersona.idPersona = {id: id2};
 
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: 'Estás a punto de aceptar la solicitud',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, aceptar!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.animalPersonaService.aceptarSolicitud(animalPersona).subscribe(
+          response => {
+            console.log(response);
+            Swal.fire('Éxito', 'Solicitud aceptada con éxito', 'success');
+            this.getAnimalPersonas(); // Recargar los datos
+          },
+          error => {
+            Swal.fire('Error', 'Hubo un error al aceptar la solicitud', 'error');
+          }
+        );
+      }
+    });
   }
 
   rechazarSolicitud(id: number, id2: number) {
+    const animalPersona = new AnimalPersona();
+    animalPersona.idAnimal = {id: id};
+    animalPersona.idPersona = {id: id2};
 
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: 'Estás a punto de rechazar la solicitud',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, rechazar!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.animalPersonaService.rechazarSolicitud(animalPersona).subscribe(
+          response => {
+            console.log(response);
+            Swal.fire('Éxito', 'Solicitud rechazada con éxito', 'success');
+            this.getAnimalPersonas(); // Recargar los datos
+          },
+          error => {
+            Swal.fire('Error', 'Hubo un error al rechazar la solicitud', 'error');
+          }
+        );
+      }
+    });
   }
 }

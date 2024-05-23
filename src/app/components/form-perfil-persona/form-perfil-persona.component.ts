@@ -6,6 +6,7 @@ import {ProvinciaService} from '../../services/provincia.service';
 import {PersonaService} from '../../services/persona.service';
 import Swal from 'sweetalert2';
 import {Router} from '@angular/router';
+import {ComunService} from "../../services/comun.service";
 
 @Component({
   selector: 'app-form-perfil-persona',
@@ -25,12 +26,13 @@ export class FormPerfilPersonaComponent implements OnInit {
     private provinciaService: ProvinciaService,
     private usuarioService: PersonaService,
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private comunService: ComunService
   ) {
   }
 
   ngOnInit(): void {
-    this.usuarioService.getPersonaSesion().subscribe(persona => {
+    this.usuarioService.getPersonaByUsuarioId(this.comunService.getUsuarioAutenticado().id).subscribe(persona => {
       this.persona = persona;
       console.log(this.persona);
       this.cargarDatosFormulario();
@@ -46,7 +48,7 @@ export class FormPerfilPersonaComponent implements OnInit {
 
   private crearFormulario(persona: Persona) {
     this.form = this.formBuilder.group({
-      tlf: [persona.usuario.tlf, [Validators.required, Validators.pattern('^[0-9]{9}$')]],
+      tlf: [persona.usuario.tlf , [Validators.required, Validators.pattern('^[0-9]{9}$')]],
       direccion: [persona.usuario.direccion, [Validators.required, Validators.maxLength(100)]],
       poblacion: [persona.usuario.poblacion, [Validators.required, Validators.maxLength(100)]],
       provincia: [persona.usuario.provincia.id, [Validators.required]],

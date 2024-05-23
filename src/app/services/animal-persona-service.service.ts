@@ -53,4 +53,15 @@ export class AnimalPersonaServiceService {
   solicitarAdopcion(animalPersona: AnimalPersona) {
     return this.http.post(`${this.apiUrl}/animalPersona/add`, animalPersona).pipe( catchError(err => { console.error('Error al solicitar la adopción', err); return throwError(err); }));
   }
+
+  aceptarSolicitud(animalPersona: AnimalPersona) {
+    return this.http.put(`${this.apiUrl}/animalPersona/updateEstado`, animalPersona).pipe( catchError(err => { console.error('Error al aceptar la solicitud', err); return throwError(err); }));
+
+  }
+
+  rechazarSolicitud(animalPersona: AnimalPersona) {
+    // @ts-ignore
+    return this.http.put(`${this.apiUrl}/animalPersona/deleteSolicitud`, animalPersona).pipe( catchError(err => { console.error('Error al rechazar la solicitud', err); return throwError(err); }));
+  }
 }
+

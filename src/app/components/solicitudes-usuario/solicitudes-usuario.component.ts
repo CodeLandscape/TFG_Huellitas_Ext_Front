@@ -24,12 +24,7 @@ export class SolicitudesUsuarioComponent implements OnInit {
   }
 
   // tslint:disable-next-line:use-lifecycle-interface
-  ngAfterViewInit(): void {
-    // tslint:disable-next-line:only-arrow-functions
-    $(document).ready(function() {
-      $('.table').DataTable();
-    });
-  }
+
 
   getAnimalPersonas(): void {
     const usuarioAutenticado = this.comunService.getUsuarioAutenticado();
@@ -43,6 +38,10 @@ export class SolicitudesUsuarioComponent implements OnInit {
       ).subscribe(
         animalPersonas => {
           this.animalPersonas = animalPersonas;
+          // tslint:disable-next-line:only-arrow-functions
+          $(document).ready(function() {
+            $('.table').DataTable();
+          });
           console.log(this.animalPersonas);
         }
       );

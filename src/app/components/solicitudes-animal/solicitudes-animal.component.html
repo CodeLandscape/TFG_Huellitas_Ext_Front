@@ -21,8 +21,8 @@
       </td>
       <td>
         <span class="d-flex">
-          <button *ngIf="!animalPersona.estado" class="btn btn-success m-2" (click)="aceptarSolicitud(animalPersona.idAnimal.id, animalPersona.idPersona.id)">Aceptar</button>
-          <button *ngIf="!animalPersona.estado" class="btn btn-danger m-2" (click)="rechazarSolicitud(animalPersona.idAnimal.id, animalPersona.idPersona.id)">Rechazar</button>
+          <button *ngIf="!animalPersona.estado" class="btn btn-success m-2" (click)="aceptarSolicitud(animalPersona.id.idAnimal, animalPersona.id.idPersona)">Aceptar</button>
+          <button *ngIf="!animalPersona.estado" class="btn btn-danger m-2" (click)="rechazarSolicitud(animalPersona.id.idAnimal, animalPersona.id.idPersona)">Rechazar</button>
         </span>
       </td>
     </tr>
