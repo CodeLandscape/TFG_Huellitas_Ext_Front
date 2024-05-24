@@ -26,9 +26,10 @@ export class PersonaService {
     return this.http.get<Persona>('http://localhost:8080/api-backend/persona/usuario/' + id);
   }
 
-  actualizarPersona(id: number, value: any) {
-    return this.http.put('http://localhost:8080/api-backend/usuario/' + id, value);
+  actualizarPersona(value: any) {
+    return this.http.put('http://localhost:8080/api-backend/usuario/update', value);
   }
+
 
   darDeBaja(id: number) {
     return this.http.put('http://localhost:8080/api-backend/usuario/baja-sesion/', null);
