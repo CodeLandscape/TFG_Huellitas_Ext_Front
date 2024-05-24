@@ -2,6 +2,7 @@
   <div class="col-md-4 col-12">
     <img [src]="animal.imagen" class="img-fluid" alt="Imagen de {{ animal.nombre }}">
     <a class="btn btn-primary mt-3 w-100" [routerLink]="['/animal',animal.id,'documentos']">Ver documentos</a>
+    <button class="btn btn-primary w-100 mt-3" (click)="solicitarAdopcion()">Solicitar adopción</button>
   </div>
   <div class="col-md-8 col-12 p-3">
     <p class="h1">

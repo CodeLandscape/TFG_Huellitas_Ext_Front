@@ -18,8 +18,16 @@ export class PersonaService {
     return this.http.get<Persona>('http://localhost:8080/api-backend/persona/sesion');
   }
 
-  actualizarPersona(value: any) {
-    return this.http.put('http://localhost:8080/api-backend/usuario/update', value);
+  getPersonaById(id: number): Observable<Persona> {
+    return this.http.get<Persona>('http://localhost:8080/api-backend/persona/' + id);
+  }
+
+  getPersonaByUsuarioId(id: number): Observable<Persona> {
+    return this.http.get<Persona>('http://localhost:8080/api-backend/persona/usuario/' + id);
+  }
+
+  actualizarPersona(id: number, value: any) {
+    return this.http.put('http://localhost:8080/api-backend/usuario/' + id, value);
   }
 
   darDeBaja(id: number) {

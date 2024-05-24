@@ -38,4 +38,8 @@ export class AsociacionService {
   activarAsociacion(id: number) {
     return this.http.put('http://localhost:8080/api-backend/usuario/alta/' + id, null);
   }
+
+  getAsociacionByUsuarioId(id: number) {
+    return this.http.get<Asociacion>('http://localhost:8080/api-backend/asociacion/usuario/' + id);
+  }
 }

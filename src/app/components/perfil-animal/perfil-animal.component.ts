@@ -3,6 +3,12 @@ import {AnimalService} from '../../services/animal.service';
 import {Animal} from '../../models/animal';
 import {ActivatedRoute} from '@angular/router';
 import {DomSanitizer} from '@angular/platform-browser';
+import Swal from 'sweetalert2';
+import {AnimalPersona} from '../../models/animalPersona';
+import {ComunService} from '../../services/comun.service';
+import {AnimalPersonaServiceService} from '../../services/animal-persona-service.service';
+import {PersonaService} from '../../services/persona.service';
+import {switchMap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-perfil-animal',
@@ -12,16 +18,21 @@ import {DomSanitizer} from '@angular/platform-browser';
 export class PerfilAnimalComponent implements OnInit {
 
   animal: Animal;
+  animalPersona: AnimalPersona;
 
   constructor(private animalService: AnimalService,
               private route: ActivatedRoute,
-              private sanitizer: DomSanitizer) {
+              private sanitizer: DomSanitizer,
+              private comunService: ComunService,
+              private animalPersonaService: AnimalPersonaServiceService,
+              private personaService: PersonaService) {
   }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.cargarAnimal(params.id);
     });
+    this.animalPersona = new AnimalPersona(); // Initialize animalPersona
   }
 
   private cargarAnimal(id: any) {
@@ -32,6 +43,40 @@ export class PerfilAnimalComponent implements OnInit {
         const url = window.URL.createObjectURL(blob);
         this.animal.imagen = this.sanitizer.bypassSecurityTrustUrl(url);
       });
+    });
+  }
+
+  solicitarAdopcion() {
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: '¿Quieres solicitar la adopción de este animal?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, solicitar adopción!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.animalPersona = this.animalPersona || new AnimalPersona(); // Initialize animalPersona if it's not already
+        this.animalPersona.idAnimal = {id: this.route.snapshot.params.id}; // Initialize idAnimal before using it
+        const usuarioAutenticado = this.comunService.getUsuarioAutenticado();
+        console.log(usuarioAutenticado)
+        this.personaService.getPersonaByUsuarioId(usuarioAutenticado.id).pipe(
+          switchMap(persona => {
+            this.animalPersona.idPersona = {id: persona.id}; // Initialize idPersona inside switchMap
+            return this.animalPersonaService.solicitarAdopcion(this.animalPersona);
+          })
+        ).subscribe(
+          res => {
+            console.log(res);
+            Swal.fire(
+              '¡Solicitud enviada!',
+              'Tu solicitud de adopción ha sido enviada. Se te notificará en los próximos días si la asociación acepta o rechaza la solicitud. Si es aceptada, la asociación contactará contigo a través de tu correo o de tu móvil. ¡Gracias por tu interés!',
+              'success'
+            );
+          }
+        );
+      }
     });
   }
 }

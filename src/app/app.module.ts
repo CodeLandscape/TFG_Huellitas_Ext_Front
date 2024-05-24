@@ -38,11 +38,17 @@ import { DocumentosAnimalComponent } from './components/documentos-animal/docume
 import { FormSubirDocumentoAnimalComponent } from './components/form-subir-documento-animal/form-subir-documento-animal.component';
 import {FormEditarDocumentoAnimalComponent} from './components/form-editar-documento-animal/form-editar-documento-animal.component';
 import { AnimalesAsociacionComponent } from './components/animales-asociacion/animales-asociacion.component';
+import { SolicitudesAdminComponent } from './components/solicitudes-admin/solicitudes-admin.component';
+import { SolicitudesUsuarioComponent } from './components/solicitudes-usuario/solicitudes-usuario.component';
+import { SolicitudesAnimalComponent } from './components/solicitudes-animal/solicitudes-animal.component';
+import { SolicitudesAsociacionComponent } from './components/solicitudes-asociacion/solicitudes-asociacion.component';
+
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterUserComponent, RegisterAssociationComponent, FormPerfilAsociacionComponent, FormPerfilPersonaComponent, PerfilComponent, NavbarComponent, ListAssociationsComponent, AnimalComponent, FormCrearAnimalComponent, PaginacionComponent, FormEditarAnimalComponent, PerfilAnimalComponent, TipoAnimalComponent, RazaComponent, FooterComponent, ArchivosAsociacionComponent, FormSubirArchivoAsocComponent, FormEditarArchivoAsocComponent, DocumentosAnimalComponent, FormSubirDocumentoAnimalComponent, FormEditarDocumentoAnimalComponent, AnimalesAsociacionComponent  ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule, NgSelectModule],
+  // tslint:disable-next-line:max-line-length
+  declarations: [AppComponent, LoginComponent, RegisterUserComponent, RegisterAssociationComponent, FormPerfilAsociacionComponent, FormPerfilPersonaComponent, PerfilComponent, NavbarComponent, ListAssociationsComponent, AnimalComponent, FormCrearAnimalComponent, PaginacionComponent, FormEditarAnimalComponent, PerfilAnimalComponent, TipoAnimalComponent, RazaComponent, FooterComponent, ArchivosAsociacionComponent, FormSubirArchivoAsocComponent, FormEditarArchivoAsocComponent, DocumentosAnimalComponent, FormSubirDocumentoAnimalComponent, FormEditarDocumentoAnimalComponent, AnimalesAsociacionComponent, SolicitudesAdminComponent, SolicitudesUsuarioComponent, SolicitudesAnimalComponent, SolicitudesAsociacionComponent ],
+    imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule, NgSelectModule],
   providers: [
     interceptorProvider,
     AuthTokenService,
