@@ -1,11 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ArchivosAsociacionService} from '../../services/archivos-asociacion.service';
 import {DomSanitizer} from '@angular/platform-browser';
 import Swal from 'sweetalert2';
 import {ArchivosAnimalService} from '../../services/archivos-animal.service';
 import {ActivatedRoute} from '@angular/router';
+import {AuthTokenService} from '../../services/auth-token.service';
+import {AnimalService} from '../../services/animal.service';
+import {Animal} from '../../models/animal';
+import {AuthService} from '../../services/auth.service';
+import {TokenService} from '../../services/token.service';
 
 declare var $: any;
+
 @Component({
   selector: 'app-documentos-animal',
   templateUrl: './documentos-animal.component.html',
@@ -16,14 +22,26 @@ export class DocumentosAnimalComponent implements OnInit {
   cargado = false;
   documentos: any[] = [];
   idAnimal: number;
-  constructor(private archivosAnimalService: ArchivosAnimalService,
+  idAsociacionAnimal: number;
+  isAsoc: boolean;
+  idUsuario: number;
+
+  constructor(private animalesService: AnimalService,
+              private archivosAnimalService: ArchivosAnimalService,
               private sanitizer: DomSanitizer,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute,
+              private tokenService: TokenService) {
+  }
 
 
   ngOnInit(): void {
     this.idAnimal = this.route.snapshot.params.id;
     this.cargarDocumentos();
+    this.isAsoc = this.tokenService.getTokenData().roles === 'ROLE_ASOC';
+    this.idUsuario = this.tokenService.getTokenData().id;
+    this.animalesService.getAnimal(this.idAnimal).subscribe((animal: Animal) => {
+      this.idAsociacionAnimal = animal.asociacion.usuario.id;
+    });
   }
 
   cargarDocumentos() {

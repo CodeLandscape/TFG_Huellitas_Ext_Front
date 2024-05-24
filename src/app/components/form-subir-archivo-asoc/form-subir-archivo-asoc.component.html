@@ -36,8 +36,7 @@
               *ngIf="formGroupArchivo.get('archivo').invalid && (formGroupArchivo.get('archivo').dirty || formGroupArchivo.get('archivo').touched)"
               class="text-danger">
               <small *ngIf="formGroupArchivo.get('archivo').errors.required">El archivo es requerido</small>
-              <small *ngIf="formGroupArchivo.get('archivo').errors.invalidFileType">El archivo no tiene un formato válido.
-                .jpg o .png</small>
+              <small *ngIf="formGroupArchivo.get('archivo').errors.invalidFileType">El archivo no tiene un formato válido.</small>
             </div>
             <div *ngIf="fileName" class="mt-2">{{ fileName }}</div>
           </div>

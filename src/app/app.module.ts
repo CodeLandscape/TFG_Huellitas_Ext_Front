@@ -37,10 +37,11 @@ import { FormEditarArchivoAsocComponent } from './components/form-editar-archivo
 import { DocumentosAnimalComponent } from './components/documentos-animal/documentos-animal.component';
 import { FormSubirDocumentoAnimalComponent } from './components/form-subir-documento-animal/form-subir-documento-animal.component';
 import {FormEditarDocumentoAnimalComponent} from './components/form-editar-documento-animal/form-editar-documento-animal.component';
+import { AnimalesAsociacionComponent } from './components/animales-asociacion/animales-asociacion.component';
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterUserComponent, RegisterAssociationComponent, FormPerfilAsociacionComponent, FormPerfilPersonaComponent, PerfilComponent, NavbarComponent, ListAssociationsComponent, AnimalComponent, FormCrearAnimalComponent, PaginacionComponent, FormEditarAnimalComponent, PerfilAnimalComponent, TipoAnimalComponent, RazaComponent, FooterComponent, ArchivosAsociacionComponent, FormSubirArchivoAsocComponent, FormEditarArchivoAsocComponent, DocumentosAnimalComponent, FormSubirDocumentoAnimalComponent, FormEditarDocumentoAnimalComponent  ],
+  declarations: [AppComponent, LoginComponent, RegisterUserComponent, RegisterAssociationComponent, FormPerfilAsociacionComponent, FormPerfilPersonaComponent, PerfilComponent, NavbarComponent, ListAssociationsComponent, AnimalComponent, FormCrearAnimalComponent, PaginacionComponent, FormEditarAnimalComponent, PerfilAnimalComponent, TipoAnimalComponent, RazaComponent, FooterComponent, ArchivosAsociacionComponent, FormSubirArchivoAsocComponent, FormEditarArchivoAsocComponent, DocumentosAnimalComponent, FormSubirDocumentoAnimalComponent, FormEditarDocumentoAnimalComponent, AnimalesAsociacionComponent  ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule, NgSelectModule],
   providers: [
     interceptorProvider,

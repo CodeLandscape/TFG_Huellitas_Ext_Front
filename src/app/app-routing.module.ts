@@ -14,6 +14,7 @@ import {PerfilAnimalComponent} from './components/perfil-animal/perfil-animal.co
 import {AuthGuard} from './guards/auth.guard';
 import {ArchivosAsociacionComponent} from './components/documentos-asociacion/archivos-asociacion.component';
 import {DocumentosAnimalComponent} from './components/documentos-animal/documentos-animal.component';
+import {AnimalesAsociacionComponent} from './components/animales-asociacion/animales-asociacion.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' }, // Por defecto
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'list-associations', component: ListAssociationsComponent, canActivate: [AuthGuard] },
   { path: 'perfil', component: PerfilComponent, canActivate: [AuthGuard]},
   { path: 'listadoAnimales', component: AnimalComponent, canActivate: [AuthGuard]},
+  { path: 'animales-asociacion', component: AnimalesAsociacionComponent, canActivate: [AuthGuard]},
   { path: 'tipo-animal', component: TipoAnimalComponent, canActivate: [AuthGuard] },
   { path: 'raza/:id', component: RazaComponent, canActivate: [AuthGuard] },
   { path: 'animal/:id', component: PerfilAnimalComponent, canActivate: [AuthGuard] },

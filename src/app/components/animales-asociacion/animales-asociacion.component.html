@@ -1,3 +1,9 @@
+<!-- Button trigger modal -->
+<div class="d-flex justify-content-center" *ngIf="isAsoc">
+  <button type="button" class="btn btn-success m-3" data-bs-toggle="modal" data-bs-target="#modalAnadir">
+    Añadir nuevo animal
+  </button>
+</div>
 <div class="d-flex justify-content-center my-3">
   <form [formGroup]="formGroupAnimal" class="row w-75">
 
@@ -47,6 +53,14 @@
       <div class="card-body text-center">
         <img [src]="animal.imagen" class="card-img-top" style="height: 35vh; object-fit: cover;" alt="...">
         <h5 class="card-title">{{ animal.nombre }}</h5>
+        <div class="row justify-content-center" *ngIf="isAsoc && animal.asociacion.usuario.id == idUsuario">
+          <div class="col-md-6">
+            <button class="btn btn-danger w-100" (click)="deleteAnimal(animal.id)">Borrar Animal</button>
+          </div>
+          <div class="col-md-6">
+            <button class="btn btn-success w-100" (click)="editarAnimal(animal.id)">Editar Animal</button>
+          </div>
+        </div>
         <div class="row justify-content-center mt-2">
           <div class="col-md-12">
             <button class="btn btn-primary w-100" [routerLink]="['/animal',animal.id]">Ver perfil</button>
@@ -64,3 +78,7 @@
     </app-paginacion>
   </div>
 </div>
+
+
+<app-form-crear-animal (recargar)="recargarAnimales()"></app-form-crear-animal>
+<app-form-editar-animal (recargar)="recargarAnimales()"></app-form-editar-animal>

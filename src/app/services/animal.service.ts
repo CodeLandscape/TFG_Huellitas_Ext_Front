@@ -31,6 +31,22 @@ export class AnimalService {
     return this.http.get('http://localhost:8080/api-backend/animal/all', {params: params});
   }
 
+  getAnimalesAsociacion(pagina: number, filtro: any[]) {
+    let params = new HttpParams().set('page', pagina.toString());
+
+    params = params.set('filtrarPorAsociacion', true);
+
+    if (filtro && filtro.length > 0) {
+      filtro.forEach((param) => {
+        for (let key in param) {
+          params = params.set(key, param[key]);
+        }
+      });
+    }
+
+    return this.http.get('http://localhost:8080/api-backend/animal/all', {params: params});
+  }
+
   deleteAnimal(id: number) {
     return this.http.delete(`http://localhost:8080/api-backend/animal/delete/${id}`);
   }
