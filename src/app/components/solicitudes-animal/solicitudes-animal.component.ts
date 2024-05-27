@@ -7,7 +7,7 @@ import {switchMap} from 'rxjs/operators';
 import {AnimalService} from '../../services/animal.service';
 import {ActivatedRoute} from '@angular/router';
 import {Animal} from '../../models/animal';
-import Swal from "sweetalert2";
+import Swal from 'sweetalert2';
 declare var $: any;
 @Component({
   selector: 'app-solicitudes-animal',
@@ -18,10 +18,12 @@ export class SolicitudesAnimalComponent implements OnInit {
 
   animalPersonas: AnimalPersona[];
   nombreAnimal: string; // Nueva propiedad para almacenar el nombre de la asociacion
+  idAnimal: number;
   // tslint:disable-next-line:max-line-length
   constructor(private animalPersonaService: AnimalPersonaServiceService, protected comunService: ComunService, protected animalService: AnimalService, private route: ActivatedRoute) { }
   ngOnInit(): void {
     this.route.params.subscribe(params => {
+      this.idAnimal = params.id;
       this.getAnimalPersonas(params.id);
     });
     console.log('Solicitudes admin');

@@ -117,7 +117,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/models/provincia.ts</code>
+            <code>src/app/models/animalPersona.ts</code>
         </p>
 
 
@@ -138,9 +138,11 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Optional</span>
                                 <a href="#id" >id</a>
                             </li>
                             <li>
+                                    <span class="modifier">Optional</span>
                                 <a href="#nombre" >nombre</a>
                             </li>
                         </ul>
@@ -156,66 +158,6 @@
     </table>
 </section>
 
-            <section data-compodoc="block-constructor">
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-<code>constructor(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, nombre: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="3" class="link-to-prism">src/app/models/provincia.ts:3</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>id</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>nombre</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-</section>
 
             <section data-compodoc="block-properties">
     
@@ -228,6 +170,7 @@
                 <td class="col-md-4">
                     <a name="id"></a>
                     <span class="name">
+                            <span class="modifier">Optional</span>
                         <span ><b>id</b></span>
                         <a href="#id"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -241,7 +184,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="2" class="link-to-prism">src/app/models/provincia.ts:2</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/models/animalPersona.ts:12</a></div>
                         </td>
                     </tr>
 
@@ -254,6 +197,7 @@
                 <td class="col-md-4">
                     <a name="nombre"></a>
                     <span class="name">
+                            <span class="modifier">Optional</span>
                         <span ><b>nombre</b></span>
                         <a href="#nombre"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -267,7 +211,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="3" class="link-to-prism">src/app/models/provincia.ts:3</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/models/animalPersona.ts:13</a></div>
                         </td>
                     </tr>
 
@@ -286,14 +230,71 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export class Provincia {
-  id: number;
-  nombre: string;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export class Id {
+  idPersona?: number;
+  idAnimal?: number;
+}
 
-  constructor(id: number, nombre: string) {
-    this.id &#x3D; id;
-    this.nombre &#x3D; nombre;
-  }
+export class Rol {
+  id?: number;
+  nombre?: string;
+}
+
+export class Provincia {
+  id?: number;
+  nombre?: string;
+}
+
+export class Usuario {
+  id?: number;
+  provincia?: Provincia;
+  rol?: Rol;
+  correo?: string;
+  poblacion?: string;
+  password?: string;
+  direccion?: string;
+  tlf?: string;
+  activo?: boolean;
+}
+
+export class Asociacion {
+  id?: number;
+  nombre?: string;
+  usuario?: Usuario;
+  cif?: string;
+}
+
+export class Raza {
+  id?: number;
+  nombre?: string;
+  idTipoAnimal?: number;
+}
+
+export class Animal {
+  id?: number;
+  nombre?: string;
+  fechaNac?: string;
+  fechaLlegadaAsoc?: string;
+  observaciones?: string;
+  raza?: Raza;
+  asociacion?: Asociacion;
+  activo?: boolean;
+  fechaAdopcion?: string;
+}
+
+export class Persona {
+  id?: number;
+  nombre?: string;
+  correo?: string;
+  tlf?: string;
+}
+
+export class AnimalPersona {
+  id?: Id;
+  idPersona?: Persona;
+  idAnimal?: Animal;
+  fecha?: string;
+  estado?: boolean;
 }
 </code></pre>
     </div>

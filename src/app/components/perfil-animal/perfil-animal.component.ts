@@ -9,6 +9,7 @@ import {ComunService} from '../../services/comun.service';
 import {AnimalPersonaServiceService} from '../../services/animal-persona-service.service';
 import {PersonaService} from '../../services/persona.service';
 import {switchMap} from 'rxjs/operators';
+import {TokenService} from '../../services/token.service';
 
 @Component({
   selector: 'app-perfil-animal',
@@ -19,13 +20,17 @@ export class PerfilAnimalComponent implements OnInit {
 
   animal: Animal;
   animalPersona: AnimalPersona;
+  isUser = false;
+  isAsociacion = false;
+  idUsuario: number;
 
   constructor(private animalService: AnimalService,
               private route: ActivatedRoute,
               private sanitizer: DomSanitizer,
               private comunService: ComunService,
               private animalPersonaService: AnimalPersonaServiceService,
-              private personaService: PersonaService) {
+              private personaService: PersonaService,
+              private tokenService: TokenService) {
   }
 
   ngOnInit(): void {
@@ -33,6 +38,9 @@ export class PerfilAnimalComponent implements OnInit {
       this.cargarAnimal(params.id);
     });
     this.animalPersona = new AnimalPersona(); // Initialize animalPersona
+    this.isUser = this.tokenService.getTokenData().roles === 'ROLE_USER';
+    this.isAsociacion = this.tokenService.getTokenData().roles === 'ROLE_ASOC';
+    this.idUsuario = this.tokenService.getTokenData().id;
   }
 
   private cargarAnimal(id: any) {

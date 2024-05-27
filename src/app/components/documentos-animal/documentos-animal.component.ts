@@ -25,6 +25,7 @@ export class DocumentosAnimalComponent implements OnInit {
   idAsociacionAnimal: number;
   isAsoc: boolean;
   idUsuario: number;
+  nombreAnimal: string;
 
   constructor(private animalesService: AnimalService,
               private archivosAnimalService: ArchivosAnimalService,
@@ -40,6 +41,7 @@ export class DocumentosAnimalComponent implements OnInit {
     this.isAsoc = this.tokenService.getTokenData().roles === 'ROLE_ASOC';
     this.idUsuario = this.tokenService.getTokenData().id;
     this.animalesService.getAnimal(this.idAnimal).subscribe((animal: Animal) => {
+      this.nombreAnimal = animal.nombre;
       this.idAsociacionAnimal = animal.asociacion.usuario.id;
     });
   }

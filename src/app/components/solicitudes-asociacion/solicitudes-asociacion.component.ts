@@ -6,6 +6,7 @@ import {PersonaService} from '../../services/persona.service';
 import {switchMap} from 'rxjs/operators';
 import {AsociacionService} from '../../services/asociacion.service';
 import Swal from "sweetalert2";
+import {NavbarService} from '../../services/navbar.service';
 declare var $: any; // Declaración de jQuery
 
 @Component({
@@ -17,7 +18,7 @@ export class SolicitudesAsociacionComponent implements OnInit {
 
   animalPersonas: AnimalPersona[];
   nombreAsociacion: string; // Nueva propiedad para almacenar el nombre de la asociacion
-  constructor(private animalPersonaService: AnimalPersonaServiceService, protected comunService: ComunService, protected asociacionService: AsociacionService) { }
+  constructor(private animalPersonaService: AnimalPersonaServiceService, protected comunService: ComunService, protected asociacionService: AsociacionService, private navbarService: NavbarService) { }
   ngOnInit(): void {
     this.getAnimalPersonas();
     console.log('Solicitudes admin');
@@ -69,6 +70,7 @@ export class SolicitudesAsociacionComponent implements OnInit {
             console.log(response);
             Swal.fire('Éxito', 'Solicitud aceptada con éxito', 'success');
             this.getAnimalPersonas(); // Recargar los datos
+            this.navbarService.reload();
           },
           error => {
             Swal.fire('Error', 'Hubo un error al aceptar la solicitud', 'error');
@@ -98,6 +100,7 @@ export class SolicitudesAsociacionComponent implements OnInit {
             console.log(response);
             Swal.fire('Éxito', 'Solicitud rechazada con éxito', 'success');
             this.getAnimalPersonas(); // Recargar los datos
+            this.navbarService.reload();
           },
           error => {
             Swal.fire('Error', 'Hubo un error al rechazar la solicitud', 'error');

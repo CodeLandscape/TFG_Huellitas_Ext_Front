@@ -55,8 +55,16 @@ export class LoginComponent implements OnInit {
         this.usuariosService.getUsuarioById(data.id).subscribe(usuario => {
           this.comunService.setUsuarioAutenticado(usuario);
           console.log(this.comunService.getUsuarioAutenticado());
+          if (usuario.rol.nombre === 'ROLE_USER') {
+            this.router.navigate(['/listadoAnimales']);
+          }
+          if (usuario.rol.nombre === 'ROLE_ASOC') {
+            this.router.navigate(['/animales-asociacion']);
+          }
+          if (usuario.rol.nombre === 'ROLE_ADMIN') {
+            this.router.navigate(['/list-associations']);
+          }
         });
-        this.router.navigate(['/listadoAnimales']);
       },
       err => {
         Swal.fire({

@@ -149,6 +149,16 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#isAuthenticated" >isAuthenticated</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#login" >login</a>
+                            </li>
+                            <li>
+                                <a href="#logout" >logout</a>
+                            </li>
+                            <li>
                                 <a href="#registerAssociation" >registerAssociation</a>
                             </li>
                             <li>
@@ -172,12 +182,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(http: HttpClient)</code>
+<code>constructor(http: HttpClient, cookieService: CookieService, router: Router)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/services/auth.service.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/services/auth.service.ts:19</a></div>
                             </td>
                         </tr>
 
@@ -206,6 +216,30 @@
                                                     </td>
                                                     
                                                 </tr>
+                                                <tr>
+                                                        <td>cookieService</td>
+                                                  
+                                                        <td>
+                                                                    <code>CookieService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -220,6 +254,149 @@
     <h3 id="methods">
         Methods
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isAuthenticated"></a>
+                    <span class="name">
+                        <span ><b>isAuthenticated</b></span>
+                        <a href="#isAuthenticated"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isAuthenticated()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="50"
+                                    class="link-to-prism">src/app/services/auth.service.ts:50</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="login"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>login</b></span>
+                        <a href="#login"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>login(loginUsuario: <a href="../classes/LoginUsuario.html" target="_self">LoginUsuario</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="37"
+                                    class="link-to-prism">src/app/services/auth.service.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>loginUsuario</td>
+                                            <td>
+                                                            <code><a href="../classes/LoginUsuario.html" target="_self" >LoginUsuario</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/JwtDTO.html" target="_self" >Observable&lt;JwtDTO&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logout"></a>
+                    <span class="name">
+                        <span ><b>logout</b></span>
+                        <a href="#logout"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>logout()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="44"
+                                    class="link-to-prism">src/app/services/auth.service.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -240,8 +417,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="13"
-                                    class="link-to-prism">src/app/services/auth.service.ts:13</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="22"
+                                    class="link-to-prism">src/app/services/auth.service.ts:22</a></div>
                         </td>
                     </tr>
 
@@ -307,8 +484,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="23"
-                                    class="link-to-prism">src/app/services/auth.service.ts:23</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="30"
+                                    class="link-to-prism">src/app/services/auth.service.ts:30</a></div>
                         </td>
                     </tr>
 
@@ -385,7 +562,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/services/auth.service.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/services/auth.service.ts:19</a></div>
                         </td>
                     </tr>
 
@@ -402,34 +579,64 @@
 import {HttpClient} from &#x27;@angular/common/http&#x27;;
 import {UserRegister} from &#x27;../interfaces/user-register.interface&#x27;;
 import {AssociationRegister} from &#x27;../interfaces/associations-register.interface&#x27;;
+import {environment} from &#x27;../../environments/environment&#x27;;
+import {CookieService} from &#x27;ngx-cookie-service&#x27;;
+import {Router} from &#x27;@angular/router&#x27;;
+import {JwtDTO} from &#x27;../dto/auth/jwt-dto&#x27;;
+import {Observable, of, throwError} from &#x27;rxjs&#x27;;
+import {LoginUsuario} from &#x27;../dto/auth/login-usuario&#x27;;
+import {catchError, map} from &#x27;rxjs/operators&#x27;;
+import Swal from &#x27;sweetalert2&#x27;;
+
 
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
 export class AuthService {
   private apiUrl &#x3D; &#x27;http://localhost:8080/api-backend/auth&#x27;;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private cookieService: CookieService, private router: Router) { }
 
   registerAssociation(association: AssociationRegister) {
-    return this.http.post&lt;void&gt;(&#x60;${this.apiUrl}/register-association&#x60; , association).subscribe(
-      () &#x3D;&gt; {
-        console.log(&#x27;Asociación registrado correctamente.&#x27;);
-      },
-      (error) &#x3D;&gt; {
-        console.error(&#x27;Error al registrar asociación:&#x27;, error);
-      }
+    return this.http.post&lt;void&gt;(&#x60;${this.apiUrl}/register-association&#x60; , association).pipe(
+      catchError((error) &#x3D;&gt; {
+        return throwError(error);
+      })
     );
   }
+
   registerUser(user: UserRegister) {
-    return this.http.post&lt;void&gt;(&#x60;${this.apiUrl}/register-user&#x60; , user).subscribe(
-      () &#x3D;&gt; {
-        console.log(&#x27;Usuario registrado correctamente.&#x27;);
-      },
-      (error) &#x3D;&gt; {
-        console.error(&#x27;Error al registrar usuario:&#x27;, error);
-      }
+    return this.http.post&lt;void&gt;(&#x60;${this.apiUrl}/register-user&#x60; , user).pipe(
+      catchError((error) &#x3D;&gt; {
+        return throwError(error);
+      })
     );
   }
+  public login(loginUsuario: LoginUsuario): Observable&lt;JwtDTO&gt;{
+    console.log(loginUsuario);
+
+
+    return this.http.post&lt;JwtDTO&gt;(environment.api.url + &#x27;/auth/login&#x27;, loginUsuario);
+  }
+
+  logout(): void {
+    this.cookieService.delete(environment.TOKEN_KEY);
+
+    this.router.navigate([&#x27;/login&#x27;]);
+  }
+
+  isAuthenticated() {
+    return this.http.get(environment.api.url + &#x27;/usuario/authenticate&#x27;).pipe(
+      map(response &#x3D;&gt; {
+        return true;
+      }),
+      catchError(error &#x3D;&gt; {
+        this.router.navigate([&#x27;/login&#x27;]);
+        return of(false);
+      })
+    );
+  }
+
+
 }
 </code></pre>
     </div>
