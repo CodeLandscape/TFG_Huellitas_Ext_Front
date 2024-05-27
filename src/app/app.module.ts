@@ -42,12 +42,13 @@ import { SolicitudesAdminComponent } from './components/solicitudes-admin/solici
 import { SolicitudesUsuarioComponent } from './components/solicitudes-usuario/solicitudes-usuario.component';
 import { SolicitudesAnimalComponent } from './components/solicitudes-animal/solicitudes-animal.component';
 import { SolicitudesAsociacionComponent } from './components/solicitudes-asociacion/solicitudes-asociacion.component';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
 
 
 
 @NgModule({
   // tslint:disable-next-line:max-line-length
-  declarations: [AppComponent, LoginComponent, RegisterUserComponent, RegisterAssociationComponent, FormPerfilAsociacionComponent, FormPerfilPersonaComponent, PerfilComponent, NavbarComponent, ListAssociationsComponent, AnimalComponent, FormCrearAnimalComponent, PaginacionComponent, FormEditarAnimalComponent, PerfilAnimalComponent, TipoAnimalComponent, RazaComponent, FooterComponent, ArchivosAsociacionComponent, FormSubirArchivoAsocComponent, FormEditarArchivoAsocComponent, DocumentosAnimalComponent, FormSubirDocumentoAnimalComponent, FormEditarDocumentoAnimalComponent, AnimalesAsociacionComponent, SolicitudesAdminComponent, SolicitudesUsuarioComponent, SolicitudesAnimalComponent, SolicitudesAsociacionComponent ],
+  declarations: [AppComponent, LoginComponent, RegisterUserComponent, RegisterAssociationComponent, FormPerfilAsociacionComponent, FormPerfilPersonaComponent, PerfilComponent, NavbarComponent, ListAssociationsComponent, AnimalComponent, FormCrearAnimalComponent, PaginacionComponent, FormEditarAnimalComponent, PerfilAnimalComponent, TipoAnimalComponent, RazaComponent, FooterComponent, ArchivosAsociacionComponent, FormSubirArchivoAsocComponent, FormEditarArchivoAsocComponent, DocumentosAnimalComponent, FormSubirDocumentoAnimalComponent, FormEditarDocumentoAnimalComponent, AnimalesAsociacionComponent, SolicitudesAdminComponent, SolicitudesUsuarioComponent, SolicitudesAnimalComponent, SolicitudesAsociacionComponent, LandingPageComponent ],
     imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule, NgSelectModule],
   providers: [
     interceptorProvider,

@@ -1,9 +1,9 @@
 <ng-container>
   <app-navbar
-    *ngIf="router.url !== '/login' && router.url !== '/register-user' && router.url !== '/register-association'">
+    *ngIf="router.url !== '/login' && router.url !== '/register-user' && router.url !== '/register-association' && router.url !== '/landing-page'">
   </app-navbar>
   <router-outlet></router-outlet>
-  <app-footer
-    *ngIf="router.url !== '/login' && router.url !== '/register-user' && router.url !== '/register-association'">
+  <app-footer class = "fixed-bottom"
+    *ngIf="router.url !== '/login' && router.url !== '/register-user' && router.url !== '/register-association' && router.url !== '/landing-page'">
   </app-footer>
 </ng-container>

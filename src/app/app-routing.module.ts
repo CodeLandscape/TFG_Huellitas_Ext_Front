@@ -19,9 +19,11 @@ import {SolicitudesAdminComponent} from './components/solicitudes-admin/solicitu
 import {SolicitudesUsuarioComponent} from './components/solicitudes-usuario/solicitudes-usuario.component';
 import {SolicitudesAsociacionComponent} from './components/solicitudes-asociacion/solicitudes-asociacion.component';
 import {SolicitudesAnimalComponent} from './components/solicitudes-animal/solicitudes-animal.component';
+import {LandingPageComponent} from './components/landing-page/landing-page.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' }, // Por defecto
+  { path: '', redirectTo: '/landing-page', pathMatch: 'full' }, // Por defecto
+  {path: 'landing-page', component: LandingPageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register-user', component: RegisterUserComponent },
   { path: 'register-association', component: RegisterAssociationComponent },
