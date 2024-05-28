@@ -30,8 +30,8 @@ export class RegisterAssociationComponent implements OnInit {
   public registerAssociation: FormGroup = this.fb.group({
     nombre: ['', Validators.required],
     correo: ['', [Validators.required, Validators.email]],
-    password: ['', Validators.required],
-    password2: ['', Validators.required],
+    password: ['', [Validators.required, this.passwordComplexityValidator]],
+    password2: ['', [Validators.required, this.passwordComplexityValidator]],
     tlf: ['', [Validators.required, Validators.minLength(9), Validators.maxLength(9)]],
     direccion: ['', Validators.required],
     poblacion: ['', Validators.required],
@@ -84,6 +84,19 @@ export class RegisterAssociationComponent implements OnInit {
     const cifPattern = /^[A-Za-z\d]{9}$/;
     if (control.value && !cifPattern.test(control.value)) {
       return { invalidCIF: true };
+    }
+    return null;
+  }
+
+  passwordComplexityValidator(control) {
+    const value = control.value;
+    const hasUpperCase = /[A-Z]+/.test(value);
+    const hasNumber = /[0-9]+/.test(value);
+    const hasLength = value && value.length >= 9;
+
+    const passwordValid = hasUpperCase && hasNumber && hasLength;
+    if (!passwordValid) {
+      return { passwordComplexity: true };
     }
     return null;
   }

@@ -26,8 +26,8 @@ export class RegisterUserComponent implements OnInit {
     nombre: ['', Validators.required],
     apellidos: ['', Validators.required],
     correo: ['', [Validators.required, Validators.email]],
-    password: ['', Validators.required],
-    password2: ['', Validators.required],
+    password: ['', [Validators.required, this.passwordComplexityValidator]],
+    password2: ['', [Validators.required, this.passwordComplexityValidator]],
     tlf: ['', [Validators.required, Validators.minLength(9), Validators.maxLength(9)]], // Validación de longitud
     direccion: ['', Validators.required],
     poblacion: ['', Validators.required],
@@ -93,5 +93,18 @@ export class RegisterUserComponent implements OnInit {
     const password = this.registerUser.get('password').value;
     const password2 = this.registerUser.get('password2').value;
     return password !== password2;
+  }
+
+   passwordComplexityValidator(control) {
+    const value = control.value;
+    const hasUpperCase = /[A-Z]+/.test(value);
+    const hasNumber = /[0-9]+/.test(value);
+    const hasLength = value && value.length >= 9;
+
+    const passwordValid = hasUpperCase && hasNumber && hasLength;
+    if (!passwordValid) {
+      return { passwordComplexity: true };
+    }
+    return null;
   }
 }

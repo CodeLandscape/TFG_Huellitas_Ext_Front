@@ -40,6 +40,7 @@
       <input type="password" id="password" class="form-control" placeholder="Contraseña" formControlName="password" />
       <div *ngIf="registerAssociation.get('password').errors && (registerAssociation.get('password').dirty || registerAssociation.get('password').touched)">
         <div *ngIf="registerAssociation.get('password').errors.required" class="text-danger">La contraseña es requerida.</div>
+        <div *ngIf="registerAssociation.get('password').errors.passwordComplexity" class="text-danger">La contraseña debe tener al menos 9 caracteres, incluyendo al menos un número y una letra mayúscula.</div>
       </div>
     </div>
 
@@ -49,6 +50,7 @@
       <input type="password" id="password2" class="form-control" placeholder="Confirmar Contraseña" formControlName="password2" />
       <div *ngIf="registerAssociation.get('password2').errors && (registerAssociation.get('password2').dirty || registerAssociation.get('password2').touched)">
         <div *ngIf="registerAssociation.get('password2').errors.required" class="text-danger">Confirmar contraseña es requerido.</div>
+        <div *ngIf="registerAssociation.get('password').errors.passwordComplexity" class="text-danger">La contraseña debe tener al menos 9 caracteres, incluyendo al menos un número y una letra mayúscula.</div>
         <div *ngIf="passwordsMismatch()" class="text-danger">Las contraseñas no coinciden.</div>
       </div>
     </div>
