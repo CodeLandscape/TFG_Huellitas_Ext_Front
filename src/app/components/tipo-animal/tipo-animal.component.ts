@@ -60,6 +60,12 @@ export class TipoAnimalComponent implements OnInit {
             'El tipo de animal ha sido borrado.',
             'success'
           );
+        }, error => {
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Existen razas asociadas a este tipo de animal. Borra las razas antes de borrar el tipo de animal.',
+          });
         });
       }
     });

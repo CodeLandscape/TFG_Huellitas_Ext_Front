@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, Validators} from '@angular/forms';
 import {TipoAnimalServiceService} from '../../services/tipo-animal-service.service';
 import {TipoAnimal} from '../../models/tipoAnimal';
 import Swal from 'sweetalert2';
@@ -31,7 +31,8 @@ export class RazaComponent implements OnInit {
     editRazaName: ['', Validators.required]
   });
 
-  constructor(private fb: FormBuilder, private tipoAnimalServ: TipoAnimalServiceService, private route: ActivatedRoute, private razaService: RazaService) { }
+  constructor(private fb: FormBuilder, private tipoAnimalServ: TipoAnimalServiceService, private route: ActivatedRoute, private razaService: RazaService) {
+  }
 
   ngOnInit(): void {
     this.getTipoAnimal();
@@ -45,6 +46,7 @@ export class RazaComponent implements OnInit {
       this.tipoAnimal = tipoAnimal;
     });
   }
+
   getRazaByTipoAnimal(): void {
     const idTipoAnimal = +this.route.snapshot.params['id'];
 
@@ -89,16 +91,24 @@ export class RazaComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
         this.razaService.deleteRaza(id).subscribe(() => {
-          this.razas = this.razas.filter(tipoAnimal => tipoAnimal.id !== id);
-          Swal.fire(
-            'Borrado',
-            'La raza ha sido borrada.',
-            'success'
-          );
-        });
+            this.razas = this.razas.filter(tipoAnimal => tipoAnimal.id !== id);
+            Swal.fire(
+              'Borrado',
+              'La raza ha sido borrada.',
+              'success'
+            );
+          }, error => {
+            Swal.fire(
+              'Error',
+              'Existen animales asociados a esta raza, no se puede borrar.',
+              'error'
+            );
+          }
+        );
       }
     });
   }
+
   editRaza(): void {
     this.razaService.getRazaById(this.editRazaId).subscribe(raza => {
       raza.nombre = this.editRazaForm.get('editRazaName').value;
