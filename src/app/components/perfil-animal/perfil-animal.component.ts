@@ -23,6 +23,7 @@ export class PerfilAnimalComponent implements OnInit {
   isUser = false;
   isAsociacion = false;
   idUsuario: number;
+  yaSolicitado = true;
 
   constructor(private animalService: AnimalService,
               private route: ActivatedRoute,
@@ -41,6 +42,18 @@ export class PerfilAnimalComponent implements OnInit {
     this.isUser = this.tokenService.getTokenData().roles === 'ROLE_USER';
     this.isAsociacion = this.tokenService.getTokenData().roles === 'ROLE_ASOC';
     this.idUsuario = this.tokenService.getTokenData().id;
+    if (this.isUser) {
+      this.personaService.getPersonaByUsuarioId(this.idUsuario).pipe(
+        switchMap(persona => {
+          this.animalPersona.idPersona = {id: persona.id}; // Initialize idPersona before using it
+          return this.animalPersonaService.getAnimalPersonasByPersonaId(persona.id);
+        })
+      ).subscribe(
+        animalPersonas => {
+          this.yaSolicitado = animalPersonas.some(animalPersona => animalPersona.idAnimal.id == this.route.snapshot.params.id);
+        }
+      );
+    }
   }
 
   private cargarAnimal(id: any) {
@@ -68,7 +81,7 @@ export class PerfilAnimalComponent implements OnInit {
         this.animalPersona = this.animalPersona || new AnimalPersona(); // Initialize animalPersona if it's not already
         this.animalPersona.idAnimal = {id: this.route.snapshot.params.id}; // Initialize idAnimal before using it
         const usuarioAutenticado = this.comunService.getUsuarioAutenticado();
-        console.log(usuarioAutenticado)
+        console.log(usuarioAutenticado);
         this.personaService.getPersonaByUsuarioId(usuarioAutenticado.id).pipe(
           switchMap(persona => {
             this.animalPersona.idPersona = {id: persona.id}; // Initialize idPersona inside switchMap
@@ -82,6 +95,7 @@ export class PerfilAnimalComponent implements OnInit {
               'Tu solicitud de adopción ha sido enviada. Se te notificará en los próximos días si la asociación acepta o rechaza la solicitud. Si es aceptada, la asociación contactará contigo a través de tu correo o de tu móvil. ¡Gracias por tu interés!',
               'success'
             );
+            this.yaSolicitado = true;
           }
         );
       }
