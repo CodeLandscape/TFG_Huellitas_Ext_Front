@@ -192,6 +192,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#logout" >logout</a>
+                            </li>
+                            <li>
                                 <a href="#ngOnInit" >ngOnInit</a>
                             </li>
                         </ul>
@@ -212,15 +215,45 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor()</code>
+<code>constructor(authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/components/navbar/navbar.component.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/components/navbar/navbar.component.ts:9</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -234,6 +267,43 @@
     <h3 id="methods">
         Methods
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logout"></a>
+                    <span class="name">
+                        <span ><b>logout</b></span>
+                        <a href="#logout"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>logout()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="16"
+                                    class="link-to-prism">src/app/components/navbar/navbar.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -254,8 +324,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="12"
-                                    class="link-to-prism">src/app/components/navbar/navbar.component.ts:12</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="13"
+                                    class="link-to-prism">src/app/components/navbar/navbar.component.ts:13</a></div>
                         </td>
                     </tr>
 
@@ -278,6 +348,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import {AuthService} from &#x27;../../services/auth.service&#x27;;
 
 @Component({
   selector: &#x27;app-navbar&#x27;,
@@ -286,11 +357,14 @@
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
   }
 
+  logout() {
+    this.authService.logout();
+  }
 }
 </code></pre>
     </div>
@@ -307,7 +381,7 @@ export class NavbarComponent implements OnInit {
     &lt;div class&#x3D;&quot;collapse navbar-collapse&quot; id&#x3D;&quot;navbarSupportedContent&quot;&gt;
       &lt;ul class&#x3D;&quot;navbar-nav me-auto mb-2 mb-lg-0&quot;&gt;
         &lt;li class&#x3D;&quot;nav-item&quot;&gt;
-          &lt;a class&#x3D;&quot;nav-link active&quot; aria-current&#x3D;&quot;page&quot; href&#x3D;&quot;#&quot;&gt;Inicio&lt;/a&gt;
+          &lt;a class&#x3D;&quot;nav-link active&quot; aria-current&#x3D;&quot;page&quot; [routerLink]&#x3D;&quot;[&#x27;/listadoAnimales&#x27;]&quot;&gt;Inicio&lt;/a&gt;
         &lt;/li&gt;
       &lt;/ul&gt;
     &lt;/div&gt;
@@ -318,9 +392,8 @@ export class NavbarComponent implements OnInit {
         &lt;i class&#x3D;&quot;fa-regular fa-user&quot; style&#x3D;&quot;color: #ffffff;&quot;&gt;&lt;/i&gt;
       &lt;/a&gt;
       &lt;ul class&#x3D;&quot;dropdown-menu dropdown-menu-end&quot; aria-labelledby&#x3D;&quot;navbarDropdown&quot;&gt;
-        &lt;li&gt;&lt;a class&#x3D;&quot;dropdown-item&quot; [routerLink]&#x3D;&quot;[&#x27;/perfil&#x27;]&quot;&gt;Perfil&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;hr class&#x3D;&quot;dropdown-divider&quot;&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a class&#x3D;&quot;dropdown-item&quot; [routerLink]&#x3D;&quot;[&#x27;/&#x27;]&quot;&gt;Cerrar Sesión&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class&#x3D;&quot;dropdown-item&quot; [routerLink]&#x3D;&quot;[&#x27;/perfil&#x27;]&quot;&gt;Mi Perfil&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;button class&#x3D;&quot;dropdown-item&quot; (click)&#x3D;&quot;logout()&quot;&gt;Cerrar Sesión&lt;/button&gt;&lt;/li&gt;
       &lt;/ul&gt;
     &lt;/div&gt;
   &lt;/div&gt;
@@ -360,8 +433,8 @@ export class NavbarComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><nav class="navbar navbar-expand-lg navbar-dark bg-dark">  <div class="container-fluid">    <!-- Botón para dispositivos móviles -->    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">      <span class="navbar-toggler-icon"></span>    </button>    <!-- Opciones a la izquierda -->    <div class="collapse navbar-collapse" id="navbarSupportedContent">      <ul class="navbar-nav me-auto mb-2 mb-lg-0">        <li class="nav-item">          <a class="nav-link active" aria-current="page" href="#">Inicio</a>        </li>      </ul>    </div>    <!-- Ícono de usuario y dropdown -->    <div class="dropdown">      <a class="nav-link dropdown-toggle" href="#" role="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">        <i class="fa-regular fa-user" style="color: #ffffff;"></i>      </a>      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">        <li><a class="dropdown-item" [routerLink]="[\'/perfil\']">Perfil</a></li>        <li><hr class="dropdown-divider"></li>        <li><a class="dropdown-item" [routerLink]="[\'/\']">Cerrar Sesión</a></li>      </ul>    </div>  </div></nav></div>'
-    var COMPONENTS = [{'name': 'AnimalComponent', 'selector': 'app-animal'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'FormCrearAnimalComponent', 'selector': 'app-form-crear-animal'},{'name': 'FormEditarAnimalComponent', 'selector': 'app-form-editar-animal'},{'name': 'FormPerfilAsociacionComponent', 'selector': 'app-form-perfil-asociacion'},{'name': 'FormPerfilPersonaComponent', 'selector': 'app-form-perfil-persona'},{'name': 'ListAssociationsComponent', 'selector': 'app-list-associations'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PaginacionComponent', 'selector': 'app-paginacion'},{'name': 'PerfilAnimalComponent', 'selector': 'app-perfil-animal'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'RazaComponent', 'selector': 'app-raza'},{'name': 'RegisterAssociationComponent', 'selector': 'app-register-association'},{'name': 'RegisterUserComponent', 'selector': 'app-register-user'},{'name': 'TipoAnimalComponent', 'selector': 'app-tipo-animal'}];
+        var COMPONENT_TEMPLATE = '<div><nav class="navbar navbar-expand-lg navbar-dark bg-dark">  <div class="container-fluid">    <!-- Botón para dispositivos móviles -->    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">      <span class="navbar-toggler-icon"></span>    </button>    <!-- Opciones a la izquierda -->    <div class="collapse navbar-collapse" id="navbarSupportedContent">      <ul class="navbar-nav me-auto mb-2 mb-lg-0">        <li class="nav-item">          <a class="nav-link active" aria-current="page" [routerLink]="[\'/listadoAnimales\']">Inicio</a>        </li>      </ul>    </div>    <!-- Ícono de usuario y dropdown -->    <div class="dropdown">      <a class="nav-link dropdown-toggle" href="#" role="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">        <i class="fa-regular fa-user" style="color: #ffffff;"></i>      </a>      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">        <li><a class="dropdown-item" [routerLink]="[\'/perfil\']">Mi Perfil</a></li>        <li><button class="dropdown-item" (click)="logout()">Cerrar Sesión</button></li>      </ul>    </div>  </div></nav></div>'
+    var COMPONENTS = [{'name': 'AnimalComponent', 'selector': 'app-animal'},{'name': 'AnimalesAsociacionComponent', 'selector': 'app-animales-asociacion'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArchivosAsociacionComponent', 'selector': 'app-archivos-asociacion'},{'name': 'DocumentosAnimalComponent', 'selector': 'app-documentos-animal'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormCrearAnimalComponent', 'selector': 'app-form-crear-animal'},{'name': 'FormEditarAnimalComponent', 'selector': 'app-form-editar-animal'},{'name': 'FormEditarArchivoAsocComponent', 'selector': 'app-form-editar-archivo-asoc'},{'name': 'FormEditarDocumentoAnimalComponent', 'selector': 'app-form-editar-documento-animal'},{'name': 'FormPerfilAsociacionComponent', 'selector': 'app-form-perfil-asociacion'},{'name': 'FormPerfilPersonaComponent', 'selector': 'app-form-perfil-persona'},{'name': 'FormSubirArchivoAsocComponent', 'selector': 'app-form-subir-archivo-asoc'},{'name': 'FormSubirDocumentoAnimalComponent', 'selector': 'app-form-subir-documento-animal'},{'name': 'ListAssociationsComponent', 'selector': 'app-list-associations'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PaginacionComponent', 'selector': 'app-paginacion'},{'name': 'PerfilAnimalComponent', 'selector': 'app-perfil-animal'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'RazaComponent', 'selector': 'app-raza'},{'name': 'RegisterAssociationComponent', 'selector': 'app-register-association'},{'name': 'RegisterUserComponent', 'selector': 'app-register-user'},{'name': 'SolicitudesAdminComponent', 'selector': 'app-solicitudes-admin'},{'name': 'SolicitudesAnimalComponent', 'selector': 'app-solicitudes-animal'},{'name': 'SolicitudesAsociacionComponent', 'selector': 'app-solicitudes-asociacion'},{'name': 'SolicitudesUsuarioComponent', 'selector': 'app-solicitudes-usuario'},{'name': 'TipoAnimalComponent', 'selector': 'app-tipo-animal'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'NavbarComponent'};
 </script>

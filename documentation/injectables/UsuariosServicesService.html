@@ -134,6 +134,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#getUsuarioById" >getUsuarioById</a>
+                            </li>
+                            <li>
                                 <a href="#getUsuarios" >getUsuarios</a>
                             </li>
                         </ul>
@@ -206,6 +209,73 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="getUsuarioById"></a>
+                    <span class="name">
+                        <span ><b>getUsuarioById</b></span>
+                        <a href="#getUsuarioById"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getUsuarioById(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="15"
+                                    class="link-to-prism">src/app/services/usuarios-services.service.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="getUsuarios"></a>
                     <span class="name">
                         <span ><b>getUsuarios</b></span>
@@ -258,6 +328,9 @@ export class UsuariosServicesService {
 
   getUsuarios() {
     return this.http.get&lt;Usuario[]&gt;(&#x27;http://localhost:8080/api-backend/usuario/all&#x27;);
+  }
+  getUsuarioById(id: number) {
+    return this.http.get&lt;Usuario&gt;(&#x60;http://localhost:8080/api-backend/usuario/${id}&#x60;);
   }
 }
 </code></pre>

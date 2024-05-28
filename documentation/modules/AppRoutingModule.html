@@ -140,18 +140,33 @@ import {TipoAnimalComponent} from &#x27;./components/tipo-animal/tipo-animal.com
 import {RazaComponent} from &#x27;./components/raza/raza.component&#x27;;
 import {AnimalComponent} from &#x27;./components/animal/animal.component&#x27;;
 import {PerfilAnimalComponent} from &#x27;./components/perfil-animal/perfil-animal.component&#x27;;
+import {AuthGuard} from &#x27;./guards/auth.guard&#x27;;
+import {ArchivosAsociacionComponent} from &#x27;./components/documentos-asociacion/archivos-asociacion.component&#x27;;
+import {DocumentosAnimalComponent} from &#x27;./components/documentos-animal/documentos-animal.component&#x27;;
+import {AnimalesAsociacionComponent} from &#x27;./components/animales-asociacion/animales-asociacion.component&#x27;;
+import {SolicitudesAdminComponent} from &#x27;./components/solicitudes-admin/solicitudes-admin.component&#x27;;
+import {SolicitudesUsuarioComponent} from &#x27;./components/solicitudes-usuario/solicitudes-usuario.component&#x27;;
+import {SolicitudesAsociacionComponent} from &#x27;./components/solicitudes-asociacion/solicitudes-asociacion.component&#x27;;
+import {SolicitudesAnimalComponent} from &#x27;./components/solicitudes-animal/solicitudes-animal.component&#x27;;
 
 const routes: Routes &#x3D; [
   { path: &#x27;&#x27;, redirectTo: &#x27;/login&#x27;, pathMatch: &#x27;full&#x27; }, // Por defecto
   { path: &#x27;login&#x27;, component: LoginComponent },
   { path: &#x27;register-user&#x27;, component: RegisterUserComponent },
   { path: &#x27;register-association&#x27;, component: RegisterAssociationComponent },
-  { path: &#x27;list-associations&#x27;, component: ListAssociationsComponent },
-  { path: &#x27;perfil&#x27;, component: PerfilComponent },
-  { path: &#x27;listadoAnimales&#x27;, component: AnimalComponent},
-  { path: &#x27;tipo-animal&#x27;, component: TipoAnimalComponent },
-  { path: &#x27;raza/:id&#x27;, component: RazaComponent },
-  { path: &#x27;animal/:id&#x27;, component: PerfilAnimalComponent },
+  { path: &#x27;list-associations&#x27;, component: ListAssociationsComponent, canActivate: [AuthGuard] },
+  { path: &#x27;perfil&#x27;, component: PerfilComponent, canActivate: [AuthGuard]},
+  { path: &#x27;listadoAnimales&#x27;, component: AnimalComponent, canActivate: [AuthGuard]},
+  { path: &#x27;animales-asociacion&#x27;, component: AnimalesAsociacionComponent, canActivate: [AuthGuard]},
+  { path: &#x27;tipo-animal&#x27;, component: TipoAnimalComponent, canActivate: [AuthGuard] },
+  { path: &#x27;raza/:id&#x27;, component: RazaComponent, canActivate: [AuthGuard] },
+  { path: &#x27;animal/:id&#x27;, component: PerfilAnimalComponent, canActivate: [AuthGuard] },
+  { path: &#x27;ArchivosAsociacion&#x27;, component: ArchivosAsociacionComponent, canActivate: [AuthGuard] },
+  { path: &#x27;animal/:id/documentos&#x27;, component: DocumentosAnimalComponent, canActivate: [AuthGuard] },
+  { path: &#x27;solicitudes-admin&#x27;, component: SolicitudesAdminComponent, canActivate: [AuthGuard] },
+  { path: &#x27;solicitudes-user&#x27;, component: SolicitudesUsuarioComponent, canActivate: [AuthGuard] },
+  { path: &#x27;solicitudes-asoc&#x27;, component: SolicitudesAsociacionComponent, canActivate: [AuthGuard] },
+  { path: &#x27;solicitudes-animal/:id&#x27;, component: SolicitudesAnimalComponent, canActivate: [AuthGuard] },
   { path: &#x27;**&#x27;, component: LoginComponent }
 ];
 

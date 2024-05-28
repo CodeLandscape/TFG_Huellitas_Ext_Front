@@ -26,7 +26,7 @@
         <div class=" col-12">
           <label for="tlf" class="m-0 h6 text-secondary col-form-label">Teléfono:</label>
         </div>
-        <div class="col-12 col-md-4">
+        <div class="col-12">
           <input type="text" class="form-control" id="tlf" name="tlf" formControlName="tlf"
                  [class.is-invalid]="validarCampo('tlf')">
           <small class="form-text text-danger" *ngIf="validarCampo('tlf')">{{ getErrorCampo('tlf') }}</small>
@@ -36,7 +36,7 @@
         <div class=" col-12">
           <label for="direccion" class="m-0 h6 text-secondary col-form-label">Direccion:</label>
         </div>
-        <div class="col-12 col-md-4 ">
+        <div class="col-12">
           <input type="text" class="form-control" id="direccion" formControlName="direccion"
                  [class.is-invalid]="validarCampo('direccion')">
           <small class="form-text text-danger"
@@ -47,7 +47,7 @@
         <div class=" col-12">
           <label for="poblacion" class="m-0 h6 text-secondary col-form-label">Población:</label>
         </div>
-        <div class="col-12 col-md-4 ">
+        <div class="col-12">
           <input type="text" class="form-control" id="poblacion" formControlName="poblacion"
                  [class.is-invalid]="validarCampo('poblacion')">
           <small class="form-text text-danger"
@@ -58,7 +58,7 @@
         <div class=" col-12">
           <label class="m-0 h6 text-secondary col-form-label">Provincia:</label>
         </div>
-        <div class="col-12 col-md-4 align-items-center">
+        <div class="col-12align-items-center">
           <select class="form-select" formControlName="provincia" [class.is-invalid]="validarCampo('provincia')">
             <option *ngFor="let provincia of provincias" [value]="provincia.id">
               {{ provincia["nombre"] }}
@@ -70,7 +70,7 @@
       </div>
       <!--      Botón de guardar-->
       <div class="form-group row mt-4">
-        <div class="col-12 col-md-4 d-grip d-flex gap-4">
+        <div class="col-12d-grip d-flex gap-4">
           <button type="button" class="btn  btn-primary w-100" (click)="guardar()" [disabled]="form.invalid">Modificar</button>
           <button type="button" class="btn  btn-danger w-100" (click)="darDeBaja()">Dar de baja</button>
         </div>

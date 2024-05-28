@@ -515,8 +515,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="120"
-                                    class="link-to-prism">src/app/components/form-crear-animal/form-crear-animal.component.ts:120</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="117"
+                                    class="link-to-prism">src/app/components/form-crear-animal/form-crear-animal.component.ts:117</a></div>
                         </td>
                     </tr>
 
@@ -621,8 +621,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="102"
-                                    class="link-to-prism">src/app/components/form-crear-animal/form-crear-animal.component.ts:102</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="99"
+                                    class="link-to-prism">src/app/components/form-crear-animal/form-crear-animal.component.ts:99</a></div>
                         </td>
                     </tr>
 
@@ -804,8 +804,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="116"
-                                    class="link-to-prism">src/app/components/form-crear-animal/form-crear-animal.component.ts:116</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="113"
+                                    class="link-to-prism">src/app/components/form-crear-animal/form-crear-animal.component.ts:113</a></div>
                         </td>
                     </tr>
 
@@ -1114,9 +1114,6 @@ export class FormCrearAnimalComponent implements OnInit {
       });
     }
 
-    // Esto se va a sacar del token en el futuro ahora está a lo cutre
-    this.formGroupAnimal.value.asociacion &#x3D; {id: 1};
-
 
     this.animalService.guardarAnimal(this.formGroupAnimal.value).subscribe((data: Animal) &#x3D;&gt; {
       this.idAnimal &#x3D; data.id;
@@ -1276,7 +1273,7 @@ export class FormCrearAnimalComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><!-- Modal --><div class="modal fade" id="modalAnadir" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">  <div class="modal-dialog">    <div class="modal-content">      <div class="modal-header">        <h5 class="modal-title" id="exampleModalLabel">Añadir nuevo animal</h5>        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>      </div>      <div class="modal-body">        <form [formGroup]="formGroupAnimal" *ngIf="cargado">          <div class="mb-3">            <label for="nombre" class="form-label">Nombre</label>            <input type="text" class="form-control" id="nombre" formControlName="nombre"                   [class.is-invalid]="validarCampo(\'nombre\')">            <small class="form-text text-danger" *ngIf="validarCampo(\'nombre\')">{{ getErrorCampo(\'nombre\') }}</small>          </div>          <div class="mb-3">            <label for="fechaNac" class="form-label">Fecha de nacimiento</label>            <input type="date" class="form-control" id="fechaNac" formControlName="fechaNac"                   [class.is-invalid]="validarCampo(\'fechaNac\')">            <small class="form-text text-danger"                   *ngIf="validarCampo(\'fechaNac\')">{{ getErrorCampo(\'fechaNac\') }}</small>          </div>          <div class="mb-3">            <label for="fechaLlegadaAsoc" class="form-label">Fecha de llegada a la asociación</label>            <input type="date" class="form-control" id="fechaLlegadaAsoc" formControlName="fechaLlegadaAsoc"                   [class.is-invalid]="validarCampo(\'fechaLlegadaAsoc\')">            <small class="form-text text-danger" *ngIf="validarCampo(\'fechaLlegadaAsoc\')">{{ getErrorCampo(\'fechaLlegadaAsoc\') }}</small>          </div>          <div class="mb-3">            <label for="observaciones" class="form-label">Observaciones</label>            <textarea class="form-control" id="observaciones" formControlName="observaciones"                      [class.is-invalid]="validarCampo(\'observaciones\')">            </textarea>            <small class="form-text text-danger" *ngIf="validarCampo(\'observaciones\')">{{ getErrorCampo(\'observaciones\') }}</small>          </div>          <div class="mb-3">            <label for="raza" class="form-label">Raza</label>            <ng-select id="raza"                       [items]="razas"                       bindLabel="nombre"                       groupBy="tipo"                       placeholder="Seleccionar raza"                       formControlName="raza"                       [class.is-invalid]="validarCampo(\'raza\')">            </ng-select>            <small class="form-text text-danger" *ngIf="validarCampo(\'raza\')">{{ getErrorCampo(\'raza\') }}</small>          </div>          <div class="mb-3">            <label for="imagen" class="form-label">Añadir imagen</label>            <input type="file" class="form-control-file" formControlName="imagen" id="imagen" #fileInput                   accept=".jpeg, .jpg, .png" hidden (change)="onFileSelected($event)">            <div class="input-group-append">              <button class="btn btn-primary" type="button" (click)="fileInput.click()">                <i class="fas fa-plus"></i>Subir Archivo              </button>            </div>            <div              *ngIf="formGroupAnimal.get(\'imagen\').invalid && (formGroupAnimal.get(\'imagen\').dirty || formGroupAnimal.get(\'imagen\').touched)"              class="text-danger">              <small *ngIf="formGroupAnimal.get(\'imagen\').errors.required">La imagen es requerida</small>              <small *ngIf="formGroupAnimal.get(\'imagen\').errors.invalidFileType">La imagen debe ser de formato .jpeg,                .jpg o .png</small>            </div>            <div *ngIf="fileName" class="mt-2">{{ fileName }}</div>          </div>        </form>      </div>      <div class="modal-footer">        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>        <button type="button" class="btn btn-primary" (click)="guardarAnimal()">Guardar</button>      </div>    </div>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AnimalComponent', 'selector': 'app-animal'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'FormCrearAnimalComponent', 'selector': 'app-form-crear-animal'},{'name': 'FormEditarAnimalComponent', 'selector': 'app-form-editar-animal'},{'name': 'FormPerfilAsociacionComponent', 'selector': 'app-form-perfil-asociacion'},{'name': 'FormPerfilPersonaComponent', 'selector': 'app-form-perfil-persona'},{'name': 'ListAssociationsComponent', 'selector': 'app-list-associations'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PaginacionComponent', 'selector': 'app-paginacion'},{'name': 'PerfilAnimalComponent', 'selector': 'app-perfil-animal'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'RazaComponent', 'selector': 'app-raza'},{'name': 'RegisterAssociationComponent', 'selector': 'app-register-association'},{'name': 'RegisterUserComponent', 'selector': 'app-register-user'},{'name': 'TipoAnimalComponent', 'selector': 'app-tipo-animal'}];
+    var COMPONENTS = [{'name': 'AnimalComponent', 'selector': 'app-animal'},{'name': 'AnimalesAsociacionComponent', 'selector': 'app-animales-asociacion'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArchivosAsociacionComponent', 'selector': 'app-archivos-asociacion'},{'name': 'DocumentosAnimalComponent', 'selector': 'app-documentos-animal'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormCrearAnimalComponent', 'selector': 'app-form-crear-animal'},{'name': 'FormEditarAnimalComponent', 'selector': 'app-form-editar-animal'},{'name': 'FormEditarArchivoAsocComponent', 'selector': 'app-form-editar-archivo-asoc'},{'name': 'FormEditarDocumentoAnimalComponent', 'selector': 'app-form-editar-documento-animal'},{'name': 'FormPerfilAsociacionComponent', 'selector': 'app-form-perfil-asociacion'},{'name': 'FormPerfilPersonaComponent', 'selector': 'app-form-perfil-persona'},{'name': 'FormSubirArchivoAsocComponent', 'selector': 'app-form-subir-archivo-asoc'},{'name': 'FormSubirDocumentoAnimalComponent', 'selector': 'app-form-subir-documento-animal'},{'name': 'ListAssociationsComponent', 'selector': 'app-list-associations'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PaginacionComponent', 'selector': 'app-paginacion'},{'name': 'PerfilAnimalComponent', 'selector': 'app-perfil-animal'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'RazaComponent', 'selector': 'app-raza'},{'name': 'RegisterAssociationComponent', 'selector': 'app-register-association'},{'name': 'RegisterUserComponent', 'selector': 'app-register-user'},{'name': 'SolicitudesAdminComponent', 'selector': 'app-solicitudes-admin'},{'name': 'SolicitudesAnimalComponent', 'selector': 'app-solicitudes-animal'},{'name': 'SolicitudesAsociacionComponent', 'selector': 'app-solicitudes-asociacion'},{'name': 'SolicitudesUsuarioComponent', 'selector': 'app-solicitudes-usuario'},{'name': 'TipoAnimalComponent', 'selector': 'app-tipo-animal'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'FormCrearAnimalComponent'};
 </script>

@@ -226,15 +226,45 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor()</code>
+<code>constructor(tokenService: <a href="../injectables/TokenService.html" target="_self">TokenService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/components/perfil/perfil.component.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/components/perfil/perfil.component.ts:11</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>tokenService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/TokenService.html" target="_self" >TokenService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -268,8 +298,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="14"
-                                    class="link-to-prism">src/app/components/perfil/perfil.component.ts:14</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="16"
+                                    class="link-to-prism">src/app/components/perfil/perfil.component.ts:16</a></div>
                         </td>
                     </tr>
 
@@ -310,7 +340,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/components/perfil/perfil.component.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/components/perfil/perfil.component.ts:11</a></div>
                         </td>
                     </tr>
 
@@ -324,6 +354,8 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, OnInit} from &#x27;@angular/core&#x27;;
+import {TokenService} from &#x27;../../services/token.service&#x27;;
+import {AuthTokenService} from &#x27;../../services/auth-token.service&#x27;;
 
 @Component({
   selector: &#x27;app-perfil&#x27;,
@@ -333,11 +365,11 @@
 export class PerfilComponent implements OnInit {
   isPerson: boolean;
 
-  constructor() {
+  constructor(private tokenService: TokenService) {
   }
 
   ngOnInit(): void {
-    this.isPerson &#x3D; true;
+    this.isPerson &#x3D; this.tokenService.getTokenData().roles &#x3D;&#x3D;&#x3D; &#x27;ROLE_USER&#x27;;
   }
 
 }
@@ -385,7 +417,7 @@ export class PerfilComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><app-form-perfil-asociacion *ngIf="!isPerson;else persona"></app-form-perfil-asociacion><ng-template #persona>  <app-form-perfil-persona></app-form-perfil-persona></ng-template></div>'
-    var COMPONENTS = [{'name': 'AnimalComponent', 'selector': 'app-animal'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'FormCrearAnimalComponent', 'selector': 'app-form-crear-animal'},{'name': 'FormEditarAnimalComponent', 'selector': 'app-form-editar-animal'},{'name': 'FormPerfilAsociacionComponent', 'selector': 'app-form-perfil-asociacion'},{'name': 'FormPerfilPersonaComponent', 'selector': 'app-form-perfil-persona'},{'name': 'ListAssociationsComponent', 'selector': 'app-list-associations'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PaginacionComponent', 'selector': 'app-paginacion'},{'name': 'PerfilAnimalComponent', 'selector': 'app-perfil-animal'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'RazaComponent', 'selector': 'app-raza'},{'name': 'RegisterAssociationComponent', 'selector': 'app-register-association'},{'name': 'RegisterUserComponent', 'selector': 'app-register-user'},{'name': 'TipoAnimalComponent', 'selector': 'app-tipo-animal'}];
+    var COMPONENTS = [{'name': 'AnimalComponent', 'selector': 'app-animal'},{'name': 'AnimalesAsociacionComponent', 'selector': 'app-animales-asociacion'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArchivosAsociacionComponent', 'selector': 'app-archivos-asociacion'},{'name': 'DocumentosAnimalComponent', 'selector': 'app-documentos-animal'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormCrearAnimalComponent', 'selector': 'app-form-crear-animal'},{'name': 'FormEditarAnimalComponent', 'selector': 'app-form-editar-animal'},{'name': 'FormEditarArchivoAsocComponent', 'selector': 'app-form-editar-archivo-asoc'},{'name': 'FormEditarDocumentoAnimalComponent', 'selector': 'app-form-editar-documento-animal'},{'name': 'FormPerfilAsociacionComponent', 'selector': 'app-form-perfil-asociacion'},{'name': 'FormPerfilPersonaComponent', 'selector': 'app-form-perfil-persona'},{'name': 'FormSubirArchivoAsocComponent', 'selector': 'app-form-subir-archivo-asoc'},{'name': 'FormSubirDocumentoAnimalComponent', 'selector': 'app-form-subir-documento-animal'},{'name': 'ListAssociationsComponent', 'selector': 'app-list-associations'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PaginacionComponent', 'selector': 'app-paginacion'},{'name': 'PerfilAnimalComponent', 'selector': 'app-perfil-animal'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'RazaComponent', 'selector': 'app-raza'},{'name': 'RegisterAssociationComponent', 'selector': 'app-register-association'},{'name': 'RegisterUserComponent', 'selector': 'app-register-user'},{'name': 'SolicitudesAdminComponent', 'selector': 'app-solicitudes-admin'},{'name': 'SolicitudesAnimalComponent', 'selector': 'app-solicitudes-animal'},{'name': 'SolicitudesAsociacionComponent', 'selector': 'app-solicitudes-asociacion'},{'name': 'SolicitudesUsuarioComponent', 'selector': 'app-solicitudes-usuario'},{'name': 'TipoAnimalComponent', 'selector': 'app-tipo-animal'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'PerfilComponent'};
 </script>

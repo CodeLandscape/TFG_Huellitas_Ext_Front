@@ -1,4 +1,9 @@
-<app-form-perfil-asociacion *ngIf="!isPerson;else persona"></app-form-perfil-asociacion>
-<ng-template #persona>
-  <app-form-perfil-persona></app-form-perfil-persona>
-</ng-template>
+<div class="row w-100">
+  <app-form-perfil-asociacion class="col-md-6 col-12" *ngIf="!isPerson;else persona"></app-form-perfil-asociacion>
+  <ng-template #persona>
+    <app-form-perfil-persona class="col-md-6 col-12"></app-form-perfil-persona>
+  </ng-template>
+  <div class="col-md-6 d-none d-md-flex justify-content-center align-items-center">
+    <img src="/assets/imgs/dibujo-perro.png" class="img-fluid w-75" alt="Huellitas extremeñas" />
+  </div>
+</div>
