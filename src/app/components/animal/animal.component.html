@@ -1,66 +1,72 @@
-<div class="d-flex justify-content-center my-3">
-  <form [formGroup]="formGroupAnimal" class="row w-75">
-
-    <div class="form-group col-3">
-      <label for="tipoAnimal" class="form-label">Tipo de animal:</label>
-      <ng-select id="tipoAnimal" *ngIf="tiposFilter.length > 0"
-                 [items]="tiposFilter"
-                 [multiple]="true"
-                 [closeOnSelect]="false"
-                 bindValue="id"
-                 bindLabel="nombre"
-                 placeholder="Seleccionar tipo de animal"
-                 formControlName="tipoAnimal">
-      </ng-select>
-    </div>
-
-
-    <div class="form-group col-3">
-      <label for="raza" class="form-label">Raza de animal:</label>
-      <ng-select id="raza" *ngIf="razasFilter.length > 0"
-                 [items]="razasFilter"
-                 [multiple]="true"
-                 [closeOnSelect]="false"
-                 bindValue="id"
-                 bindLabel="nombre"
-                 groupBy="tipo"
-                 placeholder="Seleccionar raza"
-                 formControlName="raza"
-      >
-      </ng-select>
-    </div>
-
-    <div class="form-group col-3">
-      <label for="nombre" class="form-label">Buscar animal</label>
-      <input class="form-control" type="search" placeholder="Buscar animal" aria-label="Search" id="nombre"
-             formControlName="nombre">
-    </div>
-    <div class="col-3 align-self-end d-flex justify-content-around gap-2">
-      <button class="btn btn-primary w-100" type="submit" (click)="buscarAnimal()">Buscar</button>
-      <button type="button" class="btn btn-secondary w-100" (click)="limpiarForm()">Limpiar</button>
-    </div>
-  </form>
+<!-- Sección con imagen de fondo difuminada, título y descripción -->
+<div class="position-relative text-center text-white mb-4 " style="background: url('https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2024/03/29/17117084419730.jpg') no-repeat center center/cover; height: 500px; width: 100vw; left: 50%; transform: translateX(-50%);">
+  <div class="position-absolute top-50 start-50 translate-middle" style="background-color: rgba(0, 0, 0, 0.5); padding: 20px; border-radius: 10px;">
+    <h1 class="display-4">Listado de animales</h1>
+    <p class="lead">Estos son los animales que tenemos disponibles actualmente para adoptar. Puede usar los filtros para una búsqueda más específica.</p>
+  </div>
 </div>
-<div class="row justify-content-center m-0" *ngIf="cargado">
-  <div *ngFor="let animal of animales" class="col-md-4 mb-4">
-    <div class="card" style="background-color: azure;">
-      <div class="card-body text-center">
+
+<div class="container my-3">
+  <div class="d-flex justify-content-center">
+    <form [formGroup]="formGroupAnimal" class="row w-75">
+      <div class="form-group col-12 col-md-3 mb-3">
+        <label for="tipoAnimal" class="form-label">Tipo de animal:</label>
+        <ng-select id="tipoAnimal" *ngIf="tiposFilter.length > 0"
+                   [items]="tiposFilter"
+                   [multiple]="true"
+                   [closeOnSelect]="false"
+                   bindValue="id"
+                   bindLabel="nombre"
+                   placeholder="Seleccionar tipo de animal"
+                   formControlName="tipoAnimal">
+        </ng-select>
+      </div>
+
+      <div class="form-group col-12 col-md-3 mb-3">
+        <label for="raza" class="form-label">Raza de animal:</label>
+        <ng-select id="raza" *ngIf="razasFilter.length > 0"
+                   [items]="razasFilter"
+                   [multiple]="true"
+                   [closeOnSelect]="false"
+                   bindValue="id"
+                   bindLabel="nombre"
+                   groupBy="tipo"
+                   placeholder="Seleccionar raza"
+                   formControlName="raza">
+        </ng-select>
+      </div>
+
+      <div class="form-group col-12 col-md-3 mb-3">
+        <label for="nombre" class="form-label">Buscar animal</label>
+        <input class="form-control" type="search" placeholder="Buscar animal" aria-label="Search" id="nombre"
+               formControlName="nombre">
+      </div>
+
+      <div class="col-12 col-md-3 mb-3 align-self-end d-flex justify-content-around gap-2">
+        <button class="btn btn-primary w-100" type="submit" (click)="buscarAnimal()">Buscar</button>
+        <button type="button" class="btn btn-secondary w-100" (click)="limpiarForm()">Limpiar</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="row justify-content-center m-0" *ngIf="cargado">
+    <div *ngFor="let animal of animales" class="col-12 col-md-6 col-lg-4 mb-4">
+      <div class="card h-100" style="background-color: azure;">
         <img [src]="animal.imagen" class="card-img-top" style="height: 35vh; object-fit: cover;" alt="...">
-        <h5 class="card-title">{{ animal.nombre }}</h5>
-        <div class="row justify-content-center mt-2">
-          <div class="col-md-12">
-            <button class="btn btn-primary w-100" [routerLink]="['/animal',animal.id]">Ver perfil</button>
-          </div>
+        <div class="card-body text-center">
+          <h5 class="card-title">{{ animal.nombre }}</h5>
+          <button class="btn btn-primary w-100" [routerLink]="['/animal',animal.id]">Ver perfil</button>
         </div>
       </div>
     </div>
-  </div>
-  <h1 *ngIf="animales.length === 0" class="text-center mt-5 mb-4" style="font-size: 3em;">No hay ningún resultado</h1>
-
-  <div class="d-flex justify-content-center ">
-    <app-paginacion [actual]="paginaActual"
-                    [total]="totalPaginas"
-                    (goTo)="cambiarDePagina($event)">
-    </app-paginacion>
+    <div *ngIf="animales.length === 0" class="col-12">
+      <h1 class="text-center mt-5 mb-4" style="font-size: 3em;">No hay ningún resultado</h1>
+    </div>
+    <div class="d-flex justify-content-center">
+      <app-paginacion [actual]="paginaActual"
+                      [total]="totalPaginas"
+                      (goTo)="cambiarDePagina($event)">
+      </app-paginacion>
+    </div>
   </div>
 </div>

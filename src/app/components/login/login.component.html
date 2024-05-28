@@ -1,34 +1,38 @@
-<div class="d-flex flex-column justify-content-center align-items-center vh-100">
+<div class="d-flex flex-column justify-content-center align-items-center vh-100 bg-gradient">
   <div class="d-flex justify-content-center mb-4">
-    <img src="assets/imgs/huellitasLogo2.png" alt="Sample image" class="img-fluid w-75"/>
+    <img src="assets/imgs/huellitasLogo2.png" alt="Sample image" class="img-fluid w-50 rounded-circle shadow-sm"/>
   </div>
-  <form [formGroup]="loginForm" (ngSubmit)="login()">
-    <!-- Email input -->
-    <!-- Email input -->
-    <div data-mdb-input-init class="form-outline mb-4 text-center">
-      <input type="email" id="form2Example1" class="form-control" placeholder="Email" formControlName="email" />
-      <div *ngIf="loginForm.controls.email.invalid && (loginForm.controls.email.dirty || loginForm.controls.email.touched)" class="text-danger">
-        <div *ngIf="loginForm.controls.email.errors.required">Email es campo requerido.</div>
-        <div *ngIf="loginForm.controls.email.errors.email">Por favor introduce un email válido.</div>
+  <div class="card shadow-lg p-4" style="width: 100%; max-width: 400px;">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <h3 class="text-center mb-4">Iniciar Sesión</h3>
+      <!-- Email input -->
+      <div class="form-outline mb-4">
+        <label for="form2Example1" class="form-label">Email</label>
+        <input type="email" id="form2Example1" class="form-control" placeholder="Introduzca su correo electrónico" formControlName="email" />
+        <div *ngIf="loginForm.controls.email.invalid && (loginForm.controls.email.dirty || loginForm.controls.email.touched)" class="text-danger">
+          <div *ngIf="loginForm.controls.email.errors.required">Email es un campo requerido.</div>
+          <div *ngIf="loginForm.controls.email.errors.email">Por favor, introduce un email válido.</div>
+        </div>
       </div>
-    </div>
 
-    <!-- Password input -->
-    <div data-mdb-input-init class="form-outline mb-4 text-center">
-      <input type="password" id="form2Example2" class="form-control" placeholder="Contraseña" formControlName="password" />
-      <div *ngIf="loginForm.controls.password.invalid && (loginForm.controls.password.dirty || loginForm.controls.password.touched)" class="text-danger">
-        <div *ngIf="loginForm.controls.password.errors.required">Debes introducir una contraseña.</div>
+      <!-- Password input -->
+      <div class="form-outline mb-4">
+        <label for="form2Example2" class="form-label">Contraseña</label>
+        <input type="password" id="form2Example2" class="form-control" placeholder="Introduzca su contraseña" formControlName="password" />
+        <div *ngIf="loginForm.controls.password.invalid && (loginForm.controls.password.dirty || loginForm.controls.password.touched)" class="text-danger">
+          <div *ngIf="loginForm.controls.password.errors.required">Debes introducir una contraseña.</div>
+        </div>
       </div>
-    </div>
-    <!-- Submit button -->
-    <div class="text-center">
-      <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4" [disabled]="!loginForm.valid">Acceder</button>
-    </div>
+      <!-- Submit button -->
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary btn-block mb-4" [disabled]="!loginForm.valid">Acceder</button>
+      </div>
 
-    <!-- Register buttons -->
-    <div class="text-center">
-      <p>¿Quieres adoptar? <a routerLink="/register-user" style="color: blue; cursor: pointer;"><u>Registrate como Usuario</u></a></p>
-      <p>¿Eres una asociación? <a routerLink="/register-association" style="color: blue; cursor: pointer;"><u>Registrate como Asociación</u></a></p>
-    </div>
-  </form>
+      <!-- Register buttons -->
+      <div class="text-center">
+        <p>¿Quieres adoptar? <a routerLink="/register-user" class="text-decoration-underline text-primary">Registrate como Usuario</a></p>
+        <p>¿Eres una asociación? <a routerLink="/register-association" class="text-decoration-underline text-primary">Registrate como Asociación</a></p>
+      </div>
+    </form>
+  </div>
 </div>
