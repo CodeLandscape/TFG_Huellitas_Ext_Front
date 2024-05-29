@@ -56,6 +56,7 @@ export class ListAssociationsComponent implements AfterViewInit {
       $('#datatable').DataTable({
         pagingType: 'full_numbers',
         pageLength: 10,
+        responsive: true,
         processing: true,
       });
     });
@@ -111,7 +112,7 @@ export class ListAssociationsComponent implements AfterViewInit {
           'La asociación ha sido activada.',
           'success'
         );
-
+        this.reloadDataTable();
       }
     });
   }
