@@ -42,17 +42,19 @@ export class SolicitudesAnimalComponent implements OnInit {
 
         // tslint:disable-next-line:only-arrow-functions
         $(document).ready(function() {
-          $('.table').DataTable(
-            {
-              pagingType: 'full_numbers',
-              pageLength: 10,
-              responsive: true,
-              processing: true,
-              language: {
-                url: '//cdn.datatables.net/plug-ins/1.10.21/i18n/Spanish.json'
+          $('#datatable').DataTable({
+            pagingType: 'full_numbers',
+            pageLength: 10,
+            responsive: {
+              details: {
+                type: 'inline',
+                target: 0
               }
+            },
+            language: {
+              url: 'https://cdn.datatables.net/plug-ins/2.0.8/i18n/es-ES.json'
             }
-          );
+          });
         });
         console.log(this.animalPersonas);
       }

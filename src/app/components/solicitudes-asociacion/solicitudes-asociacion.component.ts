@@ -48,16 +48,10 @@ export class SolicitudesAsociacionComponent implements OnInit {
               pageLength: 10,
               responsive: {
                 details: {
-                  type: 'column',
+                  type: 'inline',
                   target: 0
                 }
               },
-              columnDefs: [
-                { className: 'control', orderable: false, targets: 0 },
-                { responsivePriority: 1, targets: 0 },
-                { responsivePriority: 2, targets: -1 },
-                { targets: [1, 2, 3, 4], visible: true, className: 'd-none d-md-table-cell' }
-              ],
               language: {
                 url: 'https://cdn.datatables.net/plug-ins/2.0.8/i18n/es-ES.json'
               }

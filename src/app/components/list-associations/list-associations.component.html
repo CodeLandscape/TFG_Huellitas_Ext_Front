@@ -10,16 +10,16 @@
     <tbody>
     <tr *ngFor="let item of asociaciones">
       <td>{{ item.nombre }}</td>
-      <td>{{ item.usuario.poblacion }}</td>
-      <td>{{ item.usuario.provincia.nombre }}</td>
-      <td>
+      <td class="min-tablet-l">{{ item.usuario.poblacion }}</td>
+      <td class="min-tablet-l">{{ item.usuario.provincia.nombre }}</td>
+      <td class="min-tablet-l">
   <span [ngClass]="{'badge rounded-pill bg-danger': !item.usuario.activo, 'badge rounded-pill bg-success text-white': item.usuario.activo || !item.usuario.activo}">
     {{ item.usuario.activo ? 'Validada' : 'No activo' }}
   </span>
       </td>
 
 
-      <td>
+      <td class="min-tablet-l">
         <button *ngIf="!item.usuario.activo" class="btn btn-primary" (click)="activar(item.usuario.id)">Activar</button>
         <button *ngIf="item.usuario.activo" class="btn btn-danger" (click)="desactivar(item.usuario.id)">Desactivar</button>
       </td>

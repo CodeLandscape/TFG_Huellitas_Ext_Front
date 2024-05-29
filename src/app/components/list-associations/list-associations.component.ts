@@ -56,8 +56,15 @@ export class ListAssociationsComponent implements AfterViewInit {
       $('#datatable').DataTable({
         pagingType: 'full_numbers',
         pageLength: 10,
-        responsive: true,
-        processing: true,
+        responsive: {
+          details: {
+            type: 'inline',
+            target: 0
+          }
+        },
+        language: {
+          url: 'https://cdn.datatables.net/plug-ins/2.0.8/i18n/es-ES.json'
+        }
       });
     });
   }
@@ -65,7 +72,7 @@ export class ListAssociationsComponent implements AfterViewInit {
   desactivar(id: number) {
     Swal.fire({
       title: '¿Estás seguro?',
-      text: '¡No podrás revertir esto!',
+      text: 'La asociación será desactivada y no podrá realizar acciones en la plataforma.',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',

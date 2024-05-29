@@ -5,17 +5,17 @@
   <thead>
   <tr>
     <th>Nombre del Animal</th>
-    <th>Correo de la Asociación</th>
-    <th>Teléfono de la Asociacion</th>
-    <th>Estado</th>
+    <th class="min-tablet-l">Correo de la Asociación</th>
+    <th class="min-tablet-l">Teléfono de la Asociacion</th>
+    <th class="min-tablet-l">Estado</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let animalPersona of animalPersonas">
     <td>{{ animalPersona.idAnimal.nombre }}</td>
-    <td>{{ animalPersona.idAnimal.asociacion.usuario.correo }}</td>
-    <td>{{ animalPersona.idPersona.tlf }}</td>
-    <td>
+    <td class="min-tablet-l">{{ animalPersona.idAnimal.asociacion.usuario.correo }}</td>
+    <td class="min-tablet-l">{{ animalPersona.idPersona.tlf }}</td>
+    <td class="min-tablet-l">
         <span [ngClass]="{'badge rounded-pill bg-danger': !animalPersona.estado, 'badge rounded-pill bg-success text-white': animalPersona.estado || !animalPersona.estado}">
         {{ animalPersona.estado ? 'Aceptada' : 'Pendiente' }}
         </span>

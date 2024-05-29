@@ -8,21 +8,21 @@
     <thead>
     <tr>
       <th>Correo del interesado</th>
-      <th>Teléfono del interesado</th>
-      <th>Estado</th>
-      <th>Opciones</th>
+      <th class="min-tablet-l">Teléfono del interesado</th>
+      <th class="min-tablet-l">Estado</th>
+      <th class="min-tablet-l">Opciones</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let animalPersona of animalPersonas">
       <td>{{ animalPersona.idPersona.correo }}</td>
-      <td>{{ animalPersona.idPersona.tlf }}</td>
-      <td>
+      <td class="min-tablet-l">{{ animalPersona.idPersona.tlf }}</td>
+      <td class="min-tablet-l">
         <span [ngClass]="{'badge rounded-pill bg-danger': !animalPersona.estado, 'badge rounded-pill bg-success text-white': animalPersona.estado || !animalPersona.estado}">
         {{ animalPersona.estado ? 'Aceptada' : 'Pendiente' }}
         </span>
       </td>
-      <td>
+      <td class="min-tablet-l">
         <span class="d-flex">
           <button *ngIf="!animalPersona.estado" class="btn btn-success m-2" (click)="aceptarSolicitud(animalPersona.id.idAnimal, animalPersona.id.idPersona)">Aceptar</button>
           <button *ngIf="!animalPersona.estado" class="btn btn-danger m-2" (click)="rechazarSolicitud(animalPersona.id.idAnimal, animalPersona.id.idPersona)">Rechazar</button>
