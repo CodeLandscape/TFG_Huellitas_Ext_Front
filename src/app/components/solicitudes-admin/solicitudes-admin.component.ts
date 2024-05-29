@@ -25,7 +25,17 @@ export class SolicitudesAdminComponent implements OnInit {
         // Inicializar la DataTable después de que los datos estén disponibles
         // tslint:disable-next-line:only-arrow-functions
         $(document).ready(function() {
-          $('.table').DataTable();
+          $('.table').DataTable(
+            {
+              pagingType: 'full_numbers',
+              pageLength: 10,
+              responsive: true,
+              processing: true,
+              language: {
+                url: '//cdn.datatables.net/plug-ins/1.10.21/i18n/Spanish.json'
+              }
+            }
+          );
         });
       }
     );

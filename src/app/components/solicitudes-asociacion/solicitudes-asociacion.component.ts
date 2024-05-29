@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {AnimalPersona} from '../../models/animalPersona';
-import {AnimalPersonaServiceService} from '../../services/animal-persona-service.service';
-import {ComunService} from '../../services/comun.service';
-import {PersonaService} from '../../services/persona.service';
-import {switchMap} from 'rxjs/operators';
-import {AsociacionService} from '../../services/asociacion.service';
-import Swal from "sweetalert2";
-import {NavbarService} from '../../services/navbar.service';
+import { AnimalPersona } from '../../models/animalPersona';
+import { AnimalPersonaServiceService } from '../../services/animal-persona-service.service';
+import { ComunService } from '../../services/comun.service';
+import { switchMap } from 'rxjs/operators';
+import { AsociacionService } from '../../services/asociacion.service';
+import Swal from 'sweetalert2';
+import { NavbarService } from '../../services/navbar.service';
 declare var $: any; // Declaración de jQuery
 
 @Component({
@@ -18,13 +17,18 @@ export class SolicitudesAsociacionComponent implements OnInit {
 
   animalPersonas: AnimalPersona[];
   nombreAsociacion: string; // Nueva propiedad para almacenar el nombre de la asociacion
-  constructor(private animalPersonaService: AnimalPersonaServiceService, protected comunService: ComunService, protected asociacionService: AsociacionService, private navbarService: NavbarService) { }
+
+  constructor(
+    private animalPersonaService: AnimalPersonaServiceService,
+    protected comunService: ComunService,
+    protected asociacionService: AsociacionService,
+    private navbarService: NavbarService
+  ) {}
+
   ngOnInit(): void {
     this.getAnimalPersonas();
     console.log('Solicitudes admin');
   }
-
-
 
   getAnimalPersonas(): void {
     const usuarioAutenticado = this.comunService.getUsuarioAutenticado();
@@ -38,9 +42,26 @@ export class SolicitudesAsociacionComponent implements OnInit {
       ).subscribe(
         animalPersonas => {
           this.animalPersonas = animalPersonas;
-          // tslint:disable-next-line:only-arrow-functions
           $(document).ready(function() {
-            $('.table').DataTable();
+            $('#datatable').DataTable({
+              pagingType: 'full_numbers',
+              pageLength: 10,
+              responsive: {
+                details: {
+                  type: 'column',
+                  target: 0
+                }
+              },
+              columnDefs: [
+                { className: 'control', orderable: false, targets: 0 },
+                { responsivePriority: 1, targets: 0 },
+                { responsivePriority: 2, targets: -1 },
+                { targets: [1, 2, 3, 4], visible: true, className: 'd-none d-md-table-cell' }
+              ],
+              language: {
+                url: 'https://cdn.datatables.net/plug-ins/2.0.8/i18n/es-ES.json'
+              }
+            });
           });
           console.log(this.animalPersonas);
         }
@@ -52,8 +73,8 @@ export class SolicitudesAsociacionComponent implements OnInit {
 
   aceptarSolicitud(id: number, id2: number) {
     const animalPersona = new AnimalPersona();
-    animalPersona.idAnimal = {id: id};
-    animalPersona.idPersona = {id: id2};
+    animalPersona.idAnimal = { id: id };
+    animalPersona.idPersona = { id: id2 };
 
     Swal.fire({
       title: '¿Estás seguro?',
@@ -82,8 +103,8 @@ export class SolicitudesAsociacionComponent implements OnInit {
 
   rechazarSolicitud(id: number, id2: number) {
     const animalPersona = new AnimalPersona();
-    animalPersona.idAnimal = {id: id};
-    animalPersona.idPersona = {id: id2};
+    animalPersona.idAnimal = { id: id };
+    animalPersona.idPersona = { id: id2 };
 
     Swal.fire({
       title: '¿Estás seguro?',
