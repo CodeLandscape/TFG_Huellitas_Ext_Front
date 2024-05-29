@@ -1,16 +1,21 @@
 <nav class="navbar navbar-expand-lg d" style="background: #5AB253">
-  <div class="container-fluid d-flex">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
-            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <img
-      src="assets/imgs/huellitasLogo2.png"
-      height="50"
-      alt="Huellitas extremeñas"
-    />
+  <div class="container-fluid row-lg d-flex">
+
+      <button class="navbar-toggler  " type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+              aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+    <div class="d-flex align-items-center justify-content-lg-start justify-content-center col-md-3">
+      <img
+        src="assets/imgs/huellitasLogo2.png"
+        height="50"
+        alt="Huellitas extremeñas"
+      />
+      <p class="navbar-brand m-0 d-lg-block d-none" *ngIf="nombre">{{ rol==="ROLE_ASOC" ? 'Bienvenida' : 'Bienvenido' }} {{ nombre }}</p>
+    </div>
     <div
-      class="collapse navbar-collapse justify-content-center"
+      class="collapse navbar-collapse justify-content-center col-md-6"
       id="navbarTogglerDemo01"
     >
       <!-- Left links -->
@@ -49,8 +54,8 @@
       </ul>
       <!-- Left links -->
     </div>
-    <div class="dropdown">
-      <a class="nav-link dropdown-toggle" href="#" role="button" id="navbarDropdownUser" data-bs-toggle="dropdown"
+    <div class="dropdown text-lg-end d-inline col-lg-3">
+      <a class="nav-link dropdown-toggle d-inline" href="#" role="button" id="navbarDropdownUser" data-bs-toggle="dropdown"
          aria-expanded="false">
         <i class="fa-regular fa-user" style="color: #ffffff;"></i>
         <span class="badge rounded-pill badge-notification bg-danger"

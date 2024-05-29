@@ -1,9 +1,7 @@
 .navbar {
   background-color: #5AB253; /* Cambiado el color de fondo a #5AB253 */
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  border-radius: 5px;
   padding: 5px;
-  margin: 5px;
   font-weight: bold;
   transition: 0.3s;
 }
@@ -27,4 +25,12 @@
 .link-danger:active{
   background: #d9534f !important; /* Cambiado el color de fondo al hacer click en un enlace de peligro a un rojo más oscuro */
   color: #f8f9fa !important;
+}
+
+.navbar-brand{
+  color: #f8f9fa; /* Cambiado el color del texto del logo a blanco */
+  font-weight: bold;
+  white-space: nowrap; /* Evita que el texto se envuelva a la siguiente línea */
+  overflow: hidden; /* Oculta cualquier texto que se desborde del contenedor */
+  text-overflow: ellipsis;
 }
