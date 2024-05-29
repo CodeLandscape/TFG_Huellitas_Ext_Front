@@ -14,6 +14,7 @@ export class TipoAnimalComponent implements OnInit {
   tiposAnimal: TipoAnimal[] = [];
   newTipoAnimal = '';
   isAdmin = false;
+  cargado = false;
 
   constructor(private tipoAnimalServ: TipoAnimalServiceService, private router: Router, private tokenService: TokenService) {
   }
@@ -26,6 +27,7 @@ export class TipoAnimalComponent implements OnInit {
   getTiposAnimal(): void {
     this.tipoAnimalServ.getTipoAnimales().subscribe(tiposAnimal => {
       this.tiposAnimal = tiposAnimal;
+      this.cargado = true;
     });
   }
 

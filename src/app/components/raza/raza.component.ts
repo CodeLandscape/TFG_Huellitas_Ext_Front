@@ -19,6 +19,8 @@ declare var $: any;
 export class RazaComponent implements OnInit {
   razas: Raza[] = [];
 
+  cargado = false;
+
   tipoAnimal: TipoAnimal;
   editRazaId: number;
   editRazaName: string;
@@ -52,6 +54,7 @@ export class RazaComponent implements OnInit {
 
     this.razaService.getRazasByTipoAnimal(idTipoAnimal).subscribe(raza => {
       this.razas = raza;
+      this.cargado = true;
     });
   }
 

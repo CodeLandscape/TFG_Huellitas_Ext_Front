@@ -5,7 +5,12 @@
     Añadir nuevo archivo
   </button>
 </div>
-<h1 class="text-center m-5">Documentos de {{nombreAnimal}}</h1>
+<h1 class="text-center m-5" *ngIf="documentos.length > 0 && nombreAnimal">Documentos de {{nombreAnimal}}</h1>
+<div class="d-flex justify-content-center" *ngIf="!cargado">
+  <div class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
 <div class="row justify-content-center m-0" *ngIf="cargado">
   <div *ngFor="let documento of documentos" class="col-md-3 mb-4">
     <div class="card" style="background-color: azure;">
@@ -29,7 +34,7 @@
       </div>
     </div>
   </div>
-  <h1 *ngIf="documentos.length === 0" class="text-center mt-5 mb-4" style="font-size: 3em;">No hay ningún resultado</h1>
+  <h1 *ngIf="documentos.length === 0" class="text-center mt-5 mb-4" style="font-size: 3em;">{{ nombreAnimal }} no tiene ningún documento</h1>
 
 </div>
 
