@@ -20,6 +20,7 @@ import {SolicitudesUsuarioComponent} from './components/solicitudes-usuario/soli
 import {SolicitudesAsociacionComponent} from './components/solicitudes-asociacion/solicitudes-asociacion.component';
 import {SolicitudesAnimalComponent} from './components/solicitudes-animal/solicitudes-animal.component';
 import {LandingPageComponent} from './components/landing-page/landing-page.component';
+import {Error404Component} from './components/error404/error404.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/landing-page', pathMatch: 'full' }, // Por defecto
@@ -40,7 +41,7 @@ const routes: Routes = [
   { path: 'solicitudes-user', component: SolicitudesUsuarioComponent, canActivate: [AuthGuard] },
   { path: 'solicitudes-asoc', component: SolicitudesAsociacionComponent, canActivate: [AuthGuard] },
   { path: 'solicitudes-animal/:id', component: SolicitudesAnimalComponent, canActivate: [AuthGuard] },
-  { path: '**', component: LoginComponent }
+  { path: '**', component: Error404Component }
 ];
 
 @NgModule({
