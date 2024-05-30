@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Provincia} from '../models/provincia';
 import {Observable, of} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
+import {environment} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -18,8 +19,9 @@ export class ProvinciaService {
     private http: HttpClient
   ) {
   }
+  private apiUrl = environment.api.url;
 
   getProvincias() {
-    return this.http.get<Provincia[]>('http://localhost:8080/api-backend/provincia/all');
+    return this.http.get<Provincia[]>(`${this.apiUrl}/provincia/all`);
   }
 }

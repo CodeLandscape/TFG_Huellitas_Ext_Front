@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ArchivoAsociacion} from '../models/archivoAsociacion';
 import {BehaviorSubject} from 'rxjs';
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -9,23 +10,24 @@ import {BehaviorSubject} from 'rxjs';
 export class ArchivosAsociacionService {
 
   private idAEditar = new BehaviorSubject<number | null>(null);
+  private apiUrl = environment.api.url;
 
   constructor(private http: HttpClient) { }
 
   getDocumentosAsociacion() {
-    return this.http.get<ArchivoAsociacion[]>('http://localhost:8080/api-backend/archivo-asociacion/info');
+    return this.http.get<ArchivoAsociacion[]>(`${this.apiUrl}/archivo-asociacion/info`);
   }
 
   getDocumento(id) {
-    return this.http.get('http://localhost:8080/api-backend/archivo-asociacion/' + id, {responseType: 'blob'});
+    return this.http.get(`${this.apiUrl}/archivo-asociacion/` + id, {responseType: 'blob'});
   }
 
   deleteDocumento(id) {
-    return this.http.delete('http://localhost:8080/api-backend/archivo-asociacion/' + id);
+    return this.http.delete(`${this.apiUrl}/archivo-asociacion/` + id);
   }
 
   uploadDocumento(formData: FormData) {
-    return this.http.post('http://localhost:8080/api-backend/archivo-asociacion/upload', formData);
+    return this.http.post(`${this.apiUrl}/archivo-asociacion/upload`, formData);
   }
 
   setIdAEditar(id: number) {
@@ -37,10 +39,10 @@ export class ArchivosAsociacionService {
   }
 
   getInfoArchivo(idArchivo: number) {
-    return this.http.get(`http://localhost:8080/api-backend/archivo-asociacion/info-id/${idArchivo}`);
+    return this.http.get(`${this.apiUrl}/archivo-asociacion/info-id/${idArchivo}`);
   }
 
   editDocumento(formData: FormData) {
-    return this.http.put('http://localhost:8080/api-backend/archivo-asociacion/edit', formData);
+    return this.http.put(`${this.apiUrl}/archivo-asociacion/edit`, formData);
   }
 }

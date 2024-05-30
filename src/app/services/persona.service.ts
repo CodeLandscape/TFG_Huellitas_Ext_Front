@@ -4,6 +4,7 @@ import {Provincia} from '../models/provincia';
 import {Observable, of} from 'rxjs';
 import {Persona} from '../models/persona';
 import {HttpClient} from '@angular/common/http';
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -13,25 +14,26 @@ export class PersonaService {
   constructor(
     private http: HttpClient
   ) { }
+  private apiUrl = environment.api.url;
 
   getPersonaSesion(): Observable<Persona> {
-    return this.http.get<Persona>('http://localhost:8080/api-backend/persona/sesion');
+    return this.http.get<Persona>(`${this.apiUrl}/persona/sesion`);
   }
 
   getPersonaById(id: number): Observable<Persona> {
-    return this.http.get<Persona>('http://localhost:8080/api-backend/persona/' + id);
+    return this.http.get<Persona>(`${this.apiUrl}/persona/` + id);
   }
 
   getPersonaByUsuarioId(id: number): Observable<Persona> {
-    return this.http.get<Persona>('http://localhost:8080/api-backend/persona/usuario/' + id);
+    return this.http.get<Persona>(`${this.apiUrl}/persona/usuario/` + id);
   }
 
   actualizarPersona(value: any) {
-    return this.http.put('http://localhost:8080/api-backend/usuario/update', value);
+    return this.http.put(`${this.apiUrl}/usuario/update`, value);
   }
 
 
   darDeBaja(id: number) {
-    return this.http.put('http://localhost:8080/api-backend/usuario/baja-sesion/', null);
+    return this.http.put(`${this.apiUrl}/usuario/baja-sesion/`, null);
   }
 }

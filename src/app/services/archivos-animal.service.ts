@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ArchivoAnimal} from '../models/archivoAnimal';
 import {BehaviorSubject} from 'rxjs';
+import {environment} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,19 +10,20 @@ import {BehaviorSubject} from 'rxjs';
 export class ArchivosAnimalService {
 
   private idAEditar = new BehaviorSubject<number | null>(null);
+  private apiUrl = environment.api.url;
 
   constructor(private http: HttpClient) { }
 
   getDocumentosAnimal(idAnimal: number) {
-    return this.http.get<ArchivoAnimal[]>(`http://localhost:8080/api-backend/documento-animal/info/${idAnimal}`);
+    return this.http.get<ArchivoAnimal[]>(`${this.apiUrl}/documento-animal/info/${idAnimal}`);
   }
 
   getDocumento(id) {
-    return this.http.get('http://localhost:8080/api-backend/documento-animal/' + id, {responseType: 'blob'});
+    return this.http.get(`${this.apiUrl}/documento-animal/` + id, {responseType: 'blob'});
   }
 
   deleteDocumento(id) {
-    return this.http.delete('http://localhost:8080/api-backend/documento-animal/' + id);
+    return this.http.delete(`${this.apiUrl}/documento-animal/` + id);
   }
 
   setIdAEditar(id) {
@@ -29,7 +31,7 @@ export class ArchivosAnimalService {
   }
 
   uploadDocumento(formData: FormData) {
-    return this.http.post('http://localhost:8080/api-backend/documento-animal/upload', formData);
+    return this.http.post(`${this.apiUrl}/documento-animal/upload`, formData);
   }
 
   getIdAEditar() {
@@ -37,10 +39,10 @@ export class ArchivosAnimalService {
   }
 
   editDocumento(formData: FormData) {
-    return this.http.put('http://localhost:8080/api-backend/documento-animal/edit', formData);
+    return this.http.put(`${this.apiUrl}/documento-animal/edit`, formData);
   }
 
   getInfoArchivo(idArchivo: number) {
-    return this.http.get<ArchivoAnimal>(`http://localhost:8080/api-backend/documento-animal/info-id/${idArchivo}`);
+    return this.http.get<ArchivoAnimal>(`${this.apiUrl}/documento-animal/info-id/${idArchivo}`);
   }
 }
