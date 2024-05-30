@@ -43,8 +43,7 @@ import { SolicitudesUsuarioComponent } from './components/solicitudes-usuario/so
 import { SolicitudesAnimalComponent } from './components/solicitudes-animal/solicitudes-animal.component';
 import { SolicitudesAsociacionComponent } from './components/solicitudes-asociacion/solicitudes-asociacion.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
-import { Error404Component } from './components/error404/error404.component';
-
+import {Error404Component} from './components/error404/error404.component';
 
 
 @NgModule({
