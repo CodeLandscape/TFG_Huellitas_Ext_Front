@@ -23,6 +23,7 @@ import {NoAsociacionGuard} from './guards/no-asociacion.guard';
 import {NoUsuarioGuard} from './guards/no-usuario.guard';
 import {NoAdminGuard} from './guards/no-admin.guard';
 import {LandingPageComponent} from './components/landing-page/landing-page.component';
+import {Error404Component} from './components/error404/error404.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/landing-page', pathMatch: 'full' }, // Por defecto
@@ -43,7 +44,7 @@ const routes: Routes = [
   {path: 'solicitudes-user', component: SolicitudesUsuarioComponent, canActivate: [AuthGuard, NoAdminGuard, NoAsociacionGuard]},
   {path: 'solicitudes-asoc', component: SolicitudesAsociacionComponent, canActivate: [AuthGuard, NoUsuarioGuard, NoAdminGuard]},
   {path: 'solicitudes-animal/:id', component: SolicitudesAnimalComponent, canActivate: [AuthGuard, NoUsuarioGuard, NoAdminGuard]},
-  {path: '**', component: LoginComponent}
+  {path: '**', component: Error404Component}
 ];
 
 @NgModule({
