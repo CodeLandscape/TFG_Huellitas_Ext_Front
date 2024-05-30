@@ -44,7 +44,8 @@ const routes: Routes = [
   {path: 'solicitudes-user', component: SolicitudesUsuarioComponent, canActivate: [AuthGuard, NoAdminGuard, NoAsociacionGuard]},
   {path: 'solicitudes-asoc', component: SolicitudesAsociacionComponent, canActivate: [AuthGuard, NoUsuarioGuard, NoAdminGuard]},
   {path: 'solicitudes-animal/:id', component: SolicitudesAnimalComponent, canActivate: [AuthGuard, NoUsuarioGuard, NoAdminGuard]},
-  {path: '**', component: Error404Component}
+  {path: '**', component: Error404Component, canActivate: [AuthGuard]},
+  {path: '**', component: LoginComponent}
 ];
 
 @NgModule({

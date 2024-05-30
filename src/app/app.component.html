@@ -3,7 +3,7 @@
     *ngIf="router.url !== '/login' && router.url !== '/register-user' && router.url !== '/register-association' && router.url !== '/landing-page'">
   </app-navbar>
   <router-outlet></router-outlet>
-  <app-footer class="mt-auto"
+  <app-footer class="mt-auto min-w-100"
               *ngIf="router.url !== '/login' && router.url !== '/register-user' && router.url !== '/register-association' && router.url !== '/landing-page'">
   </app-footer>
 </div>
