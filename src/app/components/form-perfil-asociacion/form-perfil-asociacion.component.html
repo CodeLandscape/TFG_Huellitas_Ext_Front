@@ -1,5 +1,10 @@
 <div class="container-fluid p-5">
   <div class="row">
+    <div class="d-flex justify-content-center" *ngIf="!cargado">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
     <form class="col-12" [formGroup]="form" *ngIf="cargado">
       <div class="d-block">
         <div class="form-group">

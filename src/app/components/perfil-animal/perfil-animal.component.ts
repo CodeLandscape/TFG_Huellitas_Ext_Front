@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AnimalService} from '../../services/animal.service';
 import {Animal} from '../../models/animal';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {DomSanitizer} from '@angular/platform-browser';
 import Swal from 'sweetalert2';
 import {AnimalPersona} from '../../models/animalPersona';
@@ -31,7 +31,8 @@ export class PerfilAnimalComponent implements OnInit {
               private comunService: ComunService,
               private animalPersonaService: AnimalPersonaServiceService,
               private personaService: PersonaService,
-              private tokenService: TokenService) {
+              private tokenService: TokenService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -64,6 +65,18 @@ export class PerfilAnimalComponent implements OnInit {
         const url = window.URL.createObjectURL(blob);
         this.animal.imagen = this.sanitizer.bypassSecurityTrustUrl(url);
       });
+    }, error => {
+      console.log(error);
+      Swal.fire({
+        title: 'Error',
+        text: 'No se ha podido cargar el animal',
+        icon: 'error'
+      });
+      if (this.tokenService.getTokenData().roles === 'ROLE_ASOC') {
+        this.router.navigate(['animales-asociacion']);
+      } else {
+        this.router.navigate(['listadoAnimales']);
+      }
     });
   }
 

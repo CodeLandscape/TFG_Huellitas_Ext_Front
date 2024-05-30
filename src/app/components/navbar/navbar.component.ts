@@ -16,10 +16,12 @@ export class NavbarComponent implements OnInit {
   solicitudesPendientesAsociacion: number;
   rol: string;
   id: number;
+  nombre: string;
   private subscription: Subscription;
 
   constructor(private authService: AuthService,
               private asociacionService: AsociacionService,
+              private personaService: PersonaService,
               private animalPersonaService: AnimalPersonaServiceService,
               private tokenService: TokenService,
               private navbarService: NavbarService) {
@@ -29,6 +31,19 @@ export class NavbarComponent implements OnInit {
     this.rol = this.tokenService.getTokenData().roles;
     this.id = this.tokenService.getTokenData().id;
 
+    if (this.rol === 'ROLE_ASOC') {
+      this.asociacionService.getAsociacionByUsuarioId(this.id).subscribe(asociacion => {
+        this.nombre = asociacion.nombre;
+      });
+    }
+    if (this.rol === 'ROLE_USER') {
+      this.personaService.getPersonaByUsuarioId(this.id).subscribe(persona => {
+        this.nombre = persona.nombre;
+      });
+    }
+    if (this.rol === 'ROLE_ADMIN') {
+      this.nombre = 'Admin';
+    }
 
     this.loadSolicitudesPendientesAsociacion();
 
