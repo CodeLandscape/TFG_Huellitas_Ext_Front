@@ -13,7 +13,10 @@
   <div *ngFor="let documento of documentos" class="col-md-3 mb-4">
     <div class="card" style="background-color: azure;">
       <div class="card-body text-center">
-        <img [src]="documento.imagen" class="card-img-top" style="height: 50vh; object-fit: cover;" alt="...">
+        <img [src]="documento.imagen" *ngIf="imageLoaded" (load)="imageLoaded = true" class="card-img-top" style="height: 50vh; object-fit: cover;" alt="...">
+        <div class="spinner-border" role="status" *ngIf="!imageLoaded">
+          <span class="sr-only">Loading...</span>
+        </div>
         <h5 class="card-title">{{ documento.nombre }}</h5>
         <p class="card-text">{{ documento.descripcion }}</p>
         <div class="row justify-content-center">

@@ -60,10 +60,11 @@
     <div *ngFor="let animal of animales" class="col-md-4 mb-4">
       <div class="card" style="background-color: azure;">
         <div class="card-body text-center">
-          <img [src]="animal.imagen" (load)="imageLoaded = true" class="card-img-top" style="height: 35vh; object-fit: cover;" alt="...">
+          <img [src]="animal.imagen" *ngIf="imageLoaded" (load)="imageLoaded = true" class="card-img-top" style="height: 35vh; object-fit: cover;" alt="...">
           <div class="spinner-border" role="status" *ngIf="!imageLoaded">
             <span class="sr-only">Loading...</span>
-          </div>          <h5 class="card-title">{{ animal.nombre }}</h5>
+          </div>
+          <h5 class="card-title">{{ animal.nombre }}</h5>
           <div class="row justify-content-center" *ngIf="isAsoc && animal.asociacion.usuario.id == idUsuario">
             <div class="col-md-6">
               <button class="btn btn-danger w-100" (click)="deleteAnimal(animal.id)">Borrar Animal</button>

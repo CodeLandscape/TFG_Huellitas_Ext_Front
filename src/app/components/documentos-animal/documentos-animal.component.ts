@@ -26,6 +26,7 @@ export class DocumentosAnimalComponent implements OnInit {
   isAsoc: boolean;
   idUsuario: number;
   nombreAnimal: string;
+  imageLoaded: boolean;
 
   constructor(private animalesService: AnimalService,
               private archivosAnimalService: ArchivosAnimalService,

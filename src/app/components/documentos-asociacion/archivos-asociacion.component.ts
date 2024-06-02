@@ -13,6 +13,7 @@ export class ArchivosAsociacionComponent implements OnInit {
 
   cargado = false;
   documentos: any[] = [];
+  imageLoaded: boolean;
   constructor(private archivosAsociacionService: ArchivosAsociacionService,
               private sanitizer: DomSanitizer) { }
 

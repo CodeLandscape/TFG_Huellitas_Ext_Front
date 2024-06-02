@@ -58,7 +58,7 @@
   <div class="row justify-content-center m-0" *ngIf="cargado">
     <div *ngFor="let animal of animales" class="col-12 col-md-6 col-lg-4 mb-4">
       <div class="card h-100" style="background-color: azure;">
-        <img [src]="animal.imagen" (load)="imageLoaded = true" class="card-img-top" style="height: 35vh; object-fit: cover;" alt="...">
+        <img [src]="animal.imagen" *ngIf="imageLoaded" (load)="imageLoaded = true" class="card-img-top" style="height: 35vh; object-fit: cover;" alt="...">
         <div class="spinner-border" role="status" *ngIf="!imageLoaded">
           <span class="sr-only">Loading...</span>
         </div>
