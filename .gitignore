@@ -4,7 +4,6 @@ src/assets/css/bootstrap*.css
 src/environments/environment.ts
 
 # compiled output
-/dist
 /tmp
 /out-tsc
 # Only exists if Bazel was run

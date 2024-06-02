@@ -1,0 +1,5 @@
+services:
+  - type: static
+    name: angular-frontend
+    env: static
+    staticPublishPath: dist/huellitas-extremenas
