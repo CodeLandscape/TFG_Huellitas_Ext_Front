@@ -16,20 +16,32 @@ export class TokenService {
 
   constructor(private auth: AuthTokenService, private cookieService: CookieService) { }
 
-  public setToken(token: string): void {
-    this.cookieService.delete(this.TOKEN_KEY);
-    this.cookieService.set(this.TOKEN_KEY, token);
+  setToken(token: string): void {
+    const jwtHelper = new JwtHelperService();
+    const decodedToken = jwtHelper.decodeToken(token);
+
+    if (!decodedToken.exp) {
+      console.error('Token does not have exp claim');
+      return;
+    }
+
+    // Create a new Date object directly from exp
+    const expirationDate = new Date(decodedToken.exp * 1000);
+
+    console.log(expirationDate);
+    this.cookieService.set(environment.TOKEN_KEY, token, expirationDate);
   }
 
   public getToken(): string {
     return this.cookieService.get(this.TOKEN_KEY);
   }
 
-  public getTokenData(): any {
+  getTokenData() {
     const jwtHelper = new JwtHelperService();
     if (!jwtHelper.isTokenExpired(this.getToken())) {
       return jwtHelper.decodeToken(this.getToken());
     } else {
+      this.cookieService.delete(environment.TOKEN_KEY);
       return null;
     }
   }

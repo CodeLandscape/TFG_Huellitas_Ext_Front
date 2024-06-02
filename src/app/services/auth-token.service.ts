@@ -49,6 +49,7 @@ export class AuthTokenService {
     if (!jwtHelper.isTokenExpired(this.apiToken)) {
       return jwtHelper.decodeToken(this.apiToken);
     } else {
+      this.cookieService.delete(environment.TOKEN_KEY);
       return null;
     }
   }

@@ -1,26 +1,24 @@
-import { Component, OnInit, ElementRef} from '@angular/core';
-// import { ComunService } from './services/comun.service';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ConfigService } from './services/config.service';
-
+import { TokenService } from './services/token.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-
 export class AppComponent implements OnInit {
-  [x: string]: any;
   title = 'huellitas-extremenas';
-
 
   constructor(
     private router: Router,
-  ) {
-  }
+    private tokenService: TokenService
+  ) { }
 
   ngOnInit() {
-
+    const tokenData = this.tokenService.getTokenData();
+    if (tokenData === null) {
+      this.router.navigate(['/']);
+    }
   }
 }
