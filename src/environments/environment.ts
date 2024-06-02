@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   api: {
-    url: 'http://localhost:8080/api-backend',
+    url: 'https://tfg-huellitas-ext-back.onrender.com/api-backend',
 
     // tslint:disable-next-line: max-line-length
     token: '',

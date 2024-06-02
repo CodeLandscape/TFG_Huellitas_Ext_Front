@@ -16,7 +16,7 @@ import Swal from 'sweetalert2';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:8080/api-backend/auth';
+  private apiUrl = 'https://tfg-huellitas-ext-back.onrender.com/api-backend/api-backend/auth';
   constructor(private http: HttpClient, private cookieService: CookieService, private router: Router) { }
 
   registerAssociation(association: AssociationRegister) {
