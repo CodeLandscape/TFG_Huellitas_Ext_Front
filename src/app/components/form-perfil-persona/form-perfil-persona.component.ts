@@ -102,6 +102,8 @@ export class FormPerfilPersonaComponent implements OnInit {
             icon: 'success',
             confirmButtonText: 'Aceptar'
           });
+        },(error) => {
+          Swal.fire('Error', error.error, 'error');
         });
       }
     });

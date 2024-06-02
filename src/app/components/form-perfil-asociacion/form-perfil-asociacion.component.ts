@@ -93,8 +93,10 @@ export class FormPerfilAsociacionComponent implements OnInit {
         this.asociacion.usuario.provincia.id = this.form.get('provincia')?.value;
 
         this.asociacionService.actualizarAsociacion(this.asociacion.usuario).subscribe(() => {
-          Swal.fire('Cambios guardados', 'Los cambios se han guardado correctamente', 'success');
-        });
+            Swal.fire('Cambios guardados', 'Los cambios se han guardado correctamente', 'success');
+          }, (error) => {
+            Swal.fire('Error', error.error, 'error');
+          });
       }
     });
   }
