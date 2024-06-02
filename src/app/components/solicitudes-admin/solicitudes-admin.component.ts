@@ -11,6 +11,7 @@ declare var $: any; // Declaración de jQuery
 })
 export class SolicitudesAdminComponent implements OnInit {
   animalPersonas: AnimalPersona[];
+  isLoading: boolean = true;
   constructor(private animalPersonaService: AnimalPersonaServiceService) { }
   ngOnInit(): void {
     this.getAnimalPersonas();
@@ -22,6 +23,7 @@ export class SolicitudesAdminComponent implements OnInit {
       animalPersonas => {
         this.animalPersonas = animalPersonas;
         console.log(this.animalPersonas);
+        this.isLoading = false;
         // Inicializar la DataTable después de que los datos estén disponibles
         // tslint:disable-next-line:only-arrow-functions
         $(document).ready(function() {

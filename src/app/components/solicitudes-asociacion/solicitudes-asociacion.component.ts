@@ -17,6 +17,7 @@ export class SolicitudesAsociacionComponent implements OnInit {
 
   animalPersonas: AnimalPersona[];
   nombreAsociacion: string; // Nueva propiedad para almacenar el nombre de la asociacion
+  isLoading: boolean = true;
 
   constructor(
     private animalPersonaService: AnimalPersonaServiceService,
@@ -42,6 +43,7 @@ export class SolicitudesAsociacionComponent implements OnInit {
       ).subscribe(
         animalPersonas => {
           this.animalPersonas = animalPersonas;
+          this.isLoading = false;
           $(document).ready(function() {
             $('#datatable').DataTable({
               pagingType: 'full_numbers',

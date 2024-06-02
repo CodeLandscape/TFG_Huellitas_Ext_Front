@@ -20,6 +20,7 @@ export class SolicitudesAnimalComponent implements OnInit {
   nombreAnimal: string; // Nueva propiedad para almacenar el nombre de la asociacion
   idAnimal: number;
   // tslint:disable-next-line:max-line-length
+  isLoading: boolean = true;
   constructor(private animalPersonaService: AnimalPersonaServiceService, protected comunService: ComunService, protected animalService: AnimalService, private route: ActivatedRoute) { }
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -30,6 +31,7 @@ export class SolicitudesAnimalComponent implements OnInit {
   }
 
   getAnimalPersonas(id: number): void {
+    this.isLoading = true;
     this.animalService.getAnimal(id).pipe(
       switchMap((animal: Animal) => {
         console.log(animal);
@@ -39,7 +41,7 @@ export class SolicitudesAnimalComponent implements OnInit {
     ).subscribe(
       animalPersonas => {
         this.animalPersonas = animalPersonas;
-
+        this.isLoading = false;
         // tslint:disable-next-line:only-arrow-functions
         $(document).ready(function() {
           $('#datatable').DataTable({

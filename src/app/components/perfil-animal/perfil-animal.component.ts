@@ -24,6 +24,7 @@ export class PerfilAnimalComponent implements OnInit {
   isAsociacion = false;
   idUsuario: number;
   yaSolicitado = true;
+  imageLoaded: boolean;
 
   constructor(private animalService: AnimalService,
               private route: ActivatedRoute,

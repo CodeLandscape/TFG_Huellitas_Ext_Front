@@ -1,6 +1,9 @@
 <div class="container-fluid row p-5" *ngIf="animal">
   <div class="col-md-4 col-12">
-    <img [src]="animal.imagen" class="img-fluid" alt="Imagen de {{ animal.nombre }}">
+    <img [src]="animal.imagen" (load)="imageLoaded = true" class="img-fluid" alt="Imagen de {{ animal.nombre }}">
+    <div class="spinner-border" role="status" *ngIf="!imageLoaded">
+      <span class="sr-only">Loading...</span>
+    </div>
     <a class="btn btn-primary mt-3 w-100" [routerLink]="['/animal',animal.id,'documentos']">Ver documentos</a>
     <button class="btn btn-success w-100 mt-3" (click)="solicitarAdopcion()" *ngIf="isUser" [disabled]="yaSolicitado">Solicitar adopción</button>
     <button class="btn btn-success w-100 mt-3" [routerLink]="['/solicitudes-animal/',animal.id]" *ngIf="isAsociacion && idUsuario == animal.asociacion.usuario.id">Ver solicitudes</button>

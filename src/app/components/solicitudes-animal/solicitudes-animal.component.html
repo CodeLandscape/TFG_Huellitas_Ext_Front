@@ -1,4 +1,7 @@
-<div class="container mt-4">
+<div class="spinner-border" role="status" *ngIf="isLoading">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="container mt-4" *ngIf="!isLoading">
   <div class="d-flex justify-content-center">
     <a class="btn btn-danger m-3" [routerLink]="['/animal',idAnimal]">Volver al perfil</a>
   </div>

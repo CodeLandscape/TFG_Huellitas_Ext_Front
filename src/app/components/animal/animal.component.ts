@@ -28,6 +28,7 @@ export class AnimalComponent implements OnInit {
   totalPaginas = 0;
   paginaActual = 0;
   cargado = false;
+  imageLoaded: boolean;
 
   constructor(private animalService: AnimalService,
               private razaService: RazaService,

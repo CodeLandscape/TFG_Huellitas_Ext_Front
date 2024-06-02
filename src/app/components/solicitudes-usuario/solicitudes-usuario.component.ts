@@ -16,6 +16,7 @@ declare var $: any; // Declaración de jQuery
 export class SolicitudesUsuarioComponent implements OnInit {
   animalPersonas: AnimalPersona[];
   nombreUsuario: string; // Nueva propiedad para almacenar el nombre del usuario
+  isLoading: boolean = true;
 
   constructor(private animalPersonaService: AnimalPersonaServiceService, protected comunService: ComunService, protected personaService: PersonaService) { }
   ngOnInit(): void {
@@ -38,6 +39,7 @@ export class SolicitudesUsuarioComponent implements OnInit {
       ).subscribe(
         animalPersonas => {
           this.animalPersonas = animalPersonas;
+          this.isLoading = false;
           // tslint:disable-next-line:only-arrow-functions
           $(document).ready(function() {
             $('#datatable').DataTable({
