@@ -65,6 +65,7 @@ export class PerfilAnimalComponent implements OnInit {
         const blob = new Blob([data], {type: 'image/jpeg'});
         const url = window.URL.createObjectURL(blob);
         this.animal.imagen = this.sanitizer.bypassSecurityTrustUrl(url);
+        this.imageLoaded = true;
       });
     }, error => {
       console.log(error);

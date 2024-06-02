@@ -66,6 +66,7 @@ export class AnimalesAsociacionComponent implements OnInit {
           const blob = new Blob([data], {type: 'image/jpeg'});
           const url = window.URL.createObjectURL(blob);
           animal.imagen = this.sanitizer.bypassSecurityTrustUrl(url);
+          this.imageLoaded = true;
         });
       });
       this.totalPaginas = animalesRecibidos.totalPages;

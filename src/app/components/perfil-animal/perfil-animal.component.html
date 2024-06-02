@@ -1,6 +1,6 @@
 <div class="container-fluid row p-5" *ngIf="animal">
   <div class="col-md-4 col-12">
-    <img [src]="animal.imagen" *ngIf="imageLoaded" (load)="imageLoaded = true" class="img-fluid" alt="Imagen de {{ animal.nombre }}">
+    <img [src]="animal.imagen" *ngIf="imageLoaded" class="img-fluid" alt="Imagen de {{ animal.nombre }}">
     <div class="spinner-border" role="status" *ngIf="!imageLoaded">
       <span class="sr-only">Loading...</span>
     </div>

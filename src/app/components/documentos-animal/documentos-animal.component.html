@@ -15,7 +15,7 @@
   <div *ngFor="let documento of documentos" class="col-md-3 mb-4">
     <div class="card" style="background-color: azure;">
       <div class="card-body text-center">
-        <img [src]="documento.imagen" *ngIf="imageLoaded" (load)="imageLoaded = true" class="card-img-top" style="height: 50vh; object-fit: cover;" alt="...">
+        <img [src]="documento.imagen" *ngIf="imageLoaded" class="card-img-top" style="height: 50vh; object-fit: cover;" alt="...">
         <div class="spinner-border" role="status" *ngIf="!imageLoaded">
           <span class="sr-only">Loading...</span>
         </div>

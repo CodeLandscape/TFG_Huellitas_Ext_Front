@@ -32,9 +32,11 @@ export class ArchivosAsociacionComponent implements OnInit {
             const blob = new Blob([imagen], {type: 'image/jpeg'});
             const url = window.URL.createObjectURL(blob);
             documento.imagen = this.sanitizer.bypassSecurityTrustUrl(url);
+            this.imageLoaded = true;
           });
         } else {
           documento.imagen = '../assets/imgs/docs.png';
+          this.imageLoaded = true;
         }
       });
       this.cargado = true;
