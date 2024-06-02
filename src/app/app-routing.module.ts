@@ -24,11 +24,12 @@ import {NoUsuarioGuard} from './guards/no-usuario.guard';
 import {NoAdminGuard} from './guards/no-admin.guard';
 import {LandingPageComponent} from './components/landing-page/landing-page.component';
 import {Error404Component} from './components/error404/error404.component';
+import {NoAuthGuard} from './guards/no-auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/landing-page', pathMatch: 'full' }, // Por defecto
   {path: 'landing-page', component: LandingPageComponent },
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent, canActivate: [NoAuthGuard] },
   { path: 'register-user', component: RegisterUserComponent },
   { path: 'register-association', component: RegisterAssociationComponent },
   {path: 'list-associations', component: ListAssociationsComponent, canActivate: [AuthGuard, NoAsociacionGuard, NoUsuarioGuard]},
