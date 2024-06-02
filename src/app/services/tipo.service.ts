@@ -12,6 +12,6 @@ export class TipoService {
   constructor(private http: HttpClient) { }
 
   getTipos() {
-    return this.http.get('${this.apiUrl}/tipoAnimal/all');
+    return this.http.get(`${this.apiUrl}/tipoAnimal/all`);
   }
 }
