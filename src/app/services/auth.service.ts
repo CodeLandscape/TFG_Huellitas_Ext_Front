@@ -16,11 +16,11 @@ import Swal from 'sweetalert2';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'https://tfg-huellitas-ext-back.onrender.com/api-backend/api-backend/auth';
+  private apiUrl = environment.api.url;
   constructor(private http: HttpClient, private cookieService: CookieService, private router: Router) { }
 
   registerAssociation(association: AssociationRegister) {
-    return this.http.post<void>(`${this.apiUrl}/register-association` , association).pipe(
+    return this.http.post<void>(`${this.apiUrl}/auth/register-association` , association).pipe(
       catchError((error) => {
         return throwError(error);
       })
@@ -28,7 +28,7 @@ export class AuthService {
   }
 
   registerUser(user: UserRegister) {
-    return this.http.post<void>(`${this.apiUrl}/register-user` , user).pipe(
+    return this.http.post<void>(`${this.apiUrl}/auth/register-user` , user).pipe(
       catchError((error) => {
         return throwError(error);
       })
@@ -58,6 +58,4 @@ export class AuthService {
       })
     );
   }
-
-
 }
