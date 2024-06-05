@@ -90,7 +90,6 @@ export class FormCrearAnimalComponent implements OnInit {
       this.formGroupAnimal.reset();
       $('#modalAnadir').modal('hide');
       Swal.fire('Guardado', 'Animal guardado correctamente', 'success');
-      this.recargar.emit();
     });
 
   }
