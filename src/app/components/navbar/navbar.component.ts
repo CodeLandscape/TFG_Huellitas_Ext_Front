@@ -7,6 +7,7 @@ import {AsociacionService} from '../../services/asociacion.service';
 import {NavbarService} from '../../services/navbar.service';
 import {Subscription} from 'rxjs';
 
+declare var $: any;
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -51,6 +52,17 @@ export class NavbarComponent implements OnInit {
       this.loadSolicitudesPendientesAsociacion();
     });
 
+
+    const dropdownNavbar = $('#navbarTogglerDemo01');
+    const dropdownMenu = $('#dropdownMenu');
+
+    dropdownNavbar.on('show.bs.collapse', () => {
+      dropdownMenu.removeClass('dropdown-menu-end').addClass('dropend');
+    });
+
+    dropdownNavbar.on('hide.bs.collapse', () => {
+      dropdownMenu.removeClass('dropend').addClass('dropdown-menu-end');
+    });
   }
 
   loadSolicitudesPendientesAsociacion() {
