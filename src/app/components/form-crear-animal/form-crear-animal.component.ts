@@ -36,7 +36,6 @@ export class FormCrearAnimalComponent implements OnInit {
   ngOnInit(): void {
     this.razaService.getRazas().subscribe(razasRecibidas => {
       razasRecibidas.forEach((raza: Raza) => {
-        console.log(raza);
         this.razas.push({id: raza.id, nombre: raza.nombre, tipo: raza.tipoAnimal.nombre});
       });
       this.cargado = true;
@@ -102,7 +101,6 @@ export class FormCrearAnimalComponent implements OnInit {
       formData.append('file', selectedFile);
     }
     formData.append('idAnimal', idAnimal.toString());
-    console.log(formData);
     this.animalService.guardarImagenAnimal(formData).subscribe((data: any) => {
       console.log(data);
       this.fileName = undefined;

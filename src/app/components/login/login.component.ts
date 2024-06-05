@@ -46,7 +46,6 @@ export class LoginComponent implements OnInit {
         this.tokenService.setToken(data.token);
         this.usuariosService.getUsuarioById(data.id).subscribe(usuario => {
           this.comunService.setUsuarioAutenticado(usuario);
-          console.log(this.comunService.getUsuarioAutenticado());
           if (usuario.rol.nombre === 'ROLE_USER') {
             this.router.navigate(['/listadoAnimales']);
           }

@@ -22,6 +22,9 @@ export class ListAssociationsComponent implements AfterViewInit {
   ];
 
   constructor(private asociacionService: AsociacionService) {
+    this.loadAsociaciones();
+  }
+  loadAsociaciones(): void {
     this.asociacionService.getAsociaciones().pipe(
       map((data: any[]) =>
         data.map(item => ({
@@ -43,7 +46,6 @@ export class ListAssociationsComponent implements AfterViewInit {
       )
     ).subscribe((asociaciones: Asociacion[]) => {
       this.asociaciones = asociaciones;
-      console.log(asociaciones);
       this.initializeDataTable();
     });
   }
@@ -83,7 +85,7 @@ export class ListAssociationsComponent implements AfterViewInit {
       if (result.isConfirmed) {
         this.asociacionService.darDeBaja(id).subscribe(
           response => {
-            this.reloadDataTable();
+            this.loadAsociaciones();
           }
         );
         Swal.fire(
@@ -119,7 +121,7 @@ export class ListAssociationsComponent implements AfterViewInit {
           'La asociación ha sido activada.',
           'success'
         );
-        this.reloadDataTable();
+        this.loadAsociaciones();
       }
     });
   }

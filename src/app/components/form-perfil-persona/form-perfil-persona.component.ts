@@ -34,7 +34,6 @@ export class FormPerfilPersonaComponent implements OnInit {
   ngOnInit(): void {
     this.usuarioService.getPersonaSesion().subscribe(persona => {
       this.persona = persona;
-      console.log(this.persona);
       this.cargarDatosFormulario();
       this.crearFormulario(persona);
     });

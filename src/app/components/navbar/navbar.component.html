@@ -54,14 +54,14 @@
       </ul>
       <!-- Left links -->
     </div>
-    <div class="dropdown text-lg-end d-inline col-lg-3">
-      <a class="nav-link dropdown-toggle d-inline" href="#" role="button" id="navbarDropdownUser" data-bs-toggle="dropdown"
+    <div class="dropdown text-end col-lg-3">
+      <a class="nav-link dropdown-toggle" href="#" role="button" id="navbarDropdownUser" data-bs-toggle="dropdown"
          aria-expanded="false">
         <i class="fa-regular fa-user" style="color: #ffffff;"></i>
         <span class="badge rounded-pill badge-notification bg-danger"
               *ngIf="solicitudesPendientesAsociacion>0">{{ solicitudesPendientesAsociacion }}</span>
       </a>
-      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUser">
         <li><a class="dropdown-item link-danger" [routerLink]="['/solicitudes-asoc']"
                *ngIf="solicitudesPendientesAsociacion>0">Tienes solicitudes pendientes</a></li>
         <li><a class="dropdown-item" [routerLink]="['/perfil']" *ngIf="rol!=='ROLE_ADMIN'">Mi Perfil</a></li>

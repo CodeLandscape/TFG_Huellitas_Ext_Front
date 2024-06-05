@@ -95,8 +95,6 @@ export class AnimalComponent implements OnInit {
         control.markAsTouched();
       });
     }
-    console.log(this.formGroupAnimal.value);
-
     this.filtroPorLosQueBuscar = [];
     if (this.formGroupAnimal.value.nombre) {
       this.filtroPorLosQueBuscar.push({strSearch: this.formGroupAnimal.value.nombre});

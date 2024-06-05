@@ -28,7 +28,6 @@ export class TokenService {
     // Create a new Date object directly from exp
     const expirationDate = new Date(decodedToken.exp * 1000);
 
-    console.log(expirationDate);
     this.cookieService.set(environment.TOKEN_KEY, token, expirationDate);
   }
 

@@ -68,7 +68,6 @@ export class PerfilAnimalComponent implements OnInit {
         this.imageLoaded = true;
       });
     }, error => {
-      console.log(error);
       Swal.fire({
         title: 'Error',
         text: 'No se ha podido cargar el animal',
@@ -96,7 +95,6 @@ export class PerfilAnimalComponent implements OnInit {
         this.animalPersona = this.animalPersona || new AnimalPersona(); // Initialize animalPersona if it's not already
         this.animalPersona.idAnimal = {id: this.route.snapshot.params.id}; // Initialize idAnimal before using it
         const usuarioAutenticado = this.comunService.getUsuarioAutenticado();
-        console.log(usuarioAutenticado);
         this.personaService.getPersonaByUsuarioId(usuarioAutenticado.id).pipe(
           switchMap(persona => {
             this.animalPersona.idPersona = {id: persona.id}; // Initialize idPersona inside switchMap

@@ -132,9 +132,7 @@ export class FormEditarAnimalComponent implements OnInit {
       formData.append('file', selectedFile);
     }
     formData.append('idAnimal', idAnimal.toString());
-    console.log(formData);
     this.animalService.guardarImagenAnimal(formData).subscribe((data: any) => {
-      console.log(data);
       this.fileName = undefined;
       this.selectedFile = null;  // Reiniciar el archivo seleccionado
     });

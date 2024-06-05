@@ -35,9 +35,6 @@ export class AuthService {
     );
   }
   public login(loginUsuario: LoginUsuario): Observable<JwtDTO>{
-    console.log(loginUsuario);
-
-
     return this.http.post<JwtDTO>(environment.api.url + '/auth/login', loginUsuario);
   }
 
