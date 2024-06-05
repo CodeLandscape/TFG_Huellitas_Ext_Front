@@ -1,18 +1,36 @@
 <nav class="navbar navbar-expand-lg" style="background: #5AB253">
-  <div class="container-fluid d-flex">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
-            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="d-flex align-items-center justify-content-lg-start justify-content-center col-md-3">
-      <img
-        src="assets/imgs/huellitasLogo2.png"
-        height="50"
-        alt="Huellitas extremeñas"
-      />
-      <p class="navbar-brand m-0 d-lg-block d-none" *ngIf="nombre">{{ rol==="ROLE_ASOC" ? 'Bienvenida' : 'Bienvenido' }} {{ nombre }}</p>
+  <div class="container-fluid">
+    <div class="d-flex align-items-center justify-content-between w-100">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+              aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="d-flex align-items-center justify-content-center">
+        <img
+          src="assets/imgs/huellitasLogo2.png"
+          height="50"
+          alt="Huellitas extremeñas"
+        />
+        <p class="navbar-brand m-0 d-lg-block d-none" *ngIf="nombre">{{ rol==="ROLE_ASOC" ? 'Bienvenida' : 'Bienvenido' }} {{ nombre }}</p>
+      </div>
+      <div class="dropdown text-end">
+        <a class="nav-link dropdown-toggle" href="#" role="button" id="navbarDropdownUser" data-bs-toggle="dropdown"
+           aria-expanded="false">
+          <i class="fa-regular fa-user" style="color: #ffffff;"></i>
+          <span class="badge rounded-pill badge-notification bg-danger"
+                *ngIf="solicitudesPendientesAsociacion>0">{{ solicitudesPendientesAsociacion }}</span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUser">
+          <li><a class="dropdown-item link-danger" [routerLink]="['/solicitudes-asoc']"
+                 *ngIf="solicitudesPendientesAsociacion>0">Tienes solicitudes pendientes</a></li>
+          <li><a class="dropdown-item" [routerLink]="['/perfil']" *ngIf="rol!=='ROLE_ADMIN'">Mi Perfil</a></li>
+          <li>
+            <button class="dropdown-item" (click)="logout()">Cerrar Sesión</button>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="collapse navbar-collapse justify-content-center col-md-6" id="navbarTogglerDemo01">
+    <div class="collapse navbar-collapse justify-content-center" id="navbarTogglerDemo01">
       <!-- Left links -->
       <ul class="navbar-nav mb-2 mb-lg-0 d-flex gap-2 align-items-center">
         <li class="nav-item">
