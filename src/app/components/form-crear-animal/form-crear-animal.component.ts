@@ -88,9 +88,9 @@ export class FormCrearAnimalComponent implements OnInit {
       this.idAnimal = data.id;
       this.guardarImagenAnimal(this.idAnimal, this.selectedFile);
       this.formGroupAnimal.reset();
-      this.recargar.emit();
       $('#modalAnadir').modal('hide');
       Swal.fire('Guardado', 'Animal guardado correctamente', 'success');
+      this.recargar.emit();
     });
 
   }
@@ -105,6 +105,7 @@ export class FormCrearAnimalComponent implements OnInit {
       console.log(data);
       this.fileName = undefined;
       this.selectedFile = null;  // Reiniciar el archivo seleccionado
+      this.recargar.emit();
     });
   }
 

@@ -92,9 +92,9 @@ export class FormEditarAnimalComponent implements OnInit {
       if (this.selectedFile != null) {
         this.guardarImagenAnimal(this.idAEditar, this.selectedFile);
       }
-      this.recargar.emit();
       $('#modalEditar').modal('hide');
       Swal.fire('Guardado', 'Animal modificado correctamente', 'success');
+      this.recargar.emit();
     });
 
   }
@@ -135,6 +135,7 @@ export class FormEditarAnimalComponent implements OnInit {
     this.animalService.guardarImagenAnimal(formData).subscribe((data: any) => {
       this.fileName = undefined;
       this.selectedFile = null;  // Reiniciar el archivo seleccionado
+      this.recargar.emit();
     });
   }
 
