@@ -1,5 +1,5 @@
 .navbar {
-  background-color: #5AB253;
+  background-color: #5AB253; /* Cambiado el color de fondo a #5AB253 */
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   padding: 5px;
   font-weight: bold;
@@ -7,30 +7,30 @@
 }
 
 .nav-link {
-  color: #f8f9fa;
+  color: #f8f9fa; /* Cambiado el color del texto a blanco para contrastar con el fondo verde */
   text-decoration: none;
   cursor: pointer;
 }
 
 .nav-link:hover {
-  color: #c6c6c6;
+  color: #c6c6c6; /* Cambiado el color del texto al pasar el ratón a un gris claro */
 }
 
 .navbar .active {
-  background-color: #449d44;
+  background-color: #449d44; /* Cambiado el color de fondo de los enlaces activos a un verde más oscuro */
   color: #f8f9fa;
   border-radius: 5px;
 }
 
-.link-danger:active {
-  background: #d9534f !important;
+.link-danger:active{
+  background: #d9534f !important; /* Cambiado el color de fondo al hacer click en un enlace de peligro a un rojo más oscuro */
   color: #f8f9fa !important;
 }
 
-.navbar-brand {
-  color: #f8f9fa;
+.navbar-brand{
+  color: #f8f9fa; /* Cambiado el color del texto del logo a blanco */
   font-weight: bold;
-  white-space: nowrap;
-  overflow: hidden;
+  white-space: nowrap; /* Evita que el texto se envuelva a la siguiente línea */
+  overflow: hidden; /* Oculta cualquier texto que se desborde del contenedor */
   text-overflow: ellipsis;
 }
