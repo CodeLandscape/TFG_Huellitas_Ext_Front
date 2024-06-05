@@ -5,29 +5,39 @@
               aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="d-flex align-items-center justify-content-center flex-grow-1">
+      <div class="d-flex align-items-center justify-content-center flex-grow-1 d-lg-none">
         <img
           src="assets/imgs/huellitasLogo2.png"
           height="50"
           alt="Huellitas extremeñas"
         />
-        <p class="navbar-brand m-0 d-lg-block d-none" *ngIf="nombre">{{ rol==="ROLE_ASOC" ? 'Bienvenida' : 'Bienvenido' }} {{ nombre }}</p>
       </div>
-      <div class="dropdown text-end d-lg-flex align-items-center ms-lg-3">
-        <a class="nav-link dropdown-toggle" href="#" role="button" id="navbarDropdownUser" data-bs-toggle="dropdown"
-           aria-expanded="false">
-          <i class="fa-regular fa-user" style="color: #ffffff;"></i>
-          <span class="badge rounded-pill badge-notification bg-danger"
-                *ngIf="solicitudesPendientesAsociacion>0">{{ solicitudesPendientesAsociacion }}</span>
-        </a>
-        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUser">
-          <li><a class="dropdown-item link-danger" [routerLink]="['/solicitudes-asoc']"
-                 *ngIf="solicitudesPendientesAsociacion>0">Tienes solicitudes pendientes</a></li>
-          <li><a class="dropdown-item" [routerLink]="['/perfil']" *ngIf="rol!=='ROLE_ADMIN'">Mi Perfil</a></li>
-          <li>
-            <button class="dropdown-item" (click)="logout()">Cerrar Sesión</button>
-          </li>
-        </ul>
+      <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center justify-content-lg-start justify-content-center">
+          <img
+            src="assets/imgs/huellitasLogo2.png"
+            height="50"
+            alt="Huellitas extremeñas"
+            class="d-none d-lg-block"
+          />
+          <p class="navbar-brand m-0 d-lg-block d-none" *ngIf="nombre">{{ rol==="ROLE_ASOC" ? 'Bienvenida' : 'Bienvenido' }} {{ nombre }}</p>
+        </div>
+        <div class="dropdown text-end d-lg-flex align-items-center ms-lg-3 d-none d-lg-block">
+          <a class="nav-link dropdown-toggle" href="#" role="button" id="navbarDropdownUser" data-bs-toggle="dropdown"
+             aria-expanded="false">
+            <i class="fa-regular fa-user" style="color: #ffffff;"></i>
+            <span class="badge rounded-pill badge-notification bg-danger"
+                  *ngIf="solicitudesPendientesAsociacion>0">{{ solicitudesPendientesAsociacion }}</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUser">
+            <li><a class="dropdown-item link-danger" [routerLink]="['/solicitudes-asoc']"
+                   *ngIf="solicitudesPendientesAsociacion>0">Tienes solicitudes pendientes</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/perfil']" *ngIf="rol!=='ROLE_ADMIN'">Mi Perfil</a></li>
+            <li>
+              <button class="dropdown-item" (click)="logout()">Cerrar Sesión</button>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="collapse navbar-collapse justify-content-center" id="navbarTogglerDemo01">
@@ -64,7 +74,7 @@
       </ul>
       <!-- Left links -->
     </div>
-    <div class="dropdown ms-auto text-end d-flex align-items-center">
+    <div class="dropdown ms-auto text-end d-lg-none">
       <a class="nav-link dropdown-toggle" href="#" role="button" id="navbarDropdownUser" data-bs-toggle="dropdown"
          aria-expanded="false">
         <i class="fa-regular fa-user" style="color: #ffffff;"></i>
