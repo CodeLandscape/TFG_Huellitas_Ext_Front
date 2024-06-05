@@ -51,27 +51,13 @@
       <!-- Left links -->
     </div>
     <div class="dropdown text-lg-end d-inline col-lg-3">
-      <a class="nav-link dropdown-toggle d-inline d-lg-none ms-auto" href="#" role="button" id="navbarDropdownUserMobile" data-bs-toggle="dropdown"
+      <a class="nav-link dropdown-toggle d-inline" href="#" role="button" id="navbarDropdownUser" data-bs-toggle="dropdown"
          aria-expanded="false">
         <i class="fa-regular fa-user" style="color: #ffffff;"></i>
         <span class="badge rounded-pill badge-notification bg-danger"
               *ngIf="solicitudesPendientesAsociacion>0">{{ solicitudesPendientesAsociacion }}</span>
       </a>
-      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUserMobile">
-        <li><a class="dropdown-item link-danger" [routerLink]="['/solicitudes-asoc']"
-               *ngIf="solicitudesPendientesAsociacion>0">Tienes solicitudes pendientes</a></li>
-        <li><a class="dropdown-item" [routerLink]="['/perfil']" *ngIf="rol!=='ROLE_ADMIN'">Mi Perfil</a></li>
-        <li>
-          <button class="dropdown-item" (click)="logout()">Cerrar Sesión</button>
-        </li>
-      </ul>
-      <a class="nav-link dropdown-toggle d-none d-lg-inline" href="#" role="button" id="navbarDropdownUser" data-bs-toggle="dropdown"
-         aria-expanded="false">
-        <i class="fa-regular fa-user" style="color: #ffffff;"></i>
-        <span class="badge rounded-pill badge-notification bg-danger"
-              *ngIf="solicitudesPendientesAsociacion>0">{{ solicitudesPendientesAsociacion }}</span>
-      </a>
-      <ul class="dropdown-menu dropdown-menu-end" id="dropdownMenu" aria-labelledby="navbarDropdownUser">
+      <ul class="dropdown-menu dropdown-menu-end" id="dropdownMenu" aria-labelledby="navbarDropdown">
         <li><a class="dropdown-item link-danger" [routerLink]="['/solicitudes-asoc']"
                *ngIf="solicitudesPendientesAsociacion>0">Tienes solicitudes pendientes</a></li>
         <li><a class="dropdown-item" [routerLink]="['/perfil']" *ngIf="rol!=='ROLE_ADMIN'">Mi Perfil</a></li>
