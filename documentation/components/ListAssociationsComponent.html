@@ -122,6 +122,13 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente para listar asociaciones.</p>
+
+    </p>
 
 
     <p class="comment">
@@ -219,6 +226,9 @@
                                 <a href="#initializeDataTable" >initializeDataTable</a>
                             </li>
                             <li>
+                                <a href="#loadAsociaciones" >loadAsociaciones</a>
+                            </li>
+                            <li>
                                 <a href="#ngAfterViewInit" >ngAfterViewInit</a>
                             </li>
                             <li>
@@ -247,12 +257,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/components/list-associations/list-associations.component.ts:22</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/components/list-associations/list-associations.component.ts:31</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor que inyecta el servicio de asociaciones.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -261,6 +273,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -275,6 +288,12 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <ul>
+<li>Servicio para manejar asociaciones.</li>
+</ul>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -314,14 +333,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="96"
-                                    class="link-to-prism">src/app/components/list-associations/list-associations.component.ts:96</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="152"
+                                    class="link-to-prism">src/app/components/list-associations/list-associations.component.ts:152</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Activa una asociación por su ID.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -332,6 +353,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -346,6 +368,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>ID de la asociación a activar.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -381,14 +409,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="64"
-                                    class="link-to-prism">src/app/components/list-associations/list-associations.component.ts:64</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="110"
+                                    class="link-to-prism">src/app/components/list-associations/list-associations.component.ts:110</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Desactiva una asociación por su ID.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -399,6 +429,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -413,6 +444,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>ID de la asociación a desactivar.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -448,19 +485,66 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="54"
-                                    class="link-to-prism">src/app/components/list-associations/list-associations.component.ts:54</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="86"
+                                    class="link-to-prism">src/app/components/list-associations/list-associations.component.ts:86</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Inicializa la tabla de datos usando DataTables.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                         </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadAsociaciones"></a>
+                    <span class="name">
+                        <span ><b>loadAsociaciones</b></span>
+                        <a href="#loadAsociaciones"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>loadAsociaciones()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="47"
+                                    class="link-to-prism">src/app/components/list-associations/list-associations.component.ts:47</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Carga la lista de asociaciones desde el servicio.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -485,19 +569,24 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="51"
-                                    class="link-to-prism">src/app/components/list-associations/list-associations.component.ts:51</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="78"
+                                    class="link-to-prism">src/app/components/list-associations/list-associations.component.ts:78</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Método de ciclo de vida de Angular que se llama después de que Angular ha inicializado la vista del componente.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                         </div>
+                            <div class="io-description">
+                                
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -522,19 +611,24 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="91"
-                                    class="link-to-prism">src/app/components/list-associations/list-associations.component.ts:91</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="141"
+                                    class="link-to-prism">src/app/components/list-associations/list-associations.component.ts:141</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Recarga la tabla de datos.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                         </div>
+                            <div class="io-description">
+                                
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -570,10 +664,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/components/list-associations/list-associations.component.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/components/list-associations/list-associations.component.ts:22</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Lista de asociaciones</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -597,20 +697,26 @@
                 <tr>
                     <td class="col-md-4">
                         <i>Default value : </i><code>[
-    {name: &#x27;nombre&#x27;, title: &#x27;Nombre&#x27;},
-    {name: &#x27;poblacion&#x27;, title: &#x27;Población&#x27;},
-    {name: &#x27;provincia&#x27;, title: &#x27;Provincia&#x27;},
-    {name: &#x27;estado&#x27;, title: &#x27;Estado&#x27;},
-    {name: &#x27;opciones&#x27;, title: &#x27;Opciones&#x27;}
+    { name: &#x27;nombre&#x27;, title: &#x27;Nombre&#x27; },
+    { name: &#x27;poblacion&#x27;, title: &#x27;Población&#x27; },
+    { name: &#x27;provincia&#x27;, title: &#x27;Provincia&#x27; },
+    { name: &#x27;estado&#x27;, title: &#x27;Estado&#x27; },
+    { name: &#x27;opciones&#x27;, title: &#x27;Opciones&#x27; }
   ]</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/components/list-associations/list-associations.component.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/components/list-associations/list-associations.component.ts:25</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Columnas de la tabla</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -620,30 +726,53 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {AfterViewInit, Component, OnInit, ViewChild} from &#x27;@angular/core&#x27;;
-import {AsociacionService} from &#x27;../../services/asociacion.service&#x27;;
-import {Asociacion} from &#x27;../../interfaces/associations.interface&#x27;;
-import {map} from &#x27;rxjs/operators&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { AfterViewInit, Component, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
+import { AsociacionService } from &#x27;../../services/asociacion.service&#x27;;
+import { Asociacion } from &#x27;../../interfaces/associations.interface&#x27;;
+import { map } from &#x27;rxjs/operators&#x27;;
 import Swal from &#x27;sweetalert2&#x27;;
 
 declare var $: any; // Declaración de jQuery
 
+/**
+ * Componente para listar asociaciones.
+ *
+ * @@Component
+ */
 @Component({
   selector: &#x27;app-list-associations&#x27;,
   templateUrl: &#x27;./list-associations.component.html&#x27;,
   styleUrls: [&#x27;./list-associations.component.css&#x27;]
 })
 export class ListAssociationsComponent implements AfterViewInit {
+
+  /** Lista de asociaciones */
   public asociaciones: Asociacion[] &#x3D; [];
+
+  /** Columnas de la tabla */
   columns &#x3D; [
-    {name: &#x27;nombre&#x27;, title: &#x27;Nombre&#x27;},
-    {name: &#x27;poblacion&#x27;, title: &#x27;Población&#x27;},
-    {name: &#x27;provincia&#x27;, title: &#x27;Provincia&#x27;},
-    {name: &#x27;estado&#x27;, title: &#x27;Estado&#x27;},
-    {name: &#x27;opciones&#x27;, title: &#x27;Opciones&#x27;}
+    { name: &#x27;nombre&#x27;, title: &#x27;Nombre&#x27; },
+    { name: &#x27;poblacion&#x27;, title: &#x27;Población&#x27; },
+    { name: &#x27;provincia&#x27;, title: &#x27;Provincia&#x27; },
+    { name: &#x27;estado&#x27;, title: &#x27;Estado&#x27; },
+    { name: &#x27;opciones&#x27;, title: &#x27;Opciones&#x27; }
   ];
 
+  /**
+   * Constructor que inyecta el servicio de asociaciones.
+   *
+   * @param {AsociacionService} asociacionService - Servicio para manejar asociaciones.
+   */
   constructor(private asociacionService: AsociacionService) {
+    this.loadAsociaciones();
+  }
+
+  /**
+   * Carga la lista de asociaciones desde el servicio.
+   *
+   * @returns {void}
+   */
+  loadAsociaciones(): void {
     this.asociacionService.getAsociaciones().pipe(
       map((data: any[]) &#x3D;&gt;
         data.map(item &#x3D;&gt; ({
@@ -665,28 +794,51 @@ export class ListAssociationsComponent implements AfterViewInit {
       )
     ).subscribe((asociaciones: Asociacion[]) &#x3D;&gt; {
       this.asociaciones &#x3D; asociaciones;
-      console.log(asociaciones);
       this.initializeDataTable();
     });
   }
 
+  /**
+   * Método de ciclo de vida de Angular que se llama después de que Angular ha inicializado la vista del componente.
+   *
+   * @returns {void}
+   */
   ngAfterViewInit(): void {
   }
 
+  /**
+   * Inicializa la tabla de datos usando DataTables.
+   *
+   * @returns {void}
+   */
   initializeDataTable(): void {
     $(document).ready(function() {
       $(&#x27;#datatable&#x27;).DataTable({
         pagingType: &#x27;full_numbers&#x27;,
         pageLength: 10,
-        processing: true,
+        responsive: {
+          details: {
+            type: &#x27;inline&#x27;,
+            target: 0
+          }
+        },
+        language: {
+          url: &#x27;https://cdn.datatables.net/plug-ins/2.0.8/i18n/es-ES.json&#x27;
+        }
       });
     });
   }
 
-  desactivar(id: number) {
+  /**
+   * Desactiva una asociación por su ID.
+   *
+   * @param {number} id - ID de la asociación a desactivar.
+   * @returns {void}
+   */
+  desactivar(id: number): void {
     Swal.fire({
       title: &#x27;¿Estás seguro?&#x27;,
-      text: &#x27;¡No podrás revertir esto!&#x27;,
+      text: &#x27;La asociación será desactivada y no podrá realizar acciones en la plataforma.&#x27;,
       icon: &#x27;warning&#x27;,
       showCancelButton: true,
       confirmButtonColor: &#x27;#3085d6&#x27;,
@@ -697,7 +849,7 @@ export class ListAssociationsComponent implements AfterViewInit {
       if (result.isConfirmed) {
         this.asociacionService.darDeBaja(id).subscribe(
           response &#x3D;&gt; {
-            this.reloadDataTable();
+            this.loadAsociaciones();
           }
         );
         Swal.fire(
@@ -707,15 +859,25 @@ export class ListAssociationsComponent implements AfterViewInit {
         );
       }
     });
-
   }
 
+  /**
+   * Recarga la tabla de datos.
+   *
+   * @returns {void}
+   */
   reloadDataTable(): void {
     $(&#x27;#datatable&#x27;).DataTable().destroy();
     this.initializeDataTable();
   }
 
-  activar(id: number) {
+  /**
+   * Activa una asociación por su ID.
+   *
+   * @param {number} id - ID de la asociación a activar.
+   * @returns {void}
+   */
+  activar(id: number): void {
     Swal.fire({
       title: &#x27;¿Quiere activar la asociación?&#x27;,
       text: &#x27;Esto permitirá que la asociación pueda realizar acciones en la plataforma.&#x27;,
@@ -733,7 +895,7 @@ export class ListAssociationsComponent implements AfterViewInit {
           &#x27;La asociación ha sido activada.&#x27;,
           &#x27;success&#x27;
         );
-
+        this.loadAsociaciones();
       }
     });
   }
@@ -754,16 +916,16 @@ export class ListAssociationsComponent implements AfterViewInit {
     &lt;tbody&gt;
     &lt;tr *ngFor&#x3D;&quot;let item of asociaciones&quot;&gt;
       &lt;td&gt;{{ item.nombre }}&lt;/td&gt;
-      &lt;td&gt;{{ item.usuario.poblacion }}&lt;/td&gt;
-      &lt;td&gt;{{ item.usuario.provincia.nombre }}&lt;/td&gt;
-      &lt;td&gt;
+      &lt;td class&#x3D;&quot;min-tablet-l&quot;&gt;{{ item.usuario.poblacion }}&lt;/td&gt;
+      &lt;td class&#x3D;&quot;min-tablet-l&quot;&gt;{{ item.usuario.provincia.nombre }}&lt;/td&gt;
+      &lt;td class&#x3D;&quot;min-tablet-l&quot;&gt;
   &lt;span [ngClass]&#x3D;&quot;{&#x27;badge rounded-pill bg-danger&#x27;: !item.usuario.activo, &#x27;badge rounded-pill bg-success text-white&#x27;: item.usuario.activo || !item.usuario.activo}&quot;&gt;
     {{ item.usuario.activo ? &#x27;Validada&#x27; : &#x27;No activo&#x27; }}
   &lt;/span&gt;
       &lt;/td&gt;
 
 
-      &lt;td&gt;
+      &lt;td class&#x3D;&quot;min-tablet-l&quot;&gt;
         &lt;button *ngIf&#x3D;&quot;!item.usuario.activo&quot; class&#x3D;&quot;btn btn-primary&quot; (click)&#x3D;&quot;activar(item.usuario.id)&quot;&gt;Activar&lt;/button&gt;
         &lt;button *ngIf&#x3D;&quot;item.usuario.activo&quot; class&#x3D;&quot;btn btn-danger&quot; (click)&#x3D;&quot;desactivar(item.usuario.id)&quot;&gt;Desactivar&lt;/button&gt;
       &lt;/td&gt;
@@ -806,8 +968,8 @@ export class ListAssociationsComponent implements AfterViewInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container mt-4">  <h1 class="text-center m-5">Asociaciones</h1>  <table id="datatable" class="table table-striped table-bordered">    <thead>    <tr>      <th *ngFor="let col of columns">{{ col.title }}</th>    </tr>    </thead>    <tbody>    <tr *ngFor="let item of asociaciones">      <td>{{ item.nombre }}</td>      <td>{{ item.usuario.poblacion }}</td>      <td>{{ item.usuario.provincia.nombre }}</td>      <td>  <span [ngClass]="{\'badge rounded-pill bg-danger\': !item.usuario.activo, \'badge rounded-pill bg-success text-white\': item.usuario.activo || !item.usuario.activo}">    {{ item.usuario.activo ? \'Validada\' : \'No activo\' }}  </span>      </td>      <td>        <button *ngIf="!item.usuario.activo" class="btn btn-primary" (click)="activar(item.usuario.id)">Activar</button>        <button *ngIf="item.usuario.activo" class="btn btn-danger" (click)="desactivar(item.usuario.id)">Desactivar</button>      </td>    </tr>    </tbody>  </table></div></div>'
-    var COMPONENTS = [{'name': 'AnimalComponent', 'selector': 'app-animal'},{'name': 'AnimalesAsociacionComponent', 'selector': 'app-animales-asociacion'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArchivosAsociacionComponent', 'selector': 'app-archivos-asociacion'},{'name': 'DocumentosAnimalComponent', 'selector': 'app-documentos-animal'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormCrearAnimalComponent', 'selector': 'app-form-crear-animal'},{'name': 'FormEditarAnimalComponent', 'selector': 'app-form-editar-animal'},{'name': 'FormEditarArchivoAsocComponent', 'selector': 'app-form-editar-archivo-asoc'},{'name': 'FormEditarDocumentoAnimalComponent', 'selector': 'app-form-editar-documento-animal'},{'name': 'FormPerfilAsociacionComponent', 'selector': 'app-form-perfil-asociacion'},{'name': 'FormPerfilPersonaComponent', 'selector': 'app-form-perfil-persona'},{'name': 'FormSubirArchivoAsocComponent', 'selector': 'app-form-subir-archivo-asoc'},{'name': 'FormSubirDocumentoAnimalComponent', 'selector': 'app-form-subir-documento-animal'},{'name': 'ListAssociationsComponent', 'selector': 'app-list-associations'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PaginacionComponent', 'selector': 'app-paginacion'},{'name': 'PerfilAnimalComponent', 'selector': 'app-perfil-animal'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'RazaComponent', 'selector': 'app-raza'},{'name': 'RegisterAssociationComponent', 'selector': 'app-register-association'},{'name': 'RegisterUserComponent', 'selector': 'app-register-user'},{'name': 'SolicitudesAdminComponent', 'selector': 'app-solicitudes-admin'},{'name': 'SolicitudesAnimalComponent', 'selector': 'app-solicitudes-animal'},{'name': 'SolicitudesAsociacionComponent', 'selector': 'app-solicitudes-asociacion'},{'name': 'SolicitudesUsuarioComponent', 'selector': 'app-solicitudes-usuario'},{'name': 'TipoAnimalComponent', 'selector': 'app-tipo-animal'}];
+        var COMPONENT_TEMPLATE = '<div><div class="container mt-4">  <h1 class="text-center m-5">Asociaciones</h1>  <table id="datatable" class="table table-striped table-bordered">    <thead>    <tr>      <th *ngFor="let col of columns">{{ col.title }}</th>    </tr>    </thead>    <tbody>    <tr *ngFor="let item of asociaciones">      <td>{{ item.nombre }}</td>      <td class="min-tablet-l">{{ item.usuario.poblacion }}</td>      <td class="min-tablet-l">{{ item.usuario.provincia.nombre }}</td>      <td class="min-tablet-l">  <span [ngClass]="{\'badge rounded-pill bg-danger\': !item.usuario.activo, \'badge rounded-pill bg-success text-white\': item.usuario.activo || !item.usuario.activo}">    {{ item.usuario.activo ? \'Validada\' : \'No activo\' }}  </span>      </td>      <td class="min-tablet-l">        <button *ngIf="!item.usuario.activo" class="btn btn-primary" (click)="activar(item.usuario.id)">Activar</button>        <button *ngIf="item.usuario.activo" class="btn btn-danger" (click)="desactivar(item.usuario.id)">Desactivar</button>      </td>    </tr>    </tbody>  </table></div></div>'
+    var COMPONENTS = [{'name': 'AnimalComponent', 'selector': 'app-animal'},{'name': 'AnimalesAsociacionComponent', 'selector': 'app-animales-asociacion'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArchivosAsociacionComponent', 'selector': 'app-archivos-asociacion'},{'name': 'CookiesComponent', 'selector': 'app-cookies'},{'name': 'DocumentosAnimalComponent', 'selector': 'app-documentos-animal'},{'name': 'Error404Component', 'selector': 'app-error404'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormCrearAnimalComponent', 'selector': 'app-form-crear-animal'},{'name': 'FormEditarAnimalComponent', 'selector': 'app-form-editar-animal'},{'name': 'FormEditarArchivoAsocComponent', 'selector': 'app-form-editar-archivo-asoc'},{'name': 'FormEditarDocumentoAnimalComponent', 'selector': 'app-form-editar-documento-animal'},{'name': 'FormPerfilAsociacionComponent', 'selector': 'app-form-perfil-asociacion'},{'name': 'FormPerfilPersonaComponent', 'selector': 'app-form-perfil-persona'},{'name': 'FormSubirArchivoAsocComponent', 'selector': 'app-form-subir-archivo-asoc'},{'name': 'FormSubirDocumentoAnimalComponent', 'selector': 'app-form-subir-documento-animal'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'ListAssociationsComponent', 'selector': 'app-list-associations'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PaginacionComponent', 'selector': 'app-paginacion'},{'name': 'PerfilAnimalComponent', 'selector': 'app-perfil-animal'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'RazaComponent', 'selector': 'app-raza'},{'name': 'RegisterAssociationComponent', 'selector': 'app-register-association'},{'name': 'RegisterUserComponent', 'selector': 'app-register-user'},{'name': 'SolicitudesAdminComponent', 'selector': 'app-solicitudes-admin'},{'name': 'SolicitudesAnimalComponent', 'selector': 'app-solicitudes-animal'},{'name': 'SolicitudesAsociacionComponent', 'selector': 'app-solicitudes-asociacion'},{'name': 'SolicitudesUsuarioComponent', 'selector': 'app-solicitudes-usuario'},{'name': 'TipoAnimalComponent', 'selector': 'app-tipo-animal'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ListAssociationsComponent'};
 </script>

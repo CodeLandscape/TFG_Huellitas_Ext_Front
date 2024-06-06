@@ -117,6 +117,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Servicio para manejar operaciones relacionadas con los tipos de animales.</p>
+
+            </p>
 
 
 
@@ -124,6 +131,21 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#apiUrl" >apiUrl</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -168,12 +190,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/services/tipo-animal-service.service.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/services/tipo-animal-service.service.ts:17</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor que inyecta el HttpClient para realizar peticiones HTTP.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -182,6 +206,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -196,6 +221,12 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <ul>
+<li>Cliente HTTP para realizar las peticiones.</li>
+</ul>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -231,14 +262,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="22"
-                                    class="link-to-prism">src/app/services/tipo-animal-service.service.ts:22</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="51"
+                                    class="link-to-prism">src/app/services/tipo-animal-service.service.ts:51</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Añade un nuevo tipo de animal.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -249,6 +282,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -263,6 +297,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>El nuevo tipo de animal a añadir.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -272,7 +312,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Observable que emite el tipo de animal añadido.</p>
+
                             </div>
                 </td>
             </tr>
@@ -298,14 +339,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="27"
-                                    class="link-to-prism">src/app/services/tipo-animal-service.service.ts:27</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="61"
+                                    class="link-to-prism">src/app/services/tipo-animal-service.service.ts:61</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Borra un tipo de animal por su ID.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -316,6 +359,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -330,6 +374,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>ID del tipo de animal a borrar.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -339,7 +389,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Observable que emite la respuesta de la operación de borrado.</p>
+
                             </div>
                 </td>
             </tr>
@@ -365,14 +416,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="17"
-                                    class="link-to-prism">src/app/services/tipo-animal-service.service.ts:17</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="41"
+                                    class="link-to-prism">src/app/services/tipo-animal-service.service.ts:41</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene un tipo de animal por su ID.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -383,6 +436,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -397,6 +451,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>ID del tipo de animal.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -406,7 +466,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Observable que emite el tipo de animal correspondiente al ID proporcionado.</p>
+
                             </div>
                 </td>
             </tr>
@@ -432,21 +493,65 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="12"
-                                    class="link-to-prism">src/app/services/tipo-animal-service.service.ts:12</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="31"
+                                    class="link-to-prism">src/app/services/tipo-animal-service.service.ts:31</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene la lista de todos los tipos de animales.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                         </div>
+                            <div class="io-description">
+                                <p>Observable que emite un arreglo de tipos de animales.</p>
+
+                            </div>
                 </td>
             </tr>
+        </tbody>
+    </table>
+</section>
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="apiUrl"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>apiUrl</b></span>
+                        <a href="#apiUrl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>environment.api.url</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/services/tipo-animal-service.service.ts:17</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>URL base de la API</p>
+</div>
+                </td>
+            </tr>
+
         </tbody>
     </table>
 </section>
@@ -456,33 +561,67 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import {HttpClient} from &#x27;@angular/common/http&#x27;;
-import {TipoAnimal} from &#x27;../models/tipoAnimal&#x27;;
+import { HttpClient } from &#x27;@angular/common/http&#x27;;
+import { TipoAnimal } from &#x27;../models/tipoAnimal&#x27;;
+import { environment } from &#x27;../../environments/environment&#x27;;
 
+/**
+ * Servicio para manejar operaciones relacionadas con los tipos de animales.
+ *
+ * @@Injectable
+ */
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
 export class TipoAnimalServiceService {
 
+  /** URL base de la API */
+  private apiUrl &#x3D; environment.api.url;
+
+  /**
+   * Constructor que inyecta el HttpClient para realizar peticiones HTTP.
+   *
+   * @param {HttpClient} http - Cliente HTTP para realizar las peticiones.
+   */
   constructor(private http: HttpClient) { }
-  // obtener todos los tipos de animal
-  getTipoAnimales(){
-    return this.http.get&lt;TipoAnimal[]&gt;(&#x27;http://localhost:8080/api-backend/tipoAnimal/all&#x27;);
+
+  /**
+   * Obtiene la lista de todos los tipos de animales.
+   *
+   * @returns {Observable&lt;TipoAnimal[]&gt;} Observable que emite un arreglo de tipos de animales.
+   */
+  getTipoAnimales() {
+    return this.http.get&lt;TipoAnimal[]&gt;(&#x60;${this.apiUrl}/tipoAnimal/all&#x60;);
   }
 
-// obtener un tipo de animal por id
-  getTipoAnimalById(id: number){
-    return this.http.get&lt;TipoAnimal&gt;(&#x60;http://localhost:8080/api-backend/tipoAnimal/findById/${id}&#x60;);
+  /**
+   * Obtiene un tipo de animal por su ID.
+   *
+   * @param {number} id - ID del tipo de animal.
+   * @returns {Observable&lt;TipoAnimal&gt;} Observable que emite el tipo de animal correspondiente al ID proporcionado.
+   */
+  getTipoAnimalById(id: number) {
+    return this.http.get&lt;TipoAnimal&gt;(&#x60;${this.apiUrl}/tipoAnimal/findById/${id}&#x60;);
   }
 
-  // añadir un nuevo tipo de animal
-  addTipoAnimal(tipoAnimal: TipoAnimal){
-    return this.http.post&lt;TipoAnimal&gt;(&#x27;http://localhost:8080/api-backend/tipoAnimal/add&#x27;, tipoAnimal);
+  /**
+   * Añade un nuevo tipo de animal.
+   *
+   * @param {TipoAnimal} tipoAnimal - El nuevo tipo de animal a añadir.
+   * @returns {Observable&lt;TipoAnimal&gt;} Observable que emite el tipo de animal añadido.
+   */
+  addTipoAnimal(tipoAnimal: TipoAnimal) {
+    return this.http.post&lt;TipoAnimal&gt;(&#x60;${this.apiUrl}/tipoAnimal/add&#x60;, tipoAnimal);
   }
 
-  // borrar un tipo de animal por id
-  deleteTipoAnimal(id: number){
-    return this.http.delete(&#x60;http://localhost:8080/api-backend/tipoAnimal/delete/${id}&#x60;);
+  /**
+   * Borra un tipo de animal por su ID.
+   *
+   * @param {number} id - ID del tipo de animal a borrar.
+   * @returns {Observable&lt;void&gt;} Observable que emite la respuesta de la operación de borrado.
+   */
+  deleteTipoAnimal(id: number) {
+    return this.http.delete(&#x60;${this.apiUrl}/tipoAnimal/delete/${id}&#x60;);
   }
 }
 </code></pre>

@@ -122,6 +122,13 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente que gestiona la lista de razas de animales y sus operaciones relacionadas.</p>
+
+    </p>
 
 
     <p class="comment">
@@ -194,6 +201,9 @@
                                 <a href="#addRazaForm" >addRazaForm</a>
                             </li>
                             <li>
+                                <a href="#cargado" >cargado</a>
+                            </li>
+                            <li>
                                 <a href="#editRazaForm" >editRazaForm</a>
                             </li>
                             <li>
@@ -264,12 +274,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/components/raza/raza.component.ts:32</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/components/raza/raza.component.ts:44</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor del componente RazaComponent.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -278,6 +290,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -292,6 +305,12 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <ul>
+<li>Servicio FormBuilder para crear grupos de formularios.</li>
+</ul>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>tipoAnimalServ</td>
@@ -304,6 +323,12 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <ul>
+<li>Servicio para obtener datos del tipo de animal.</li>
+</ul>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>route</td>
@@ -316,6 +341,12 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <ul>
+<li>Servicio ActivatedRoute para acceder a los parámetros de la ruta.</li>
+</ul>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>razaService</td>
@@ -328,6 +359,12 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <ul>
+<li>Servicio para obtener y manipular datos de las razas.</li>
+</ul>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -367,14 +404,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="56"
-                                    class="link-to-prism">src/app/components/raza/raza.component.ts:56</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="90"
+                                    class="link-to-prism">src/app/components/raza/raza.component.ts:90</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Añade una nueva raza a la lista.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -404,14 +443,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="79"
-                                    class="link-to-prism">src/app/components/raza/raza.component.ts:79</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="118"
+                                    class="link-to-prism">src/app/components/raza/raza.component.ts:118</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Elimina una raza de la lista.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -422,6 +463,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -436,6 +478,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>El ID de la raza a eliminar.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -471,14 +519,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="102"
-                                    class="link-to-prism">src/app/components/raza/raza.component.ts:102</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="152"
+                                    class="link-to-prism">src/app/components/raza/raza.component.ts:152</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Edita una raza existente.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -508,14 +558,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="48"
-                                    class="link-to-prism">src/app/components/raza/raza.component.ts:48</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="78"
+                                    class="link-to-prism">src/app/components/raza/raza.component.ts:78</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene las razas asociadas al tipo de animal.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -545,14 +597,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="41"
-                                    class="link-to-prism">src/app/components/raza/raza.component.ts:41</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="67"
+                                    class="link-to-prism">src/app/components/raza/raza.component.ts:67</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene el tipo de animal basado en el parámetro de la ruta.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -582,14 +636,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="36"
-                                    class="link-to-prism">src/app/components/raza/raza.component.ts:36</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="59"
+                                    class="link-to-prism">src/app/components/raza/raza.component.ts:59</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Hook del ciclo de vida ngOnInit. Obtiene el tipo de animal y las razas asociadas al inicializar el componente.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -619,14 +675,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="118"
-                                    class="link-to-prism">src/app/components/raza/raza.component.ts:118</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="173"
+                                    class="link-to-prism">src/app/components/raza/raza.component.ts:173</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Abre el modal para editar una raza y establece los valores de la raza a editar.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -637,6 +695,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -651,6 +710,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>La raza a editar.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -692,10 +757,47 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/components/raza/raza.component.ts:26</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/components/raza/raza.component.ts:37</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Grupo de formularios para añadir una nueva raza.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cargado"></a>
+                    <span class="name">
+                        <span ><b>cargado</b></span>
+                        <a href="#cargado"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/components/raza/raza.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Indica si los datos han sido cargados.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -719,10 +821,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/components/raza/raza.component.ts:30</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/components/raza/raza.component.ts:42</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Grupo de formularios para editar una raza existente.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -745,10 +853,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/components/raza/raza.component.ts:23</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/components/raza/raza.component.ts:31</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>El ID de la raza que se está editando.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -771,10 +885,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/components/raza/raza.component.ts:24</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/components/raza/raza.component.ts:34</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>El nombre de la raza que se está editando.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -802,10 +922,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/components/raza/raza.component.ts:20</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/components/raza/raza.component.ts:22</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Lista de razas.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -828,10 +954,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/components/raza/raza.component.ts:22</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/components/raza/raza.component.ts:28</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>El tipo de animal asociado a las razas.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -841,8 +973,8 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
-import { FormBuilder, Validators } from &#x27;@angular/forms&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, OnInit} from &#x27;@angular/core&#x27;;
+import {FormBuilder, Validators} from &#x27;@angular/forms&#x27;;
 import {TipoAnimalServiceService} from &#x27;../../services/tipo-animal-service.service&#x27;;
 import {TipoAnimal} from &#x27;../../models/tipoAnimal&#x27;;
 import Swal from &#x27;sweetalert2&#x27;;
@@ -852,35 +984,61 @@ import {RazaService} from &#x27;../../services/raza.service&#x27;;
 
 declare var $: any;
 
+/**
+ * Componente que gestiona la lista de razas de animales y sus operaciones relacionadas.
+ */
 @Component({
   selector: &#x27;app-raza&#x27;,
   templateUrl: &#x27;./raza.component.html&#x27;,
   styleUrls: [&#x27;./raza.component.css&#x27;]
 })
-
-
 export class RazaComponent implements OnInit {
+  /** Lista de razas. */
   razas: Raza[] &#x3D; [];
 
+  /** Indica si los datos han sido cargados. */
+  cargado &#x3D; false;
+
+  /** El tipo de animal asociado a las razas. */
   tipoAnimal: TipoAnimal;
+
+  /** El ID de la raza que se está editando. */
   editRazaId: number;
+
+  /** El nombre de la raza que se está editando. */
   editRazaName: string;
 
+  /** Grupo de formularios para añadir una nueva raza. */
   addRazaForm &#x3D; this.fb.group({
     newRaza: [&#x27;&#x27;, Validators.required]
   });
 
+  /** Grupo de formularios para editar una raza existente. */
   editRazaForm &#x3D; this.fb.group({
     editRazaName: [&#x27;&#x27;, Validators.required]
   });
 
-  constructor(private fb: FormBuilder, private tipoAnimalServ: TipoAnimalServiceService, private route: ActivatedRoute, private razaService: RazaService) { }
+  /**
+   * Constructor del componente RazaComponent.
+   *
+   * @param fb - Servicio FormBuilder para crear grupos de formularios.
+   * @param tipoAnimalServ - Servicio para obtener datos del tipo de animal.
+   * @param route - Servicio ActivatedRoute para acceder a los parámetros de la ruta.
+   * @param razaService - Servicio para obtener y manipular datos de las razas.
+   */
+  constructor(private fb: FormBuilder, private tipoAnimalServ: TipoAnimalServiceService, private route: ActivatedRoute, private razaService: RazaService) {}
 
+  /**
+   * Hook del ciclo de vida ngOnInit. Obtiene el tipo de animal y las razas asociadas al inicializar el componente.
+   */
   ngOnInit(): void {
     this.getTipoAnimal();
     this.getRazaByTipoAnimal();
   }
 
+  /**
+   * Obtiene el tipo de animal basado en el parámetro de la ruta.
+   */
   getTipoAnimal(): void {
     const idTipoAnimal &#x3D; +this.route.snapshot.params[&#x27;id&#x27;];
 
@@ -888,14 +1046,22 @@ export class RazaComponent implements OnInit {
       this.tipoAnimal &#x3D; tipoAnimal;
     });
   }
+
+  /**
+   * Obtiene las razas asociadas al tipo de animal.
+   */
   getRazaByTipoAnimal(): void {
     const idTipoAnimal &#x3D; +this.route.snapshot.params[&#x27;id&#x27;];
 
     this.razaService.getRazasByTipoAnimal(idTipoAnimal).subscribe(raza &#x3D;&gt; {
       this.razas &#x3D; raza;
+      this.cargado &#x3D; true;
     });
   }
 
+  /**
+   * Añade una nueva raza a la lista.
+   */
   addRaza(): void {
     const nombre &#x3D; this.addRazaForm.get(&#x27;newRaza&#x27;).value;
     if (this.razas.some(raza &#x3D;&gt; raza.nombre.toLowerCase() &#x3D;&#x3D;&#x3D; nombre.toLowerCase())) {
@@ -919,6 +1085,11 @@ export class RazaComponent implements OnInit {
     });
   }
 
+  /**
+   * Elimina una raza de la lista.
+   *
+   * @param id - El ID de la raza a eliminar.
+   */
   deleteRaza(id: number): void {
     Swal.fire({
       title: &#x27;¿Estás seguro?&#x27;,
@@ -932,16 +1103,27 @@ export class RazaComponent implements OnInit {
     }).then((result) &#x3D;&gt; {
       if (result.isConfirmed) {
         this.razaService.deleteRaza(id).subscribe(() &#x3D;&gt; {
-          this.razas &#x3D; this.razas.filter(tipoAnimal &#x3D;&gt; tipoAnimal.id !&#x3D;&#x3D; id);
-          Swal.fire(
-            &#x27;Borrado&#x27;,
-            &#x27;La raza ha sido borrada.&#x27;,
-            &#x27;success&#x27;
-          );
-        });
+            this.razas &#x3D; this.razas.filter(tipoAnimal &#x3D;&gt; tipoAnimal.id !&#x3D;&#x3D; id);
+            Swal.fire(
+              &#x27;Borrado&#x27;,
+              &#x27;La raza ha sido borrada.&#x27;,
+              &#x27;success&#x27;
+            );
+          }, error &#x3D;&gt; {
+            Swal.fire(
+              &#x27;Error&#x27;,
+              &#x27;Existen animales asociados a esta raza, no se puede borrar.&#x27;,
+              &#x27;error&#x27;
+            );
+          }
+        );
       }
     });
   }
+
+  /**
+   * Edita una raza existente.
+   */
   editRaza(): void {
     this.razaService.getRazaById(this.editRazaId).subscribe(raza &#x3D;&gt; {
       raza.nombre &#x3D; this.editRazaForm.get(&#x27;editRazaName&#x27;).value;
@@ -958,13 +1140,16 @@ export class RazaComponent implements OnInit {
     });
   }
 
+  /**
+   * Abre el modal para editar una raza y establece los valores de la raza a editar.
+   *
+   * @param raza - La raza a editar.
+   */
   openEditModal(raza: Raza): void {
-    // Set the values of the raza to be edited
     this.editRazaId &#x3D; raza.id;
     this.editRazaName &#x3D; raza.nombre;
 
     this.editRazaForm.patchValue({editRazaName: this.editRazaName});
-
   }
 
 }
@@ -974,7 +1159,12 @@ export class RazaComponent implements OnInit {
     <div class="tab-pane fade " id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot;&gt;
   &lt;h1 *ngIf&#x3D;&quot;razas.length &gt; 0&quot; class&#x3D;&quot;text-center mt-5 mb-4&quot; style&#x3D;&quot;font-size: 3em;&quot;&gt;Razas {{tipoAnimal.nombre}}&lt;/h1&gt;
-  &lt;div class&#x3D;&quot;row justify-content-center&quot;&gt;
+  &lt;div class&#x3D;&quot;d-flex justify-content-center mt-5&quot; *ngIf&#x3D;&quot;!cargado&quot;&gt;
+    &lt;div class&#x3D;&quot;spinner-border&quot; role&#x3D;&quot;status&quot;&gt;
+      &lt;span class&#x3D;&quot;sr-only&quot;&gt;Loading...&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;row justify-content-center&quot; *ngIf&#x3D;&quot;cargado&quot;&gt;
     &lt;div *ngFor&#x3D;&quot;let raza of razas&quot; class&#x3D;&quot;col-md-4 mb-4&quot;&gt;
       &lt;div class&#x3D;&quot;card&quot; style&#x3D;&quot;background-color: azure;&quot;&gt;
         &lt;div class&#x3D;&quot;card-body text-center&quot;&gt;
@@ -989,8 +1179,10 @@ export class RazaComponent implements OnInit {
     &lt;h1 *ngIf&#x3D;&quot;razas.length &#x3D;&#x3D;&#x3D; 0&quot; class&#x3D;&quot;text-center mt-5 mb-4&quot; style&#x3D;&quot;font-size: 3em;&quot;&gt;No hay razas&lt;/h1&gt;
   &lt;/div&gt;
 
+
+
   &lt;!-- Botón para abrir el modal --&gt;
-  &lt;div class&#x3D;&quot;row justify-content-center mt-4&quot;&gt;
+  &lt;div class&#x3D;&quot;row justify-content-center mt-4 mb-4&quot;&gt;
     &lt;div class&#x3D;&quot;col-md-4 text-center&quot;&gt; &lt;!-- Ajuste aquí: Agregué la clase text-center --&gt;
       &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-primary btn-lg btn-block&quot; data-bs-toggle&#x3D;&quot;modal&quot; data-bs-target&#x3D;&quot;#addRazaModal&quot;&gt;
         Añadir nueva raza
@@ -1084,8 +1276,8 @@ export class RazaComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container">  <h1 *ngIf="razas.length > 0" class="text-center mt-5 mb-4" style="font-size: 3em;">Razas {{tipoAnimal.nombre}}</h1>  <div class="row justify-content-center">    <div *ngFor="let raza of razas" class="col-md-4 mb-4">      <div class="card" style="background-color: azure;">        <div class="card-body text-center">          <h5 class="card-title">{{raza.nombre}}</h5>          <div class="d-grid gap-2">            <button class="btn btn-danger" (click)="deleteRaza(raza.id)">Borrar raza</button>            <button class="btn btn-primary" (click)="openEditModal(raza)" data-bs-toggle="modal" data-bs-target="#editRazaModal">Editar raza</button>          </div>        </div>      </div>    </div>    <h1 *ngIf="razas.length === 0" class="text-center mt-5 mb-4" style="font-size: 3em;">No hay razas</h1>  </div>  <!-- Botón para abrir el modal -->  <div class="row justify-content-center mt-4">    <div class="col-md-4 text-center"> <!-- Ajuste aquí: Agregué la clase text-center -->      <button type="button" class="btn btn-primary btn-lg btn-block" data-bs-toggle="modal" data-bs-target="#addRazaModal">        Añadir nueva raza      </button>    </div>  </div></div><!-- Modal add --><div class="modal fade" id="addRazaModal" tabindex="-1" aria-labelledby="addRazaModalLabel" aria-hidden="true">  <div class="modal-dialog">    <div class="modal-content">      <div class="modal-header">        <h5 class="modal-title" id="addRazaModalLabel">Añadir nueva raza</h5>        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>      </div>      <div class="modal-body">        <form [formGroup]="addRazaForm" (ngSubmit)="addRaza()">          <div class="mb-3">            <label for="newRaza" class="form-label">Nombre de raza</label>            <input type="text" class="form-control" id="newRaza" formControlName="newRaza">            <div *ngIf="addRazaForm.get(\'newRaza\').invalid && addRazaForm.get(\'newRaza\').touched" class="text-danger">              El campo no puede estar vacío            </div>          </div>          <button type="submit" class="btn btn-primary" [disabled]="addRazaForm.invalid">Añadir</button>        </form>      </div>    </div>  </div></div><!-- Modal editar --><div class="modal fade" id="editRazaModal" tabindex="-1" aria-labelledby="editRazaModalLabel" aria-hidden="true">  <div class="modal-dialog">    <div class="modal-content">      <div class="modal-header">        <h5 class="modal-title" id="editRazaModalLabel">Editar raza</h5>        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>      </div>      <div class="modal-body">        <form [formGroup]="editRazaForm" (ngSubmit)="editRaza()">          <input type="hidden" #editRazaId>          <div class="mb-3">            <label for="editRazaName" class="form-label">Nombre de raza</label>            <input type="text" class="form-control" id="editRazaName" formControlName="editRazaName">            <div *ngIf="editRazaForm.get(\'editRazaName\').invalid && editRazaForm.get(\'editRazaName\').touched" class="text-danger">              El campo no puede estar vacío            </div>          </div>          <button type="submit" class="btn btn-primary" [disabled]="editRazaForm.invalid">Guardar cambios</button>        </form>      </div>    </div>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AnimalComponent', 'selector': 'app-animal'},{'name': 'AnimalesAsociacionComponent', 'selector': 'app-animales-asociacion'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArchivosAsociacionComponent', 'selector': 'app-archivos-asociacion'},{'name': 'DocumentosAnimalComponent', 'selector': 'app-documentos-animal'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormCrearAnimalComponent', 'selector': 'app-form-crear-animal'},{'name': 'FormEditarAnimalComponent', 'selector': 'app-form-editar-animal'},{'name': 'FormEditarArchivoAsocComponent', 'selector': 'app-form-editar-archivo-asoc'},{'name': 'FormEditarDocumentoAnimalComponent', 'selector': 'app-form-editar-documento-animal'},{'name': 'FormPerfilAsociacionComponent', 'selector': 'app-form-perfil-asociacion'},{'name': 'FormPerfilPersonaComponent', 'selector': 'app-form-perfil-persona'},{'name': 'FormSubirArchivoAsocComponent', 'selector': 'app-form-subir-archivo-asoc'},{'name': 'FormSubirDocumentoAnimalComponent', 'selector': 'app-form-subir-documento-animal'},{'name': 'ListAssociationsComponent', 'selector': 'app-list-associations'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PaginacionComponent', 'selector': 'app-paginacion'},{'name': 'PerfilAnimalComponent', 'selector': 'app-perfil-animal'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'RazaComponent', 'selector': 'app-raza'},{'name': 'RegisterAssociationComponent', 'selector': 'app-register-association'},{'name': 'RegisterUserComponent', 'selector': 'app-register-user'},{'name': 'SolicitudesAdminComponent', 'selector': 'app-solicitudes-admin'},{'name': 'SolicitudesAnimalComponent', 'selector': 'app-solicitudes-animal'},{'name': 'SolicitudesAsociacionComponent', 'selector': 'app-solicitudes-asociacion'},{'name': 'SolicitudesUsuarioComponent', 'selector': 'app-solicitudes-usuario'},{'name': 'TipoAnimalComponent', 'selector': 'app-tipo-animal'}];
+        var COMPONENT_TEMPLATE = '<div><div class="container">  <h1 *ngIf="razas.length > 0" class="text-center mt-5 mb-4" style="font-size: 3em;">Razas {{tipoAnimal.nombre}}</h1>  <div class="d-flex justify-content-center mt-5" *ngIf="!cargado">    <div class="spinner-border" role="status">      <span class="sr-only">Loading...</span>    </div>  </div>  <div class="row justify-content-center" *ngIf="cargado">    <div *ngFor="let raza of razas" class="col-md-4 mb-4">      <div class="card" style="background-color: azure;">        <div class="card-body text-center">          <h5 class="card-title">{{raza.nombre}}</h5>          <div class="d-grid gap-2">            <button class="btn btn-danger" (click)="deleteRaza(raza.id)">Borrar raza</button>            <button class="btn btn-primary" (click)="openEditModal(raza)" data-bs-toggle="modal" data-bs-target="#editRazaModal">Editar raza</button>          </div>        </div>      </div>    </div>    <h1 *ngIf="razas.length === 0" class="text-center mt-5 mb-4" style="font-size: 3em;">No hay razas</h1>  </div>  <!-- Botón para abrir el modal -->  <div class="row justify-content-center mt-4 mb-4">    <div class="col-md-4 text-center"> <!-- Ajuste aquí: Agregué la clase text-center -->      <button type="button" class="btn btn-primary btn-lg btn-block" data-bs-toggle="modal" data-bs-target="#addRazaModal">        Añadir nueva raza      </button>    </div>  </div></div><!-- Modal add --><div class="modal fade" id="addRazaModal" tabindex="-1" aria-labelledby="addRazaModalLabel" aria-hidden="true">  <div class="modal-dialog">    <div class="modal-content">      <div class="modal-header">        <h5 class="modal-title" id="addRazaModalLabel">Añadir nueva raza</h5>        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>      </div>      <div class="modal-body">        <form [formGroup]="addRazaForm" (ngSubmit)="addRaza()">          <div class="mb-3">            <label for="newRaza" class="form-label">Nombre de raza</label>            <input type="text" class="form-control" id="newRaza" formControlName="newRaza">            <div *ngIf="addRazaForm.get(\'newRaza\').invalid && addRazaForm.get(\'newRaza\').touched" class="text-danger">              El campo no puede estar vacío            </div>          </div>          <button type="submit" class="btn btn-primary" [disabled]="addRazaForm.invalid">Añadir</button>        </form>      </div>    </div>  </div></div><!-- Modal editar --><div class="modal fade" id="editRazaModal" tabindex="-1" aria-labelledby="editRazaModalLabel" aria-hidden="true">  <div class="modal-dialog">    <div class="modal-content">      <div class="modal-header">        <h5 class="modal-title" id="editRazaModalLabel">Editar raza</h5>        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>      </div>      <div class="modal-body">        <form [formGroup]="editRazaForm" (ngSubmit)="editRaza()">          <input type="hidden" #editRazaId>          <div class="mb-3">            <label for="editRazaName" class="form-label">Nombre de raza</label>            <input type="text" class="form-control" id="editRazaName" formControlName="editRazaName">            <div *ngIf="editRazaForm.get(\'editRazaName\').invalid && editRazaForm.get(\'editRazaName\').touched" class="text-danger">              El campo no puede estar vacío            </div>          </div>          <button type="submit" class="btn btn-primary" [disabled]="editRazaForm.invalid">Guardar cambios</button>        </form>      </div>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AnimalComponent', 'selector': 'app-animal'},{'name': 'AnimalesAsociacionComponent', 'selector': 'app-animales-asociacion'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArchivosAsociacionComponent', 'selector': 'app-archivos-asociacion'},{'name': 'CookiesComponent', 'selector': 'app-cookies'},{'name': 'DocumentosAnimalComponent', 'selector': 'app-documentos-animal'},{'name': 'Error404Component', 'selector': 'app-error404'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormCrearAnimalComponent', 'selector': 'app-form-crear-animal'},{'name': 'FormEditarAnimalComponent', 'selector': 'app-form-editar-animal'},{'name': 'FormEditarArchivoAsocComponent', 'selector': 'app-form-editar-archivo-asoc'},{'name': 'FormEditarDocumentoAnimalComponent', 'selector': 'app-form-editar-documento-animal'},{'name': 'FormPerfilAsociacionComponent', 'selector': 'app-form-perfil-asociacion'},{'name': 'FormPerfilPersonaComponent', 'selector': 'app-form-perfil-persona'},{'name': 'FormSubirArchivoAsocComponent', 'selector': 'app-form-subir-archivo-asoc'},{'name': 'FormSubirDocumentoAnimalComponent', 'selector': 'app-form-subir-documento-animal'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'ListAssociationsComponent', 'selector': 'app-list-associations'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PaginacionComponent', 'selector': 'app-paginacion'},{'name': 'PerfilAnimalComponent', 'selector': 'app-perfil-animal'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'RazaComponent', 'selector': 'app-raza'},{'name': 'RegisterAssociationComponent', 'selector': 'app-register-association'},{'name': 'RegisterUserComponent', 'selector': 'app-register-user'},{'name': 'SolicitudesAdminComponent', 'selector': 'app-solicitudes-admin'},{'name': 'SolicitudesAnimalComponent', 'selector': 'app-solicitudes-animal'},{'name': 'SolicitudesAsociacionComponent', 'selector': 'app-solicitudes-asociacion'},{'name': 'SolicitudesUsuarioComponent', 'selector': 'app-solicitudes-usuario'},{'name': 'TipoAnimalComponent', 'selector': 'app-tipo-animal'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'RazaComponent'};
 </script>

@@ -1,9 +1,9 @@
 <div class="d-flex flex-column min-vh-100">
   <app-navbar
-    *ngIf="router.url !== '/login' && router.url !== '/register-user' && router.url !== '/register-association' && router.url !== '/landing-page'">
+    *ngIf="router.url !== '/login' && router.url !== '/register-user' && router.url !== '/register-association' && router.url !== '/landing-page' && router.url !== '/cookies'">
   </app-navbar>
   <router-outlet></router-outlet>
   <app-footer class="mt-auto min-w-100"
-              *ngIf="router.url !== '/login' && router.url !== '/register-user' && router.url !== '/register-association' && router.url !== '/landing-page'">
+              *ngIf="router.url !== '/login' && router.url !== '/register-user' && router.url !== '/register-association' && router.url !== '/landing-page'&& router.url !== '/cookies'">
   </app-footer>
 </div>

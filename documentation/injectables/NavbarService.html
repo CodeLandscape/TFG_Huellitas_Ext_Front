@@ -89,7 +89,7 @@
 
 <ol class="breadcrumb">
   <li class="breadcrumb-item">Injectables</li>
-  <li class="breadcrumb-item" >UsuariosServicesService</li>
+  <li class="breadcrumb-item" >NavbarService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -113,7 +113,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/services/usuarios-services.service.ts</code>
+            <code>src/app/services/navbar.service.ts</code>
         </p>
 
 
@@ -121,7 +121,7 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>Servicio para manejar operaciones relacionadas con los usuarios.</p>
+                <p>Servicio para manejar la recarga del Navbar.</p>
 
             </p>
 
@@ -141,7 +141,7 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#apiUrl" >apiUrl</a>
+                                <a href="#reloadSubject" >reloadSubject</a>
                             </li>
                         </ul>
                     </td>
@@ -156,10 +156,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#getUsuarioById" >getUsuarioById</a>
-                            </li>
-                            <li>
-                                <a href="#getUsuarios" >getUsuarios</a>
+                                <a href="#reload" >reload</a>
                             </li>
                         </ul>
                     </td>
@@ -169,6 +166,20 @@
 
 
 
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#reloadObservable" >reloadObservable</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
         </tbody>
     </table>
 </section>
@@ -179,52 +190,19 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(http: HttpClient)</code>
+<code>constructor()</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/services/usuarios-services.service.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/services/navbar.service.ts:15</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Constructor que inyecta el HttpClient para realizar peticiones HTTP.</p>
+                            <div class="io-description"><p>Constructor del servicio NavbarService.</p>
 </div>
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>http</td>
-                                                  
-                                                        <td>
-                                                                    <code>HttpClient</code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <ul>
-<li>Cliente HTTP para realizar las peticiones.</li>
-</ul>
-
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
                     </td>
                 </tr>
             </tbody>
@@ -240,117 +218,39 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getUsuarioById"></a>
+                    <a name="reload"></a>
                     <span class="name">
-                        <span ><b>getUsuarioById</b></span>
-                        <a href="#getUsuarioById"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>reload</b></span>
+                        <a href="#reload"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getUsuarioById(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+<code>reload()</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="41"
-                                    class="link-to-prism">src/app/services/usuarios-services.service.ts:41</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="36"
+                                    class="link-to-prism">src/app/services/navbar.service.ts:36</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>Obtiene un usuario por su ID.</p>
+                        <div class="io-description"><p>Emite un evento para recargar el Navbar.</p>
 </div>
 
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
                             <div class="io-description">
-                                <b>Parameters :</b>
                                 
-                                <table class="params">
-                                    <thead>
-                                        <tr>
-                                            <td>Name</td>
-                                                <td>Type</td>
-                                            <td>Optional</td>
-                                                <td>Description</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                                <td>id</td>
-                                            <td>
-                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                            </td>
-
-                                            <td>
-                                                    No
-                                            </td>
-
-
-                                            <td>
-                                                    <ul>
-<li>ID del usuario.</li>
-</ul>
-
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-
-                        </div>
-                            <div class="io-description">
-                                <p>Observable que emite el usuario correspondiente al ID proporcionado.</p>
-
-                            </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getUsuarios"></a>
-                    <span class="name">
-                        <span ><b>getUsuarios</b></span>
-                        <a href="#getUsuarios"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>getUsuarios()</code>
-                </td>
-            </tr>
-
-
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="31"
-                                    class="link-to-prism">src/app/services/usuarios-services.service.ts:31</a></div>
-                        </td>
-                    </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                        <div class="io-description"><p>Obtiene la lista de todos los usuarios.</p>
-</div>
-
-                        <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-
-                        </div>
-                            <div class="io-description">
-                                <p>Observable que emite un arreglo de usuarios.</p>
-
                             </div>
                 </td>
             </tr>
@@ -366,28 +266,28 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="apiUrl"></a>
+                    <a name="reloadSubject"></a>
                     <span class="name">
                             <span class="modifier">Private</span>
-                        <span ><b>apiUrl</b></span>
-                        <a href="#apiUrl"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>reloadSubject</b></span>
+                        <a href="#reloadSubject"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>environment.api.url</code>
+                        <i>Default value : </i><code>new Subject&lt;void&gt;()</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/services/usuarios-services.service.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/services/navbar.service.ts:15</a></div>
                         </td>
                     </tr>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>URL base de la API</p>
+                    <div class="io-description"><p>Subject para emitir eventos de recarga</p>
 </div>
                 </td>
             </tr>
@@ -396,52 +296,83 @@
     </table>
 </section>
 
+            <section data-compodoc="block-accessors">
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="reloadObservable"></a>
+                        <span class="name"><b>reloadObservable</b><a href="#reloadObservable"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>reloadObservable()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/services/navbar.service.ts:27</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Obtiene el observable que emite eventos de recarga.</p>
+</div>
+
+                                <div>
+                                </div>
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+</section>
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import { HttpClient } from &#x27;@angular/common/http&#x27;;
-import { Usuario } from &#x27;../models/usuario&#x27;;
-import { environment } from &#x27;../../environments/environment&#x27;;
+import { Subject } from &#x27;rxjs&#x27;;
 
 /**
- * Servicio para manejar operaciones relacionadas con los usuarios.
+ * Servicio para manejar la recarga del Navbar.
  *
  * @@Injectable
  */
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
-export class UsuariosServicesService {
+export class NavbarService {
 
-  /** URL base de la API */
-  private apiUrl &#x3D; environment.api.url;
-
-  /**
-   * Constructor que inyecta el HttpClient para realizar peticiones HTTP.
-   *
-   * @param {HttpClient} http - Cliente HTTP para realizar las peticiones.
-   */
-  constructor(private http: HttpClient) { }
+  /** Subject para emitir eventos de recarga */
+  private reloadSubject &#x3D; new Subject&lt;void&gt;();
 
   /**
-   * Obtiene la lista de todos los usuarios.
-   *
-   * @returns {Observable&lt;Usuario[]&gt;} Observable que emite un arreglo de usuarios.
+   * Constructor del servicio NavbarService.
    */
-  getUsuarios() {
-    return this.http.get&lt;Usuario[]&gt;(&#x60;${this.apiUrl}/usuario/all&#x60;);
+  constructor() { }
+
+  /**
+   * Obtiene el observable que emite eventos de recarga.
+   *
+   * @returns {Observable&lt;void&gt;} Observable que emite eventos de recarga.
+   */
+  get reloadObservable() {
+    return this.reloadSubject.asObservable();
   }
 
   /**
-   * Obtiene un usuario por su ID.
+   * Emite un evento para recargar el Navbar.
    *
-   * @param {number} id - ID del usuario.
-   * @returns {Observable&lt;Usuario&gt;} Observable que emite el usuario correspondiente al ID proporcionado.
+   * @returns {void}
    */
-  getUsuarioById(id: number) {
-    return this.http.get&lt;Usuario&gt;(&#x60;${this.apiUrl}/usuario/${id}&#x60;);
+  reload() {
+    this.reloadSubject.next();
   }
 }
 </code></pre>
@@ -487,7 +418,7 @@ export class UsuariosServicesService {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'UsuariosServicesService.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'NavbarService.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

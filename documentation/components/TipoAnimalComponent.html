@@ -191,6 +191,12 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#cargado" >cargado</a>
+                            </li>
+                            <li>
+                                <a href="#isAdmin" >isAdmin</a>
+                            </li>
+                            <li>
                                 <a href="#newTipoAnimal" >newTipoAnimal</a>
                             </li>
                             <li>
@@ -241,12 +247,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(tipoAnimalServ: <a href="../injectables/TipoAnimalServiceService.html" target="_self">TipoAnimalServiceService</a>, router: Router)</code>
+<code>constructor(tipoAnimalServ: <a href="../injectables/TipoAnimalServiceService.html" target="_self">TipoAnimalServiceService</a>, router: Router, tokenService: <a href="../injectables/TokenService.html" target="_self">TokenService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/components/tipo-animal/tipo-animal.component.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/components/tipo-animal/tipo-animal.component.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -280,6 +286,18 @@
                                                   
                                                         <td>
                                                                     <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>tokenService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/TokenService.html" target="_self" >TokenService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -325,14 +343,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="28"
-                                    class="link-to-prism">src/app/components/tipo-animal/tipo-animal.component.ts:28</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="44"
+                                    class="link-to-prism">src/app/components/tipo-animal/tipo-animal.component.ts:44</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Agrega un nuevo tipo de animal.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -343,6 +363,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -357,6 +378,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>El nombre del nuevo tipo de animal.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -392,14 +419,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="40"
-                                    class="link-to-prism">src/app/components/tipo-animal/tipo-animal.component.ts:40</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="60"
+                                    class="link-to-prism">src/app/components/tipo-animal/tipo-animal.component.ts:60</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Elimina un tipo de animal.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -410,6 +439,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -424,6 +454,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>El ID del tipo de animal a eliminar.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -459,14 +495,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="22"
-                                    class="link-to-prism">src/app/components/tipo-animal/tipo-animal.component.ts:22</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="33"
+                                    class="link-to-prism">src/app/components/tipo-animal/tipo-animal.component.ts:33</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene la lista de tipos de animales desde el servicio.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -496,14 +534,17 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="18"
-                                    class="link-to-prism">src/app/components/tipo-animal/tipo-animal.component.ts:18</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="25"
+                                    class="link-to-prism">src/app/components/tipo-animal/tipo-animal.component.ts:25</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Método de ciclo de vida de Angular que se ejecuta al inicializar el componente.
+Se encarga de obtener la lista de tipos de animales y verificar si el usuario es administrador.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -533,14 +574,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="64"
-                                    class="link-to-prism">src/app/components/tipo-animal/tipo-animal.component.ts:64</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="94"
+                                    class="link-to-prism">src/app/components/tipo-animal/tipo-animal.component.ts:94</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Navega a la página de razas para un tipo de animal específico.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -551,6 +594,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -565,6 +609,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>El ID del tipo de animal.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -590,6 +640,56 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="cargado"></a>
+                    <span class="name">
+                        <span ><b>cargado</b></span>
+                        <a href="#cargado"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/components/tipo-animal/tipo-animal.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isAdmin"></a>
+                    <span class="name">
+                        <span ><b>isAdmin</b></span>
+                        <a href="#isAdmin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/components/tipo-animal/tipo-animal.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="newTipoAnimal"></a>
                     <span class="name">
                         <span ><b>newTipoAnimal</b></span>
@@ -610,7 +710,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/components/tipo-animal/tipo-animal.component.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/components/tipo-animal/tipo-animal.component.ts:15</a></div>
                         </td>
                     </tr>
 
@@ -641,7 +741,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/components/tipo-animal/tipo-animal.component.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/components/tipo-animal/tipo-animal.component.ts:14</a></div>
                         </td>
                     </tr>
 
@@ -655,10 +755,11 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
-import {TipoAnimalServiceService} from &#x27;../../services/tipo-animal-service.service&#x27;;
-import {TipoAnimal} from &#x27;../../models/tipoAnimal&#x27;;
+import { TipoAnimalServiceService } from &#x27;../../services/tipo-animal-service.service&#x27;;
+import { TipoAnimal } from &#x27;../../models/tipoAnimal&#x27;;
 import Swal from &#x27;sweetalert2&#x27;;
-import {Router} from &quot;@angular/router&quot;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { TokenService } from &#x27;../../services/token.service&#x27;;
 
 @Component({
   selector: &#x27;app-tipo-animal&#x27;,
@@ -668,19 +769,34 @@ import {Router} from &quot;@angular/router&quot;;
 export class TipoAnimalComponent implements OnInit {
   tiposAnimal: TipoAnimal[] &#x3D; [];
   newTipoAnimal &#x3D; &#x27;&#x27;;
+  isAdmin &#x3D; false;
+  cargado &#x3D; false;
 
-  constructor(private tipoAnimalServ: TipoAnimalServiceService, private router:Router) { }
+  constructor(private tipoAnimalServ: TipoAnimalServiceService, private router: Router, private tokenService: TokenService) { }
 
+  /**
+   * Método de ciclo de vida de Angular que se ejecuta al inicializar el componente.
+   * Se encarga de obtener la lista de tipos de animales y verificar si el usuario es administrador.
+   */
   ngOnInit(): void {
     this.getTiposAnimal();
+    this.isAdmin &#x3D; this.tokenService.getTokenData().roles &#x3D;&#x3D;&#x3D; &#x27;ROLE_ADMIN&#x27;;
   }
 
+  /**
+   * Obtiene la lista de tipos de animales desde el servicio.
+   */
   getTiposAnimal(): void {
     this.tipoAnimalServ.getTipoAnimales().subscribe(tiposAnimal &#x3D;&gt; {
       this.tiposAnimal &#x3D; tiposAnimal;
+      this.cargado &#x3D; true;
     });
   }
 
+  /**
+   * Agrega un nuevo tipo de animal.
+   * @param nombre - El nombre del nuevo tipo de animal.
+   */
   addTipoAnimal(nombre: string): void {
     const tipoAnimal &#x3D; new TipoAnimal(nombre);
     this.tipoAnimalServ.addTipoAnimal(tipoAnimal).subscribe(() &#x3D;&gt; {
@@ -693,6 +809,10 @@ export class TipoAnimalComponent implements OnInit {
     });
   }
 
+  /**
+   * Elimina un tipo de animal.
+   * @param id - El ID del tipo de animal a eliminar.
+   */
   deleteTipoAnimal(id: number): void {
     Swal.fire({
       title: &#x27;¿Estás seguro?&#x27;,
@@ -712,12 +832,22 @@ export class TipoAnimalComponent implements OnInit {
             &#x27;El tipo de animal ha sido borrado.&#x27;,
             &#x27;success&#x27;
           );
+        }, error &#x3D;&gt; {
+          Swal.fire({
+            icon: &#x27;error&#x27;,
+            title: &#x27;Error&#x27;,
+            text: &#x27;Existen razas asociadas a este tipo de animal. Borra las razas antes de borrar el tipo de animal.&#x27;,
+          });
         });
       }
     });
   }
 
-  verRaza(id: number) {
+  /**
+   * Navega a la página de razas para un tipo de animal específico.
+   * @param id - El ID del tipo de animal.
+   */
+  verRaza(id: number): void {
     this.router.navigate([&#x27;/raza&#x27;, id]);
   }
 }
@@ -727,13 +857,18 @@ export class TipoAnimalComponent implements OnInit {
     <div class="tab-pane fade " id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot;&gt;
   &lt;h1 *ngIf&#x3D;&quot;tiposAnimal.length &gt; 0&quot; class&#x3D;&quot;text-center mt-5 mb-4&quot; style&#x3D;&quot;font-size: 3em;&quot;&gt;Tipos Animal&lt;/h1&gt;
-  &lt;div class&#x3D;&quot;row justify-content-center&quot;&gt;
+  &lt;div class&#x3D;&quot;d-flex justify-content-center mt-5&quot; *ngIf&#x3D;&quot;!cargado&quot;&gt;
+    &lt;div class&#x3D;&quot;spinner-border&quot; role&#x3D;&quot;status&quot;&gt;
+      &lt;span class&#x3D;&quot;sr-only&quot;&gt;Loading...&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;row justify-content-center&quot; *ngIf&#x3D;&quot;cargado&quot;&gt;
     &lt;div *ngFor&#x3D;&quot;let tipoAnimal of tiposAnimal&quot; class&#x3D;&quot;col-md-4 mb-4&quot;&gt;
       &lt;div class&#x3D;&quot;card&quot; style&#x3D;&quot;background-color: azure;&quot;&gt;
         &lt;div class&#x3D;&quot;card-body text-center&quot;&gt;
           &lt;h5 class&#x3D;&quot;card-title&quot;&gt;{{tipoAnimal.nombre}}&lt;/h5&gt;
           &lt;div class&#x3D;&quot;d-grid gap-2&quot;&gt;
-            &lt;button class&#x3D;&quot;btn btn-danger&quot; (click)&#x3D;&quot;deleteTipoAnimal(tipoAnimal.id)&quot;&gt;Borrar tipo&lt;/button&gt;
+            &lt;button class&#x3D;&quot;btn btn-danger&quot; (click)&#x3D;&quot;deleteTipoAnimal(tipoAnimal.id)&quot; *ngIf&#x3D;&quot;isAdmin&quot;&gt;Borrar tipo&lt;/button&gt;
             &lt;button class&#x3D;&quot;btn btn-success&quot; (click)&#x3D;&quot;verRaza(tipoAnimal.id)&quot;&gt;Ver Razas&lt;/button&gt;
           &lt;/div&gt;
         &lt;/div&gt;
@@ -743,7 +878,7 @@ export class TipoAnimalComponent implements OnInit {
   &lt;/div&gt;
 
   &lt;!-- Botón para abrir el modal --&gt;
-  &lt;div class&#x3D;&quot;row justify-content-center mt-4&quot;&gt;
+  &lt;div class&#x3D;&quot;row justify-content-center mt-4&quot; *ngIf&#x3D;&quot;isAdmin&quot;&gt;
     &lt;div class&#x3D;&quot;col-md-4 text-center&quot;&gt; &lt;!-- Ajuste aquí: Agregué la clase text-center --&gt;
       &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-primary btn-lg btn-block&quot; data-bs-toggle&#x3D;&quot;modal&quot; data-bs-target&#x3D;&quot;#addTipoAnimalModal&quot;&gt;
         Añadir nuevo tipo animal
@@ -809,8 +944,8 @@ export class TipoAnimalComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container">  <h1 *ngIf="tiposAnimal.length > 0" class="text-center mt-5 mb-4" style="font-size: 3em;">Tipos Animal</h1>  <div class="row justify-content-center">    <div *ngFor="let tipoAnimal of tiposAnimal" class="col-md-4 mb-4">      <div class="card" style="background-color: azure;">        <div class="card-body text-center">          <h5 class="card-title">{{tipoAnimal.nombre}}</h5>          <div class="d-grid gap-2">            <button class="btn btn-danger" (click)="deleteTipoAnimal(tipoAnimal.id)">Borrar tipo</button>            <button class="btn btn-success" (click)="verRaza(tipoAnimal.id)">Ver Razas</button>          </div>        </div>      </div>    </div>    <h1 *ngIf="tiposAnimal.length === 0" class="text-center mt-5 mb-4" style="font-size: 3em;">No hay tipos de animal</h1>  </div>  <!-- Botón para abrir el modal -->  <div class="row justify-content-center mt-4">    <div class="col-md-4 text-center"> <!-- Ajuste aquí: Agregué la clase text-center -->      <button type="button" class="btn btn-primary btn-lg btn-block" data-bs-toggle="modal" data-bs-target="#addTipoAnimalModal">        Añadir nuevo tipo animal      </button>    </div>  </div></div><!-- Modal --><div class="modal fade" id="addTipoAnimalModal" tabindex="-1" aria-labelledby="addTipoAnimalModalLabel" aria-hidden="true">  <div class="modal-dialog">    <div class="modal-content">      <div class="modal-header">        <h5 class="modal-title" id="addTipoAnimalModalLabel">Añadir nuevo tipo animal</h5>        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>      </div>      <div class="modal-body">        <form (submit)="addTipoAnimal(newTipoAnimal)">          <div class="mb-3">            <label for="newTipoAnimal" class="form-label">Nombre del tipo animal</label>            <input type="text" class="form-control" id="newTipoAnimal" [(ngModel)]="newTipoAnimal" name="newTipoAnimal">          </div>          <button type="submit" class="btn btn-primary" [disabled]="!newTipoAnimal">Añadir</button>        </form>      </div>    </div>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AnimalComponent', 'selector': 'app-animal'},{'name': 'AnimalesAsociacionComponent', 'selector': 'app-animales-asociacion'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArchivosAsociacionComponent', 'selector': 'app-archivos-asociacion'},{'name': 'DocumentosAnimalComponent', 'selector': 'app-documentos-animal'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormCrearAnimalComponent', 'selector': 'app-form-crear-animal'},{'name': 'FormEditarAnimalComponent', 'selector': 'app-form-editar-animal'},{'name': 'FormEditarArchivoAsocComponent', 'selector': 'app-form-editar-archivo-asoc'},{'name': 'FormEditarDocumentoAnimalComponent', 'selector': 'app-form-editar-documento-animal'},{'name': 'FormPerfilAsociacionComponent', 'selector': 'app-form-perfil-asociacion'},{'name': 'FormPerfilPersonaComponent', 'selector': 'app-form-perfil-persona'},{'name': 'FormSubirArchivoAsocComponent', 'selector': 'app-form-subir-archivo-asoc'},{'name': 'FormSubirDocumentoAnimalComponent', 'selector': 'app-form-subir-documento-animal'},{'name': 'ListAssociationsComponent', 'selector': 'app-list-associations'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PaginacionComponent', 'selector': 'app-paginacion'},{'name': 'PerfilAnimalComponent', 'selector': 'app-perfil-animal'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'RazaComponent', 'selector': 'app-raza'},{'name': 'RegisterAssociationComponent', 'selector': 'app-register-association'},{'name': 'RegisterUserComponent', 'selector': 'app-register-user'},{'name': 'SolicitudesAdminComponent', 'selector': 'app-solicitudes-admin'},{'name': 'SolicitudesAnimalComponent', 'selector': 'app-solicitudes-animal'},{'name': 'SolicitudesAsociacionComponent', 'selector': 'app-solicitudes-asociacion'},{'name': 'SolicitudesUsuarioComponent', 'selector': 'app-solicitudes-usuario'},{'name': 'TipoAnimalComponent', 'selector': 'app-tipo-animal'}];
+        var COMPONENT_TEMPLATE = '<div><div class="container">  <h1 *ngIf="tiposAnimal.length > 0" class="text-center mt-5 mb-4" style="font-size: 3em;">Tipos Animal</h1>  <div class="d-flex justify-content-center mt-5" *ngIf="!cargado">    <div class="spinner-border" role="status">      <span class="sr-only">Loading...</span>    </div>  </div>  <div class="row justify-content-center" *ngIf="cargado">    <div *ngFor="let tipoAnimal of tiposAnimal" class="col-md-4 mb-4">      <div class="card" style="background-color: azure;">        <div class="card-body text-center">          <h5 class="card-title">{{tipoAnimal.nombre}}</h5>          <div class="d-grid gap-2">            <button class="btn btn-danger" (click)="deleteTipoAnimal(tipoAnimal.id)" *ngIf="isAdmin">Borrar tipo</button>            <button class="btn btn-success" (click)="verRaza(tipoAnimal.id)">Ver Razas</button>          </div>        </div>      </div>    </div>    <h1 *ngIf="tiposAnimal.length === 0" class="text-center mt-5 mb-4" style="font-size: 3em;">No hay tipos de animal</h1>  </div>  <!-- Botón para abrir el modal -->  <div class="row justify-content-center mt-4" *ngIf="isAdmin">    <div class="col-md-4 text-center"> <!-- Ajuste aquí: Agregué la clase text-center -->      <button type="button" class="btn btn-primary btn-lg btn-block" data-bs-toggle="modal" data-bs-target="#addTipoAnimalModal">        Añadir nuevo tipo animal      </button>    </div>  </div></div><!-- Modal --><div class="modal fade" id="addTipoAnimalModal" tabindex="-1" aria-labelledby="addTipoAnimalModalLabel" aria-hidden="true">  <div class="modal-dialog">    <div class="modal-content">      <div class="modal-header">        <h5 class="modal-title" id="addTipoAnimalModalLabel">Añadir nuevo tipo animal</h5>        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>      </div>      <div class="modal-body">        <form (submit)="addTipoAnimal(newTipoAnimal)">          <div class="mb-3">            <label for="newTipoAnimal" class="form-label">Nombre del tipo animal</label>            <input type="text" class="form-control" id="newTipoAnimal" [(ngModel)]="newTipoAnimal" name="newTipoAnimal">          </div>          <button type="submit" class="btn btn-primary" [disabled]="!newTipoAnimal">Añadir</button>        </form>      </div>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AnimalComponent', 'selector': 'app-animal'},{'name': 'AnimalesAsociacionComponent', 'selector': 'app-animales-asociacion'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArchivosAsociacionComponent', 'selector': 'app-archivos-asociacion'},{'name': 'CookiesComponent', 'selector': 'app-cookies'},{'name': 'DocumentosAnimalComponent', 'selector': 'app-documentos-animal'},{'name': 'Error404Component', 'selector': 'app-error404'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormCrearAnimalComponent', 'selector': 'app-form-crear-animal'},{'name': 'FormEditarAnimalComponent', 'selector': 'app-form-editar-animal'},{'name': 'FormEditarArchivoAsocComponent', 'selector': 'app-form-editar-archivo-asoc'},{'name': 'FormEditarDocumentoAnimalComponent', 'selector': 'app-form-editar-documento-animal'},{'name': 'FormPerfilAsociacionComponent', 'selector': 'app-form-perfil-asociacion'},{'name': 'FormPerfilPersonaComponent', 'selector': 'app-form-perfil-persona'},{'name': 'FormSubirArchivoAsocComponent', 'selector': 'app-form-subir-archivo-asoc'},{'name': 'FormSubirDocumentoAnimalComponent', 'selector': 'app-form-subir-documento-animal'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'ListAssociationsComponent', 'selector': 'app-list-associations'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PaginacionComponent', 'selector': 'app-paginacion'},{'name': 'PerfilAnimalComponent', 'selector': 'app-perfil-animal'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'RazaComponent', 'selector': 'app-raza'},{'name': 'RegisterAssociationComponent', 'selector': 'app-register-association'},{'name': 'RegisterUserComponent', 'selector': 'app-register-user'},{'name': 'SolicitudesAdminComponent', 'selector': 'app-solicitudes-admin'},{'name': 'SolicitudesAnimalComponent', 'selector': 'app-solicitudes-animal'},{'name': 'SolicitudesAsociacionComponent', 'selector': 'app-solicitudes-asociacion'},{'name': 'SolicitudesUsuarioComponent', 'selector': 'app-solicitudes-usuario'},{'name': 'TipoAnimalComponent', 'selector': 'app-tipo-animal'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'TipoAnimalComponent'};
 </script>

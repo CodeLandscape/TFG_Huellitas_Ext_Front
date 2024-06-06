@@ -77,7 +77,7 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content injectable">
+               <div class="content guard">
                    <div class="content-data">
 
 
@@ -87,9 +87,11 @@
 
 
 
+
+
 <ol class="breadcrumb">
-  <li class="breadcrumb-item">Injectables</li>
-  <li class="breadcrumb-item" >UsuariosServicesService</li>
+    <li class="breadcrumb-item">Guards</li>
+    <li class="breadcrumb-item" >NoUsuarioGuard</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -108,44 +110,23 @@
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="info">
-        <p class="comment">
+        <div class="tab-pane fade active in" id="info">
+            <p class="comment">
             <h3>File</h3>
-        </p>
-        <p class="comment">
-            <code>src/app/services/usuarios-services.service.ts</code>
-        </p>
-
-
-            <p class="comment">
-                <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>Servicio para manejar operaciones relacionadas con los usuarios.</p>
-
+                <code>src/app/guards/no-usuario.guard.ts</code>
             </p>
 
 
 
-            <section data-compodoc="block-index">
+
+
+
+                <section data-compodoc="block-index">
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Properties</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#apiUrl" >apiUrl</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -156,10 +137,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#getUsuarioById" >getUsuarioById</a>
-                            </li>
-                            <li>
-                                <a href="#getUsuarios" >getUsuarios</a>
+                                <a href="#canActivate" >canActivate</a>
                             </li>
                         </ul>
                     </td>
@@ -173,25 +151,23 @@
     </table>
 </section>
 
-            <section data-compodoc="block-constructor">
+                <section data-compodoc="block-constructor">
     <h3 id="constructor">Constructor</h3>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(http: HttpClient)</code>
+<code>constructor(tokenService: <a href="../injectables/TokenService.html" target="_self">TokenService</a>, router: Router)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/services/usuarios-services.service.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/guards/no-usuario.guard.ts:9</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Constructor que inyecta el HttpClient para realizar peticiones HTTP.</p>
-</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -200,27 +176,32 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
-                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>http</td>
+                                                        <td>tokenService</td>
                                                   
                                                         <td>
-                                                                    <code>HttpClient</code>
+                                                                        <code><a href="../injectables/TokenService.html" target="_self" >TokenService</a></code>
                                                         </td>
                                                   
                                                     <td>
                                                             No
                                                     </td>
                                                     
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
                                                         <td>
-                                                                <ul>
-<li>Cliente HTTP para realizar las peticiones.</li>
-</ul>
-
+                                                                    <code>Router</code>
                                                         </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -231,7 +212,7 @@
         </table>
 </section>
 
-            <section data-compodoc="block-methods">
+                <section data-compodoc="block-methods">
     
     <h3 id="methods">
         Methods
@@ -240,32 +221,30 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getUsuarioById"></a>
+                    <a name="canActivate"></a>
                     <span class="name">
-                        <span ><b>getUsuarioById</b></span>
-                        <a href="#getUsuarioById"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>canActivate</b></span>
+                        <a href="#canActivate"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getUsuarioById(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+<code>canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot)</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="41"
-                                    class="link-to-prism">src/app/services/usuarios-services.service.ts:41</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="13"
+                                    class="link-to-prism">src/app/guards/no-usuario.guard.ts:13</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>Obtiene un usuario por su ID.</p>
-</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -276,14 +255,13 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
-                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                                <td>id</td>
+                                                <td>route</td>
                                             <td>
-                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        <code>ActivatedRouteSnapshot</code>
                                             </td>
 
                                             <td>
@@ -291,165 +269,66 @@
                                             </td>
 
 
+                                        </tr>
+                                        <tr>
+                                                <td>state</td>
                                             <td>
-                                                    <ul>
-<li>ID del usuario.</li>
-</ul>
-
+                                                        <code>RouterStateSnapshot</code>
                                             </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                            <b>Returns : </b>    <code>Observable | Promise | boolean | UrlTree</code>
 
                         </div>
                             <div class="io-description">
-                                <p>Observable que emite el usuario correspondiente al ID proporcionado.</p>
-
-                            </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getUsuarios"></a>
-                    <span class="name">
-                        <span ><b>getUsuarios</b></span>
-                        <a href="#getUsuarios"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>getUsuarios()</code>
-                </td>
-            </tr>
-
-
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="31"
-                                    class="link-to-prism">src/app/services/usuarios-services.service.ts:31</a></div>
-                        </td>
-                    </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                        <div class="io-description"><p>Obtiene la lista de todos los usuarios.</p>
-</div>
-
-                        <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-
-                        </div>
-                            <div class="io-description">
-                                <p>Observable que emite un arreglo de usuarios.</p>
-
+                                
                             </div>
                 </td>
             </tr>
         </tbody>
     </table>
 </section>
-            <section data-compodoc="block-properties">
-    
-    <h3 id="inputs">
-        Properties
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="apiUrl"></a>
-                    <span class="name">
-                            <span class="modifier">Private</span>
-                        <span ><b>apiUrl</b></span>
-                        <a href="#apiUrl"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>environment.api.url</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/services/usuarios-services.service.ts:17</a></div>
-                        </td>
-                    </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>URL base de la API</p>
-</div>
-                </td>
-            </tr>
-
-        </tbody>
-    </table>
-</section>
-
-    </div>
+        </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import { HttpClient } from &#x27;@angular/common/http&#x27;;
-import { Usuario } from &#x27;../models/usuario&#x27;;
-import { environment } from &#x27;../../environments/environment&#x27;;
+        <div class="tab-pane fade  tab-source-code" id="source">
+            <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Injectable} from &#x27;@angular/core&#x27;;
+import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree} from &#x27;@angular/router&#x27;;
+import {Observable} from &#x27;rxjs&#x27;;
+import {TokenService} from &#x27;../services/token.service&#x27;;
 
-/**
- * Servicio para manejar operaciones relacionadas con los usuarios.
- *
- * @@Injectable
- */
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
-export class UsuariosServicesService {
-
-  /** URL base de la API */
-  private apiUrl &#x3D; environment.api.url;
-
-  /**
-   * Constructor que inyecta el HttpClient para realizar peticiones HTTP.
-   *
-   * @param {HttpClient} http - Cliente HTTP para realizar las peticiones.
-   */
-  constructor(private http: HttpClient) { }
-
-  /**
-   * Obtiene la lista de todos los usuarios.
-   *
-   * @returns {Observable&lt;Usuario[]&gt;} Observable que emite un arreglo de usuarios.
-   */
-  getUsuarios() {
-    return this.http.get&lt;Usuario[]&gt;(&#x60;${this.apiUrl}/usuario/all&#x60;);
+export class NoUsuarioGuard implements CanActivate {
+  constructor(private tokenService: TokenService, private router: Router) {
   }
 
-  /**
-   * Obtiene un usuario por su ID.
-   *
-   * @param {number} id - ID del usuario.
-   * @returns {Observable&lt;Usuario&gt;} Observable que emite el usuario correspondiente al ID proporcionado.
-   */
-  getUsuarioById(id: number) {
-    return this.http.get&lt;Usuario&gt;(&#x60;${this.apiUrl}/usuario/${id}&#x60;);
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot): Observable&lt;boolean | UrlTree&gt; | Promise&lt;boolean | UrlTree&gt; | boolean | UrlTree {
+    const rol &#x3D; this.tokenService.getTokenData().roles;
+    if (rol &#x3D;&#x3D;&#x3D; &#x27;ROLE_USER&#x27;) {
+      this.router.navigate([&#x27;/listadoAnimales&#x27;]);
+      return false;
+    } else {
+      return true;
+    }
   }
+
 }
 </code></pre>
-    </div>
-
+        </div>
 </div>
-
-
 
 
 
@@ -486,8 +365,8 @@ export class UsuariosServicesService {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'UsuariosServicesService.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'guard';
+            var COMPODOC_CURRENT_PAGE_URL = 'NoUsuarioGuard.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

@@ -117,6 +117,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Servicio para manejar operaciones relacionadas con las razas de animales.</p>
+
+            </p>
 
 
 
@@ -124,6 +131,21 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#apiUrl" >apiUrl</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -174,12 +196,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/services/raza.service.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/services/raza.service.ts:17</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor que inyecta el HttpClient para realizar peticiones HTTP.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -188,6 +212,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -202,6 +227,12 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <ul>
+<li>Cliente HTTP para realizar las peticiones.</li>
+</ul>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -237,14 +268,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="34"
-                                    class="link-to-prism">src/app/services/raza.service.ts:34</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="71"
+                                    class="link-to-prism">src/app/services/raza.service.ts:71</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Añade una nueva raza.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -255,6 +288,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -269,6 +303,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>La nueva raza a añadir.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -278,7 +318,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Observable que emite la raza añadida.</p>
+
                             </div>
                 </td>
             </tr>
@@ -304,14 +345,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="39"
-                                    class="link-to-prism">src/app/services/raza.service.ts:39</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="81"
+                                    class="link-to-prism">src/app/services/raza.service.ts:81</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Borra una raza por su ID.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -322,6 +365,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -336,6 +380,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>ID de la raza a borrar.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -345,7 +395,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Observable que emite la respuesta de la operación de borrado.</p>
+
                             </div>
                 </td>
             </tr>
@@ -371,14 +422,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="24"
-                                    class="link-to-prism">src/app/services/raza.service.ts:24</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="51"
+                                    class="link-to-prism">src/app/services/raza.service.ts:51</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene una raza por su ID.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -389,6 +442,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -403,6 +457,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>ID de la raza.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -412,7 +472,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Observable que emite la raza correspondiente al ID proporcionado.</p>
+
                             </div>
                 </td>
             </tr>
@@ -438,19 +499,25 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="14"
-                                    class="link-to-prism">src/app/services/raza.service.ts:14</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="31"
+                                    class="link-to-prism">src/app/services/raza.service.ts:31</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene la lista de todas las razas.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                         </div>
+                            <div class="io-description">
+                                <p>Observable que emite un arreglo de razas.</p>
+
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -475,14 +542,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="19"
-                                    class="link-to-prism">src/app/services/raza.service.ts:19</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="41"
+                                    class="link-to-prism">src/app/services/raza.service.ts:41</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene la lista de todas las razas por tipo de animal.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -493,6 +562,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -507,6 +577,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>ID del tipo de animal.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -516,7 +592,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Observable que emite un arreglo de razas correspondiente al tipo de animal proporcionado.</p>
+
                             </div>
                 </td>
             </tr>
@@ -542,14 +619,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="29"
-                                    class="link-to-prism">src/app/services/raza.service.ts:29</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="61"
+                                    class="link-to-prism">src/app/services/raza.service.ts:61</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Actualiza una raza.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -560,6 +639,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -574,6 +654,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>La raza a actualizar.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -583,10 +669,49 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Observable que emite la raza actualizada.</p>
+
                             </div>
                 </td>
             </tr>
+        </tbody>
+    </table>
+</section>
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="apiUrl"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>apiUrl</b></span>
+                        <a href="#apiUrl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>environment.api.url</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/services/raza.service.ts:17</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>URL base de la API</p>
+</div>
+                </td>
+            </tr>
+
         </tbody>
     </table>
 </section>
@@ -596,45 +721,87 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import {HttpClient} from &#x27;@angular/common/http&#x27;;
-import {of} from &#x27;rxjs&#x27;;
-import {Raza} from &#x27;../models/raza&#x27;;
-import {TipoAnimal} from &#x27;../models/tipoAnimal&#x27;;
+import { HttpClient } from &#x27;@angular/common/http&#x27;;
+import { Raza } from &#x27;../models/raza&#x27;;
+import { environment } from &#x27;../../environments/environment&#x27;;
 
+/**
+ * Servicio para manejar operaciones relacionadas con las razas de animales.
+ *
+ * @@Injectable
+ */
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
 export class RazaService {
 
+  /** URL base de la API */
+  private apiUrl &#x3D; environment.api.url;
+
+  /**
+   * Constructor que inyecta el HttpClient para realizar peticiones HTTP.
+   *
+   * @param {HttpClient} http - Cliente HTTP para realizar las peticiones.
+   */
   constructor(private http: HttpClient) { }
-  // obtener todas las razas
-  getRazas(){
-    return this.http.get&lt;Raza[]&gt;(&#x27;http://localhost:8080/api-backend/raza/all&#x27;);
+
+  /**
+   * Obtiene la lista de todas las razas.
+   *
+   * @returns {Observable&lt;Raza[]&gt;} Observable que emite un arreglo de razas.
+   */
+  getRazas() {
+    return this.http.get&lt;Raza[]&gt;(&#x60;${this.apiUrl}/raza/all&#x60;);
   }
 
-  // obtener todas las razas por tipo de animal
-  getRazasByTipoAnimal(id: number){
-    return this.http.get&lt;Raza[]&gt;(&#x60;http://localhost:8080/api-backend/raza/findByIdTipoAnimal/${id}&#x60;);
+  /**
+   * Obtiene la lista de todas las razas por tipo de animal.
+   *
+   * @param {number} id - ID del tipo de animal.
+   * @returns {Observable&lt;Raza[]&gt;} Observable que emite un arreglo de razas correspondiente al tipo de animal proporcionado.
+   */
+  getRazasByTipoAnimal(id: number) {
+    return this.http.get&lt;Raza[]&gt;(&#x60;${this.apiUrl}/raza/findByIdTipoAnimal/${id}&#x60;);
   }
 
-  // obtener una raza por id
-  getRazaById(id: number){
-    return this.http.get&lt;Raza&gt;(&#x60;http://localhost:8080/api-backend/raza/findById/${id}&#x60;);
+  /**
+   * Obtiene una raza por su ID.
+   *
+   * @param {number} id - ID de la raza.
+   * @returns {Observable&lt;Raza&gt;} Observable que emite la raza correspondiente al ID proporcionado.
+   */
+  getRazaById(id: number) {
+    return this.http.get&lt;Raza&gt;(&#x60;${this.apiUrl}/raza/findById/${id}&#x60;);
   }
 
-  // actualizar una raza
-  updateRaza(raza: Raza){
-    return this.http.put&lt;Raza&gt;(&#x27;http://localhost:8080/api-backend/raza/update&#x27;, raza);
+  /**
+   * Actualiza una raza.
+   *
+   * @param {Raza} raza - La raza a actualizar.
+   * @returns {Observable&lt;Raza&gt;} Observable que emite la raza actualizada.
+   */
+  updateRaza(raza: Raza) {
+    return this.http.put&lt;Raza&gt;(&#x60;${this.apiUrl}/raza/update&#x60;, raza);
   }
 
-  // añadir una raza
-  addRaza(raza: Raza){
-    return this.http.post&lt;Raza&gt;(&#x27;http://localhost:8080/api-backend/raza/add&#x27;, raza);
+  /**
+   * Añade una nueva raza.
+   *
+   * @param {Raza} raza - La nueva raza a añadir.
+   * @returns {Observable&lt;Raza&gt;} Observable que emite la raza añadida.
+   */
+  addRaza(raza: Raza) {
+    return this.http.post&lt;Raza&gt;(&#x60;${this.apiUrl}/raza/add&#x60;, raza);
   }
 
-  // borrar una raza por id
-  deleteRaza(id: number){
-    return this.http.delete(&#x60;http://localhost:8080/api-backend/raza/delete/${id}&#x60;);
+  /**
+   * Borra una raza por su ID.
+   *
+   * @param {number} id - ID de la raza a borrar.
+   * @returns {Observable&lt;void&gt;} Observable que emite la respuesta de la operación de borrado.
+   */
+  deleteRaza(id: number) {
+    return this.http.delete(&#x60;${this.apiUrl}/raza/delete/${id}&#x60;);
   }
 }
 </code></pre>

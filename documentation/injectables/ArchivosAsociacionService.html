@@ -134,6 +134,10 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Private</span>
+                                <a href="#apiUrl" >apiUrl</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
                                 <a href="#idAEditar" >idAEditar</a>
                             </li>
                         </ul>
@@ -195,7 +199,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/services/archivos-asociacion.service.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/services/archivos-asociacion.service.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -251,21 +255,23 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>deleteDocumento(id)</code>
+<code>deleteDocumento(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="23"
-                                    class="link-to-prism">src/app/services/archivos-asociacion.service.ts:23</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="39"
+                                    class="link-to-prism">src/app/services/archivos-asociacion.service.ts:39</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Elimina un documento por su ID.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -274,18 +280,29 @@
                                     <thead>
                                         <tr>
                                             <td>Name</td>
+                                                <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                                 <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
 
                                             <td>
                                                     No
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>ID del documento a eliminar.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -295,7 +312,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Observable de la respuesta HTTP.</p>
+
                             </div>
                 </td>
             </tr>
@@ -321,14 +339,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="43"
-                                    class="link-to-prism">src/app/services/archivos-asociacion.service.ts:43</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="82"
+                                    class="link-to-prism">src/app/services/archivos-asociacion.service.ts:82</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Edita un documento existente.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -339,6 +359,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -353,6 +374,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>FormData que contiene el documento editado.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -362,7 +389,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Observable de la respuesta HTTP.</p>
+
                             </div>
                 </td>
             </tr>
@@ -381,21 +409,23 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getDocumento(id)</code>
+<code>getDocumento(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="19"
-                                    class="link-to-prism">src/app/services/archivos-asociacion.service.ts:19</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="30"
+                                    class="link-to-prism">src/app/services/archivos-asociacion.service.ts:30</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene un documento por su ID.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -404,18 +434,29 @@
                                     <thead>
                                         <tr>
                                             <td>Name</td>
+                                                <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                                 <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
 
                                             <td>
                                                     No
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>ID del documento.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -425,7 +466,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Observable del documento en formato Blob.</p>
+
                             </div>
                 </td>
             </tr>
@@ -451,19 +493,25 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="15"
-                                    class="link-to-prism">src/app/services/archivos-asociacion.service.ts:15</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="21"
+                                    class="link-to-prism">src/app/services/archivos-asociacion.service.ts:21</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene todos los documentos de la asociación.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                         </div>
+                            <div class="io-description">
+                                <p>Observable de un array de ArchivoAsociacion.</p>
+
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -488,19 +536,25 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="35"
-                                    class="link-to-prism">src/app/services/archivos-asociacion.service.ts:35</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="64"
+                                    class="link-to-prism">src/app/services/archivos-asociacion.service.ts:64</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene un observable del ID del documento que se está editando.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                         </div>
+                            <div class="io-description">
+                                <p>Observable del ID del documento a editar.</p>
+
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -525,14 +579,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="39"
-                                    class="link-to-prism">src/app/services/archivos-asociacion.service.ts:39</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="73"
+                                    class="link-to-prism">src/app/services/archivos-asociacion.service.ts:73</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene la información de un archivo por su ID.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -543,6 +599,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -557,6 +614,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>ID del archivo.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -566,7 +629,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Observable de un ArchivoAsociacion.</p>
+
                             </div>
                 </td>
             </tr>
@@ -592,14 +656,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="31"
-                                    class="link-to-prism">src/app/services/archivos-asociacion.service.ts:31</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="56"
+                                    class="link-to-prism">src/app/services/archivos-asociacion.service.ts:56</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Establece el ID del documento que se está editando.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -610,6 +676,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -624,6 +691,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>ID del documento a editar.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -659,14 +732,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="27"
-                                    class="link-to-prism">src/app/services/archivos-asociacion.service.ts:27</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="48"
+                                    class="link-to-prism">src/app/services/archivos-asociacion.service.ts:48</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Sube un nuevo documento.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -677,6 +752,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -691,6 +767,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>FormData que contiene el documento a subir.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -700,7 +782,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Observable de la respuesta HTTP.</p>
+
                             </div>
                 </td>
             </tr>
@@ -712,6 +795,32 @@
     <h3 id="inputs">
         Properties
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="apiUrl"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>apiUrl</b></span>
+                        <a href="#apiUrl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>environment.api.url</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/services/archivos-asociacion.service.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -731,7 +840,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/services/archivos-asociacion.service.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/services/archivos-asociacion.service.ts:12</a></div>
                         </td>
                     </tr>
 
@@ -745,9 +854,10 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import {HttpClient} from &#x27;@angular/common/http&#x27;;
-import {ArchivoAsociacion} from &#x27;../models/archivoAsociacion&#x27;;
-import {BehaviorSubject} from &#x27;rxjs&#x27;;
+import { HttpClient } from &#x27;@angular/common/http&#x27;;
+import { ArchivoAsociacion } from &#x27;../models/archivoAsociacion&#x27;;
+import { BehaviorSubject } from &#x27;rxjs&#x27;;
+import { environment } from &#x27;../../environments/environment&#x27;;
 
 @Injectable({
   providedIn: &#x27;root&#x27;
@@ -755,39 +865,77 @@ import {BehaviorSubject} from &#x27;rxjs&#x27;;
 export class ArchivosAsociacionService {
 
   private idAEditar &#x3D; new BehaviorSubject&lt;number | null&gt;(null);
+  private apiUrl &#x3D; environment.api.url;
 
   constructor(private http: HttpClient) { }
 
+  /**
+   * Obtiene todos los documentos de la asociación.
+   * @returns Observable de un array de ArchivoAsociacion.
+   */
   getDocumentosAsociacion() {
-    return this.http.get&lt;ArchivoAsociacion[]&gt;(&#x27;http://localhost:8080/api-backend/archivo-asociacion/info&#x27;);
+    return this.http.get&lt;ArchivoAsociacion[]&gt;(&#x60;${this.apiUrl}/archivo-asociacion/info&#x60;);
   }
 
-  getDocumento(id) {
-    return this.http.get(&#x27;http://localhost:8080/api-backend/archivo-asociacion/&#x27; + id, {responseType: &#x27;blob&#x27;});
+  /**
+   * Obtiene un documento por su ID.
+   * @param id - ID del documento.
+   * @returns Observable del documento en formato Blob.
+   */
+  getDocumento(id: number) {
+    return this.http.get(&#x60;${this.apiUrl}/archivo-asociacion/&#x60; + id, { responseType: &#x27;blob&#x27; });
   }
 
-  deleteDocumento(id) {
-    return this.http.delete(&#x27;http://localhost:8080/api-backend/archivo-asociacion/&#x27; + id);
+  /**
+   * Elimina un documento por su ID.
+   * @param id - ID del documento a eliminar.
+   * @returns Observable de la respuesta HTTP.
+   */
+  deleteDocumento(id: number) {
+    return this.http.delete(&#x60;${this.apiUrl}/archivo-asociacion/&#x60; + id);
   }
 
+  /**
+   * Sube un nuevo documento.
+   * @param formData - FormData que contiene el documento a subir.
+   * @returns Observable de la respuesta HTTP.
+   */
   uploadDocumento(formData: FormData) {
-    return this.http.post(&#x27;http://localhost:8080/api-backend/archivo-asociacion/upload&#x27;, formData);
+    return this.http.post(&#x60;${this.apiUrl}/archivo-asociacion/upload&#x60;, formData);
   }
 
+  /**
+   * Establece el ID del documento que se está editando.
+   * @param id - ID del documento a editar.
+   */
   setIdAEditar(id: number) {
     this.idAEditar.next(id);
   }
 
+  /**
+   * Obtiene un observable del ID del documento que se está editando.
+   * @returns Observable del ID del documento a editar.
+   */
   getIdAEditar() {
     return this.idAEditar.asObservable();
   }
 
+  /**
+   * Obtiene la información de un archivo por su ID.
+   * @param idArchivo - ID del archivo.
+   * @returns Observable de un ArchivoAsociacion.
+   */
   getInfoArchivo(idArchivo: number) {
-    return this.http.get(&#x60;http://localhost:8080/api-backend/archivo-asociacion/info-id/${idArchivo}&#x60;);
+    return this.http.get(&#x60;${this.apiUrl}/archivo-asociacion/info-id/${idArchivo}&#x60;);
   }
 
+  /**
+   * Edita un documento existente.
+   * @param formData - FormData que contiene el documento editado.
+   * @returns Observable de la respuesta HTTP.
+   */
   editDocumento(formData: FormData) {
-    return this.http.put(&#x27;http://localhost:8080/api-backend/archivo-asociacion/edit&#x27;, formData);
+    return this.http.put(&#x60;${this.apiUrl}/archivo-asociacion/edit&#x60;, formData);
   }
 }
 </code></pre>

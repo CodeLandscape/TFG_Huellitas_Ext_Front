@@ -117,6 +117,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Servicio para manejar tokens de autenticación.</p>
+
+            </p>
 
 
 
@@ -171,7 +178,6 @@
                                 <a href="#getToken" >getToken</a>
                             </li>
                             <li>
-                                    <span class="modifier">Public</span>
                                 <a href="#getTokenData" >getTokenData</a>
                             </li>
                             <li>
@@ -187,7 +193,6 @@
                                 <a href="#setAuthorities" >setAuthorities</a>
                             </li>
                             <li>
-                                    <span class="modifier">Public</span>
                                 <a href="#setToken" >setToken</a>
                             </li>
                         </ul>
@@ -213,12 +218,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/services/token.service.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/services/token.service.ts:23</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor que inyecta los servicios necesarios.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -227,6 +234,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -241,6 +249,12 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <ul>
+<li>Servicio de autenticación.</li>
+</ul>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>cookieService</td>
@@ -253,6 +267,12 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <ul>
+<li>Servicio para manejar cookies.</li>
+</ul>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -290,19 +310,25 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="48"
-                                    class="link-to-prism">src/app/services/token.service.ts:48</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="105"
+                                    class="link-to-prism">src/app/services/token.service.ts:105</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene las autoridades almacenadas en las cookies.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>    <code>string[]</code>
 
                         </div>
+                            <div class="io-description">
+                                <p>Lista de autoridades.</p>
+
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -329,19 +355,25 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="24"
-                                    class="link-to-prism">src/app/services/token.service.ts:24</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="59"
+                                    class="link-to-prism">src/app/services/token.service.ts:59</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene el token almacenado en las cookies.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                         </div>
+                            <div class="io-description">
+                                <p>El token JWT.</p>
+
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -352,7 +384,6 @@
                 <td class="col-md-4">
                     <a name="getTokenData"></a>
                     <span class="name">
-                            <span class="modifier">Public</span>
                         <span ><b>getTokenData</b></span>
                         <a href="#getTokenData"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -360,27 +391,32 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getTokenData()</code>
+<code>getTokenData()</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="28"
-                                    class="link-to-prism">src/app/services/token.service.ts:28</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="68"
+                                    class="link-to-prism">src/app/services/token.service.ts:68</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene los datos decodificados del token.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                         </div>
+                            <div class="io-description">
+                                <p>Datos decodificados del token o null si el token ha expirado.</p>
+
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -407,19 +443,25 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="37"
-                                    class="link-to-prism">src/app/services/token.service.ts:37</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="83"
+                                    class="link-to-prism">src/app/services/token.service.ts:83</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene el nombre de usuario del token.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                         </div>
+                            <div class="io-description">
+                                <p>El nombre de usuario.</p>
+
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -446,19 +488,24 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="58"
-                                    class="link-to-prism">src/app/services/token.service.ts:58</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="120"
+                                    class="link-to-prism">src/app/services/token.service.ts:120</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Elimina todas las cookies para cerrar la sesión.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                         </div>
+                            <div class="io-description">
+                                
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -485,14 +532,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="43"
-                                    class="link-to-prism">src/app/services/token.service.ts:43</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="95"
+                                    class="link-to-prism">src/app/services/token.service.ts:95</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Almacena las autoridades en las cookies.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -503,6 +552,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -517,6 +567,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>Lista de autoridades.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -538,7 +594,6 @@
                 <td class="col-md-4">
                     <a name="setToken"></a>
                     <span class="name">
-                            <span class="modifier">Public</span>
                         <span ><b>setToken</b></span>
                         <a href="#setToken"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -546,22 +601,23 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>setToken(token: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>setToken(token: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="19"
-                                    class="link-to-prism">src/app/services/token.service.ts:19</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="39"
+                                    class="link-to-prism">src/app/services/token.service.ts:39</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Almacena el token en las cookies.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -572,6 +628,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -586,6 +643,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>El token JWT.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -627,10 +690,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/services/token.service.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/services/token.service.ts:21</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Clave de las autoridades en las cookies</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -658,7 +727,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/services/token.service.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/services/token.service.ts:23</a></div>
                         </td>
                     </tr>
 
@@ -685,10 +754,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/services/token.service.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/services/token.service.ts:17</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Clave del token en las cookies</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -712,10 +787,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/services/token.service.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/services/token.service.ts:19</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Clave del nombre de usuario en las cookies</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -726,52 +807,109 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import {environment} from &#x27;../../environments/environment&#x27;;
-import {AuthTokenService} from &#x27;./auth-token.service&#x27;;
-import {CookieService} from &#x27;ngx-cookie-service&#x27;;
-import {JwtHelperService} from &#x27;@auth0/angular-jwt&#x27;;
+import { environment } from &#x27;../../environments/environment&#x27;;
+import { AuthTokenService } from &#x27;./auth-token.service&#x27;;
+import { CookieService } from &#x27;ngx-cookie-service&#x27;;
+import { JwtHelperService } from &#x27;@auth0/angular-jwt&#x27;;
 
+/**
+ * Servicio para manejar tokens de autenticación.
+ *
+ * @@Injectable
+ */
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
 export class TokenService {
+  /** Clave del token en las cookies */
   private readonly TOKEN_KEY &#x3D; environment.TOKEN_KEY;
+  /** Clave del nombre de usuario en las cookies */
   private readonly USERNAME_KEY &#x3D; environment.USERNAME_KEY;
+  /** Clave de las autoridades en las cookies */
   private readonly AUTHORITIES_KEY &#x3D; environment.AUTHORITIES_KEY;
 
   roles: Array&lt;string&gt; &#x3D; [];
 
+  /**
+   * Constructor que inyecta los servicios necesarios.
+   *
+   * @param {AuthTokenService} auth - Servicio de autenticación.
+   * @param {CookieService} cookieService - Servicio para manejar cookies.
+   */
   constructor(private auth: AuthTokenService, private cookieService: CookieService) { }
 
-  public setToken(token: string): void {
-    this.cookieService.delete(this.TOKEN_KEY);
-    this.cookieService.set(this.TOKEN_KEY, token);
+  /**
+   * Almacena el token en las cookies.
+   *
+   * @param {string} token - El token JWT.
+   * @returns {void}
+   */
+  setToken(token: string): void {
+    const jwtHelper &#x3D; new JwtHelperService();
+    const decodedToken &#x3D; jwtHelper.decodeToken(token);
+
+    if (!decodedToken.exp) {
+      console.error(&#x27;Token does not have exp claim&#x27;);
+      return;
+    }
+
+    // Crear un nuevo objeto Date directamente desde exp
+    const expirationDate &#x3D; new Date(decodedToken.exp * 1000);
+
+    this.cookieService.set(this.TOKEN_KEY, token, expirationDate);
   }
 
+  /**
+   * Obtiene el token almacenado en las cookies.
+   *
+   * @returns {string} El token JWT.
+   */
   public getToken(): string {
     return this.cookieService.get(this.TOKEN_KEY);
   }
 
-  public getTokenData(): any {
+  /**
+   * Obtiene los datos decodificados del token.
+   *
+   * @returns {any} Datos decodificados del token o null si el token ha expirado.
+   */
+  getTokenData() {
     const jwtHelper &#x3D; new JwtHelperService();
     if (!jwtHelper.isTokenExpired(this.getToken())) {
       return jwtHelper.decodeToken(this.getToken());
     } else {
+      this.cookieService.delete(this.TOKEN_KEY);
       return null;
     }
   }
 
+  /**
+   * Obtiene el nombre de usuario del token.
+   *
+   * @returns {string} El nombre de usuario.
+   */
   public getUserName(): string {
     if (this.cookieService.get(this.TOKEN_KEY)) {
       return this.auth.getTokenData().sub;
     }
   }
 
+  /**
+   * Almacena las autoridades en las cookies.
+   *
+   * @param {string[]} authorities - Lista de autoridades.
+   * @returns {void}
+   */
   public setAuthorities(authorities: string[]): void {
     this.cookieService.delete(this.AUTHORITIES_KEY);
     this.cookieService.set(this.AUTHORITIES_KEY, JSON.stringify(authorities));
   }
 
+  /**
+   * Obtiene las autoridades almacenadas en las cookies.
+   *
+   * @returns {string[]} Lista de autoridades.
+   */
   public getAuthorities(): string[] {
     this.roles &#x3D; [];
     if (this.cookieService.get(this.AUTHORITIES_KEY)) {
@@ -782,6 +920,11 @@ export class TokenService {
     return this.roles;
   }
 
+  /**
+   * Elimina todas las cookies para cerrar la sesión.
+   *
+   * @returns {void}
+   */
   public logOut(): void {
     this.cookieService.deleteAll();
   }

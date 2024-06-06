@@ -124,6 +124,21 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#apiUrl" >apiUrl</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -240,14 +255,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="38"
-                                    class="link-to-prism">src/app/services/asociacion.service.ts:38</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="62"
+                                    class="link-to-prism">src/app/services/asociacion.service.ts:62</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Activa una asociación por su ID.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -258,6 +275,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -272,6 +290,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>ID de la asociación a activar.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -281,7 +305,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Observable de la respuesta HTTP.</p>
+
                             </div>
                 </td>
             </tr>
@@ -307,14 +332,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="26"
-                                    class="link-to-prism">src/app/services/asociacion.service.ts:26</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="36"
+                                    class="link-to-prism">src/app/services/asociacion.service.ts:36</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Actualiza la información de una asociación.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -325,6 +352,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -339,6 +367,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>Objeto con los datos actualizados de la asociación.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -348,7 +382,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Observable de la respuesta HTTP.</p>
+
                             </div>
                 </td>
             </tr>
@@ -374,14 +409,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="30"
-                                    class="link-to-prism">src/app/services/asociacion.service.ts:30</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="45"
+                                    class="link-to-prism">src/app/services/asociacion.service.ts:45</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Da de baja una asociación por su ID.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -392,6 +429,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -406,6 +444,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>ID de la asociación a dar de baja.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -415,7 +459,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Observable de la respuesta HTTP.</p>
+
                             </div>
                 </td>
             </tr>
@@ -441,19 +486,25 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="34"
-                                    class="link-to-prism">src/app/services/asociacion.service.ts:34</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="53"
+                                    class="link-to-prism">src/app/services/asociacion.service.ts:53</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Da de baja la asociación de la sesión actual.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                         </div>
+                            <div class="io-description">
+                                <p>Observable de la respuesta HTTP.</p>
+
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -478,14 +529,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="42"
-                                    class="link-to-prism">src/app/services/asociacion.service.ts:42</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="71"
+                                    class="link-to-prism">src/app/services/asociacion.service.ts:71</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene una asociación por el ID de su usuario.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -496,6 +549,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -510,6 +564,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>ID del usuario.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -519,7 +579,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Observable de la asociación.</p>
+
                             </div>
                 </td>
             </tr>
@@ -545,19 +606,25 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="23"
-                                    class="link-to-prism">src/app/services/asociacion.service.ts:23</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="27"
+                                    class="link-to-prism">src/app/services/asociacion.service.ts:27</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene una lista de todas las asociaciones.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                         </div>
+                            <div class="io-description">
+                                <p>Observable de un array de asociaciones.</p>
+
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -582,21 +649,59 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="18"
-                                    class="link-to-prism">src/app/services/asociacion.service.ts:18</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="19"
+                                    class="link-to-prism">src/app/services/asociacion.service.ts:19</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene la asociación de la sesión actual.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                         </div>
+                            <div class="io-description">
+                                <p>Observable de la asociación de la sesión actual.</p>
+
+                            </div>
                 </td>
             </tr>
+        </tbody>
+    </table>
+</section>
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="apiUrl"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>apiUrl</b></span>
+                        <a href="#apiUrl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>environment.api.url</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/services/asociacion.service.ts:11</a></div>
+                        </td>
+                    </tr>
+
+
         </tbody>
     </table>
 </section>
@@ -605,49 +710,78 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Injectable} from &#x27;@angular/core&#x27;;
-import {Asociacion} from &#x27;../models/asociacion&#x27;;
-import {Usuario} from &#x27;../models/usuario&#x27;;
-import {Provincia} from &#x27;../models/provincia&#x27;;
-import {of} from &#x27;rxjs&#x27;;
-import {HttpClient} from &#x27;@angular/common/http&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { HttpClient } from &#x27;@angular/common/http&#x27;;
+import { Asociacion } from &#x27;../models/asociacion&#x27;;
+import { environment } from &#x27;../../environments/environment&#x27;;
 
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
 export class AsociacionService {
 
-  constructor(
-    private http: HttpClient
-  ) {
-  }
+  private apiUrl &#x3D; environment.api.url;
 
+  constructor(private http: HttpClient) { }
+
+  /**
+   * Obtiene la asociación de la sesión actual.
+   * @returns Observable de la asociación de la sesión actual.
+   */
   getAsociacionSesion() {
-    // cambiar por la id de la asociacion en sesion
-    return this.http.get&lt;Asociacion&gt;(&#x27;http://localhost:8080/api-backend/asociacion/sesion&#x27;);
+    return this.http.get&lt;Asociacion&gt;(&#x60;${this.apiUrl}/asociacion/sesion&#x60;);
   }
 
+  /**
+   * Obtiene una lista de todas las asociaciones.
+   * @returns Observable de un array de asociaciones.
+   */
   getAsociaciones() {
-    return this.http.get&lt;Asociacion[]&gt;(&#x27;http://localhost:8080/api-backend/asociacion/all&#x27;);
+    return this.http.get&lt;Asociacion[]&gt;(&#x60;${this.apiUrl}/asociacion/all&#x60;);
   }
+
+  /**
+   * Actualiza la información de una asociación.
+   * @param value - Objeto con los datos actualizados de la asociación.
+   * @returns Observable de la respuesta HTTP.
+   */
   actualizarAsociacion(value: any) {
-    return this.http.put(&#x27;http://localhost:8080/api-backend/usuario/update&#x27;, value);
+    return this.http.put(&#x60;${this.apiUrl}/usuario/update&#x60;, value);
   }
 
+  /**
+   * Da de baja una asociación por su ID.
+   * @param id - ID de la asociación a dar de baja.
+   * @returns Observable de la respuesta HTTP.
+   */
   darDeBaja(id: number) {
-    return this.http.put(&#x27;http://localhost:8080/api-backend/usuario/baja/&#x27; + id, null);
+    return this.http.put(&#x60;${this.apiUrl}/usuario/baja/&#x60; + id, null);
   }
 
+  /**
+   * Da de baja la asociación de la sesión actual.
+   * @returns Observable de la respuesta HTTP.
+   */
   darDeBajaSesion() {
-    return this.http.put(&#x27;http://localhost:8080/api-backend/usuario/baja-sesion/&#x27;, null);
+    return this.http.put(&#x60;${this.apiUrl}/usuario/baja-sesion/&#x60;, null);
   }
 
+  /**
+   * Activa una asociación por su ID.
+   * @param id - ID de la asociación a activar.
+   * @returns Observable de la respuesta HTTP.
+   */
   activarAsociacion(id: number) {
-    return this.http.put(&#x27;http://localhost:8080/api-backend/usuario/alta/&#x27; + id, null);
+    return this.http.put(&#x60;${this.apiUrl}/usuario/alta/&#x60; + id, null);
   }
 
+  /**
+   * Obtiene una asociación por el ID de su usuario.
+   * @param id - ID del usuario.
+   * @returns Observable de la asociación.
+   */
   getAsociacionByUsuarioId(id: number) {
-    return this.http.get&lt;Asociacion&gt;(&#x27;http://localhost:8080/api-backend/asociacion/usuario/&#x27; + id);
+    return this.http.get&lt;Asociacion&gt;(&#x60;${this.apiUrl}/asociacion/usuario/&#x60; + id);
   }
 }
 </code></pre>

@@ -226,12 +226,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(router: Router)</code>
+<code>constructor(router: Router, tokenService: <a href="../injectables/TokenService.html" target="_self">TokenService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/app.component.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/app.component.ts:11</a></div>
                             </td>
                         </tr>
 
@@ -253,6 +253,18 @@
                                                   
                                                         <td>
                                                                     <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>tokenService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/TokenService.html" target="_self" >TokenService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -298,8 +310,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="23"
-                                    class="link-to-prism">src/app/app.component.ts:23</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="18"
+                                    class="link-to-prism">src/app/app.component.ts:18</a></div>
                         </td>
                     </tr>
 
@@ -345,7 +357,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/app.component.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/app.component.ts:11</a></div>
                         </td>
                     </tr>
 
@@ -358,45 +370,43 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ElementRef} from &#x27;@angular/core&#x27;;
-// import { ComunService } from &#x27;./services/comun.service&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
-import { ConfigService } from &#x27;./services/config.service&#x27;;
-
+import { TokenService } from &#x27;./services/token.service&#x27;;
 
 @Component({
   selector: &#x27;app-root&#x27;,
   templateUrl: &#x27;./app.component.html&#x27;,
   styleUrls: [&#x27;./app.component.css&#x27;]
 })
-
 export class AppComponent implements OnInit {
-  [x: string]: any;
   title &#x3D; &#x27;huellitas-extremenas&#x27;;
-
 
   constructor(
     private router: Router,
-  ) {
-  }
+    private tokenService: TokenService
+  ) { }
 
   ngOnInit() {
-
+    const tokenData &#x3D; this.tokenService.getTokenData();
+    if (tokenData &#x3D;&#x3D;&#x3D; null) {
+      this.router.navigate([&#x27;/&#x27;]);
+    }
   }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;ng-container&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;d-flex flex-column min-vh-100&quot;&gt;
   &lt;app-navbar
-    *ngIf&#x3D;&quot;router.url !&#x3D;&#x3D; &#x27;/login&#x27; &amp;&amp; router.url !&#x3D;&#x3D; &#x27;/register-user&#x27; &amp;&amp; router.url !&#x3D;&#x3D; &#x27;/register-association&#x27;&quot;&gt;
+    *ngIf&#x3D;&quot;router.url !&#x3D;&#x3D; &#x27;/login&#x27; &amp;&amp; router.url !&#x3D;&#x3D; &#x27;/register-user&#x27; &amp;&amp; router.url !&#x3D;&#x3D; &#x27;/register-association&#x27; &amp;&amp; router.url !&#x3D;&#x3D; &#x27;/landing-page&#x27; &amp;&amp; router.url !&#x3D;&#x3D; &#x27;/cookies&#x27;&quot;&gt;
   &lt;/app-navbar&gt;
   &lt;router-outlet&gt;&lt;/router-outlet&gt;
-  &lt;app-footer
-    *ngIf&#x3D;&quot;router.url !&#x3D;&#x3D; &#x27;/login&#x27; &amp;&amp; router.url !&#x3D;&#x3D; &#x27;/register-user&#x27; &amp;&amp; router.url !&#x3D;&#x3D; &#x27;/register-association&#x27;&quot;&gt;
+  &lt;app-footer class&#x3D;&quot;mt-auto min-w-100&quot;
+              *ngIf&#x3D;&quot;router.url !&#x3D;&#x3D; &#x27;/login&#x27; &amp;&amp; router.url !&#x3D;&#x3D; &#x27;/register-user&#x27; &amp;&amp; router.url !&#x3D;&#x3D; &#x27;/register-association&#x27; &amp;&amp; router.url !&#x3D;&#x3D; &#x27;/landing-page&#x27;&amp;&amp; router.url !&#x3D;&#x3D; &#x27;/cookies&#x27;&quot;&gt;
   &lt;/app-footer&gt;
-&lt;/ng-container&gt;
+&lt;/div&gt;
 </code></pre>
     </div>
 
@@ -432,8 +442,8 @@ export class AppComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ng-container>  <app-navbar    *ngIf="router.url !== \'/login\' && router.url !== \'/register-user\' && router.url !== \'/register-association\'">  </app-navbar>  <router-outlet></router-outlet>  <app-footer    *ngIf="router.url !== \'/login\' && router.url !== \'/register-user\' && router.url !== \'/register-association\'">  </app-footer></ng-container></div>'
-    var COMPONENTS = [{'name': 'AnimalComponent', 'selector': 'app-animal'},{'name': 'AnimalesAsociacionComponent', 'selector': 'app-animales-asociacion'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArchivosAsociacionComponent', 'selector': 'app-archivos-asociacion'},{'name': 'DocumentosAnimalComponent', 'selector': 'app-documentos-animal'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormCrearAnimalComponent', 'selector': 'app-form-crear-animal'},{'name': 'FormEditarAnimalComponent', 'selector': 'app-form-editar-animal'},{'name': 'FormEditarArchivoAsocComponent', 'selector': 'app-form-editar-archivo-asoc'},{'name': 'FormEditarDocumentoAnimalComponent', 'selector': 'app-form-editar-documento-animal'},{'name': 'FormPerfilAsociacionComponent', 'selector': 'app-form-perfil-asociacion'},{'name': 'FormPerfilPersonaComponent', 'selector': 'app-form-perfil-persona'},{'name': 'FormSubirArchivoAsocComponent', 'selector': 'app-form-subir-archivo-asoc'},{'name': 'FormSubirDocumentoAnimalComponent', 'selector': 'app-form-subir-documento-animal'},{'name': 'ListAssociationsComponent', 'selector': 'app-list-associations'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PaginacionComponent', 'selector': 'app-paginacion'},{'name': 'PerfilAnimalComponent', 'selector': 'app-perfil-animal'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'RazaComponent', 'selector': 'app-raza'},{'name': 'RegisterAssociationComponent', 'selector': 'app-register-association'},{'name': 'RegisterUserComponent', 'selector': 'app-register-user'},{'name': 'SolicitudesAdminComponent', 'selector': 'app-solicitudes-admin'},{'name': 'SolicitudesAnimalComponent', 'selector': 'app-solicitudes-animal'},{'name': 'SolicitudesAsociacionComponent', 'selector': 'app-solicitudes-asociacion'},{'name': 'SolicitudesUsuarioComponent', 'selector': 'app-solicitudes-usuario'},{'name': 'TipoAnimalComponent', 'selector': 'app-tipo-animal'}];
+        var COMPONENT_TEMPLATE = '<div><div class="d-flex flex-column min-vh-100">  <app-navbar    *ngIf="router.url !== \'/login\' && router.url !== \'/register-user\' && router.url !== \'/register-association\' && router.url !== \'/landing-page\' && router.url !== \'/cookies\'">  </app-navbar>  <router-outlet></router-outlet>  <app-footer class="mt-auto min-w-100"              *ngIf="router.url !== \'/login\' && router.url !== \'/register-user\' && router.url !== \'/register-association\' && router.url !== \'/landing-page\'&& router.url !== \'/cookies\'">  </app-footer></div></div>'
+    var COMPONENTS = [{'name': 'AnimalComponent', 'selector': 'app-animal'},{'name': 'AnimalesAsociacionComponent', 'selector': 'app-animales-asociacion'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArchivosAsociacionComponent', 'selector': 'app-archivos-asociacion'},{'name': 'CookiesComponent', 'selector': 'app-cookies'},{'name': 'DocumentosAnimalComponent', 'selector': 'app-documentos-animal'},{'name': 'Error404Component', 'selector': 'app-error404'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormCrearAnimalComponent', 'selector': 'app-form-crear-animal'},{'name': 'FormEditarAnimalComponent', 'selector': 'app-form-editar-animal'},{'name': 'FormEditarArchivoAsocComponent', 'selector': 'app-form-editar-archivo-asoc'},{'name': 'FormEditarDocumentoAnimalComponent', 'selector': 'app-form-editar-documento-animal'},{'name': 'FormPerfilAsociacionComponent', 'selector': 'app-form-perfil-asociacion'},{'name': 'FormPerfilPersonaComponent', 'selector': 'app-form-perfil-persona'},{'name': 'FormSubirArchivoAsocComponent', 'selector': 'app-form-subir-archivo-asoc'},{'name': 'FormSubirDocumentoAnimalComponent', 'selector': 'app-form-subir-documento-animal'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'ListAssociationsComponent', 'selector': 'app-list-associations'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PaginacionComponent', 'selector': 'app-paginacion'},{'name': 'PerfilAnimalComponent', 'selector': 'app-perfil-animal'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'RazaComponent', 'selector': 'app-raza'},{'name': 'RegisterAssociationComponent', 'selector': 'app-register-association'},{'name': 'RegisterUserComponent', 'selector': 'app-register-user'},{'name': 'SolicitudesAdminComponent', 'selector': 'app-solicitudes-admin'},{'name': 'SolicitudesAnimalComponent', 'selector': 'app-solicitudes-animal'},{'name': 'SolicitudesAsociacionComponent', 'selector': 'app-solicitudes-asociacion'},{'name': 'SolicitudesUsuarioComponent', 'selector': 'app-solicitudes-usuario'},{'name': 'TipoAnimalComponent', 'selector': 'app-tipo-animal'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};
 </script>

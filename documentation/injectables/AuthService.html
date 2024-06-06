@@ -187,7 +187,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/services/auth.service.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/services/auth.service.ts:18</a></div>
                             </td>
                         </tr>
 
@@ -274,19 +274,25 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="50"
-                                    class="link-to-prism">src/app/services/auth.service.ts:50</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="73"
+                                    class="link-to-prism">src/app/services/auth.service.ts:73</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Verifica si el usuario está autenticado.</p>
+</div>
 
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                            <b>Returns : </b>    <code>Observable&lt;boolean&gt;</code>
 
                         </div>
+                            <div class="io-description">
+                                <p>Observable que indica si el usuario está autenticado.</p>
+
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -313,14 +319,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="37"
-                                    class="link-to-prism">src/app/services/auth.service.ts:37</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="57"
+                                    class="link-to-prism">src/app/services/auth.service.ts:57</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Inicia sesión con las credenciales proporcionadas.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -331,6 +339,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -345,6 +354,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>Credenciales del usuario.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -354,7 +369,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Observable con el JWT si el inicio de sesión es exitoso.</p>
+
                             </div>
                 </td>
             </tr>
@@ -380,14 +396,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="44"
-                                    class="link-to-prism">src/app/services/auth.service.ts:44</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="64"
+                                    class="link-to-prism">src/app/services/auth.service.ts:64</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Cierra la sesión del usuario actual.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -417,14 +435,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="22"
-                                    class="link-to-prism">src/app/services/auth.service.ts:22</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="31"
+                                    class="link-to-prism">src/app/services/auth.service.ts:31</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Registra una nueva asociación.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -435,6 +455,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -449,6 +470,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>Datos de la asociación a registrar.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -458,7 +485,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Observable que indica el éxito o fracaso del registro.</p>
+
                             </div>
                 </td>
             </tr>
@@ -484,14 +512,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="30"
-                                    class="link-to-prism">src/app/services/auth.service.ts:30</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="44"
+                                    class="link-to-prism">src/app/services/auth.service.ts:44</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Registra un nuevo usuario.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -502,6 +532,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -516,6 +547,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>Datos del usuario a registrar.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -525,7 +562,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Observable que indica el éxito o fracaso del registro.</p>
+
                             </div>
                 </td>
             </tr>
@@ -551,18 +589,12 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>&#x27;http://localhost:8080/api-backend/auth&#x27;</code>
+                        <i>Default value : </i><code>environment.api.url</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/services/auth.service.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/services/auth.service.ts:18</a></div>
                         </td>
                     </tr>
 
@@ -576,56 +608,79 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import {HttpClient} from &#x27;@angular/common/http&#x27;;
-import {UserRegister} from &#x27;../interfaces/user-register.interface&#x27;;
-import {AssociationRegister} from &#x27;../interfaces/associations-register.interface&#x27;;
-import {environment} from &#x27;../../environments/environment&#x27;;
-import {CookieService} from &#x27;ngx-cookie-service&#x27;;
-import {Router} from &#x27;@angular/router&#x27;;
-import {JwtDTO} from &#x27;../dto/auth/jwt-dto&#x27;;
-import {Observable, of, throwError} from &#x27;rxjs&#x27;;
-import {LoginUsuario} from &#x27;../dto/auth/login-usuario&#x27;;
-import {catchError, map} from &#x27;rxjs/operators&#x27;;
+import { HttpClient } from &#x27;@angular/common/http&#x27;;
+import { UserRegister } from &#x27;../interfaces/user-register.interface&#x27;;
+import { AssociationRegister } from &#x27;../interfaces/associations-register.interface&#x27;;
+import { environment } from &#x27;../../environments/environment&#x27;;
+import { CookieService } from &#x27;ngx-cookie-service&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { JwtDTO } from &#x27;../dto/auth/jwt-dto&#x27;;
+import { Observable, of, throwError } from &#x27;rxjs&#x27;;
+import { LoginUsuario } from &#x27;../dto/auth/login-usuario&#x27;;
+import { catchError, map } from &#x27;rxjs/operators&#x27;;
 import Swal from &#x27;sweetalert2&#x27;;
-
 
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
 export class AuthService {
-  private apiUrl &#x3D; &#x27;http://localhost:8080/api-backend/auth&#x27;;
-  constructor(private http: HttpClient, private cookieService: CookieService, private router: Router) { }
+  private apiUrl &#x3D; environment.api.url;
 
+  constructor(
+    private http: HttpClient,
+    private cookieService: CookieService,
+    private router: Router
+  ) { }
+
+  /**
+   * Registra una nueva asociación.
+   * @param association - Datos de la asociación a registrar.
+   * @returns Observable que indica el éxito o fracaso del registro.
+   */
   registerAssociation(association: AssociationRegister) {
-    return this.http.post&lt;void&gt;(&#x60;${this.apiUrl}/register-association&#x60; , association).pipe(
+    return this.http.post&lt;void&gt;(&#x60;${this.apiUrl}/auth/register-association&#x60;, association).pipe(
       catchError((error) &#x3D;&gt; {
         return throwError(error);
       })
     );
   }
 
+  /**
+   * Registra un nuevo usuario.
+   * @param user - Datos del usuario a registrar.
+   * @returns Observable que indica el éxito o fracaso del registro.
+   */
   registerUser(user: UserRegister) {
-    return this.http.post&lt;void&gt;(&#x60;${this.apiUrl}/register-user&#x60; , user).pipe(
+    return this.http.post&lt;void&gt;(&#x60;${this.apiUrl}/auth/register-user&#x60;, user).pipe(
       catchError((error) &#x3D;&gt; {
         return throwError(error);
       })
     );
   }
-  public login(loginUsuario: LoginUsuario): Observable&lt;JwtDTO&gt;{
-    console.log(loginUsuario);
 
-
-    return this.http.post&lt;JwtDTO&gt;(environment.api.url + &#x27;/auth/login&#x27;, loginUsuario);
+  /**
+   * Inicia sesión con las credenciales proporcionadas.
+   * @param loginUsuario - Credenciales del usuario.
+   * @returns Observable con el JWT si el inicio de sesión es exitoso.
+   */
+  public login(loginUsuario: LoginUsuario): Observable&lt;JwtDTO&gt; {
+    return this.http.post&lt;JwtDTO&gt;(&#x60;${this.apiUrl}/auth/login&#x60;, loginUsuario);
   }
 
+  /**
+   * Cierra la sesión del usuario actual.
+   */
   logout(): void {
     this.cookieService.delete(environment.TOKEN_KEY);
-
     this.router.navigate([&#x27;/login&#x27;]);
   }
 
-  isAuthenticated() {
-    return this.http.get(environment.api.url + &#x27;/usuario/authenticate&#x27;).pipe(
+  /**
+   * Verifica si el usuario está autenticado.
+   * @returns Observable que indica si el usuario está autenticado.
+   */
+  isAuthenticated(): Observable&lt;boolean&gt; {
+    return this.http.get(&#x60;${this.apiUrl}/usuario/authenticate&#x60;).pipe(
       map(response &#x3D;&gt; {
         return true;
       }),
@@ -635,8 +690,6 @@ export class AuthService {
       })
     );
   }
-
-
 }
 </code></pre>
     </div>

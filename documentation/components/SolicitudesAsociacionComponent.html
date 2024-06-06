@@ -122,6 +122,13 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente para gestionar las solicitudes de una asociación.</p>
+
+    </p>
 
 
     <p class="comment">
@@ -194,6 +201,9 @@
                                 <a href="#animalPersonas" >animalPersonas</a>
                             </li>
                             <li>
+                                <a href="#isLoading" >isLoading</a>
+                            </li>
+                            <li>
                                 <a href="#nombreAsociacion" >nombreAsociacion</a>
                             </li>
                         </ul>
@@ -238,17 +248,19 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(animalPersonaService: <a href="../injectables/AnimalPersonaServiceService.html" target="_self">AnimalPersonaServiceService</a>, comunService: <a href="../injectables/ComunService.html" target="_self">ComunService</a>, asociacionService: <a href="../injectables/AsociacionService.html" target="_self">AsociacionService</a>)</code>
+<code>constructor(animalPersonaService: <a href="../injectables/AnimalPersonaServiceService.html" target="_self">AnimalPersonaServiceService</a>, comunService: <a href="../injectables/ComunService.html" target="_self">ComunService</a>, asociacionService: <a href="../injectables/AsociacionService.html" target="_self">AsociacionService</a>, navbarService: <a href="../injectables/NavbarService.html" target="_self">NavbarService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/components/solicitudes-asociacion/solicitudes-asociacion.component.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/components/solicitudes-asociacion/solicitudes-asociacion.component.ts:47</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Crea una instancia de SolicitudesAsociacionComponent.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -257,6 +269,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -271,6 +284,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>Servicio para gestionar AnimalPersona.</p>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>comunService</td>
@@ -283,6 +300,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>Servicio común.</p>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>asociacionService</td>
@@ -295,6 +316,26 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>Servicio para gestionar Asociación.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>navbarService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/NavbarService.html" target="_self" >NavbarService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio para gestionar la barra de navegación.</p>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -334,14 +375,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="52"
-                                    class="link-to-prism">src/app/components/solicitudes-asociacion/solicitudes-asociacion.component.ts:52</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="122"
+                                    class="link-to-prism">src/app/components/solicitudes-asociacion/solicitudes-asociacion.component.ts:122</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Acepta una solicitud de AnimalPersona.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -352,6 +395,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -366,6 +410,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Id del animal.</p>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                                 <td>id2</td>
@@ -378,6 +426,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Id de la persona.</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -413,14 +465,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="28"
-                                    class="link-to-prism">src/app/components/solicitudes-asociacion/solicitudes-asociacion.component.ts:28</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="79"
+                                    class="link-to-prism">src/app/components/solicitudes-asociacion/solicitudes-asociacion.component.ts:79</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene la lista de AnimalPersona para la asociación del usuario autenticado.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -450,14 +504,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="21"
-                                    class="link-to-prism">src/app/components/solicitudes-asociacion/solicitudes-asociacion.component.ts:21</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="70"
+                                    class="link-to-prism">src/app/components/solicitudes-asociacion/solicitudes-asociacion.component.ts:70</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Método de inicialización del componente.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -487,14 +543,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="81"
-                                    class="link-to-prism">src/app/components/solicitudes-asociacion/solicitudes-asociacion.component.ts:81</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="159"
+                                    class="link-to-prism">src/app/components/solicitudes-asociacion/solicitudes-asociacion.component.ts:159</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Rechaza una solicitud de AnimalPersona.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -505,6 +563,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -519,6 +578,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Id del animal.</p>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                                 <td>id2</td>
@@ -531,6 +594,10 @@
                                             </td>
 
 
+                                            <td>
+                                                    <p>Id de la persona.</p>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -571,10 +638,53 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/components/solicitudes-asociacion/solicitudes-asociacion.component.ts:18</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/components/solicitudes-asociacion/solicitudes-asociacion.component.ts:31</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Lista de AnimalPersona.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isLoading"></a>
+                    <span class="name">
+                        <span ><b>isLoading</b></span>
+                        <a href="#isLoading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/components/solicitudes-asociacion/solicitudes-asociacion.component.ts:47</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Indicador de carga.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -597,10 +707,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/components/solicitudes-asociacion/solicitudes-asociacion.component.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/components/solicitudes-asociacion/solicitudes-asociacion.component.ts:39</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Nombre de la asociación.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -611,15 +727,22 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
-import {AnimalPersona} from &#x27;../../models/animalPersona&#x27;;
-import {AnimalPersonaServiceService} from &#x27;../../services/animal-persona-service.service&#x27;;
-import {ComunService} from &#x27;../../services/comun.service&#x27;;
-import {PersonaService} from &#x27;../../services/persona.service&#x27;;
-import {switchMap} from &#x27;rxjs/operators&#x27;;
-import {AsociacionService} from &#x27;../../services/asociacion.service&#x27;;
-import Swal from &quot;sweetalert2&quot;;
+import { AnimalPersona } from &#x27;../../models/animalPersona&#x27;;
+import { AnimalPersonaServiceService } from &#x27;../../services/animal-persona-service.service&#x27;;
+import { ComunService } from &#x27;../../services/comun.service&#x27;;
+import { switchMap } from &#x27;rxjs/operators&#x27;;
+import { AsociacionService } from &#x27;../../services/asociacion.service&#x27;;
+import Swal from &#x27;sweetalert2&#x27;;
+import { NavbarService } from &#x27;../../services/navbar.service&#x27;;
 declare var $: any; // Declaración de jQuery
 
+/**
+ * Componente para gestionar las solicitudes de una asociación.
+ *
+ * @export
+ * @class SolicitudesAsociacionComponent
+ * @implements {OnInit}
+ */
 @Component({
   selector: &#x27;app-solicitudes-asociacion&#x27;,
   templateUrl: &#x27;./solicitudes-asociacion.component.html&#x27;,
@@ -627,31 +750,87 @@ declare var $: any; // Declaración de jQuery
 })
 export class SolicitudesAsociacionComponent implements OnInit {
 
+  /**
+   * Lista de AnimalPersona.
+   *
+   * @type {AnimalPersona[]}
+   * @memberof SolicitudesAsociacionComponent
+   */
   animalPersonas: AnimalPersona[];
-  nombreAsociacion: string; // Nueva propiedad para almacenar el nombre de la asociacion
-  constructor(private animalPersonaService: AnimalPersonaServiceService, protected comunService: ComunService, protected asociacionService: AsociacionService) { }
+
+  /**
+   * Nombre de la asociación.
+   *
+   * @type {string}
+   * @memberof SolicitudesAsociacionComponent
+   */
+  nombreAsociacion: string;
+
+  /**
+   * Indicador de carga.
+   *
+   * @type {boolean}
+   * @memberof SolicitudesAsociacionComponent
+   */
+  isLoading: boolean &#x3D; true;
+
+  /**
+   * Crea una instancia de SolicitudesAsociacionComponent.
+   *
+   * @param {AnimalPersonaServiceService} animalPersonaService Servicio para gestionar AnimalPersona.
+   * @param {ComunService} comunService Servicio común.
+   * @param {AsociacionService} asociacionService Servicio para gestionar Asociación.
+   * @param {NavbarService} navbarService Servicio para gestionar la barra de navegación.
+   * @memberof SolicitudesAsociacionComponent
+   */
+  constructor(
+    private animalPersonaService: AnimalPersonaServiceService,
+    protected comunService: ComunService,
+    protected asociacionService: AsociacionService,
+    private navbarService: NavbarService
+  ) {}
+
+  /**
+   * Método de inicialización del componente.
+   *
+   * @memberof SolicitudesAsociacionComponent
+   */
   ngOnInit(): void {
     this.getAnimalPersonas();
-    console.log(&#x27;Solicitudes admin&#x27;);
   }
 
-
-
+  /**
+   * Obtiene la lista de AnimalPersona para la asociación del usuario autenticado.
+   *
+   * @memberof SolicitudesAsociacionComponent
+   */
   getAnimalPersonas(): void {
     const usuarioAutenticado &#x3D; this.comunService.getUsuarioAutenticado();
     if (usuarioAutenticado) {
       this.asociacionService.getAsociacionByUsuarioId(usuarioAutenticado.id).pipe(
         switchMap(asociacion &#x3D;&gt; {
           console.log(asociacion);
-          this.nombreAsociacion &#x3D; asociacion.nombre; // Asignar el nombre del usuario
+          this.nombreAsociacion &#x3D; asociacion.nombre;
           return this.animalPersonaService.getAnimalPersonasByAsociacionId(asociacion.id);
         })
       ).subscribe(
         animalPersonas &#x3D;&gt; {
           this.animalPersonas &#x3D; animalPersonas;
-          // tslint:disable-next-line:only-arrow-functions
+          this.isLoading &#x3D; false;
           $(document).ready(function() {
-            $(&#x27;.table&#x27;).DataTable();
+            $(&#x27;#datatable&#x27;).DataTable({
+              pagingType: &#x27;full_numbers&#x27;,
+              pageLength: 10,
+              responsive: {
+                details: {
+                  type: &#x27;inline&#x27;,
+                  target: 0
+                }
+              },
+              language: {
+                url: &#x27;https://cdn.datatables.net/plug-ins/2.0.8/i18n/es-ES.json&#x27;
+              }
+            });
           });
           console.log(this.animalPersonas);
         }
@@ -661,10 +840,17 @@ export class SolicitudesAsociacionComponent implements OnInit {
     }
   }
 
+  /**
+   * Acepta una solicitud de AnimalPersona.
+   *
+   * @param {number} id Id del animal.
+   * @param {number} id2 Id de la persona.
+   * @memberof SolicitudesAsociacionComponent
+   */
   aceptarSolicitud(id: number, id2: number) {
     const animalPersona &#x3D; new AnimalPersona();
-    animalPersona.idAnimal &#x3D; {id: id};
-    animalPersona.idPersona &#x3D; {id: id2};
+    animalPersona.idAnimal &#x3D; { id: id };
+    animalPersona.idPersona &#x3D; { id: id2 };
 
     Swal.fire({
       title: &#x27;¿Estás seguro?&#x27;,
@@ -680,7 +866,8 @@ export class SolicitudesAsociacionComponent implements OnInit {
           response &#x3D;&gt; {
             console.log(response);
             Swal.fire(&#x27;Éxito&#x27;, &#x27;Solicitud aceptada con éxito&#x27;, &#x27;success&#x27;);
-            this.getAnimalPersonas(); // Recargar los datos
+            this.getAnimalPersonas();
+            this.navbarService.reload();
           },
           error &#x3D;&gt; {
             Swal.fire(&#x27;Error&#x27;, &#x27;Hubo un error al aceptar la solicitud&#x27;, &#x27;error&#x27;);
@@ -690,10 +877,17 @@ export class SolicitudesAsociacionComponent implements OnInit {
     });
   }
 
+  /**
+   * Rechaza una solicitud de AnimalPersona.
+   *
+   * @param {number} id Id del animal.
+   * @param {number} id2 Id de la persona.
+   * @memberof SolicitudesAsociacionComponent
+   */
   rechazarSolicitud(id: number, id2: number) {
     const animalPersona &#x3D; new AnimalPersona();
-    animalPersona.idAnimal &#x3D; {id: id};
-    animalPersona.idPersona &#x3D; {id: id2};
+    animalPersona.idAnimal &#x3D; { id: id };
+    animalPersona.idPersona &#x3D; { id: id2 };
 
     Swal.fire({
       title: &#x27;¿Estás seguro?&#x27;,
@@ -709,7 +903,8 @@ export class SolicitudesAsociacionComponent implements OnInit {
           response &#x3D;&gt; {
             console.log(response);
             Swal.fire(&#x27;Éxito&#x27;, &#x27;Solicitud rechazada con éxito&#x27;, &#x27;success&#x27;);
-            this.getAnimalPersonas(); // Recargar los datos
+            this.getAnimalPersonas();
+            this.navbarService.reload();
           },
           error &#x3D;&gt; {
             Swal.fire(&#x27;Error&#x27;, &#x27;Hubo un error al rechazar la solicitud&#x27;, &#x27;error&#x27;);
@@ -723,34 +918,37 @@ export class SolicitudesAsociacionComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container mt-4&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container mt-4 spinner-border&quot; role&#x3D;&quot;status&quot; *ngIf&#x3D;&quot;isLoading&quot;&gt;
+  &lt;span class&#x3D;&quot;sr-only&quot;&gt;Loading...&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class&#x3D;&quot;container mt-4&quot; *ngIf&#x3D;&quot;!isLoading&quot;&gt;
   &lt;h1 class&#x3D;&quot;text-center m-5&quot;&gt;Listado Solicitudes de {{nombreAsociacion}}&lt;/h1&gt;
 
   &lt;table id&#x3D;&quot;datatable&quot; class&#x3D;&quot;table table-striped table-bordered&quot;&gt;
     &lt;thead&gt;
     &lt;tr&gt;
       &lt;th&gt;Nombre del Animal&lt;/th&gt;
-      &lt;th&gt;Correo del interesado&lt;/th&gt;
-      &lt;th&gt;Teléfono del interesado&lt;/th&gt;
-      &lt;th&gt;Estado&lt;/th&gt;
-      &lt;th&gt;Opciones&lt;/th&gt;
+      &lt;th class&#x3D;&quot;min-tablet-l&quot;&gt;Correo del interesado&lt;/th&gt;
+      &lt;th class&#x3D;&quot;min-tablet-l&quot;&gt;Teléfono del interesado&lt;/th&gt;
+      &lt;th class&#x3D;&quot;min-tablet-l&quot;&gt;Estado&lt;/th&gt;
+      &lt;th class&#x3D;&quot;min-tablet-l&quot;&gt;Opciones&lt;/th&gt;
     &lt;/tr&gt;
     &lt;/thead&gt;
     &lt;tbody&gt;
     &lt;tr *ngFor&#x3D;&quot;let animalPersona of animalPersonas&quot;&gt;
       &lt;td&gt;{{ animalPersona.idAnimal.nombre }}&lt;/td&gt;
-      &lt;td&gt;{{ animalPersona.idPersona.correo }}&lt;/td&gt;
-      &lt;td&gt;{{ animalPersona.idPersona.tlf }}&lt;/td&gt;
-      &lt;td&gt;
-        &lt;span [ngClass]&#x3D;&quot;{&#x27;badge rounded-pill bg-danger&#x27;: !animalPersona.estado, &#x27;badge rounded-pill bg-success text-white&#x27;: animalPersona.estado || !animalPersona.estado}&quot;&gt;
-        {{ animalPersona.estado ? &#x27;Aceptada&#x27; : &#x27;Pendiente&#x27; }}
-        &lt;/span&gt;
+      &lt;td class&#x3D;&quot;min-tablet-l&quot;&gt;{{ animalPersona.idPersona.correo }}&lt;/td&gt;
+      &lt;td class&#x3D;&quot;min-tablet-l&quot;&gt;{{ animalPersona.idPersona.tlf }}&lt;/td&gt;
+      &lt;td class&#x3D;&quot;min-tablet-l&quot;&gt;
+          &lt;span [ngClass]&#x3D;&quot;{&#x27;badge rounded-pill bg-danger&#x27;: !animalPersona.estado, &#x27;badge rounded-pill bg-success text-white&#x27;: animalPersona.estado || !animalPersona.estado}&quot;&gt;
+            {{ animalPersona.estado ? &#x27;Aceptada&#x27; : &#x27;Pendiente&#x27; }}
+          &lt;/span&gt;
       &lt;/td&gt;
-      &lt;td&gt;
-        &lt;span class&#x3D;&quot;d-flex&quot;&gt;
-          &lt;button *ngIf&#x3D;&quot;!animalPersona.estado&quot; class&#x3D;&quot;btn btn-success m-2&quot; (click)&#x3D;&quot;aceptarSolicitud(animalPersona.id.idAnimal, animalPersona.id.idPersona)&quot;&gt;Aceptar&lt;/button&gt;
-          &lt;button *ngIf&#x3D;&quot;!animalPersona.estado&quot; class&#x3D;&quot;btn btn-danger m-2&quot; (click)&#x3D;&quot;rechazarSolicitud(animalPersona.id.idAnimal, animalPersona.id.idPersona)&quot;&gt;Rechazar&lt;/button&gt;
-        &lt;/span&gt;
+      &lt;td class&#x3D;&quot;min-tablet-l&quot;&gt;
+          &lt;span class&#x3D;&quot;d-flex&quot;&gt;
+            &lt;button *ngIf&#x3D;&quot;!animalPersona.estado&quot; class&#x3D;&quot;btn btn-success m-2&quot; (click)&#x3D;&quot;aceptarSolicitud(animalPersona.id.idAnimal, animalPersona.id.idPersona)&quot;&gt;Aceptar&lt;/button&gt;
+            &lt;button *ngIf&#x3D;&quot;!animalPersona.estado&quot; class&#x3D;&quot;btn btn-danger m-2&quot; (click)&#x3D;&quot;rechazarSolicitud(animalPersona.id.idAnimal, animalPersona.id.idPersona)&quot;&gt;Rechazar&lt;/button&gt;
+          &lt;/span&gt;
       &lt;/td&gt;
     &lt;/tr&gt;
     &lt;/tbody&gt;
@@ -791,8 +989,8 @@ export class SolicitudesAsociacionComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container mt-4">  <h1 class="text-center m-5">Listado Solicitudes de {{nombreAsociacion}}</h1>  <table id="datatable" class="table table-striped table-bordered">    <thead>    <tr>      <th>Nombre del Animal</th>      <th>Correo del interesado</th>      <th>Teléfono del interesado</th>      <th>Estado</th>      <th>Opciones</th>    </tr>    </thead>    <tbody>    <tr *ngFor="let animalPersona of animalPersonas">      <td>{{ animalPersona.idAnimal.nombre }}</td>      <td>{{ animalPersona.idPersona.correo }}</td>      <td>{{ animalPersona.idPersona.tlf }}</td>      <td>        <span [ngClass]="{\'badge rounded-pill bg-danger\': !animalPersona.estado, \'badge rounded-pill bg-success text-white\': animalPersona.estado || !animalPersona.estado}">        {{ animalPersona.estado ? \'Aceptada\' : \'Pendiente\' }}        </span>      </td>      <td>        <span class="d-flex">          <button *ngIf="!animalPersona.estado" class="btn btn-success m-2" (click)="aceptarSolicitud(animalPersona.id.idAnimal, animalPersona.id.idPersona)">Aceptar</button>          <button *ngIf="!animalPersona.estado" class="btn btn-danger m-2" (click)="rechazarSolicitud(animalPersona.id.idAnimal, animalPersona.id.idPersona)">Rechazar</button>        </span>      </td>    </tr>    </tbody>  </table></div></div>'
-    var COMPONENTS = [{'name': 'AnimalComponent', 'selector': 'app-animal'},{'name': 'AnimalesAsociacionComponent', 'selector': 'app-animales-asociacion'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArchivosAsociacionComponent', 'selector': 'app-archivos-asociacion'},{'name': 'DocumentosAnimalComponent', 'selector': 'app-documentos-animal'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormCrearAnimalComponent', 'selector': 'app-form-crear-animal'},{'name': 'FormEditarAnimalComponent', 'selector': 'app-form-editar-animal'},{'name': 'FormEditarArchivoAsocComponent', 'selector': 'app-form-editar-archivo-asoc'},{'name': 'FormEditarDocumentoAnimalComponent', 'selector': 'app-form-editar-documento-animal'},{'name': 'FormPerfilAsociacionComponent', 'selector': 'app-form-perfil-asociacion'},{'name': 'FormPerfilPersonaComponent', 'selector': 'app-form-perfil-persona'},{'name': 'FormSubirArchivoAsocComponent', 'selector': 'app-form-subir-archivo-asoc'},{'name': 'FormSubirDocumentoAnimalComponent', 'selector': 'app-form-subir-documento-animal'},{'name': 'ListAssociationsComponent', 'selector': 'app-list-associations'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PaginacionComponent', 'selector': 'app-paginacion'},{'name': 'PerfilAnimalComponent', 'selector': 'app-perfil-animal'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'RazaComponent', 'selector': 'app-raza'},{'name': 'RegisterAssociationComponent', 'selector': 'app-register-association'},{'name': 'RegisterUserComponent', 'selector': 'app-register-user'},{'name': 'SolicitudesAdminComponent', 'selector': 'app-solicitudes-admin'},{'name': 'SolicitudesAnimalComponent', 'selector': 'app-solicitudes-animal'},{'name': 'SolicitudesAsociacionComponent', 'selector': 'app-solicitudes-asociacion'},{'name': 'SolicitudesUsuarioComponent', 'selector': 'app-solicitudes-usuario'},{'name': 'TipoAnimalComponent', 'selector': 'app-tipo-animal'}];
+        var COMPONENT_TEMPLATE = '<div><div class="container mt-4 spinner-border" role="status" *ngIf="isLoading">  <span class="sr-only">Loading...</span></div><div class="container mt-4" *ngIf="!isLoading">  <h1 class="text-center m-5">Listado Solicitudes de {{nombreAsociacion}}</h1>  <table id="datatable" class="table table-striped table-bordered">    <thead>    <tr>      <th>Nombre del Animal</th>      <th class="min-tablet-l">Correo del interesado</th>      <th class="min-tablet-l">Teléfono del interesado</th>      <th class="min-tablet-l">Estado</th>      <th class="min-tablet-l">Opciones</th>    </tr>    </thead>    <tbody>    <tr *ngFor="let animalPersona of animalPersonas">      <td>{{ animalPersona.idAnimal.nombre }}</td>      <td class="min-tablet-l">{{ animalPersona.idPersona.correo }}</td>      <td class="min-tablet-l">{{ animalPersona.idPersona.tlf }}</td>      <td class="min-tablet-l">          <span [ngClass]="{\'badge rounded-pill bg-danger\': !animalPersona.estado, \'badge rounded-pill bg-success text-white\': animalPersona.estado || !animalPersona.estado}">            {{ animalPersona.estado ? \'Aceptada\' : \'Pendiente\' }}          </span>      </td>      <td class="min-tablet-l">          <span class="d-flex">            <button *ngIf="!animalPersona.estado" class="btn btn-success m-2" (click)="aceptarSolicitud(animalPersona.id.idAnimal, animalPersona.id.idPersona)">Aceptar</button>            <button *ngIf="!animalPersona.estado" class="btn btn-danger m-2" (click)="rechazarSolicitud(animalPersona.id.idAnimal, animalPersona.id.idPersona)">Rechazar</button>          </span>      </td>    </tr>    </tbody>  </table></div></div>'
+    var COMPONENTS = [{'name': 'AnimalComponent', 'selector': 'app-animal'},{'name': 'AnimalesAsociacionComponent', 'selector': 'app-animales-asociacion'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArchivosAsociacionComponent', 'selector': 'app-archivos-asociacion'},{'name': 'CookiesComponent', 'selector': 'app-cookies'},{'name': 'DocumentosAnimalComponent', 'selector': 'app-documentos-animal'},{'name': 'Error404Component', 'selector': 'app-error404'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormCrearAnimalComponent', 'selector': 'app-form-crear-animal'},{'name': 'FormEditarAnimalComponent', 'selector': 'app-form-editar-animal'},{'name': 'FormEditarArchivoAsocComponent', 'selector': 'app-form-editar-archivo-asoc'},{'name': 'FormEditarDocumentoAnimalComponent', 'selector': 'app-form-editar-documento-animal'},{'name': 'FormPerfilAsociacionComponent', 'selector': 'app-form-perfil-asociacion'},{'name': 'FormPerfilPersonaComponent', 'selector': 'app-form-perfil-persona'},{'name': 'FormSubirArchivoAsocComponent', 'selector': 'app-form-subir-archivo-asoc'},{'name': 'FormSubirDocumentoAnimalComponent', 'selector': 'app-form-subir-documento-animal'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'ListAssociationsComponent', 'selector': 'app-list-associations'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PaginacionComponent', 'selector': 'app-paginacion'},{'name': 'PerfilAnimalComponent', 'selector': 'app-perfil-animal'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'RazaComponent', 'selector': 'app-raza'},{'name': 'RegisterAssociationComponent', 'selector': 'app-register-association'},{'name': 'RegisterUserComponent', 'selector': 'app-register-user'},{'name': 'SolicitudesAdminComponent', 'selector': 'app-solicitudes-admin'},{'name': 'SolicitudesAnimalComponent', 'selector': 'app-solicitudes-animal'},{'name': 'SolicitudesAsociacionComponent', 'selector': 'app-solicitudes-asociacion'},{'name': 'SolicitudesUsuarioComponent', 'selector': 'app-solicitudes-usuario'},{'name': 'TipoAnimalComponent', 'selector': 'app-tipo-animal'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'SolicitudesAsociacionComponent'};
 </script>

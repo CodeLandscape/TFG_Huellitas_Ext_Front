@@ -282,7 +282,7 @@
 @Component({
   selector: &#x27;app-footer&#x27;,
   templateUrl: &#x27;./footer.component.html&#x27;,
-  styleUrls: [&#x27;./footer.component.css&#x27;]
+  styleUrls: [&#x27;./footer.component.css&#x27;],
 })
 export class FooterComponent implements OnInit {
 
@@ -296,44 +296,32 @@ export class FooterComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;footer class&#x3D;&quot;bg-body-tertiary text-center text-lg-start&quot;&gt;
-  &lt;!-- Grid container --&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;footer class&#x3D;&quot;mt-5 pt-5 footer mt-auto&quot;&gt;
   &lt;div class&#x3D;&quot;container p-4&quot;&gt;
-    &lt;!--Grid row--&gt;
     &lt;div class&#x3D;&quot;row&quot;&gt;
-      &lt;!--Grid column--&gt;
       &lt;div class&#x3D;&quot;col-lg-6 col-md-12 mb-4 mb-md-0&quot;&gt;
         &lt;h5 class&#x3D;&quot;text-uppercase&quot;&gt;Usuarios&lt;/h5&gt;
-
-        &lt;p&gt;
-          Como usuario de nuestra aplicación, disfrutarás de una experiencia intuitiva y personalizada para encontrar y adoptar a tu compañero peludo ideal.
-          Con nuestra amplia red de refugios y organizaciones de rescate, tendrás acceso a una variedad de mascotas disponibles para adopción.
-          Además, nuestra aplicación te permite realizar seguimiento de tus mascotas adoptadas, acceder a recursos útiles para el cuidado animal y conectarte con una comunidad comprometida con el bienestar de los animales.
-        &lt;/p&gt;
+        &lt;p&gt;Disfruta de una experiencia intuitiva para encontrar y adoptar mascotas. Accede a una variedad de animales disponibles para adopción y conéctate con una comunidad comprometida con el bienestar animal.&lt;/p&gt;
       &lt;/div&gt;
-      &lt;!--Grid column--&gt;
-
-      &lt;!--Grid column--&gt;
       &lt;div class&#x3D;&quot;col-lg-6 col-md-12 mb-4 mb-md-0&quot;&gt;
         &lt;h5 class&#x3D;&quot;text-uppercase&quot;&gt;Asociaciones&lt;/h5&gt;
-
-        &lt;p&gt;
-          Como asociación que colabora con nuestra aplicación, tendrás la oportunidad de llegar a una audiencia más amplia de personas interesadas en adoptar mascotas.
-          Nuestra plataforma te ofrece herramientas para promocionar tus animales en adopción de manera efectiva, gestionar tus perfiles de mascotas y comunicarte fácilmente con posibles adoptantes.
-          Además, te brindamos soporte continuo y recursos para optimizar tus esfuerzos de adopción y promover el bienestar animal en tu comunidad.
-        &lt;/p&gt;
+        &lt;p&gt;Llega a más personas interesadas en adoptar mascotas. Promociona tus animales en adopción, gestiona tus perfiles de mascotas y accede a recursos para optimizar tus esfuerzos de adopción.&lt;/p&gt;
       &lt;/div&gt;
-      &lt;!--Grid column--&gt;
     &lt;/div&gt;
-    &lt;!--Grid row--&gt;
   &lt;/div&gt;
-  &lt;!-- Grid container --&gt;
-
-  &lt;!-- Copyright --&gt;
-  &lt;div class&#x3D;&quot;text-center p-3&quot; style&#x3D;&quot;background-color: rgba(0, 0, 0, 0.05);&quot;&gt;
-    © 2024 Copyright: Huellitas Extremeñas
+  &lt;div class&#x3D;&quot;w-100&quot; style&#x3D;&quot;background-color: rgba(0, 0, 0, 0.05);&quot;&gt;
+    &lt;div class&#x3D;&quot;container d-flex justify-content-between pt-3 pb-3&quot;&gt;
+      &lt;div class&#x3D;&quot;mx-3&quot;&gt;
+        © 2024 Copyright: Huellitas Extremeñas   &lt;a class&#x3D;&quot;nav-link&quot; [routerLink]&#x3D;&quot;[&#x27;/cookies&#x27;]&quot;&gt;Aviso Legal - Uso de Cookies - Protección de datos&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;mx-3&quot;&gt;
+        &lt;a class&#x3D;&quot;me-2&quot;&gt;&lt;i class&#x3D;&quot;fab fa-facebook-f&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;a class&#x3D;&quot;me-2&quot;&gt;&lt;i class&#x3D;&quot;fab fa-twitter&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;a class&#x3D;&quot;me-2&quot;&gt;&lt;i class&#x3D;&quot;fab fa-instagram&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;a class&#x3D;&quot;me-2&quot;&gt;&lt;i class&#x3D;&quot;fab fa-linkedin-in&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
-  &lt;!-- Copyright --&gt;
 &lt;/footer&gt;
 </code></pre>
     </div>
@@ -370,8 +358,8 @@ export class FooterComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><footer class="bg-body-tertiary text-center text-lg-start">  <!-- Grid container -->  <div class="container p-4">    <!--Grid row-->    <div class="row">      <!--Grid column-->      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">        <h5 class="text-uppercase">Usuarios</h5>        <p>          Como usuario de nuestra aplicación, disfrutarás de una experiencia intuitiva y personalizada para encontrar y adoptar a tu compañero peludo ideal.          Con nuestra amplia red de refugios y organizaciones de rescate, tendrás acceso a una variedad de mascotas disponibles para adopción.          Además, nuestra aplicación te permite realizar seguimiento de tus mascotas adoptadas, acceder a recursos útiles para el cuidado animal y conectarte con una comunidad comprometida con el bienestar de los animales.        </p>      </div>      <!--Grid column-->      <!--Grid column-->      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">        <h5 class="text-uppercase">Asociaciones</h5>        <p>          Como asociación que colabora con nuestra aplicación, tendrás la oportunidad de llegar a una audiencia más amplia de personas interesadas en adoptar mascotas.          Nuestra plataforma te ofrece herramientas para promocionar tus animales en adopción de manera efectiva, gestionar tus perfiles de mascotas y comunicarte fácilmente con posibles adoptantes.          Además, te brindamos soporte continuo y recursos para optimizar tus esfuerzos de adopción y promover el bienestar animal en tu comunidad.        </p>      </div>      <!--Grid column-->    </div>    <!--Grid row-->  </div>  <!-- Grid container -->  <!-- Copyright -->  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">    © 2024 Copyright: Huellitas Extremeñas  </div>  <!-- Copyright --></footer></div>'
-    var COMPONENTS = [{'name': 'AnimalComponent', 'selector': 'app-animal'},{'name': 'AnimalesAsociacionComponent', 'selector': 'app-animales-asociacion'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArchivosAsociacionComponent', 'selector': 'app-archivos-asociacion'},{'name': 'DocumentosAnimalComponent', 'selector': 'app-documentos-animal'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormCrearAnimalComponent', 'selector': 'app-form-crear-animal'},{'name': 'FormEditarAnimalComponent', 'selector': 'app-form-editar-animal'},{'name': 'FormEditarArchivoAsocComponent', 'selector': 'app-form-editar-archivo-asoc'},{'name': 'FormEditarDocumentoAnimalComponent', 'selector': 'app-form-editar-documento-animal'},{'name': 'FormPerfilAsociacionComponent', 'selector': 'app-form-perfil-asociacion'},{'name': 'FormPerfilPersonaComponent', 'selector': 'app-form-perfil-persona'},{'name': 'FormSubirArchivoAsocComponent', 'selector': 'app-form-subir-archivo-asoc'},{'name': 'FormSubirDocumentoAnimalComponent', 'selector': 'app-form-subir-documento-animal'},{'name': 'ListAssociationsComponent', 'selector': 'app-list-associations'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PaginacionComponent', 'selector': 'app-paginacion'},{'name': 'PerfilAnimalComponent', 'selector': 'app-perfil-animal'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'RazaComponent', 'selector': 'app-raza'},{'name': 'RegisterAssociationComponent', 'selector': 'app-register-association'},{'name': 'RegisterUserComponent', 'selector': 'app-register-user'},{'name': 'SolicitudesAdminComponent', 'selector': 'app-solicitudes-admin'},{'name': 'SolicitudesAnimalComponent', 'selector': 'app-solicitudes-animal'},{'name': 'SolicitudesAsociacionComponent', 'selector': 'app-solicitudes-asociacion'},{'name': 'SolicitudesUsuarioComponent', 'selector': 'app-solicitudes-usuario'},{'name': 'TipoAnimalComponent', 'selector': 'app-tipo-animal'}];
+        var COMPONENT_TEMPLATE = '<div><footer class="mt-5 pt-5 footer mt-auto">  <div class="container p-4">    <div class="row">      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">        <h5 class="text-uppercase">Usuarios</h5>        <p>Disfruta de una experiencia intuitiva para encontrar y adoptar mascotas. Accede a una variedad de animales disponibles para adopción y conéctate con una comunidad comprometida con el bienestar animal.</p>      </div>      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">        <h5 class="text-uppercase">Asociaciones</h5>        <p>Llega a más personas interesadas en adoptar mascotas. Promociona tus animales en adopción, gestiona tus perfiles de mascotas y accede a recursos para optimizar tus esfuerzos de adopción.</p>      </div>    </div>  </div>  <div class="w-100" style="background-color: rgba(0, 0, 0, 0.05);">    <div class="container d-flex justify-content-between pt-3 pb-3">      <div class="mx-3">        © 2024 Copyright: Huellitas Extremeñas   <a class="nav-link" [routerLink]="[\'/cookies\']">Aviso Legal - Uso de Cookies - Protección de datos</a>      </div>      <div class="mx-3">        <a class="me-2"><i class="fab fa-facebook-f"></i></a>        <a class="me-2"><i class="fab fa-twitter"></i></a>        <a class="me-2"><i class="fab fa-instagram"></i></a>        <a class="me-2"><i class="fab fa-linkedin-in"></i></a>      </div>    </div>  </div></footer></div>'
+    var COMPONENTS = [{'name': 'AnimalComponent', 'selector': 'app-animal'},{'name': 'AnimalesAsociacionComponent', 'selector': 'app-animales-asociacion'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArchivosAsociacionComponent', 'selector': 'app-archivos-asociacion'},{'name': 'CookiesComponent', 'selector': 'app-cookies'},{'name': 'DocumentosAnimalComponent', 'selector': 'app-documentos-animal'},{'name': 'Error404Component', 'selector': 'app-error404'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormCrearAnimalComponent', 'selector': 'app-form-crear-animal'},{'name': 'FormEditarAnimalComponent', 'selector': 'app-form-editar-animal'},{'name': 'FormEditarArchivoAsocComponent', 'selector': 'app-form-editar-archivo-asoc'},{'name': 'FormEditarDocumentoAnimalComponent', 'selector': 'app-form-editar-documento-animal'},{'name': 'FormPerfilAsociacionComponent', 'selector': 'app-form-perfil-asociacion'},{'name': 'FormPerfilPersonaComponent', 'selector': 'app-form-perfil-persona'},{'name': 'FormSubirArchivoAsocComponent', 'selector': 'app-form-subir-archivo-asoc'},{'name': 'FormSubirDocumentoAnimalComponent', 'selector': 'app-form-subir-documento-animal'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'ListAssociationsComponent', 'selector': 'app-list-associations'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PaginacionComponent', 'selector': 'app-paginacion'},{'name': 'PerfilAnimalComponent', 'selector': 'app-perfil-animal'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'RazaComponent', 'selector': 'app-raza'},{'name': 'RegisterAssociationComponent', 'selector': 'app-register-association'},{'name': 'RegisterUserComponent', 'selector': 'app-register-user'},{'name': 'SolicitudesAdminComponent', 'selector': 'app-solicitudes-admin'},{'name': 'SolicitudesAnimalComponent', 'selector': 'app-solicitudes-animal'},{'name': 'SolicitudesAsociacionComponent', 'selector': 'app-solicitudes-asociacion'},{'name': 'SolicitudesUsuarioComponent', 'selector': 'app-solicitudes-usuario'},{'name': 'TipoAnimalComponent', 'selector': 'app-tipo-animal'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'FooterComponent'};
 </script>

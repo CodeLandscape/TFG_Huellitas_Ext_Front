@@ -122,6 +122,13 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente para el perfil de usuario.</p>
+
+    </p>
 
 
     <p class="comment">
@@ -231,12 +238,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/components/perfil/perfil.component.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/components/perfil/perfil.component.ts:16</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor del componente de perfil.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -245,6 +254,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -259,6 +269,12 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <ul>
+<li>Servicio para manejar tokens.</li>
+</ul>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -298,19 +314,25 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="16"
-                                    class="link-to-prism">src/app/components/perfil/perfil.component.ts:16</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="31"
+                                    class="link-to-prism">src/app/components/perfil/perfil.component.ts:31</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Método de inicialización del componente.
+Obtiene el tipo de usuario basado en el token y establece la bandera <code>isPerson</code> en consecuencia.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                         </div>
+                            <div class="io-description">
+                                
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -340,10 +362,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/components/perfil/perfil.component.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/components/perfil/perfil.component.ts:16</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Indica si el usuario es una persona o no</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -353,34 +381,53 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, OnInit} from &#x27;@angular/core&#x27;;
-import {TokenService} from &#x27;../../services/token.service&#x27;;
-import {AuthTokenService} from &#x27;../../services/auth-token.service&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { TokenService } from &#x27;../../services/token.service&#x27;;
 
+/**
+ * Componente para el perfil de usuario.
+ *
+ * @@Component
+ */
 @Component({
   selector: &#x27;app-perfil&#x27;,
   templateUrl: &#x27;./perfil.component.html&#x27;,
   styleUrls: [&#x27;./perfil.component.css&#x27;]
 })
 export class PerfilComponent implements OnInit {
+  /** Indica si el usuario es una persona o no */
   isPerson: boolean;
 
-  constructor(private tokenService: TokenService) {
-  }
+  /**
+   * Constructor del componente de perfil.
+   *
+   * @param {TokenService} tokenService - Servicio para manejar tokens.
+   */
+  constructor(private tokenService: TokenService) {}
 
+  /**
+   * Método de inicialización del componente.
+   * Obtiene el tipo de usuario basado en el token y establece la bandera &#x60;isPerson&#x60; en consecuencia.
+   *
+   * @returns {void}
+   */
   ngOnInit(): void {
     this.isPerson &#x3D; this.tokenService.getTokenData().roles &#x3D;&#x3D;&#x3D; &#x27;ROLE_USER&#x27;;
   }
-
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;app-form-perfil-asociacion *ngIf&#x3D;&quot;!isPerson;else persona&quot;&gt;&lt;/app-form-perfil-asociacion&gt;
-&lt;ng-template #persona&gt;
-  &lt;app-form-perfil-persona&gt;&lt;/app-form-perfil-persona&gt;
-&lt;/ng-template&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;row w-100&quot;&gt;
+  &lt;app-form-perfil-asociacion class&#x3D;&quot;col-md-6 col-12&quot; *ngIf&#x3D;&quot;!isPerson;else persona&quot;&gt;&lt;/app-form-perfil-asociacion&gt;
+  &lt;ng-template #persona&gt;
+    &lt;app-form-perfil-persona class&#x3D;&quot;col-md-6 col-12&quot;&gt;&lt;/app-form-perfil-persona&gt;
+  &lt;/ng-template&gt;
+  &lt;div class&#x3D;&quot;col-md-6 d-none d-md-flex justify-content-center align-items-center&quot;&gt;
+    &lt;img src&#x3D;&quot;/assets/imgs/dibujo-perro.png&quot; class&#x3D;&quot;img-fluid w-75&quot; alt&#x3D;&quot;Huellitas extremeñas&quot; /&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 </code></pre>
     </div>
 
@@ -416,8 +463,8 @@ export class PerfilComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-form-perfil-asociacion *ngIf="!isPerson;else persona"></app-form-perfil-asociacion><ng-template #persona>  <app-form-perfil-persona></app-form-perfil-persona></ng-template></div>'
-    var COMPONENTS = [{'name': 'AnimalComponent', 'selector': 'app-animal'},{'name': 'AnimalesAsociacionComponent', 'selector': 'app-animales-asociacion'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArchivosAsociacionComponent', 'selector': 'app-archivos-asociacion'},{'name': 'DocumentosAnimalComponent', 'selector': 'app-documentos-animal'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormCrearAnimalComponent', 'selector': 'app-form-crear-animal'},{'name': 'FormEditarAnimalComponent', 'selector': 'app-form-editar-animal'},{'name': 'FormEditarArchivoAsocComponent', 'selector': 'app-form-editar-archivo-asoc'},{'name': 'FormEditarDocumentoAnimalComponent', 'selector': 'app-form-editar-documento-animal'},{'name': 'FormPerfilAsociacionComponent', 'selector': 'app-form-perfil-asociacion'},{'name': 'FormPerfilPersonaComponent', 'selector': 'app-form-perfil-persona'},{'name': 'FormSubirArchivoAsocComponent', 'selector': 'app-form-subir-archivo-asoc'},{'name': 'FormSubirDocumentoAnimalComponent', 'selector': 'app-form-subir-documento-animal'},{'name': 'ListAssociationsComponent', 'selector': 'app-list-associations'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PaginacionComponent', 'selector': 'app-paginacion'},{'name': 'PerfilAnimalComponent', 'selector': 'app-perfil-animal'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'RazaComponent', 'selector': 'app-raza'},{'name': 'RegisterAssociationComponent', 'selector': 'app-register-association'},{'name': 'RegisterUserComponent', 'selector': 'app-register-user'},{'name': 'SolicitudesAdminComponent', 'selector': 'app-solicitudes-admin'},{'name': 'SolicitudesAnimalComponent', 'selector': 'app-solicitudes-animal'},{'name': 'SolicitudesAsociacionComponent', 'selector': 'app-solicitudes-asociacion'},{'name': 'SolicitudesUsuarioComponent', 'selector': 'app-solicitudes-usuario'},{'name': 'TipoAnimalComponent', 'selector': 'app-tipo-animal'}];
+        var COMPONENT_TEMPLATE = '<div><div class="row w-100">  <app-form-perfil-asociacion class="col-md-6 col-12" *ngIf="!isPerson;else persona"></app-form-perfil-asociacion>  <ng-template #persona>    <app-form-perfil-persona class="col-md-6 col-12"></app-form-perfil-persona>  </ng-template>  <div class="col-md-6 d-none d-md-flex justify-content-center align-items-center">    <img src="/assets/imgs/dibujo-perro.png" class="img-fluid w-75" alt="Huellitas extremeñas" />  </div></div></div>'
+    var COMPONENTS = [{'name': 'AnimalComponent', 'selector': 'app-animal'},{'name': 'AnimalesAsociacionComponent', 'selector': 'app-animales-asociacion'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArchivosAsociacionComponent', 'selector': 'app-archivos-asociacion'},{'name': 'CookiesComponent', 'selector': 'app-cookies'},{'name': 'DocumentosAnimalComponent', 'selector': 'app-documentos-animal'},{'name': 'Error404Component', 'selector': 'app-error404'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormCrearAnimalComponent', 'selector': 'app-form-crear-animal'},{'name': 'FormEditarAnimalComponent', 'selector': 'app-form-editar-animal'},{'name': 'FormEditarArchivoAsocComponent', 'selector': 'app-form-editar-archivo-asoc'},{'name': 'FormEditarDocumentoAnimalComponent', 'selector': 'app-form-editar-documento-animal'},{'name': 'FormPerfilAsociacionComponent', 'selector': 'app-form-perfil-asociacion'},{'name': 'FormPerfilPersonaComponent', 'selector': 'app-form-perfil-persona'},{'name': 'FormSubirArchivoAsocComponent', 'selector': 'app-form-subir-archivo-asoc'},{'name': 'FormSubirDocumentoAnimalComponent', 'selector': 'app-form-subir-documento-animal'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'ListAssociationsComponent', 'selector': 'app-list-associations'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PaginacionComponent', 'selector': 'app-paginacion'},{'name': 'PerfilAnimalComponent', 'selector': 'app-perfil-animal'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'RazaComponent', 'selector': 'app-raza'},{'name': 'RegisterAssociationComponent', 'selector': 'app-register-association'},{'name': 'RegisterUserComponent', 'selector': 'app-register-user'},{'name': 'SolicitudesAdminComponent', 'selector': 'app-solicitudes-admin'},{'name': 'SolicitudesAnimalComponent', 'selector': 'app-solicitudes-animal'},{'name': 'SolicitudesAsociacionComponent', 'selector': 'app-solicitudes-asociacion'},{'name': 'SolicitudesUsuarioComponent', 'selector': 'app-solicitudes-usuario'},{'name': 'TipoAnimalComponent', 'selector': 'app-tipo-animal'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'PerfilComponent'};
 </script>

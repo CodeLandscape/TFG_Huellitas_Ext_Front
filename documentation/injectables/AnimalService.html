@@ -117,6 +117,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Servicio para manejar operaciones relacionadas con animales.</p>
+
+            </p>
 
 
 
@@ -132,6 +139,10 @@
                 <tr>
                     <td class="col-md-4">
                         <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#apiUrl" >apiUrl</a>
+                            </li>
                             <li>
                                     <span class="modifier">Private</span>
                                 <a href="#idAEditar" >idAEditar</a>
@@ -204,7 +215,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/services/animal.service.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/services/animal.service.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -267,14 +278,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="66"
-                                    class="link-to-prism">src/app/services/animal.service.ts:66</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="110"
+                                    class="link-to-prism">src/app/services/animal.service.ts:110</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Actualiza la información de un animal.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -285,6 +298,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -299,6 +313,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>ID del animal a actualizar.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                                 <td>animal</td>
@@ -311,6 +331,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>Objeto con la nueva información del animal.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -320,7 +346,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Observable de la respuesta HTTP.</p>
+
                             </div>
                 </td>
             </tr>
@@ -346,14 +373,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="50"
-                                    class="link-to-prism">src/app/services/animal.service.ts:50</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="75"
+                                    class="link-to-prism">src/app/services/animal.service.ts:75</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Elimina un animal por su ID.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -364,6 +393,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -378,6 +408,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>ID del animal a eliminar.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -387,7 +423,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Observable de la respuesta HTTP.</p>
+
                             </div>
                 </td>
             </tr>
@@ -413,14 +450,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="54"
-                                    class="link-to-prism">src/app/services/animal.service.ts:54</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="84"
+                                    class="link-to-prism">src/app/services/animal.service.ts:84</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene un animal por su ID.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -431,6 +470,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -445,6 +485,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>ID del animal a obtener.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -454,7 +500,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Observable de la respuesta HTTP.</p>
+
                             </div>
                 </td>
             </tr>
@@ -480,14 +527,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="20"
-                                    class="link-to-prism">src/app/services/animal.service.ts:20</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="34"
+                                    class="link-to-prism">src/app/services/animal.service.ts:34</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene una lista de animales con paginación y filtros.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -498,6 +547,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -512,6 +562,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>Número de la página a obtener.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                                 <td>filtro</td>
@@ -524,6 +580,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>Array de filtros a aplicar.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -533,7 +595,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Observable de la respuesta HTTP.</p>
+
                             </div>
                 </td>
             </tr>
@@ -559,14 +622,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="34"
-                                    class="link-to-prism">src/app/services/animal.service.ts:34</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="54"
+                                    class="link-to-prism">src/app/services/animal.service.ts:54</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene una lista de animales de una asociación con paginación y filtros.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -577,6 +642,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -591,6 +657,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>Número de la página a obtener.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                                 <td>filtro</td>
@@ -603,6 +675,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>Array de filtros a aplicar.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -612,7 +690,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Observable de la respuesta HTTP.</p>
+
                             </div>
                 </td>
             </tr>
@@ -638,19 +717,25 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="62"
-                                    class="link-to-prism">src/app/services/animal.service.ts:62</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="100"
+                                    class="link-to-prism">src/app/services/animal.service.ts:100</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene un observable del ID del animal que se está editando.</p>
+</div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                         </div>
+                            <div class="io-description">
+                                <p>Observable del ID del animal a editar.</p>
+
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -675,14 +760,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="74"
-                                    class="link-to-prism">src/app/services/animal.service.ts:74</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="128"
+                                    class="link-to-prism">src/app/services/animal.service.ts:128</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene la imagen de un animal por su ID.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -693,6 +780,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -707,6 +795,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>ID del animal cuya imagen se desea obtener.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -716,7 +810,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Observable de la imagen en formato Blob.</p>
+
                             </div>
                 </td>
             </tr>
@@ -742,14 +837,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="78"
-                                    class="link-to-prism">src/app/services/animal.service.ts:78</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="137"
+                                    class="link-to-prism">src/app/services/animal.service.ts:137</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene la información de la imagen de un animal por su ID.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -760,6 +857,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -774,6 +872,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>ID del animal cuya información de imagen se desea obtener.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -783,7 +887,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Observable de la respuesta HTTP.</p>
+
                             </div>
                 </td>
             </tr>
@@ -809,14 +914,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="16"
-                                    class="link-to-prism">src/app/services/animal.service.ts:16</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="24"
+                                    class="link-to-prism">src/app/services/animal.service.ts:24</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Guarda un nuevo animal en la base de datos.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -827,6 +934,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -841,6 +949,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>Objeto que representa al animal.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -850,7 +964,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Observable de la respuesta HTTP.</p>
+
                             </div>
                 </td>
             </tr>
@@ -876,14 +991,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="70"
-                                    class="link-to-prism">src/app/services/animal.service.ts:70</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="119"
+                                    class="link-to-prism">src/app/services/animal.service.ts:119</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Guarda una imagen del animal.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -894,6 +1011,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -908,6 +1026,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>FormData que contiene la imagen del animal.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -917,7 +1041,8 @@
 
                         </div>
                             <div class="io-description">
-                                
+                                <p>Observable de la respuesta HTTP.</p>
+
                             </div>
                 </td>
             </tr>
@@ -943,14 +1068,16 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="58"
-                                    class="link-to-prism">src/app/services/animal.service.ts:58</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="92"
+                                    class="link-to-prism">src/app/services/animal.service.ts:92</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                        <div class="io-description"><p>Establece el ID del animal que se está editando.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -961,6 +1088,7 @@
                                             <td>Name</td>
                                                 <td>Type</td>
                                             <td>Optional</td>
+                                                <td>Description</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -975,6 +1103,12 @@
                                             </td>
 
 
+                                            <td>
+                                                    <ul>
+<li>ID del animal a editar.</li>
+</ul>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -1000,6 +1134,32 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="apiUrl"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>apiUrl</b></span>
+                        <a href="#apiUrl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>environment.api.url</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/services/animal.service.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="idAEditar"></a>
                     <span class="name">
                             <span class="modifier">Private</span>
@@ -1015,7 +1175,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/services/animal.service.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/services/animal.service.ts:14</a></div>
                         </td>
                     </tr>
 
@@ -1028,25 +1188,39 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Injectable} from &#x27;@angular/core&#x27;;
-import {HttpClient, HttpParams} from &#x27;@angular/common/http&#x27;;
-import {BehaviorSubject} from &#x27;rxjs&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { HttpClient, HttpParams } from &#x27;@angular/common/http&#x27;;
+import { BehaviorSubject } from &#x27;rxjs&#x27;;
+import { environment } from &#x27;../../environments/environment&#x27;;
 
+/**
+ * Servicio para manejar operaciones relacionadas con animales.
+ */
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
 export class AnimalService {
 
   private idAEditar &#x3D; new BehaviorSubject&lt;number | null&gt;(null);
+  private apiUrl &#x3D; environment.api.url;
 
+  constructor(private http: HttpClient) { }
 
-  constructor(private http: HttpClient) {
-  }
-
+  /**
+   * Guarda un nuevo animal en la base de datos.
+   * @param animal - Objeto que representa al animal.
+   * @returns Observable de la respuesta HTTP.
+   */
   guardarAnimal(animal: any) {
-    return this.http.post(&#x27;http://localhost:8080/api-backend/animal/add&#x27;, animal);
+    return this.http.post(&#x60;${this.apiUrl}/animal/add&#x60;, animal);
   }
 
+  /**
+   * Obtiene una lista de animales con paginación y filtros.
+   * @param pagina - Número de la página a obtener.
+   * @param filtro - Array de filtros a aplicar.
+   * @returns Observable de la respuesta HTTP.
+   */
   getAnimales(pagina: number, filtro: any[]) {
     let params &#x3D; new HttpParams().set(&#x27;page&#x27;, pagina.toString());
 
@@ -1058,9 +1232,15 @@ export class AnimalService {
       });
     }
 
-    return this.http.get(&#x27;http://localhost:8080/api-backend/animal/all&#x27;, {params: params});
+    return this.http.get(&#x60;${this.apiUrl}/animal/all&#x60;, { params: params });
   }
 
+  /**
+   * Obtiene una lista de animales de una asociación con paginación y filtros.
+   * @param pagina - Número de la página a obtener.
+   * @param filtro - Array de filtros a aplicar.
+   * @returns Observable de la respuesta HTTP.
+   */
   getAnimalesAsociacion(pagina: number, filtro: any[]) {
     let params &#x3D; new HttpParams().set(&#x27;page&#x27;, pagina.toString());
 
@@ -1074,39 +1254,78 @@ export class AnimalService {
       });
     }
 
-    return this.http.get(&#x27;http://localhost:8080/api-backend/animal/all&#x27;, {params: params});
+    return this.http.get(&#x60;${this.apiUrl}/animal/all&#x60;, { params: params });
   }
 
+  /**
+   * Elimina un animal por su ID.
+   * @param id - ID del animal a eliminar.
+   * @returns Observable de la respuesta HTTP.
+   */
   deleteAnimal(id: number) {
-    return this.http.delete(&#x60;http://localhost:8080/api-backend/animal/delete/${id}&#x60;);
+    return this.http.delete(&#x60;${this.apiUrl}/animal/delete/${id}&#x60;);
   }
 
+  /**
+   * Obtiene un animal por su ID.
+   * @param id - ID del animal a obtener.
+   * @returns Observable de la respuesta HTTP.
+   */
   getAnimal(id: number) {
-    return this.http.get(&#x60;http://localhost:8080/api-backend/animal/findById/${id}&#x60;);
+    return this.http.get(&#x60;${this.apiUrl}/animal/findById/${id}&#x60;);
   }
 
+  /**
+   * Establece el ID del animal que se está editando.
+   * @param id - ID del animal a editar.
+   */
   setIdAEditar(id: number) {
     this.idAEditar.next(id);
   }
 
+  /**
+   * Obtiene un observable del ID del animal que se está editando.
+   * @returns Observable del ID del animal a editar.
+   */
   getIdAEditar() {
     return this.idAEditar.asObservable();
   }
 
+  /**
+   * Actualiza la información de un animal.
+   * @param id - ID del animal a actualizar.
+   * @param animal - Objeto con la nueva información del animal.
+   * @returns Observable de la respuesta HTTP.
+   */
   actualizarAnimal(id: number, animal: any) {
-    return this.http.put(&#x60;http://localhost:8080/api-backend/animal/update/${id}&#x60;, animal);
+    return this.http.put(&#x60;${this.apiUrl}/animal/update/${id}&#x60;, animal);
   }
 
+  /**
+   * Guarda una imagen del animal.
+   * @param formData - FormData que contiene la imagen del animal.
+   * @returns Observable de la respuesta HTTP.
+   */
   guardarImagenAnimal(formData: FormData) {
-    return this.http.post(&#x27;http://localhost:8080/api-backend/imagen-animal/upload&#x27;, formData);
+    return this.http.post(&#x60;${this.apiUrl}/imagen-animal/upload&#x60;, formData);
   }
 
+  /**
+   * Obtiene la imagen de un animal por su ID.
+   * @param idAnimal - ID del animal cuya imagen se desea obtener.
+   * @returns Observable de la imagen en formato Blob.
+   */
   getImagenAnimal(idAnimal: number) {
-    return this.http.get(&#x60;http://localhost:8080/api-backend/imagen-animal/animal/${idAnimal}&#x60;, {responseType: &#x27;blob&#x27;});
+    return this.http.get(&#x60;${this.apiUrl}/imagen-animal/animal/${idAnimal}&#x60;, { responseType: &#x27;blob&#x27; });
   }
 
+  /**
+   * Obtiene la información de la imagen de un animal por su ID.
+   * @param idAnimal - ID del animal cuya información de imagen se desea obtener.
+   * @returns Observable de la respuesta HTTP.
+   */
   getInfoImagenAnimal(idAnimal: number) {
-    return this.http.get(&#x60;http://localhost:8080/api-backend/imagen-animal/info/${idAnimal}&#x60;);
+    return this.http.get(&#x60;${this.apiUrl}/imagen-animal/info/${idAnimal}&#x60;);
   }
 }
 </code></pre>

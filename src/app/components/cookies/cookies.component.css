@@ -39,3 +39,8 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+.bg-gradient {
+  background: linear-gradient(135deg, #81d1ec, #319e29)!important;
+  min-height: 100vh!important;
+}
