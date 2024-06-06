@@ -18,13 +18,24 @@ export class FormSubirArchivoAsocComponent implements OnInit {
   fileName: string | undefined;
   selectedFile: File | null = null;
 
+  /**
+   * Constructor del componente.
+   * @param formBuilder Constructor de FormBuilder para crear formularios reactivos
+   * @param archivosAsociacionService Servicio para gestionar archivos de asociación
+   */
   constructor(private formBuilder: FormBuilder,
               private archivosAsociacionService: ArchivosAsociacionService) { }
 
+  /**
+   * Método de inicialización del componente.
+   */
   ngOnInit(): void {
     this.crearFormArchivo();
   }
 
+  /**
+   * Crea el FormGroup para el formulario de carga de archivos.
+   */
   private crearFormArchivo() {
     this.formGroupArchivo = this.formBuilder.group({
       nombre: ['', [Validators.required, Validators.maxLength(90)]],
@@ -34,7 +45,11 @@ export class FormSubirArchivoAsocComponent implements OnInit {
     this.cargado = true;
   }
 
-  // Validador personalizado para la extensión del archivo
+  /**
+   * Validador personalizado para la extensión del archivo.
+   * @param allowedExtensions Extensiones permitidas para los archivos
+   * @returns ValidatorFn
+   */
   fileExtensionValidator(allowedExtensions: string[]) {
     // El validador recibe un arreglo con las extensiones permitidas
     return (control: { value: any }) => {
@@ -46,6 +61,10 @@ export class FormSubirArchivoAsocComponent implements OnInit {
     };
   }
 
+  /**
+   * Método para manejar la selección de archivos.
+   * @param event Evento de selección de archivos
+   */
   onFileSelected(event: any) {
     this.selectedFile = event.target.files[0];
     if (this.selectedFile) {
@@ -55,10 +74,20 @@ export class FormSubirArchivoAsocComponent implements OnInit {
     }
   }
 
+  /**
+   * Método para validar un campo del formulario.
+   * @param campo Nombre del campo a validar
+   * @returns true si el campo es inválido y ha sido tocado, de lo contrario false
+   */
   validarCampo(campo: string) {
     return this.formGroupArchivo.get(campo)?.invalid && this.formGroupArchivo.get(campo)?.touched;
   }
 
+  /**
+   * Obtiene el mensaje de error correspondiente a un campo del formulario.
+   * @param campo Nombre del campo
+   * @returns Mensaje de error
+   */
   getErrorCampo(campo: string) {
     if (this.formGroupArchivo.get(campo)?.hasError('required')) {
       return 'Campo obligatorio';
@@ -69,6 +98,9 @@ export class FormSubirArchivoAsocComponent implements OnInit {
     return '';
   }
 
+  /**
+   * Método para guardar el archivo cargado.
+   */
   guardarArchivo() {
     if (this.formGroupArchivo.valid) {
       const formData = new FormData();

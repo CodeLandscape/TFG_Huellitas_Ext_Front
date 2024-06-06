@@ -30,6 +30,15 @@ export class AnimalesAsociacionComponent implements OnInit {
   cargado = false;
   imageLoaded: boolean;
 
+  /**
+   * @constructor
+   * @param {AnimalService} animalService - Servicio para manejar las operaciones de animales.
+   * @param {RazaService} razaService - Servicio para manejar las operaciones de razas.
+   * @param {TipoService} tipoService - Servicio para manejar las operaciones de tipos de animales.
+   * @param {FormBuilder} formBuilder - Servicio para construir formularios reactivos.
+   * @param {DomSanitizer} sanitizer - Servicio para manejar y sanitizar URLs.
+   * @param {TokenService} authTokenService - Servicio para manejar tokens de autenticación.
+   */
   constructor(private animalService: AnimalService,
               private razaService: RazaService,
               private tipoService: TipoService,
@@ -38,6 +47,10 @@ export class AnimalesAsociacionComponent implements OnInit {
               private authTokenService: TokenService) {
   }
 
+  /**
+   * Método que se ejecuta al inicializar el componente.
+   * Carga los filtros y los animales asociados al usuario.
+   */
   ngOnInit(): void {
     this.isAsoc = this.authTokenService.getTokenData().roles === 'ROLE_ASOC';
     this.idUsuario = this.authTokenService.getTokenData().id;
@@ -50,6 +63,10 @@ export class AnimalesAsociacionComponent implements OnInit {
     this.cargarAnimales($event);
   }
 
+  /**
+   * Cambia la página actual de los animales.
+   * @param {number} $event - Número de la nueva página.
+   */
   private crearFormAnimal() {
     this.formGroupAnimal = this.formBuilder.group({
       nombre: [''],
@@ -58,6 +75,10 @@ export class AnimalesAsociacionComponent implements OnInit {
     });
   }
 
+  /**
+   * Crea el formulario reactivo para buscar animales.
+   * @private
+   */
   private cargarAnimales(pagina) {
     this.animalService.getAnimalesAsociacion(pagina, this.filtroPorLosQueBuscar).subscribe((animalesRecibidos: Page) => {
       this.animales = animalesRecibidos.content;
@@ -75,6 +96,11 @@ export class AnimalesAsociacionComponent implements OnInit {
     });
   }
 
+  /**
+   * Carga los animales de una página específica asociados al usuario.
+   * @param {number} pagina - Número de la página a cargar.
+   * @private
+   */
   deleteAnimal(id: number) {
     Swal.fire({
       title: '¿Estás seguro?',
@@ -102,15 +128,25 @@ export class AnimalesAsociacionComponent implements OnInit {
     });
   }
 
+  /**
+   * Recarga los animales de la página actual.
+   */
   recargarAnimales() {
     this.cargarAnimales(this.paginaActual);
   }
-
+  /**
+   * Edita un animal mostrando un modal con el formulario de edición.
+   * @param {number} id - ID del animal a editar.
+   */
   editarAnimal(id: number) {
     this.animalService.setIdAEditar(id);
     $('#modalEditar').modal('show');
   }
 
+  /**
+   * Carga los filtros de razas y tipos de animales.
+   * @private
+   */
   private cargarFiltros() {
     this.razaService.getRazas().subscribe((razas: any) => {
       razas.forEach((raza: Raza) => {
@@ -124,6 +160,9 @@ export class AnimalesAsociacionComponent implements OnInit {
     });
   }
 
+  /**
+   * Busca animales según los filtros aplicados.
+   */
   buscarAnimal() {
     if (this.formGroupAnimal.invalid) { // Validar el formulario
       return Object.values(this.formGroupAnimal.controls).forEach(control => {
@@ -149,6 +188,9 @@ export class AnimalesAsociacionComponent implements OnInit {
 
   }
 
+  /**
+   * Limpia el formulario de búsqueda y recarga los animales.
+   */
   limpiarForm() {
     this.formGroupAnimal.reset();
     this.filtroPorLosQueBuscar = [];

@@ -1,29 +1,49 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
-import {AsociacionService} from '../../services/asociacion.service';
-import {Asociacion} from '../../interfaces/associations.interface';
-import {map} from 'rxjs/operators';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AsociacionService } from '../../services/asociacion.service';
+import { Asociacion } from '../../interfaces/associations.interface';
+import { map } from 'rxjs/operators';
 import Swal from 'sweetalert2';
 
 declare var $: any; // Declaración de jQuery
 
+/**
+ * Componente para listar asociaciones.
+ *
+ * @@Component
+ */
 @Component({
   selector: 'app-list-associations',
   templateUrl: './list-associations.component.html',
   styleUrls: ['./list-associations.component.css']
 })
 export class ListAssociationsComponent implements AfterViewInit {
+
+  /** Lista de asociaciones */
   public asociaciones: Asociacion[] = [];
+
+  /** Columnas de la tabla */
   columns = [
-    {name: 'nombre', title: 'Nombre'},
-    {name: 'poblacion', title: 'Población'},
-    {name: 'provincia', title: 'Provincia'},
-    {name: 'estado', title: 'Estado'},
-    {name: 'opciones', title: 'Opciones'}
+    { name: 'nombre', title: 'Nombre' },
+    { name: 'poblacion', title: 'Población' },
+    { name: 'provincia', title: 'Provincia' },
+    { name: 'estado', title: 'Estado' },
+    { name: 'opciones', title: 'Opciones' }
   ];
 
+  /**
+   * Constructor que inyecta el servicio de asociaciones.
+   *
+   * @param {AsociacionService} asociacionService - Servicio para manejar asociaciones.
+   */
   constructor(private asociacionService: AsociacionService) {
     this.loadAsociaciones();
   }
+
+  /**
+   * Carga la lista de asociaciones desde el servicio.
+   *
+   * @returns {void}
+   */
   loadAsociaciones(): void {
     this.asociacionService.getAsociaciones().pipe(
       map((data: any[]) =>
@@ -50,9 +70,19 @@ export class ListAssociationsComponent implements AfterViewInit {
     });
   }
 
+  /**
+   * Método de ciclo de vida de Angular que se llama después de que Angular ha inicializado la vista del componente.
+   *
+   * @returns {void}
+   */
   ngAfterViewInit(): void {
   }
 
+  /**
+   * Inicializa la tabla de datos usando DataTables.
+   *
+   * @returns {void}
+   */
   initializeDataTable(): void {
     $(document).ready(function() {
       $('#datatable').DataTable({
@@ -71,7 +101,13 @@ export class ListAssociationsComponent implements AfterViewInit {
     });
   }
 
-  desactivar(id: number) {
+  /**
+   * Desactiva una asociación por su ID.
+   *
+   * @param {number} id - ID de la asociación a desactivar.
+   * @returns {void}
+   */
+  desactivar(id: number): void {
     Swal.fire({
       title: '¿Estás seguro?',
       text: 'La asociación será desactivada y no podrá realizar acciones en la plataforma.',
@@ -95,15 +131,25 @@ export class ListAssociationsComponent implements AfterViewInit {
         );
       }
     });
-
   }
 
+  /**
+   * Recarga la tabla de datos.
+   *
+   * @returns {void}
+   */
   reloadDataTable(): void {
     $('#datatable').DataTable().destroy();
     this.initializeDataTable();
   }
 
-  activar(id: number) {
+  /**
+   * Activa una asociación por su ID.
+   *
+   * @param {number} id - ID de la asociación a activar.
+   * @returns {void}
+   */
+  activar(id: number): void {
     Swal.fire({
       title: '¿Quiere activar la asociación?',
       text: 'Esto permitirá que la asociación pueda realizar acciones en la plataforma.',

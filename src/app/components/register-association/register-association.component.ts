@@ -7,15 +7,29 @@ import { ProvinciaService } from '../../services/provincia.service';
 import { Provincia } from '../../models/provincia';
 import { AssociationRegister } from '../../interfaces/associations-register.interface';
 
+/**
+ * Componente para registrar una nueva asociación.
+ */
 @Component({
   selector: 'app-register-association',
   templateUrl: './register-association.component.html',
   styleUrls: ['./register-association.component.css']
 })
 export class RegisterAssociationComponent implements OnInit {
+  /** Lista de provincias disponibles. */
   public provincias: Provincia[] = [];
+
+  /** Datos de la asociación a registrar. */
   public association: AssociationRegister;
 
+  /**
+   * Constructor del componente RegisterAssociationComponent.
+   *
+   * @param fb - Servicio FormBuilder para crear grupos de formularios.
+   * @param router - Servicio Router para la navegación.
+   * @param authService - Servicio de autenticación.
+   * @param provinciaService - Servicio para obtener datos de provincias.
+   */
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -27,6 +41,7 @@ export class RegisterAssociationComponent implements OnInit {
     });
   }
 
+  /** Formulario de registro de la asociación. */
   public registerAssociation: FormGroup = this.fb.group({
     nombre: ['', Validators.required],
     correo: ['', [Validators.required, Validators.email]],
@@ -39,9 +54,14 @@ export class RegisterAssociationComponent implements OnInit {
     cif: ['', [Validators.required, this.validateCIF]]
   });
 
-  ngOnInit(): void {
-  }
+  /**
+   * Hook del ciclo de vida ngOnInit. Se ejecuta cuando se inicializa el componente.
+   */
+  ngOnInit(): void {}
 
+  /**
+   * Método que se ejecuta al enviar el formulario.
+   */
   onSubmit() {
     if (this.registerAssociation.invalid || this.passwordsMismatch()) {
       this.registerAssociation.markAllAsTouched();
@@ -74,12 +94,23 @@ export class RegisterAssociationComponent implements OnInit {
     );
   }
 
+  /**
+   * Comprueba si las contraseñas introducidas coinciden.
+   *
+   * @returns True si las contraseñas no coinciden, False en caso contrario.
+   */
   passwordsMismatch() {
     const password = this.registerAssociation.get('password').value;
     const password2 = this.registerAssociation.get('password2').value;
     return password !== password2;
   }
 
+  /**
+   * Valida el CIF introducido.
+   *
+   * @param control - Control del formulario que contiene el CIF.
+   * @returns Un objeto de error si el CIF no es válido, null en caso contrario.
+   */
   validateCIF(control) {
     const cifPattern = /^[A-Za-z\d]{9}$/;
     if (control.value && !cifPattern.test(control.value)) {
@@ -88,6 +119,12 @@ export class RegisterAssociationComponent implements OnInit {
     return null;
   }
 
+  /**
+   * Validador de complejidad de la contraseña.
+   *
+   * @param control - Control del formulario que contiene la contraseña.
+   * @returns Un objeto de error si la contraseña no cumple los requisitos, null en caso contrario.
+   */
   passwordComplexityValidator(control) {
     const value = control.value;
     const hasUpperCase = /[A-Z]+/.test(value);

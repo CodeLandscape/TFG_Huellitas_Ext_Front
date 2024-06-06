@@ -21,7 +21,14 @@ export class FormPerfilPersonaComponent implements OnInit {
   form!: FormGroup; // Formulario de edición del perfil
   provincias: Provincia[] = [];
 
-
+  /**
+   * Constructor para inicializar los servicios necesarios.
+   * @param {ProvinciaService} provinciaService - Servicio para manejar las provincias.
+   * @param {PersonaService} usuarioService - Servicio para manejar los datos de la persona.
+   * @param {FormBuilder} formBuilder - Constructor de formularios.
+   * @param {Router} router - Router de Angular.
+   * @param {AuthService} authService - Servicio de autenticación.
+   */
   constructor(
     private provinciaService: ProvinciaService,
     private usuarioService: PersonaService,
@@ -31,6 +38,7 @@ export class FormPerfilPersonaComponent implements OnInit {
   ) {
   }
 
+  /** Método que se ejecuta al inicializar el componente. */
   ngOnInit(): void {
     this.usuarioService.getPersonaSesion().subscribe(persona => {
       this.persona = persona;
@@ -39,12 +47,17 @@ export class FormPerfilPersonaComponent implements OnInit {
     });
   }
 
+  /** Método para cargar los datos del formulario. */
   private cargarDatosFormulario() {
     this.provinciaService.getProvincias().subscribe(provincias => {
       this.provincias = provincias;
     });
   }
 
+  /**
+   * Método para crear el FormGroup del formulario.
+   * @param {Persona} persona - Objeto que almacena la información de la persona.
+   */
   private crearFormulario(persona: Persona) {
     this.form = this.formBuilder.group({
       tlf: [persona.usuario.tlf, [Validators.required, Validators.pattern('^[0-9]{9}$')]],
@@ -55,10 +68,20 @@ export class FormPerfilPersonaComponent implements OnInit {
     this.cargado = true;
   }
 
+  /**
+   * Método para validar un campo del formulario.
+   * @param {string} campo - Nombre del campo.
+   * @returns {boolean} - Indica si el campo es inválido y ha sido tocado.
+   */
   validarCampo(campo: string) {
     return this.form.get(campo)?.invalid && this.form.get(campo)?.touched;
   }
 
+  /**
+   * Método para obtener el mensaje de error de un campo del formulario.
+   * @param {string} campo - Nombre del campo.
+   * @returns {string} - Mensaje de error del campo.
+   */
   getErrorCampo(campo: string) {
     if (this.form.get(campo)?.hasError('required')) {
       return 'Campo obligatorio';
@@ -72,6 +95,7 @@ export class FormPerfilPersonaComponent implements OnInit {
     return '';
   }
 
+  /** Método para guardar los cambios realizados en el formulario. */
   guardar() {
     if (this.form.invalid) { // Validar el formulario
       return Object.values(this.form.controls).forEach(control => {
@@ -108,7 +132,7 @@ export class FormPerfilPersonaComponent implements OnInit {
     });
   }
 
-
+  /** Método para darse de baja. */
   darDeBaja() {
     Swal.fire({
       title: '¿Estás seguro?',

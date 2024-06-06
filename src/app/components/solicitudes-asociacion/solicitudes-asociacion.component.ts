@@ -8,6 +8,13 @@ import Swal from 'sweetalert2';
 import { NavbarService } from '../../services/navbar.service';
 declare var $: any; // Declaración de jQuery
 
+/**
+ * Componente para gestionar las solicitudes de una asociación.
+ *
+ * @export
+ * @class SolicitudesAsociacionComponent
+ * @implements {OnInit}
+ */
 @Component({
   selector: 'app-solicitudes-asociacion',
   templateUrl: './solicitudes-asociacion.component.html',
@@ -15,10 +22,39 @@ declare var $: any; // Declaración de jQuery
 })
 export class SolicitudesAsociacionComponent implements OnInit {
 
+  /**
+   * Lista de AnimalPersona.
+   *
+   * @type {AnimalPersona[]}
+   * @memberof SolicitudesAsociacionComponent
+   */
   animalPersonas: AnimalPersona[];
-  nombreAsociacion: string; // Nueva propiedad para almacenar el nombre de la asociacion
+
+  /**
+   * Nombre de la asociación.
+   *
+   * @type {string}
+   * @memberof SolicitudesAsociacionComponent
+   */
+  nombreAsociacion: string;
+
+  /**
+   * Indicador de carga.
+   *
+   * @type {boolean}
+   * @memberof SolicitudesAsociacionComponent
+   */
   isLoading: boolean = true;
 
+  /**
+   * Crea una instancia de SolicitudesAsociacionComponent.
+   *
+   * @param {AnimalPersonaServiceService} animalPersonaService Servicio para gestionar AnimalPersona.
+   * @param {ComunService} comunService Servicio común.
+   * @param {AsociacionService} asociacionService Servicio para gestionar Asociación.
+   * @param {NavbarService} navbarService Servicio para gestionar la barra de navegación.
+   * @memberof SolicitudesAsociacionComponent
+   */
   constructor(
     private animalPersonaService: AnimalPersonaServiceService,
     protected comunService: ComunService,
@@ -26,18 +62,27 @@ export class SolicitudesAsociacionComponent implements OnInit {
     private navbarService: NavbarService
   ) {}
 
+  /**
+   * Método de inicialización del componente.
+   *
+   * @memberof SolicitudesAsociacionComponent
+   */
   ngOnInit(): void {
     this.getAnimalPersonas();
-    console.log('Solicitudes admin');
   }
 
+  /**
+   * Obtiene la lista de AnimalPersona para la asociación del usuario autenticado.
+   *
+   * @memberof SolicitudesAsociacionComponent
+   */
   getAnimalPersonas(): void {
     const usuarioAutenticado = this.comunService.getUsuarioAutenticado();
     if (usuarioAutenticado) {
       this.asociacionService.getAsociacionByUsuarioId(usuarioAutenticado.id).pipe(
         switchMap(asociacion => {
           console.log(asociacion);
-          this.nombreAsociacion = asociacion.nombre; // Asignar el nombre del usuario
+          this.nombreAsociacion = asociacion.nombre;
           return this.animalPersonaService.getAnimalPersonasByAsociacionId(asociacion.id);
         })
       ).subscribe(
@@ -67,6 +112,13 @@ export class SolicitudesAsociacionComponent implements OnInit {
     }
   }
 
+  /**
+   * Acepta una solicitud de AnimalPersona.
+   *
+   * @param {number} id Id del animal.
+   * @param {number} id2 Id de la persona.
+   * @memberof SolicitudesAsociacionComponent
+   */
   aceptarSolicitud(id: number, id2: number) {
     const animalPersona = new AnimalPersona();
     animalPersona.idAnimal = { id: id };
@@ -86,7 +138,7 @@ export class SolicitudesAsociacionComponent implements OnInit {
           response => {
             console.log(response);
             Swal.fire('Éxito', 'Solicitud aceptada con éxito', 'success');
-            this.getAnimalPersonas(); // Recargar los datos
+            this.getAnimalPersonas();
             this.navbarService.reload();
           },
           error => {
@@ -97,6 +149,13 @@ export class SolicitudesAsociacionComponent implements OnInit {
     });
   }
 
+  /**
+   * Rechaza una solicitud de AnimalPersona.
+   *
+   * @param {number} id Id del animal.
+   * @param {number} id2 Id de la persona.
+   * @memberof SolicitudesAsociacionComponent
+   */
   rechazarSolicitud(id: number, id2: number) {
     const animalPersona = new AnimalPersona();
     animalPersona.idAnimal = { id: id };
@@ -116,7 +175,7 @@ export class SolicitudesAsociacionComponent implements OnInit {
           response => {
             console.log(response);
             Swal.fire('Éxito', 'Solicitud rechazada con éxito', 'success');
-            this.getAnimalPersonas(); // Recargar los datos
+            this.getAnimalPersonas();
             this.navbarService.reload();
           },
           error => {

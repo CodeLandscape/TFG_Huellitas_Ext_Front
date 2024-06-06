@@ -20,6 +20,14 @@ export class FormPerfilAsociacionComponent implements OnInit {
   form!: FormGroup;
   provincias: Provincia[] = [];
 
+  /**
+   * Constructor para inicializar los servicios necesarios.
+   * @param {FormBuilder} formBuilder - Constructor de formularios.
+   * @param {ProvinciaService} provinciaService - Servicio para manejar las provincias.
+   * @param {AsociacionService} asociacionService - Servicio para manejar las asociaciones.
+   * @param {Router} router - Router de Angular.
+   * @param {AuthService} authService - Servicio de autenticación.
+   */
   constructor(
     private formBuilder: FormBuilder,
     private provinciaService: ProvinciaService,
@@ -29,6 +37,7 @@ export class FormPerfilAsociacionComponent implements OnInit {
   ) {
   }
 
+  /** Método que se ejecuta al inicializar el componente. */
   ngOnInit(): void {
     this.asociacionService.getAsociacionSesion().subscribe(asociacion => {
       this.asociacion = asociacion;
@@ -37,12 +46,17 @@ export class FormPerfilAsociacionComponent implements OnInit {
     });
   }
 
+  /** Método para cargar los datos del formulario. */
   private cargarDatosFormulario() {
     this.provinciaService.getProvincias().subscribe(provincias => {
       this.provincias = provincias;
     });
   }
 
+  /**
+   * Método para crear el FormGroup del formulario.
+   * @param {Asociacion} asociacion - Objeto de la asociación.
+   */
   private crearFormulario(asociacion: Asociacion) {
     this.form = this.formBuilder.group({
       tlf: [asociacion.usuario.tlf, [Validators.required, Validators.pattern('^[0-9]{9}$')]],
@@ -53,10 +67,20 @@ export class FormPerfilAsociacionComponent implements OnInit {
     this.cargado = true;
   }
 
+  /**
+   * Método para validar un campo del formulario.
+   * @param {string} campo - Nombre del campo.
+   * @returns {boolean} - Indica si el campo es inválido y ha sido tocado.
+   */
   validarCampo(campo: string) {
     return this.form.get(campo)?.invalid && this.form.get(campo)?.touched;
   }
 
+  /**
+   * Método para obtener el mensaje de error de un campo del formulario.
+   * @param {string} campo - Nombre del campo.
+   * @returns {string} - Mensaje de error del campo.
+   */
   getErrorCampo(campo: string) {
     if (this.form.get(campo)?.hasError('required')) {
       return 'Campo obligatorio';
@@ -70,6 +94,7 @@ export class FormPerfilAsociacionComponent implements OnInit {
     return '';
   }
 
+  /** Método para guardar los cambios en el formulario. */
   guardar() {
     if (this.form.invalid) { // Validar el formulario
       return Object.values(this.form.controls).forEach(control => {
@@ -101,6 +126,7 @@ export class FormPerfilAsociacionComponent implements OnInit {
     });
   }
 
+  /** Método para darse de baja. */
   darDeBaja() {
     Swal.fire({
       title: '¿Estás seguro?',

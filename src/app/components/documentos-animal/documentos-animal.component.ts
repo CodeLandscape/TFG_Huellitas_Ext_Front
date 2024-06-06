@@ -28,6 +28,14 @@ export class DocumentosAnimalComponent implements OnInit {
   nombreAnimal: string;
   imageLoaded: boolean;
 
+  /**
+   * @constructor
+   * @param {AnimalService} animalesService - Servicio para manejar las operaciones de animales.
+   * @param {ArchivosAnimalService} archivosAnimalService - Servicio para manejar los archivos de animales.
+   * @param {DomSanitizer} sanitizer - Servicio para manejar y sanitizar URLs.
+   * @param {ActivatedRoute} route - Servicio para manejar las rutas activadas.
+   * @param {TokenService} tokenService - Servicio para manejar tokens de autenticación.
+   */
   constructor(private animalesService: AnimalService,
               private archivosAnimalService: ArchivosAnimalService,
               private sanitizer: DomSanitizer,
@@ -35,7 +43,10 @@ export class DocumentosAnimalComponent implements OnInit {
               private tokenService: TokenService) {
   }
 
-
+  /**
+   * Método que se ejecuta al inicializar el componente.
+   * Carga los documentos del animal y la información del animal.
+   */
   ngOnInit(): void {
     this.idAnimal = this.route.snapshot.params.id;
     this.cargarDocumentos();
@@ -47,6 +58,9 @@ export class DocumentosAnimalComponent implements OnInit {
     });
   }
 
+  /**
+   * Carga los documentos del animal.
+   */
   cargarDocumentos() {
     this.archivosAnimalService.getDocumentosAnimal(this.idAnimal).subscribe(documentos => {
       this.documentos = documentos;
@@ -68,6 +82,10 @@ export class DocumentosAnimalComponent implements OnInit {
     });
   }
 
+  /**
+   * Elimina un archivo después de confirmar la acción.
+   * @param {number} id - ID del archivo a eliminar.
+   */
   deleteArchivo(id) {
     Swal.fire({
       title: '¿Estás seguro?',
@@ -92,11 +110,19 @@ export class DocumentosAnimalComponent implements OnInit {
     });
   }
 
+  /**
+   * Edita un archivo mostrando un modal con el formulario de edición.
+   * @param {number} id - ID del archivo a editar.
+   */
   editarArchivo(id) {
     this.archivosAnimalService.setIdAEditar(id);
     $('#modalEditarArchivo').modal('show');
   }
 
+  /**
+   * Descarga un archivo del servidor.
+   * @param {number} id - ID del archivo a descargar.
+   */
   descargarArchivo(id) {
     this.archivosAnimalService.getDocumento(id).subscribe(data => {
       const blob = new Blob([data], {type: 'application/octet-stream'});
@@ -111,6 +137,11 @@ export class DocumentosAnimalComponent implements OnInit {
     });
   }
 
+  /**
+   * Verifica si una extensión de archivo corresponde a una imagen.
+   * @param {string} extension - La extensión del archivo.
+   * @returns {boolean} - True si la extensión corresponde a una imagen, false de lo contrario.
+   */
   isImage(extension: string): boolean {
     const imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp'];
     return imageExtensions.includes(extension.toLowerCase());

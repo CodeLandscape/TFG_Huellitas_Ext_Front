@@ -1,23 +1,61 @@
 import { Component, OnInit } from '@angular/core';
-import {AnimalPersonaServiceService} from '../../services/animal-persona-service.service';
-import {AnimalPersona} from '../../models/animalPersona';
+import { AnimalPersonaServiceService } from '../../services/animal-persona-service.service';
+import { AnimalPersona } from '../../models/animalPersona';
 
 declare var $: any; // Declaración de jQuery
 
+/**
+ * Componente para gestionar las solicitudes de administración.
+ *
+ * @export
+ * @class SolicitudesAdminComponent
+ * @implements {OnInit}
+ */
 @Component({
   selector: 'app-solicitudes-admin',
   templateUrl: './solicitudes-admin.component.html',
   styleUrls: ['./solicitudes-admin.component.css']
 })
 export class SolicitudesAdminComponent implements OnInit {
+
+  /**
+   * Lista de AnimalPersona.
+   *
+   * @type {AnimalPersona[]}
+   * @memberof SolicitudesAdminComponent
+   */
   animalPersonas: AnimalPersona[];
+
+  /**
+   * Indicador de carga.
+   *
+   * @type {boolean}
+   * @memberof SolicitudesAdminComponent
+   */
   isLoading: boolean = true;
+
+  /**
+   * Crea una instancia de SolicitudesAdminComponent.
+   *
+   * @param {AnimalPersonaServiceService} animalPersonaService Servicio para gestionar AnimalPersona.
+   * @memberof SolicitudesAdminComponent
+   */
   constructor(private animalPersonaService: AnimalPersonaServiceService) { }
+
+  /**
+   * Método de inicialización del componente.
+   *
+   * @memberof SolicitudesAdminComponent
+   */
   ngOnInit(): void {
     this.getAnimalPersonas();
-    console.log('Solicitudes admin');
   }
 
+  /**
+   * Obtiene la lista de AnimalPersona.
+   *
+   * @memberof SolicitudesAdminComponent
+   */
   getAnimalPersonas(): void {
     this.animalPersonaService.getAnimalPersonas().subscribe(
       animalPersonas => {
@@ -25,7 +63,6 @@ export class SolicitudesAdminComponent implements OnInit {
         console.log(this.animalPersonas);
         this.isLoading = false;
         // Inicializar la DataTable después de que los datos estén disponibles
-        // tslint:disable-next-line:only-arrow-functions
         $(document).ready(function() {
           $('#datatable').DataTable({
             pagingType: 'full_numbers',

@@ -30,6 +30,15 @@ export class AnimalComponent implements OnInit {
   cargado = false;
   imageLoaded: boolean;
 
+  /**
+   * @constructor
+   * @param {AnimalService} animalService - Servicio para manejar las operaciones de animales.
+   * @param {RazaService} razaService - Servicio para manejar las operaciones de razas.
+   * @param {TipoService} tipoService - Servicio para manejar las operaciones de tipos de animales.
+   * @param {FormBuilder} formBuilder - Servicio para construir formularios reactivos.
+   * @param {DomSanitizer} sanitizer - Servicio para manejar y sanitizar URLs.
+   * @param {TokenService} authTokenService - Servicio para manejar tokens de autenticación.
+   */
   constructor(private animalService: AnimalService,
               private razaService: RazaService,
               private tipoService: TipoService,
@@ -38,16 +47,28 @@ export class AnimalComponent implements OnInit {
               private authTokenService: TokenService) {
   }
 
+  /**
+   * Método que se ejecuta al inicializar el componente.
+   * Carga los filtros y los animales.
+   */
   ngOnInit(): void {
     this.cargarFiltros();
     this.crearFormAnimal();
     this.cargarAnimales(0);
   }
 
+  /**
+   * Cambia la página actual de los animales.
+   * @param {number} $event - Número de la nueva página.
+   */
   cambiarDePagina($event: number) {
     this.cargarAnimales($event);
   }
 
+  /**
+   * Crea el formulario reactivo para buscar animales.
+   * @private
+   */
   private crearFormAnimal() {
     this.formGroupAnimal = this.formBuilder.group({
       nombre: [''],
@@ -56,6 +77,11 @@ export class AnimalComponent implements OnInit {
     });
   }
 
+  /**
+   * Carga los animales de una página específica.
+   * @param {number} pagina - Número de la página a cargar.
+   * @private
+   */
   private cargarAnimales(pagina) {
     this.animalService.getAnimales(pagina, this.filtroPorLosQueBuscar).subscribe((animalesRecibidos: Page) => {
       this.animales = animalesRecibidos.content;
@@ -72,10 +98,18 @@ export class AnimalComponent implements OnInit {
       this.cargado = true;
     });
   }
+
+  /**
+   * Recarga los animales de la página actual.
+   */
   recargarAnimales() {
     this.cargarAnimales(this.paginaActual);
   }
 
+  /**
+   * Carga los filtros de razas y tipos de animales.
+   * @private
+   */
   private cargarFiltros() {
     this.razaService.getRazas().subscribe((razas: any) => {
       razas.forEach((raza: Raza) => {
@@ -89,6 +123,9 @@ export class AnimalComponent implements OnInit {
     });
   }
 
+  /**
+   * Busca animales según los filtros aplicados.
+   */
   buscarAnimal() {
     if (this.formGroupAnimal.invalid) { // Validar el formulario
       return Object.values(this.formGroupAnimal.controls).forEach(control => {
@@ -112,6 +149,9 @@ export class AnimalComponent implements OnInit {
 
   }
 
+  /**
+   * Limpia el formulario de búsqueda y recarga los animales.
+   */
   limpiarForm() {
     this.formGroupAnimal.reset();
     this.filtroPorLosQueBuscar = [];

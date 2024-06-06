@@ -21,10 +21,16 @@ export class FormEditarArchivoAsocComponent implements OnInit {
   fileName: string | undefined;
   selectedFile: File | null = null;
 
+  /**
+   * Constructor para inicializar los servicios necesarios.
+   * @param {FormBuilder} formBuilder - Constructor de formularios.
+   * @param {ArchivosAsociacionService} archivosAsociacionService - Servicio para manejar los archivos asociados.
+   */
   constructor(private formBuilder: FormBuilder,
               private archivosAsociacionService: ArchivosAsociacionService) {
   }
 
+  /** Método que se ejecuta al inicializar el componente. */
   ngOnInit(): void {
     this.crearFormArchivo();
     this.archivosAsociacionService.getIdAEditar().subscribe(id => {
@@ -37,6 +43,7 @@ export class FormEditarArchivoAsocComponent implements OnInit {
 
   }
 
+  /** Método para crear el FormGroup del formulario de archivo. */
   private crearFormArchivo() {
     this.formGroupArchivo = this.formBuilder.group({
       nombre: ['', [Validators.required, Validators.maxLength(90)]],
@@ -46,7 +53,11 @@ export class FormEditarArchivoAsocComponent implements OnInit {
     this.cargado = true;
   }
 
-  // Validador personalizado para la extensión del archivo
+  /**
+   * Validador personalizado para la extensión del archivo.
+   * @param {string[]} allowedExtensions - Extensiones permitidas.
+   * @returns {Function} - Función de validación.
+   */
   fileExtensionValidator(allowedExtensions: string[]) {
     // El validador recibe un arreglo con las extensiones permitidas
     return (control: { value: any }) => {
@@ -58,6 +69,7 @@ export class FormEditarArchivoAsocComponent implements OnInit {
     };
   }
 
+  /** Método que se ejecuta al seleccionar un archivo. */
   onFileSelected(event: any) {
     this.selectedFile = event.target.files[0];
     if (this.selectedFile) {
@@ -67,10 +79,20 @@ export class FormEditarArchivoAsocComponent implements OnInit {
     }
   }
 
+  /**
+   * Método para validar un campo del formulario.
+   * @param {string} campo - Nombre del campo.
+   * @returns {boolean} - Indicador de validez.
+   */
   validarCampo(campo: string) {
     return this.formGroupArchivo.get(campo)?.invalid && this.formGroupArchivo.get(campo)?.touched;
   }
 
+  /**
+   * Método para obtener el mensaje de error de un campo del formulario.
+   * @param {string} campo - Nombre del campo.
+   * @returns {string} - Mensaje de error.
+   */
   getErrorCampo(campo: string) {
     if (this.formGroupArchivo.get(campo)?.hasError('required')) {
       return 'Campo obligatorio';
@@ -81,6 +103,7 @@ export class FormEditarArchivoAsocComponent implements OnInit {
     return '';
   }
 
+  /** Método para guardar un archivo. */
   guardarArchivo() {
     if (this.formGroupArchivo.valid) {
       const formData = new FormData();
@@ -102,6 +125,7 @@ export class FormEditarArchivoAsocComponent implements OnInit {
     }
   }
 
+  /** Método privado para cargar los datos del archivo. */
   private cargarDatosArchivo() {
     this.archivosAsociacionService.getInfoArchivo(this.idArchivo).subscribe((archivo: ArchivoAsociacion) => {
       this.formGroupArchivo.patchValue({

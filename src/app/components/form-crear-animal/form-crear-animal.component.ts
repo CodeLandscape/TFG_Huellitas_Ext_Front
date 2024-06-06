@@ -27,12 +27,22 @@ export class FormCrearAnimalComponent implements OnInit {
   selectedFile: File | null = null;
   idAnimal!: number;
 
+  /**
+   * Constructor para inicializar los servicios necesarios.
+   * @param razaService Servicio para manejar las razas.
+   * @param animalService Servicio para manejar los animales.
+   * @param formBuilder Constructor de formularios.
+   * @param asociacionService Servicio para manejar asociaciones.
+   */
   constructor(private razaService: RazaService,
               private animalService: AnimalService,
               private formBuilder: FormBuilder,
               private asociacionService: AsociacionService) {
   }
 
+  /**
+   * Método que se ejecuta al inicializar el componente.
+   */
   ngOnInit(): void {
     this.razaService.getRazas().subscribe(razasRecibidas => {
       razasRecibidas.forEach((raza: Raza) => {
@@ -43,6 +53,9 @@ export class FormCrearAnimalComponent implements OnInit {
     this.crearFormAnimal();
   }
 
+  /**
+   * Crea el formulario para el animal.
+   */
   private crearFormAnimal() {
     this.formGroupAnimal = this.formBuilder.group({
       nombre: ['', [Validators.required, Validators.maxLength(255)]],
@@ -54,7 +67,11 @@ export class FormCrearAnimalComponent implements OnInit {
     });
   }
 
-  // Validador personalizado para la extensión del archivo
+  /**
+   * Validador personalizado para la extensión del archivo.
+   * @param {string[]} allowedExtensions - Extensiones permitidas.
+   * @returns Validador de extensiones de archivo.
+   */
   fileExtensionValidator(allowedExtensions: string[]) {
     // El validador recibe un arreglo con las extensiones permitidas
     return (control: { value: any }) => {
@@ -66,6 +83,10 @@ export class FormCrearAnimalComponent implements OnInit {
     };
   }
 
+  /**
+   * Maneja la selección de archivos.
+   * @param {Event} event - Evento de selección de archivo.
+   */
   onFileSelected(event: any) {
     this.selectedFile = event.target.files[0];
     if (this.selectedFile) {
@@ -75,7 +96,9 @@ export class FormCrearAnimalComponent implements OnInit {
     }
   }
 
-
+  /**
+   * Guarda un nuevo animal.
+   */
   guardarAnimal() {
     if (this.formGroupAnimal.invalid) { // Validar el formulario
       return Object.values(this.formGroupAnimal.controls).forEach(control => {
@@ -94,6 +117,11 @@ export class FormCrearAnimalComponent implements OnInit {
 
   }
 
+  /**
+   * Guarda la imagen del animal.
+   * @param {number} idAnimal - ID del animal.
+   * @param {File} selectedFile - Archivo de imagen seleccionado.
+   */
   private guardarImagenAnimal(idAnimal: number, selectedFile: File) {
     const formData = new FormData();
     if (selectedFile) {
@@ -108,10 +136,20 @@ export class FormCrearAnimalComponent implements OnInit {
     });
   }
 
+  /**
+   * Valida un campo del formulario.
+   * @param {string} campo - Nombre del campo.
+   * @returns {boolean} `true` si el campo es inválido y ha sido tocado.
+   */
   validarCampo(campo: string) {
     return this.formGroupAnimal.get(campo)?.invalid && this.formGroupAnimal.get(campo)?.touched;
   }
 
+  /**
+   * Obtiene el mensaje de error para un campo del formulario.
+   * @param {string} campo - Nombre del campo.
+   * @returns {string} Mensaje de error.
+   */
   getErrorCampo(campo: string) {
     if (this.formGroupAnimal.get(campo)?.hasError('required')) {
       return 'Campo obligatorio';

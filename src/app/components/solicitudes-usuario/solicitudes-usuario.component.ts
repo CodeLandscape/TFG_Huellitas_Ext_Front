@@ -1,39 +1,86 @@
 import { Component, OnInit } from '@angular/core';
-import {AnimalPersona} from '../../models/animalPersona';
-import {AnimalPersonaServiceService} from '../../services/animal-persona-service.service';
-import {ComunService} from "../../services/comun.service";
-import {TokenService} from "../../services/token.service";
-import {AuthTokenService} from "../../services/auth-token.service";
-import {PersonaService} from "../../services/persona.service";
-import {switchMap} from "rxjs/operators";
+import { AnimalPersona } from '../../models/animalPersona';
+import { AnimalPersonaServiceService } from '../../services/animal-persona-service.service';
+import { ComunService } from '../../services/comun.service';
+import { TokenService } from '../../services/token.service';
+import {PersonaService} from '../../services/persona.service';
+import { switchMap } from 'rxjs/operators';
 declare var $: any; // Declaración de jQuery
 
+/**
+ * Componente para gestionar las solicitudes del usuario.
+ *
+ * @export
+ * @class SolicitudesUsuarioComponent
+ * @implements {OnInit}
+ */
 @Component({
   selector: 'app-solicitudes-usuario',
   templateUrl: './solicitudes-usuario.component.html',
   styleUrls: ['./solicitudes-usuario.component.css']
 })
 export class SolicitudesUsuarioComponent implements OnInit {
+  /**
+   * Lista de AnimalPersona.
+   *
+   * @type {AnimalPersona[]}
+   * @memberof SolicitudesUsuarioComponent
+   */
   animalPersonas: AnimalPersona[];
-  nombreUsuario: string; // Nueva propiedad para almacenar el nombre del usuario
-  isLoading: boolean = true;
 
-  constructor(private animalPersonaService: AnimalPersonaServiceService, protected comunService: ComunService, protected personaService: PersonaService) { }
+  /**
+   * Nombre del usuario.
+   *
+   * @type {string}
+   * @memberof SolicitudesUsuarioComponent
+   */
+  nombreUsuario: string;
+
+  /**
+   * Indicador de carga.
+   *
+   * @type {boolean}
+   * @memberof SolicitudesUsuarioComponent
+   */
+  isLoading = true;
+
+  /**
+   * Crea una instancia de SolicitudesUsuarioComponent.
+   *
+   * @param {AnimalPersonaServiceService} animalPersonaService Servicio para gestionar AnimalPersona.
+   * @param {ComunService} comunService Servicio común.
+   * @param {PersonaService} personaService Servicio para gestionar Persona.
+   * @memberof SolicitudesUsuarioComponent
+   */
+  constructor(
+    private animalPersonaService: AnimalPersonaServiceService,
+    protected comunService: ComunService,
+    protected personaService: PersonaService
+  ) { }
+
+  /**
+   * Método de inicialización del componente.
+   *
+   * @memberof SolicitudesUsuarioComponent
+   */
   ngOnInit(): void {
     this.getAnimalPersonas();
-    console.log('Solicitudes admin');
   }
 
-  // tslint:disable-next-line:use-lifecycle-interface
-
-
+  /**
+   * Obtiene la lista de AnimalPersona para el usuario autenticado.
+   *
+   * @memberof SolicitudesUsuarioComponent
+   */
   getAnimalPersonas(): void {
     const usuarioAutenticado = this.comunService.getUsuarioAutenticado();
     if (usuarioAutenticado) {
       this.personaService.getPersonaByUsuarioId(usuarioAutenticado.id).pipe(
         switchMap(persona => {
           console.log(persona);
+          // @ts-ignore
           this.nombreUsuario = persona.nombre; // Asignar el nombre del usuario
+          // @ts-ignore
           return this.animalPersonaService.getAnimalPersonasByPersonaId(persona.id);
         })
       ).subscribe(

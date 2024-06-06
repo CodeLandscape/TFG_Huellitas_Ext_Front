@@ -3,9 +3,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 import { UserRegister } from '../../interfaces/user-register.interface';
-import { AuthService } from "../../services/auth.service";
-import { ProvinciaService } from "../../services/provincia.service";
-import { Provincia } from "../../models/provincia";
+import { AuthService } from '../../services/auth.service';
+import { Provincia } from '../../models/provincia';
+import {ProvinciaService} from '../../services/provincia.service';
 
 @Component({
   selector: 'app-register-user',
@@ -13,15 +13,28 @@ import { Provincia } from "../../models/provincia";
   styleUrls: ['./register-user.component.css']
 })
 export class RegisterUserComponent implements OnInit {
+  /**
+   * Datos del usuario a registrar.
+   *
+   * @type {UserRegister}
+   * @memberof RegisterUserComponent
+   */
   public user: UserRegister;
+
+  /**
+   * Lista de provincias.
+   *
+   * @type {Provincia[]}
+   * @memberof RegisterUserComponent
+   */
   public provincias: Provincia[] = [];
 
-  constructor(private fb: FormBuilder, private router: Router, private authService: AuthService, private provinciaService: ProvinciaService) {
-    provinciaService.getProvincias().subscribe((data) => {
-      this.provincias = data;
-    });
-  }
-
+  /**
+   * Formulario reactivo para el registro de usuario.
+   *
+   * @type {FormGroup}
+   * @memberof RegisterUserComponent
+   */
   public registerUser: FormGroup = this.fb.group({
     nombre: ['', Validators.required],
     apellidos: ['', Validators.required],
@@ -35,9 +48,32 @@ export class RegisterUserComponent implements OnInit {
     dni: ['', [Validators.required, this.validateDNI]] // Validación de DNI español
   });
 
-  ngOnInit(): void {
+  /**
+   * Creates an instance of RegisterUserComponent.
+   * @param {FormBuilder} fb Constructor de formularios reactivos.
+   * @param {Router} router Servicio para la navegación.
+   * @param {AuthService} authService Servicio de autenticación.
+   * @param {ProvinciaService} provinciaService Servicio de gestión de provincias.
+   * @memberof RegisterUserComponent
+   */
+  constructor(private fb: FormBuilder, private router: Router, private authService: AuthService, private provinciaService: ProvinciaService) {
+    provinciaService.getProvincias().subscribe((data) => {
+      this.provincias = data;
+    });
   }
 
+  /**
+   * Método de inicialización del componente.
+   *
+   * @memberof RegisterUserComponent
+   */
+  ngOnInit(): void {}
+
+  /**
+   * Maneja el envío del formulario de registro.
+   *
+   * @memberof RegisterUserComponent
+   */
   onSubmit() {
     if (this.registerUser.invalid) {
       this.registerUser.markAllAsTouched();
@@ -81,7 +117,13 @@ export class RegisterUserComponent implements OnInit {
     );
   }
 
-  // Función para validar el formato de un DNI español
+  /**
+   * Valida el formato de un DNI español.
+   *
+   * @param control Control del formulario que contiene el DNI.
+   * @returns {Object | null} Error de validación o null si es válido.
+   * @memberof RegisterUserComponent
+   */
   validateDNI(control) {
     const dniPattern = /^[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKET]{1}$/i;
     if (control.value && !dniPattern.test(control.value)) {
@@ -89,13 +131,27 @@ export class RegisterUserComponent implements OnInit {
     }
     return null;
   }
+
+  /**
+   * Comprueba si las contraseñas no coinciden.
+   *
+   * @returns {boolean} true si las contraseñas no coinciden, de lo contrario false.
+   * @memberof RegisterUserComponent
+   */
   passwordsMismatch() {
     const password = this.registerUser.get('password').value;
     const password2 = this.registerUser.get('password2').value;
     return password !== password2;
   }
 
-   passwordComplexityValidator(control) {
+  /**
+   * Validador de complejidad de contraseña.
+   *
+   * @param control Control del formulario que contiene la contraseña.
+   * @returns {Object | null} Error de validación o null si es válido.
+   * @memberof RegisterUserComponent
+   */
+  passwordComplexityValidator(control) {
     const value = control.value;
     const hasUpperCase = /[A-Z]+/.test(value);
     const hasNumber = /[0-9]+/.test(value);

@@ -25,6 +25,7 @@ import {NoAdminGuard} from './guards/no-admin.guard';
 import {LandingPageComponent} from './components/landing-page/landing-page.component';
 import {Error404Component} from './components/error404/error404.component';
 import {NoAuthGuard} from './guards/no-auth.guard';
+import {CookiesComponent} from './components/cookies/cookies.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/landing-page', pathMatch: 'full' }, // Por defecto
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [NoAuthGuard] },
   { path: 'register-user', component: RegisterUserComponent },
   { path: 'register-association', component: RegisterAssociationComponent },
+  { path: 'cookies', component: CookiesComponent },
   {path: 'list-associations', component: ListAssociationsComponent, canActivate: [AuthGuard, NoAsociacionGuard, NoUsuarioGuard]},
   {path: 'perfil', component: PerfilComponent, canActivate: [AuthGuard, NoAdminGuard]},
   {path: 'listadoAnimales', component: AnimalComponent, canActivate: [AuthGuard, NoAsociacionGuard, NoAdminGuard]},

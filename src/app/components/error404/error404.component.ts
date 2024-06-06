@@ -8,11 +8,21 @@ import { Location } from '@angular/common';
 })
 export class Error404Component implements OnInit {
 
+  /**
+   * @constructor
+   * @param {Location} location - Servicio de Angular para interactuar con la URL del navegador.
+   */
   constructor(private location: Location) { }
 
+  /**
+   * Método que se ejecuta al inicializar el componente.
+   */
   ngOnInit(): void {
   }
 
+  /**
+   * Navega a la página anterior en el historial del navegador.
+   */
   goBack() {
     this.location.back();
   }

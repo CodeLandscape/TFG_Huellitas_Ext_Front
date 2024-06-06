@@ -1,14 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import {AnimalPersona} from '../../models/animalPersona';
-import {AnimalPersonaServiceService} from '../../services/animal-persona-service.service';
-import {ComunService} from '../../services/comun.service';
-import {AsociacionService} from '../../services/asociacion.service';
-import {switchMap} from 'rxjs/operators';
-import {AnimalService} from '../../services/animal.service';
-import {ActivatedRoute} from '@angular/router';
-import {Animal} from '../../models/animal';
+import { AnimalPersona } from '../../models/animalPersona';
+import { AnimalPersonaServiceService } from '../../services/animal-persona-service.service';
+import { ComunService } from '../../services/comun.service';
+import { AsociacionService } from '../../services/asociacion.service';
+import { switchMap } from 'rxjs/operators';
+import { AnimalService } from '../../services/animal.service';
+import { ActivatedRoute } from '@angular/router';
+import { Animal } from '../../models/animal';
 import Swal from 'sweetalert2';
 declare var $: any;
+
+/**
+ * Componente para gestionar las solicitudes relacionadas con un animal específico.
+ *
+ * @export
+ * @class SolicitudesAnimalComponent
+ * @implements {OnInit}
+ */
 @Component({
   selector: 'app-solicitudes-animal',
   templateUrl: './solicitudes-animal.component.html',
@@ -16,33 +24,84 @@ declare var $: any;
 })
 export class SolicitudesAnimalComponent implements OnInit {
 
+  /**
+   * Lista de AnimalPersona.
+   *
+   * @type {AnimalPersona[]}
+   * @memberof SolicitudesAnimalComponent
+   */
   animalPersonas: AnimalPersona[];
-  nombreAnimal: string; // Nueva propiedad para almacenar el nombre de la asociacion
+
+  /**
+   * Nombre del animal.
+   *
+   * @type {string}
+   * @memberof SolicitudesAnimalComponent
+   */
+  nombreAnimal: string;
+
+  /**
+   * ID del animal.
+   *
+   * @type {number}
+   * @memberof SolicitudesAnimalComponent
+   */
   idAnimal: number;
-  // tslint:disable-next-line:max-line-length
+
+  /**
+   * Indicador de carga.
+   *
+   * @type {boolean}
+   * @memberof SolicitudesAnimalComponent
+   */
   isLoading: boolean = true;
-  constructor(private animalPersonaService: AnimalPersonaServiceService, protected comunService: ComunService, protected animalService: AnimalService, private route: ActivatedRoute) { }
+
+  /**
+   * Crea una instancia de SolicitudesAnimalComponent.
+   *
+   * @param {AnimalPersonaServiceService} animalPersonaService Servicio para gestionar AnimalPersona.
+   * @param {ComunService} comunService Servicio común.
+   * @param {AnimalService} animalService Servicio para gestionar Animal.
+   * @param {ActivatedRoute} route Servicio para obtener información sobre la ruta activa.
+   * @memberof SolicitudesAnimalComponent
+   */
+  constructor(
+    private animalPersonaService: AnimalPersonaServiceService,
+    protected comunService: ComunService,
+    protected animalService: AnimalService,
+    private route: ActivatedRoute
+  ) {}
+
+  /**
+   * Método de inicialización del componente.
+   *
+   * @memberof SolicitudesAnimalComponent
+   */
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.idAnimal = params.id;
       this.getAnimalPersonas(params.id);
     });
-    console.log('Solicitudes admin');
   }
 
+  /**
+   * Obtiene la lista de AnimalPersona para el animal especificado.
+   *
+   * @param {number} id ID del animal.
+   * @memberof SolicitudesAnimalComponent
+   */
   getAnimalPersonas(id: number): void {
     this.isLoading = true;
     this.animalService.getAnimal(id).pipe(
       switchMap((animal: Animal) => {
         console.log(animal);
-        this.nombreAnimal = animal.nombre; // Asignar el nombre del animal
+        this.nombreAnimal = animal.nombre;
         return this.animalPersonaService.getAnimalPersonasByAnimalId(animal.id);
       })
     ).subscribe(
       animalPersonas => {
         this.animalPersonas = animalPersonas;
         this.isLoading = false;
-        // tslint:disable-next-line:only-arrow-functions
         $(document).ready(function() {
           $('#datatable').DataTable({
             pagingType: 'full_numbers',
@@ -63,11 +122,17 @@ export class SolicitudesAnimalComponent implements OnInit {
     );
   }
 
-
+  /**
+   * Acepta una solicitud de AnimalPersona.
+   *
+   * @param {number} id ID del animal.
+   * @param {number} id2 ID de la persona.
+   * @memberof SolicitudesAnimalComponent
+   */
   aceptarSolicitud(id: number, id2: number) {
     const animalPersona = new AnimalPersona();
-    animalPersona.idAnimal = {id: id};
-    animalPersona.idPersona = {id: id2};
+    animalPersona.idAnimal = { id: id };
+    animalPersona.idPersona = { id: id2 };
 
     Swal.fire({
       title: '¿Estás seguro?',
@@ -83,7 +148,7 @@ export class SolicitudesAnimalComponent implements OnInit {
           response => {
             console.log(response);
             Swal.fire('Éxito', 'Solicitud aceptada con éxito', 'success');
-            this.getAnimalPersonas(id); // Recargar los datos
+            this.getAnimalPersonas(id);
           },
           error => {
             Swal.fire('Error', 'Hubo un error al aceptar la solicitud', 'error');
@@ -93,10 +158,17 @@ export class SolicitudesAnimalComponent implements OnInit {
     });
   }
 
+  /**
+   * Rechaza una solicitud de AnimalPersona.
+   *
+   * @param {number} id ID del animal.
+   * @param {number} id2 ID de la persona.
+   * @memberof SolicitudesAnimalComponent
+   */
   rechazarSolicitud(id: number, id2: number) {
     const animalPersona = new AnimalPersona();
-    animalPersona.idAnimal = {id: id};
-    animalPersona.idPersona = {id: id2};
+    animalPersona.idAnimal = { id: id };
+    animalPersona.idPersona = { id: id2 };
 
     Swal.fire({
       title: '¿Estás seguro?',
@@ -112,7 +184,7 @@ export class SolicitudesAnimalComponent implements OnInit {
           response => {
             console.log(response);
             Swal.fire('Éxito', 'Solicitud rechazada con éxito', 'success');
-            this.getAnimalPersonas(id); // Recargar los datos
+            this.getAnimalPersonas(id);
           },
           error => {
             Swal.fire('Error', 'Hubo un error al rechazar la solicitud', 'error');
