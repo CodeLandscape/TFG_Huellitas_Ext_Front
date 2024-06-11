@@ -161,13 +161,16 @@ export class ListAssociationsComponent implements AfterViewInit {
       cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.asociacionService.activarAsociacion(id).subscribe();
+        this.asociacionService.activarAsociacion(id).subscribe(
+          response => {
+            this.loadAsociaciones();
+          }
+        );
         Swal.fire(
           'Activada',
           'La asociación ha sido activada.',
           'success'
         );
-        this.loadAsociaciones();
       }
     });
   }
